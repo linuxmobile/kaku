@@ -14,7 +14,7 @@
     systemInputs = {_module.args = {inherit self' inputs';};};
     inherit (inputs.nixpkgs.lib) nixosSystem;
   in {
-    io = nixosSystem {
+    linudev = nixosSystem {
       inherit system;
 
       modules =

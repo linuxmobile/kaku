@@ -24,7 +24,7 @@
             pkgs.git
             config.packages.repl
           ];
-          name = "dotfiles";
+          name = "nixland";
           DIRENV_LOG_FORMAT = "";
         };
         # Nix Formatter
