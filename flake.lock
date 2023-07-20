@@ -189,11 +189,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1689875525,
-        "narHash": "sha256-fgUrFH3bMZ6R7qgBTfuTRGlkZXIkdyjndl6ZbExbjE8=",
+        "lastModified": 1689891262,
+        "narHash": "sha256-Pc4wDczbdgd6QXKJIXprgxe7L9AVDsoAkMnvm5vmpUU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1443abd2696ec6bd6fb9701e6c26b277a27b4a3e",
+        "rev": "ee5673246de0254186e469935909e821b8f4ec15",
         "type": "github"
       },
       "original": {
@@ -279,11 +279,11 @@
         "pre-commit-hooks-nix": "pre-commit-hooks-nix"
       },
       "locked": {
-        "lastModified": 1689845416,
-        "narHash": "sha256-ERkXfeLjDlYliIK6aPZpnlWAhgXAj3t1ppXWJAtFRoA=",
+        "lastModified": 1689889377,
+        "narHash": "sha256-ChBawisTCY3Cl06CSG+QNC2ES+G0ASiOxtOVif9uP/0=",
         "owner": "nix-community",
         "repo": "lanzaboote",
-        "rev": "bf82f823e185fce19a8fb50c336432d7ed95216f",
+        "rev": "e7246c6bce1733d373059e6342f67fd53f90c198",
         "type": "github"
       },
       "original": {
@@ -369,16 +369,16 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1678872516,
-        "narHash": "sha256-/E1YwtMtFAu2KUQKV/1+KFuReYPANM2Rzehk84VxVoc=",
+        "lastModified": 1685801374,
+        "narHash": "sha256-otaSUoFEMM+LjBI1XL/xGB5ao6IwnZOXc47qhIgJe8U=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9b8e5abb18324c7fe9f07cb100c3cd4a29cda8b8",
+        "rev": "c37ca420157f4abc31e26f436c1145f8951ff373",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-22.11",
+        "ref": "nixos-23.05",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -417,11 +417,11 @@
         "nixpkgs-stable": "nixpkgs-stable"
       },
       "locked": {
-        "lastModified": 1684842236,
-        "narHash": "sha256-rYWsIXHvNhVQ15RQlBUv67W3YnM+Pd+DuXGMvCBq2IE=",
+        "lastModified": 1689668210,
+        "narHash": "sha256-XAATwDkaUxH958yXLs1lcEOmU6pSEIkatY3qjqk8X0E=",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "61e567d6497bc9556f391faebe5e410e6623217f",
+        "rev": "eb433bff05b285258be76513add6f6c57b441775",
         "type": "github"
       },
       "original": {
@@ -444,7 +444,8 @@
         "nix-index-db": "nix-index-db",
         "nixpkgs": "nixpkgs_2",
         "rust-overlay": "rust-overlay",
-        "spicetify-nix": "spicetify-nix"
+        "spicetify-nix": "spicetify-nix",
+        "xwaylandvideobridge": "xwaylandvideobridge"
       }
     },
     "rust-overlay": {
@@ -563,6 +564,45 @@
         "owner": "hyprwm",
         "repo": "xdg-desktop-portal-hyprland",
         "type": "github"
+      }
+    },
+    "xwaylandvideobridge": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "xwaylandvideobridge-git": "xwaylandvideobridge-git"
+      },
+      "locked": {
+        "lastModified": 1687587155,
+        "narHash": "sha256-cWHZs7SrppcNVwer9HY1IzIQup5lR7r33WsdQFGDJmo=",
+        "owner": "rgri",
+        "repo": "xwaylandvideobridge-flake",
+        "rev": "7e002f69dc92d5bfcf3a9445d5a5f68823b3c32d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rgri",
+        "repo": "xwaylandvideobridge-flake",
+        "type": "github"
+      }
+    },
+    "xwaylandvideobridge-git": {
+      "flake": false,
+      "locked": {
+        "host": "invent.kde.org",
+        "lastModified": 1687057635,
+        "narHash": "sha256-COv3lQuJ4LO6iThAy9lrfYPKkZTkiVSvqBp2xzPHKKw=",
+        "owner": "system",
+        "repo": "xwaylandvideobridge",
+        "rev": "a9c40f8cda1016d20cea80ecdbfc90637c6f24dd",
+        "type": "gitlab"
+      },
+      "original": {
+        "host": "invent.kde.org",
+        "owner": "system",
+        "repo": "xwaylandvideobridge",
+        "type": "gitlab"
       }
     }
   },

@@ -8,6 +8,8 @@
 
       catppuccin-plymouth = pkgs.callPackage ./catppuccin-plymouth {};
 
+      xwaylandvideobridge = pkgs.libsForQt5.callPackage ./xwaylandvideobridge {};
+
       # gdb-frontend = pkgs.callPackage ./gdb-frontend {};
 
       # waveform = pkgs.callPackage ./waveform {};

@@ -22,6 +22,7 @@ in {
     exec-once = swaybg -m fill -i ~/.wallpapers/gwen.png
     exec-once = waybar
     exec-once = dunst
+    exec-once = xwaylandvideobridge
     exec-once = wl-paste --type text --watch cliphist store
     exec-once = wl-paste --type image --watch cliphist store
 

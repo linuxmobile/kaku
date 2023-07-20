@@ -10,6 +10,7 @@
     jaq
     xorg.xprop
     inputs'.hyprland-contrib.packages.grimblast
+    xwaylandvideobridge
   ];
 
   # start swayidle as part of hyprland, not sway
