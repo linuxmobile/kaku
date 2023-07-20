@@ -10,7 +10,7 @@
         ./hosts
         ./lib
         ./modules
-        ./pkgs
+        # ./pkgs
       ];
 
       perSystem = {
