@@ -21,6 +21,10 @@
       efiSysMountPoint = "/boot";
     };
   };
+  # Change systemd stop job timeout in NixOS configuration (Default = 90s)
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
 
   environment.systemPackages = [config.boot.kernelPackages.cpupower];
 
