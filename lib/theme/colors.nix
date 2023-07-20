@@ -21,13 +21,13 @@ rec {
   overlay1 = "7f849c";
   overlay0 = "6c7086";
 
-  surface2 = "585b70";
-  surface1 = "45475a";
-  surface0 = "313244";
+  surface2 = "1c272b";
+  surface1 = "131e22";
+  surface0 = "0d181c";
 
-  base = "1e1e2e";
-  mantle = "181825";
-  crust = "11111b";
+  base = "0c0e0f";
+  mantle = "292137";
+  crust = "101b1f";
 
   fg = text;
   bg = base;
