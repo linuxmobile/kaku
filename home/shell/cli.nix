@@ -17,6 +17,7 @@
     ripgrep
     trash-cli
     zoxide
+    fzf
 
     # file managers
     ranger
