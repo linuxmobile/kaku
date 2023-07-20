@@ -12,22 +12,21 @@
         font_size = ${toString default.terminal.size},
 
         
-        -- Font config 
-        -- font = font_with_fallback(font_name),
-	      font_rules = {
-		      {
-			      italic = true,
-			      font = font_with_fallback(font_name, { italic = true }),
-		      },
-		      {
-			      italic = false,
-			      font = font_with_fallback(font_name, { bold = true }),
-		      },
-		      {
-			      intensity = "Bold",
-			      font = font_with_fallback(font_name, { bold = true }),
-		      },
-	      },
+       --  -- Font config 
+	      -- font_rules = {
+		     --  {
+			    --   italic = true,
+			    --   font = font_with_fallback(font_name, { italic = true }),
+		     --  },
+		     --  {
+			    --   italic = false,
+			    --   font = font_with_fallback(font_name, { bold = true }),
+		     --  },
+		     --  {
+			    --   intensity = "Bold",
+			    --   font = font_with_fallback(font_name, { bold = true }),
+		     --  },
+	      -- },
         color_scheme = "Catppuccin Mocha",
         window_background_opacity = ${toString default.terminal.opacity},
         enable_scroll_bar = false,

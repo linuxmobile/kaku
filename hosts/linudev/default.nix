@@ -14,6 +14,14 @@
     kernelParams = ["amd_pstate=active" "amd_iommu=on" "nvme_core.default_ps_max_latency_us=0"];
   };
 
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot";
+    };
+  };
+
   environment.systemPackages = [config.boot.kernelPackages.cpupower];
 
   networking.hostName = "aesthetic";
@@ -22,11 +30,6 @@
     # enable hyprland and required options
     hyprland.enable = true;
     # steam.enable = true;
-  };
-
-  security.tpm2 = {
-    enable = true;
-    abrmd.enable = true;
   };
 
   services = {

@@ -21,7 +21,7 @@
         [
           ./linudev
           ../modules/desktop.nix
-          ../modules/lanzaboote.nix
+          # ../modules/lanzaboote.nix
           {home-manager.users.linuxmobile.imports = homeImports."linuxmobile@linudev";}
           systemInputs
         ]
