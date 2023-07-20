@@ -89,6 +89,8 @@
 
     gnome.gnome-keyring.enable = true;
 
+    xserver.displayManager.sddm.enable = true;
+
     logind.extraConfig = ''
       HandlePowerKey=suspend
     '';
