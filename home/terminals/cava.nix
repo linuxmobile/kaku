@@ -2,7 +2,6 @@
   programs.cava = {
     enable = true;
     extraConfig = ''
-    ## Configuration file for CAVA. Default values are commented out. Use either ';' or '#' for commenting.
 		[general]
 		; mode = normal
 		; framerate = 60
