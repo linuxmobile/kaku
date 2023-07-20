@@ -37,9 +37,9 @@ in {
     core = import ./system.nix;
     desktop = import ./desktop.nix;
     # gamemode = import ./gamemode.nix;
-    greetd = import ./greetd.nix;
+    # greetd = import ./greetd.nix;
     lanzaboote = import ./lanzaboote.nix;
-    minimal = import ./minimal.nix;
+    # minimal = import ./minimal.nix;
     network = import ./network.nix;
     nix = import ./nix.nix;
   };

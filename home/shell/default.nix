@@ -4,7 +4,6 @@
     ./starship.nix
     ./transient-services.nix
     ./zsh.nix
-    ./git.nix
     ./nix.nix
   ];
 

@@ -101,7 +101,7 @@
       pulse.enable = true;
 
       # see https://github.com/fufexan/nix-gaming/#pipewire-low-latency
-      lowLatency.enable = true;
+      # lowLatency.enable = true;
     };
 
     # battery info & stuff

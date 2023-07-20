@@ -1,27 +1,9 @@
 {
-  lib,
   pkgs,
+  default,
   ...
 }: {
-  home.packages = lib.attrValues {
-    inherit
-      (pkgs)
-      bfg-repo-cleaner
-      colordiff
-      gist
-      git-filter-repo
-      pre-commit
-      subversion
-      ;
-
-    inherit
-      (pkgs.gitAndTools)
-      git-absorb
-      gitui
-      git-machete
-      gh
-      ;
-  };
+  home.packages = [pkgs.gh];
 
   programs.git = {
     enable = true;
@@ -33,20 +15,18 @@
       signByDefault = true;
     };
 
+    userEmail = "bdiez19@gmail.com";
+    userName = "linuxmobile";
+
     delta = {
       enable = true;
-      options.map-styles = "bold purple => syntax #8839ef, bold cyan => syntax #1e66f5";
+      options.map-styles = "bold purple => syntax ${default.xcolors.mauve}, bold cyan => syntax ${default.xcolors.blue}";
     };
 
     extraConfig = {
       init = {defaultBranch = "main";};
       diff.colorMoved = "default";
       merge.conflictstyle = "diff3";
-      delta = {
-        syntax-theme = "Nord";
-        line-numbers = true;
-      };
-      credential.helper = "${pkgs.gitAndTools.gitFull}/bin/git-credential-libsecret";
     };
 
     aliases = {
