@@ -11,8 +11,10 @@
     in {
       clock = true;
       font = "Jost *";
-      image = default.wallpaper;
+      # image = default.wallpaper;
       indicator = true;
+      effect-blur = "10x2";
+      color = xcolors.base;
 
       bs-hl-color = xcolors.red;
       key-hl-color = xcolors.text;

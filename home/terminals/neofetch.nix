@@ -1,7 +1,7 @@
-{default, ...}: {
-  programs.neofetch = {
-    enable = true;
-    extraConfig = ''
+{ config, lib, pkgs, ... }:
+{
+  home.packages = [ pkgs.neofetch ];
+  home.file.".config/neofetch/config.conf".text = ''
 			print_info() {
 				# info title
 				# info underline
@@ -113,5 +113,4 @@
 			background_color=
 			stdout="off"
     '';
-  };
 }

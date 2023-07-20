@@ -5,7 +5,10 @@
 }: {
   imports = [
     ../shell/nix.nix
+    ../terminals/wezterm.nix
     # ../terminals/foot.nix
+    ../terminals/cava.nix
+    ../terminals/neofetch.nix
     ./files
     ./media.nix
     ./git.nix

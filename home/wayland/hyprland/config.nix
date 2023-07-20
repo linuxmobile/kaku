@@ -15,8 +15,19 @@ in {
     env = _JAVA_AWT_WM_NONREPARENTING,1
     env = QT_WAYLAND_DISABLE_WINDOWDECORATION,1
 
+    exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP # for XDPH
+    exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+    exec-once = echo latam > /tmp/kb_layout
+    exec-once = wlsunset -t 5200 -S 9:00 -s 19:30
+    exec-once = swaybg -m fill -i ~/.wallpapers/gwen.png
+    exec-once = waybar
+    exec-once = dunst
+    exec-once = wl-paste --type text --watch cliphist store
+    exec-once = wl-paste --type image --watch cliphist store
+
     # scale apps
-    exec-once = xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
+    exec-once = xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1
+    exec-once = echo "Xft.dpi: 130" | xrdb -merge
 
     # set cursor for HL itself
     exec-once = hyprctl setcursor ${pointer.name} ${toString pointer.size}
@@ -45,8 +56,8 @@ in {
       gaps_in = 5
       gaps_out = 5
       border_size = 2
-      col.active_border = rgb(${colors.blue}) rgb(${colors.mauve}) 270deg
-      col.inactive_border = rgb(${colors.crust}) rgb(${colors.lavender}) 270deg
+      col.active_border = rgb(${colors.base}) rgb(${colors.mantle}) 270deg
+      col.inactive_border = rgb(${colors.crust}) rgb(${colors.mantle}) 270deg
       # group borders
       col.group_border_active = rgb(${colors.pink})
       col.group_border = rgb(${colors.surface0})
@@ -193,7 +204,7 @@ in {
 
     bindr = $mod, SUPER_L, exec, pkill .${default.launcher}-wrapped || run-as-service ${default.launcher}
     bind = $mod, Return, exec, run-as-service ${default.terminal.name}
-    bind = $mod, L, exec, loginctl lock-session
+    bind = $mod SHIFT, L, exec, loginctl lock-session
 
     bind = $mod, Q, killactive,
     bind = $mod SHIFT, Q, exit,

@@ -1,7 +1,8 @@
-{default, ...}: {
-  programs.cava = {
-    enable = true;
-    extraConfig = ''
+{ config, lib, pkgs, ... }:
+
+{
+  home.packages = [ pkgs.cava ];
+  home.file.".config/cava/config".text = ''
 		[general]
 		; mode = normal
 		; framerate = 60
@@ -58,13 +59,15 @@
 
 
 		gradient = 1
-		gradient_count = 6
-		gradient_color_6 = '#FDAB0F'
-		gradient_color_5 = '#D88949'
-		gradient_color_4 = '#C57866'
-		gradient_color_3 = '#B26682'
-		gradient_color_2 = '#986E8D'
-		gradient_color_1 = '#8B7292'
+		gradient_count = 8
+		gradient_color_1 = '#94e2d5'
+		gradient_color_2 = '#89dceb'
+		gradient_color_3 = '#74c7ec'
+		gradient_color_4 = '#89b4fa'
+		gradient_color_5 = '#cba6f7'
+		gradient_color_6 = '#f5c2e7'
+		gradient_color_7 = '#eba0ac'
+		gradient_color_8 = '#f38ba8'
 
 		; gradient_color_1 = '#D5CADE'
 		; gradient_color_2 = '#DCC7CC'
@@ -89,5 +92,4 @@
 		; 4 = 1
 		; 5 = 1 # treble
     '';
-  };
 }

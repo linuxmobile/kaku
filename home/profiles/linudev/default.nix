@@ -4,9 +4,6 @@
     ../../software
     ../../software/dunst.nix
     ../../wayland
-    ../../terminals/wezterm.nix
-    # ../../terminals/cava.nix
-    # ../../terminals/neofetch.nix
   ];
 
   home.sessionVariables = {

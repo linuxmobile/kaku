@@ -25,7 +25,7 @@ in {
           inputs.lanzaboote.nixosModules.lanzaboote
           module_args
           ./system.nix
-          ./network.nix
+          # ./network.nix
           ./nix.nix
           ./security.nix
         ];
@@ -40,7 +40,7 @@ in {
     # greetd = import ./greetd.nix;
     lanzaboote = import ./lanzaboote.nix;
     # minimal = import ./minimal.nix;
-    network = import ./network.nix;
+    # network = import ./network.nix;
     nix = import ./nix.nix;
   };
 }

@@ -13,7 +13,7 @@
     settings = {
       global = {
         alignment = "center";
-        corner_radius = 16;
+        corner_radius = 5;
         follow = "mouse";
         font = "Roboto 10";
         format = "<b>%s</b>\\n%b";
@@ -51,7 +51,7 @@
       urgency_normal = {
         background = default.xcolors.bg;
         foreground = default.xcolors.fg;
-        frame_color = default.xcolors.green;
+        frame_color = default.xcolors.mauve;
       };
     };
   };
