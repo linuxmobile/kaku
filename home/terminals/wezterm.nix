@@ -2,7 +2,7 @@
   programs.wezterm = {
     enable = true;
     extraConfig = ''
-      local wezterm = require "wezterm"
+      local wezterm = require ("wezterm")
 
       local function font_with_fallback(name, params)
         local names = { name, "Material Symbols Outlined"}
@@ -12,12 +12,7 @@
       local font_name = "${default.terminal.font}"
 
       return {
-        -- font = wezterm.font_with_fallback {
-        --   "${default.terminal.font}",
-        --   "Material Symbols Outlined"
-        -- },
         font_size = ${toString default.terminal.size},
-
         
        -- Font config
         font = font_with_fallback(font_name),
@@ -60,7 +55,23 @@
             mods = "CTRL",
             action = wezterm.action({ CloseCurrentPane = { confirm = false } }),
           },
+		{ -- browser-like bindings for tabbing
+			key = "t",
+			mods = "CTRL",
+			action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
+		},
+		{
+			key = "v",
+			mods = "CTRL|SHIFT",
+			action = wezterm.action({ PasteFrom = "Clipboard" }),
+		},
+		{
+			key = "c",
+			mods = "CTRL|SHIFT",
+			action = wezterm.action({ CopyTo = "ClipboardAndPrimarySelection" }),
+		},
         },
+	window_close_confirmation = "NeverPrompt",
       }
     '';
   };

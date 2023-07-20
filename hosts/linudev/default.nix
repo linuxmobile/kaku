@@ -8,7 +8,7 @@
 
   boot = {
     # load modules on boot
-    kernelModules = ["acpi_call" "amdgpu"];
+    kernelModules = ["amdgpu"];
     # use latest kernel
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
     kernelParams = ["amd_pstate=active" "amd_iommu=on" "nvme_core.default_ps_max_latency_us=0"];
