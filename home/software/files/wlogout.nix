@@ -11,7 +11,7 @@ in {
       font-family: "Jost *", Roboto, sans-serif;
     }
     window {
-    	background-color: rgba(12, 12, 12, 0.9);
+    	background-color: rgba(12, 12, 12, 0.2);
     }
     button {
       background: unset;
