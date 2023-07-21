@@ -14,7 +14,7 @@
       # image = default.wallpaper;
       indicator = true;
       effect-blur = "10x2";
-      color = xcolors.base;
+      color = "#0c0e0f4d";
 
       bs-hl-color = xcolors.red;
       key-hl-color = xcolors.text;
