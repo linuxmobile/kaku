@@ -20,4 +20,4 @@
 <p align="center"><img src="https://i.imgur.com/NbxQ8MY.png" width=600px></p>
 
 <h2 align="center">linuxmobile NixOS Dotfiles</h2>
-<caption align="center">Intro Stolen from @HeinzDev</caption>
+<caption align="center" size="8">Intro Stolen from @HeinzDev</caption>
