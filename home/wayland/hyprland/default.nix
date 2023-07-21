@@ -2,6 +2,7 @@
   inputs',
   lib,
   pkgs,
+  self',
   ...
 }: {
   imports = [./config.nix];
@@ -10,7 +11,7 @@
     jaq
     xorg.xprop
     inputs'.hyprland-contrib.packages.grimblast
-    xwaylandvideobridge
+    self'.packages.xwaylandvideobridge
   ];
 
   # start swayidle as part of hyprland, not sway
