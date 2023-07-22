@@ -88,10 +88,10 @@
 
       m = "mkdir -p";
       fcd = "cd $(find -type d | fzf)";
-      grep = "ripgrep";
+      # grep = "ripgrep";
       du = "du-dust";
       ps = "procs";
-      rm = "trash-cli";
+      # rm = "trash-cli";
       cat = "bat --style=plain";
       l = "exa -lF --time-style=long-iso --icons";
       la = "exa -lah --tree";
