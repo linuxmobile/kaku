@@ -25,6 +25,7 @@
     rizin
     xcolor
     cargo
+    gcc
     nodejs
     nodePackages.pnpm
 
