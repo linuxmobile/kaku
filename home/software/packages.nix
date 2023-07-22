@@ -25,6 +25,8 @@
     rizin
     xcolor
     cargo
+    nodejs
+    nodePackages.pnpm
 
     neofetch
     gnome.file-roller
