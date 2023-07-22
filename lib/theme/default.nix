@@ -21,9 +21,8 @@
   };
 
   # TODO: Change this later
-  wallpaper = builtins.fetchurl rec {
-    name = "${sha256}-9O1MjRQ.png";
-    url = "https://i.imgur.com/";
-    sha256 = "0v6hjnvfgcimip95m9gj1jfaqmza978qpxl0sgbbvkqn5qhsan1m";
+  wallpaper = builtins.fetchurl {
+    url = "https://i.imgur.com/8Elk2Pv.png";
+    sha256 = "1yv64hmv1l95nf20nbkwab8ixgzsimb4grqk07rq0bvsidh8qjxh";
   };
 }
