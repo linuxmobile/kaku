@@ -27,7 +27,7 @@ in {
           # ./network.nix
           ./nix.nix
           ./security.nix
-          ./greetd.nix
+          # ./greetd.nix
         ];
       };
     }

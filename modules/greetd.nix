@@ -51,8 +51,7 @@ in {
   programs.hyprland.enable = true;
 
   services.greetd.settings.default_session.command =
-    "${config.programs.hyprland.package}/bin/Hyprland --config ${greetdHyprlandConfig}"
-    + (lib.optionalString (config.networking.hostName == "aesthetic") " --unsupported-gpu");
+    "${config.programs.hyprland.package}/bin/Hyprland";
 
   # unlock GPG keyring on login
   security.pam.services.greetd.enableGnomeKeyring = true;
