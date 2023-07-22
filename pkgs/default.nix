@@ -10,9 +10,8 @@
 
       xwaylandvideobridge = pkgs.libsForQt5.callPackage ./xwaylandvideobridge {};
 
-      # gdb-frontend = pkgs.callPackage ./gdb-frontend {};
+      nvchad = pkgs.callPackage ./nvchad {};
 
-      # waveform = pkgs.callPackage ./waveform {};
     };
   };
 }

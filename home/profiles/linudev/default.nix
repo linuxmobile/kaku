@@ -1,6 +1,6 @@
 {
   imports = [
-    # ../../editors/neovim
+    ../../editors/nvchad
     ../../software
     ../../software/dunst.nix
     ../../wayland

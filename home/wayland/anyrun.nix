@@ -39,7 +39,7 @@
 
       #match {
         padding: 3px;
-        border-radius: 16px;
+        border-radius: 5px;
       }
 
       #entry, #plugin:hover {
@@ -48,7 +48,7 @@
 
       box#main {
         background: rgba(30, 30, 46, 0.7);
-        border: 1px solid #28283d;
+        border: 1px solid #1c272b;
         border-radius: 24px;
         padding: 8px;
       }
