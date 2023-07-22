@@ -19,7 +19,7 @@ in {
     exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
     exec-once = echo latam > /tmp/kb_layout
     exec-once = wlsunset -t 5200 -S 9:00 -s 19:30
-    exec-once = swaybg -m fill -i ~/.wallpapers/gwen.png
+    # exec-once = swaybg -m fill -i ~/.wallpapers/gwen.png
     exec-once = waybar
     exec-once = dunst
     exec-once = xwaylandvideobridge

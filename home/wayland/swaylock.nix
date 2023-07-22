@@ -11,7 +11,7 @@
     in {
       clock = true;
       font = "Jost *";
-      # image = default.wallpaper;
+      image = default.wallpaper;
       indicator = true;
       effect-blur = "10x2";
       color = "#0c0e0f4d";

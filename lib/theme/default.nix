@@ -21,9 +21,9 @@
   };
 
   # TODO: Change this later
-  # wallpaper = builtins.fetchurl rec {
-  #   name = "wallpaper-${sha256}.png";
-  #   url = "~/.wallpapers/gwen";
-  #   sha256 = "1xngx610skv1vqzx1c7j2zv5cg3gld3hkcxki8jd30rssjjx98p2";
-  # };
+  wallpaper = builtins.fetchurl rec {
+    name = "${sha256}-9O1MjRQ.png";
+    url = "https://i.imgur.com/";
+    sha256 = "0v6hjnvfgcimip95m9gj1jfaqmza978qpxl0sgbbvkqn5qhsan1m";
+  };
 }

@@ -10,7 +10,7 @@
     ./anyrun.nix
     ./hyprland
     ./waybar
-    # ./swaybg.nix
+    ./swaybg.nix
     ./swayidle.nix
     ./swaylock.nix
   ];
