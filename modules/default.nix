@@ -21,13 +21,13 @@ in {
           inputs.agenix.nixosModules.default
           inputs.hm.nixosModule
           inputs.hyprland.nixosModules.default
-          # inputs.nix-gaming.nixosModules.default
           inputs.lanzaboote.nixosModules.lanzaboote
           module_args
           ./system.nix
           # ./network.nix
           ./nix.nix
           ./security.nix
+          ./greetd.nix
         ];
       };
     }
