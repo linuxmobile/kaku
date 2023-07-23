@@ -38,7 +38,7 @@
 
 - **Window Manager** • [Hyprland](https://github.com/hyprwm/Hyprland)🎨 Tiles
   Everywhere!
-- **Shell** • [Zsh](https://www.zsh.org) 🐚 con
+- **Shell** • [Zsh](https://www.zsh.org) 🐚 with
   [starship](https://github.com/starship/starship) Cross Shell Platform!
 - **Terminal** • [WezTerm](https://github.com/wez/wezterm) 💻 A powerful term
   with gpu support!

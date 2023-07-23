@@ -11,7 +11,7 @@
     userName = "linuxmobile";
     userEmail = "bdiez19@gmail.com";
     signing = {
-      key = "F895D335E1997F28";
+      key = "0ED36D957F70C814";
       signByDefault = true;
     };
 
