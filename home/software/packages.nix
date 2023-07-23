@@ -28,6 +28,7 @@
     gcc
     nodejs
     nodePackages.pnpm
+    libsixel
 
     neofetch
     gnome.file-roller
