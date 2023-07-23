@@ -28,7 +28,7 @@
     gcc
     nodejs
     nodePackages.pnpm
-    libsixel
+    # libsixel # image support for foot
 
     neofetch
     gnome.file-roller

@@ -6,7 +6,7 @@
       main = {
         term = "xterm-256color";
         font = "${default.terminal.font}";
-        dpi-aware = "auto";
+        # dpi-aware = "auto";
         pad = "4x4 center";
       };
       cursor = {
