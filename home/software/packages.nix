@@ -4,6 +4,7 @@
     tdesktop
     discord
     webcord
+    inkdrop
 
     pavucontrol
     neovim-unwrapped

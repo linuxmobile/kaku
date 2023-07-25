@@ -57,31 +57,5 @@
 
   nixpkgs = {
     config.allowUnfree = true;
-    overlays = [
-      (
-        _: prev: {
-          greetd =
-            prev.greetd
-            // {
-              regreet = prev.greetd.regreet.overrideAttrs (oldAttrs: rec {
-                version = "main";
-                src = prev.fetchFromGitHub {
-                  owner = "rharish101";
-                  repo = "ReGreet";
-                  rev = "61d871a0ee5c74230dfef8100d0c9bc75b309203";
-                  hash = "sha256-PkQTubSm/FN3FXs9vBB3FI4dXbQhv/7fS1rXkVsTAAs=";
-                };
-                cargoDeps = oldAttrs.cargoDeps.overrideAttrs (_: {
-                  inherit src;
-                  outputHash = "sha256-dR6veXCGVMr5TbCvP0EqyQKTG2XM65VHF9U2nRWyzfA=";
-                });
-
-                # debug only
-                patches = ["${self}/pkgs/regreet.patch"];
-              });
-            };
-        }
-      )
-    ];
   };
 }
