@@ -87,7 +87,7 @@ stdenv.mkDerivation {
 
   src = fetchurl {
     url = "https://d3ip0rje8grhnl.cloudfront.net/v${version}/inkdrop_${version}_amd64.deb";
-    hash = "0hb7nyyh098mmhcqrsmzrladhap2nq6sfrpnjkalccbb28s8qrhx";
+    hash = "sha256-0hb7nyyh098mmhcqrsmzrladhap2nq6sfrpnjkalccbb28s8qrhx";
   };
 
   dontBuild = true;
