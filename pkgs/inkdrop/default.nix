@@ -125,7 +125,7 @@ stdenv.mkDerivation {
   meta = with lib; {
     homepage = "https://www.inkdrop.app/";
     description = "Organizing your Markdown notes made simple";
-    license = licenses.unfreeRedistributable;
+    # license = licenses.unfreeRedistributable;
     platforms = [ "x86_64-linux" ];
     maintainers = [ maintainers.danielgm ];
   };
