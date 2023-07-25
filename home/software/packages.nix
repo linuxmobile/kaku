@@ -1,10 +1,9 @@
-{pkgs, ...}: {
+{pkgs, self', ...}: {
   home.packages = with pkgs; [
     # messaging
     tdesktop
     discord
     webcord
-    inkdrop
 
     pavucontrol
     neovim-unwrapped
