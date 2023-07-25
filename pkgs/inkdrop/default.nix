@@ -33,7 +33,7 @@
 }:
 
 let
-  version = "5.5.0";
+  version = "5.5.3";
 
   deps = [
     libxkbcommon
@@ -83,13 +83,11 @@ in
 stdenv.mkDerivation {
   pname = "inkdrop";
   inherit version;
+  allowUnfree = true;
 
   src = fetchurl {
     url = "https://d3ip0rje8grhnl.cloudfront.net/v${version}/inkdrop_${version}_amd64.deb";
-    # hash = "sha256-JI0H25Bu7uk3ASMo65Gv1YxPc9tC+tAb7M7wFPMyvxk=";
-    # hash = "sha256:06dz6bri9w6fxhdx1yj2vdrlz36mmy8yna1304vykvkfj3dhg394";
-    # hash = "sha256:183rnh965nxn5vzkgn2q087j0lzi6ly1jg5w3q44zgc8jrgzxyc8";
-    hash = "sha256:1l8fxx7p2bg7fck2da9cj0g1xx9ql32v5hyqxjkwarv0xz0fv24f";
+    hash = "0hb7nyyh098mmhcqrsmzrladhap2nq6sfrpnjkalccbb28s8qrhx";
   };
 
   dontBuild = true;
@@ -129,7 +127,7 @@ stdenv.mkDerivation {
     description = "Organizing your Markdown notes made simple";
     license = licenses.unfreeRedistributable;
     platforms = [ "x86_64-linux" ];
-    maintainers = [ maintainers.cstrahan ];
+    maintainers = [ maintainers.danielgm ];
   };
 }
 

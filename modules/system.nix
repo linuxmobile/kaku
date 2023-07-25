@@ -51,6 +51,7 @@
     extraGroups = ["input" "libvirtd" "networkmanager" "plugdev" "video" "wheel"];
   };
 
+  nixpkgs.config.allowUnfree = true;
   # compresses half the ram for use as swap
   zramSwap.enable = true;
 
