@@ -12,6 +12,8 @@
 
       nvchad = pkgs.callPackage ./nvchad {};
 
+      inkdrop = pkgs.callPackage ./inkdrop {};
+
     };
   };
 }

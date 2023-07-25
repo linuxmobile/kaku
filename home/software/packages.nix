@@ -24,6 +24,7 @@
     cliphist
     rizin
     xcolor
+    htop
     cargo
     gcc
     nodejs
