@@ -20,7 +20,8 @@
 <p align="center"><img src="https://i.imgur.com/NbxQ8MY.png" width=600px></p>
 
 <h2 align="center">革 | kaku</h2>
-<small align="center" >Intro Stolen from @HeinzDev</small>
+
+###  ⚠ <sup><sub><samp>PLEASE RESPECT THE CREDITS IF YOU USE SOMETHING FROM MY DESKTOP/SETUP.</samp></sub></sup>
 
 ---
 
@@ -141,7 +142,9 @@ home-manager switch --flake 'github:linuxmobile/kaku#linudev@aesthetic'
 |           | 3 | [Siduck](https://github.com/siduck)                |                                                                                                                                                              |            |
 |           | 4 | [NvChad](https://github.com/NvChad)         |                                                                                                                                                              |            |
 |           | 5 | [Rxyhn](https://github.com/rxyhn)         |                                                                                                                                                              |            |
-|           | 6 | [AmitGolden](https://github.com/AmitGolden)               |                                                                                                                                                              |            |
+|           | 6 | [HeinzDev](https://github.com/HeinzDev)                        |                                                                                                                                                              |            |
+|           | 7 | [fufexan](https://github.com/fufexan)                        |                                                                                                                                                              |            |
+|           | 8 | [AmitGolden](https://github.com/AmitGolden)               |                                                                                                                                                              |            |
 |           |   |                                                             |                                                                                                                                                              |            |
 | **Based** |   | **Community**                                               | **Membership Status**                                                                                                                                        |            |
 |🗺| 3 | [r/unixp*rn](https://reddit.com/r/unixporn)                 | Not working there anymore.                                                                                                                                    |            |
