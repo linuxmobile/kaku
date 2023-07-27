@@ -8,6 +8,7 @@
   imports = [./config.nix];
 
   home.packages = with pkgs; [
+    seatd
     jaq
     xorg.xprop
     inputs'.hyprland-contrib.packages.grimblast

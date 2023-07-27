@@ -16,7 +16,7 @@ in {
     button {
       background: unset;
       border-radius: 16px;
-    	border: 1px solid #28283d;
+    	border: 1px solid ${default.xcolors.mauve};
       color: ${default.xcolors.text};
       margin: 1rem;
     	background-repeat: no-repeat;
