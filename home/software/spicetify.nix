@@ -10,7 +10,6 @@
     colorScheme = "flamingo";
 
     enabledExtensions = with spicePkgs.extensions; [
-      fullAppDisplay
       hidePodcasts
       shuffle
       adblock

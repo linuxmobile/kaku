@@ -31,7 +31,7 @@
 		       },
 	       },
 
-        color_scheme = "Catppuccin Mocha",
+        color_scheme = "Mono (terminal.sexy)",
         window_background_opacity = ${toString default.terminal.opacity},
         warn_about_missing_glyphs = false,
         enable_scroll_bar = false,
@@ -55,24 +55,24 @@
             mods = "CTRL",
             action = wezterm.action({ CloseCurrentPane = { confirm = false } }),
           },
-		{ -- browser-like bindings for tabbing
-			key = "t",
-			mods = "CTRL",
-			action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
-		},
-		{
-			key = "v",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action({ PasteFrom = "Clipboard" }),
-		},
-		{
-			key = "c",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action({ CopyTo = "ClipboardAndPrimarySelection" }),
-		},
-        },
-	window_close_confirmation = "NeverPrompt",
-      }
+          { -- browser-like bindings for tabbing
+            key = "t",
+            mods = "CTRL",
+            action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
+          },
+          {
+            key = "v",
+            mods = "CTRL|SHIFT",
+            action = wezterm.action({ PasteFrom = "Clipboard" }),
+          },
+          {
+            key = "c",
+            mods = "CTRL|SHIFT",
+            action = wezterm.action({ CopyTo = "ClipboardAndPrimarySelection" }),
+          },
+          },
+            window_close_confirmation = "NeverPrompt",
+          }
     '';
   };
 }

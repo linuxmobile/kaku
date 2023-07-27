@@ -14,7 +14,7 @@ rec {
   blue = "89b4fa";
   lavender = "b4befe";
 
-  text = "cdd6f4";
+  text = "eeeeee";
   subtext1 = "bac2de";
   subtext0 = "a6adc8";
   overlay2 = "9399b2";
@@ -25,9 +25,9 @@ rec {
   surface1 = "131e22";
   surface0 = "0d181c";
 
-  base = "0c0e0f";
+  base = "0e0e0e";
   mantle = "292137";
-  crust = "101b1f";
+  crust = "202020";
 
   fg = text;
   bg = base;
