@@ -13,7 +13,6 @@
           obs-pipewire-audio-capture
           # obs-vkcapture
         ]
-        ++ optional (env.isWayland)
         pkgs.obs-studio-plugins.wlrobs;
     };
   };
