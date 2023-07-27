@@ -39,8 +39,17 @@ in {
     userDirs = {
       enable = true;
       createDirectories = true;
+      documents = "$HOME/Documents";
+      download = "$HOME/Downloads";
+      videos = "$HOME/Videos";
+      music = "$HOME/Music";
+      pictures = "$HOME/Pictures";
+      desktop = "$HOME/Desktop";
+      publicShare = "$HOME/Share";
+      templates = "$HOME/Templates";
       extraConfig = {
         XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
+        XDG_DEV_DIR = "$HOME/Dev";
       };
     };
   };
