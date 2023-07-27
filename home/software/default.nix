@@ -17,6 +17,9 @@
     ./qt.nix
     ./spicetify.nix
     ./xdg.nix
+
+    # Apps
+    ./discord.nix
   ];
 
   programs = {
@@ -45,7 +48,6 @@
       enable = true;
       enableSshSupport = true;
       pinentryFlavor = "gnome3";
-      # sshKeys = ["73D1C4271E8C508E1E55259660C94BE828B07738"];
     };
 
     syncthing.enable = true;

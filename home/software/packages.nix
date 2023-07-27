@@ -2,7 +2,6 @@
   home.packages = with pkgs; [
     # messaging
     tdesktop
-    discord
     webcord
     self'.packages.inkdrop
 
