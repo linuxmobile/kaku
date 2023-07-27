@@ -21,6 +21,7 @@
     # Apps
     ./discord.nix
     ./obs.nix
+    # ./vscode.nix
   ];
 
   programs = {
