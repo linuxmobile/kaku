@@ -20,6 +20,7 @@
 
     # Apps
     ./discord.nix
+    ./obs.nix
   ];
 
   programs = {

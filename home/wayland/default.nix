@@ -39,8 +39,6 @@
     XDG_SESSION_TYPE = "wayland";
   };
 
-  # programs.obs-studio.plugins = with pkgs.obs-studio-plugins; [wlrobs];
-
   # fake a tray to let apps start
   # https://github.com/nix-community/home-manager/issues/2064
   systemd.user.targets.tray = {
