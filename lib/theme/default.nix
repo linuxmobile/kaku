@@ -14,10 +14,10 @@
 
   # linuxmobile font -> AestheticIosevka Nerd Font Mono
   terminal = {
-    font = "AestheticIosevka Nerd Font Mono";
+    font = "CartographCF Nerd Font";
     name = "wezterm";
     opacity = 0.9;
-    size = 10;
+    size = 9;
   };
 
   # TODO: Change this later

@@ -22,13 +22,13 @@
     };
   };
 
-  # Product Sans font
-  home.file."${config.xdg.dataHome}/fonts/ProductSans".source = lib.cleanSourceWith {
-    filter = name: _: (lib.hasSuffix ".ttf" (baseNameOf (toString name)));
-    src = pkgs.fetchzip {
-      url = "https://befonts.com/wp-content/uploads/2018/08/product-sans.zip";
-      sha256 = "sha256-PF2n4d9+t1vscpCRWZ0CR3X0XBefzL9BAkLHoqWFZR4=";
-      stripRoot = false;
-    };
-  };
+  # # Product Sans font
+  # home.file."${config.xdg.dataHome}/fonts/Cartograph-CF-NF".source = lib.cleanSourceWith {
+  #   filter = name: _: (lib.hasSuffix ".otf" (baseNameOf (toString name)));
+  #   src = pkgs.fetchzip {
+  #     url = "git@github.com:linuxmobile/cartograph/raw/main/Cartograph-CF-NF.zip";
+  #     sha256 = "sha256-PF2n4d9+t1vscpCRWZ0CR3X0XBefzL9BAkLHoqWFZR4=";
+  #     stripRoot = false;
+  #   };
+  # };
 }
