@@ -98,11 +98,10 @@ in {
         new_is_master = true;
       };
 
-      "$SCREENSHTDIR" = "$HOME/.config/hypr/scripts";
       "$VIDEODIR" = "$HOME/Videos";
       "$NOTIFY" = "notify-send -h string:x-canonical-private-synchronouse:hypr-cfg -u low";
-      "$SCREENSHOT" = "$SCREENSHTDIR/screensht";
-      "$COLORPICKER" = "$SCREENSHTDIR/colorpicker";
+      "$SCREENSHOT" = "~/.config/hypr/scripts/screensht";
+      "$COLORPICKER" = "~/.config/hypr/scripts/colorpicker";
 
       bind = [
         "$MOD, Escape, exec, wlogout -p layer-shell"
@@ -115,7 +114,7 @@ in {
         "$MODSHIFT, S, exec, $SCREENSHOT area"
         "$MODSHIFT, X, exec, $COLORPICKER"
 
-        "$MOD, SUPER_L, exec, pkill .${default.launcher}-wrapped || run-as-service ${default.launcher}"
+        "$MOD, D, exec, pkill .${default.launcher}-wrapped || run-as-service ${default.launcher}"
         "$MOD, Return, exec, run-as-service ${default.terminal.name}"
         "$MODSHIFT, L, exec, loginctl lock-session"
 
