@@ -10,46 +10,50 @@
     enableUpdateCheck = true;
     extensions = with pkgs.vscode-extensions;
       [
-        arrterian.nix-env-selector
         bbenoist.nix
+
         catppuccin.catppuccin-vsc
+        mvllow.rose-pine
+        pkief.material-icon-theme
+
+        formulahendry.auto-close-tag
         christian-kohler.path-intellisense
-        dbaeumer.vscode-eslint
+        naumovs.color-highlight
+        usernamehw.errorlens
         eamodio.gitlens
+        dbaeumer.vscode-eslint
+        # icrawl.discord-vscode
+
         esbenp.prettier-vscode
         kamadorueda.alejandra
-        naumovs.color-highlight
         ms-vsliveshare.vsliveshare
-        pkief.material-icon-theme
-        shardulm94.trailing-spaces
-        usernamehw.errorlens
-        irongeek.vscode-env
         astro-build.astro-vscode
+        bradlc.vscode-tailwindcss
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
-          name = "copilot-nightly";
+          name = "copilot-chat";
           publisher = "github";
-          version = "1.67.7949";
-          sha256 = "sha256-ZtUqQeWjXmTz49DUeYkuqSTdVHRC8OfgWv8fuhlHDVc=";
+          version = "0.5.2023072701";
+          sha256 = "sha256-pmEACc4LGOipionf1SypUYjng+WHfuD1WhVEvXiQcbQ=";
         }
         {
-          name = "vscode-chromium-vector-icons";
-          publisher = "adolfdaniel";
-          version = "1.0.2";
-          sha256 = "sha256-Meo53e/3jUP6YDEXOA/40xghI77jj4iAQus3/S8RPZI=";
+          name = "discord-presence";
+          publisher = "icrawl";
+          version = "5.8.0";
+          sha256 = "sha256-Ud3YviqpBDd2xzAVGw0/ylJAtU9tQbuU6DedLJjtHfY=";
         }
       ];
     userSettings = {
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.colorTheme" = "Catppuccin Macchiato";
       "catppuccin.accentColor" = "mauve";
-      "editor.fontFamily" = "JetBrainsMono Nerd Font, Material Design Icons, 'monospace', monospace";
+      "editor.fontFamily" = "Cartograph CF Nerd Font, Material Design Icons, 'monospace', monospace";
       "editor.fontSize" = 10;
       "editor.fontLigatures" = true;
       "workbench.fontAliasing" = "antialiased";
       "files.trimTrailingWhitespace" = true;
-      "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font Mono";
+      "terminal.integrated.fontFamily" = "Cartograph CF Nerd Font";
       "window.titleBarStyle" = "custom";
       "terminal.integrated.automationShell.linux" = "nix-shell";
       "terminal.integrated.defaultProfile.linux" = "zsh";
@@ -73,11 +77,17 @@
       "window.menuBarVisibility" = "toggle";
       "workbench.panel.defaultLocation" = "right";
       "workbench.editor.tabCloseButton" = "left";
-      "workbench.startupEditor" = "none";
       "workbench.list.smoothScrolling" = true;
       "security.workspace.trust.enabled" = false;
       "explorer.confirmDelete" = false;
       "breadcrumbs.enabled" = true;
+      "telemetry.telemetryLevel"= "off";
+      "workbench.startupEditor"= "newUntitledFile";
+      "editor.cursorBlinking"= "expand";
+      "security.workspace.trust.untrustedFiles"= "open";
+      "security.workspace.trust.banner"= "never";
+      "security.workspace.trust.startupPrompt"= "never";
+      "workbench.sideBar.location"= "right";
     };
   };
 }
