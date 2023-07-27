@@ -20,6 +20,7 @@
 
     # Apps
     ./discord.nix
+    ./webcord/default.nix
     ./obs.nix
     # ./vscode.nix
   ];
