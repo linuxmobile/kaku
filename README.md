@@ -100,13 +100,33 @@ mount /dev/disk/by-label/EFI /mnt/boot
 - Enable nixFlakes
 
 ```bash
-nix-shell -p nixFlakes
+nix-shell -p nixFlakes git
+```
+
+- Clone my Dotfiles 
+
+```bash 
+git clone --depth 1 https://github.com/linuxmobile/kaku /mnt/etc/nixos
+```
+
+- Generate your Own Nix Hardware Settings:
+### ⚠ <sup><sub><samp>DON'T FORGET IT</samp></sub></sup>
+
+```bash
+sudo nixos-generate-config --dir --force /mnt/etc/nixos/hosts/linudev
+
+# Remove configuration.nix 
+rm -rf /mnt/etc/nixos/hosts/linudev/configuration.nix
 ```
 
 - Install Dotfiles Using Flake
 
 ```bash
-nixos-install --flake 'github:linuxmobile/kaku#linudev'
+# Move to folder
+cd mnt/etc/nixos/
+
+# Install
+nixos-install --flake kaku#linudev
 ```
 
 - Reboot
