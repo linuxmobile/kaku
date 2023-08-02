@@ -1,10 +1,6 @@
-{
-  pkgs,
-  lib,
-  inputs,
-  ...
-}:
-with lib; let
+{ pkgs, lib, inputs, ... }:
+with lib;
+let
   catppuccin-mocha = pkgs.fetchFromGitHub {
     owner = "catppuccin";
     repo = "discord";
@@ -12,16 +8,17 @@ with lib; let
     hash = "sha256-iUnLLAQVMXFLyoB3wgYqUTx5SafLkvtOXK6C8EHK/nI=";
   };
 in {
-    home.packages = with pkgs; [
+  home.packages = with pkgs;
+    [
       webcord-vencord # webcord with vencord extension installed
     ];
 
-    xdg.configFile = {
-      "WebCord/Themes/mocha" = {
-        source = "${catppuccin-mocha}/themes/mocha.theme.css";
-      };
-
-      # # share my webcord configuration across devices
-      # "WebCord/config.json".source = config.lib.file.mkOutOfStoreSymlink "./config.json";
+  xdg.configFile = {
+    "WebCord/Themes/mocha" = {
+      source = "${catppuccin-mocha}/themes/mocha.theme.css";
     };
+
+    # # share my webcord configuration across devices
+    # "WebCord/config.json".source = config.lib.file.mkOutOfStoreSymlink "./config.json";
+  };
 }

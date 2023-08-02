@@ -1,9 +1,7 @@
 { lib, stdenv, pkgs }:
 
-let
-  custom = ./custom;
-in
-stdenv.mkDerivation {
+let custom = ./custom;
+in stdenv.mkDerivation {
   pname = "nvchad";
   version = "2.0.0";
 

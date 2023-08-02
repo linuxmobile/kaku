@@ -6,7 +6,5 @@
     ../../wayland
   ];
 
-  home.sessionVariables = {
-    GDK_SCALE = "1";
-  };
+  home.sessionVariables = { GDK_SCALE = "1"; };
 }

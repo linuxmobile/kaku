@@ -1,4 +1,4 @@
-{inputs', ...}: {
+{ inputs', ... }: {
   programs.anyrun = {
     enable = true;
 

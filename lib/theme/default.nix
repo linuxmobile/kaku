@@ -1,7 +1,4 @@
-{
-  colorlib,
-  lib,
-}: rec {
+{ colorlib, lib, }: rec {
   colors = import ./colors.nix;
   # #RRGGBB
   xcolors = lib.mapAttrs (_: colorlib.x) colors;

@@ -1,17 +1,16 @@
-{
-  config,
-  pkgs,
-  self,
-  ...
-}: {
-  imports = [./hardware-configuration.nix];
+{ config, pkgs, self, ... }: {
+  imports = [ ./hardware-configuration.nix ];
 
   boot = {
     # load modules on boot
-    kernelModules = ["amdgpu"];
+    kernelModules = [ "amdgpu" ];
     # use latest kernel
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
-    kernelParams = ["amd_pstate=active" "amd_iommu=on" "nvme_core.default_ps_max_latency_us=0"];
+    kernelParams = [
+      "amd_pstate=active"
+      "amd_iommu=on"
+      "nvme_core.default_ps_max_latency_us=0"
+    ];
   };
 
   boot.loader = {
@@ -26,7 +25,7 @@
     DefaultTimeoutStopSec=10s
   '';
 
-  environment.systemPackages = [config.boot.kernelPackages.cpupower];
+  environment.systemPackages = [ config.boot.kernelPackages.cpupower ];
 
   networking.hostName = "aesthetic";
 

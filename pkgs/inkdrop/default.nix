@@ -1,36 +1,7 @@
-{ stdenv
-, lib
-, libxkbcommon
-, libdrm
-, alsaLib
-, atk
-, at-spi2-atk
-, cairo
-, cups
-, dbus
-, dpkg
-, expat
-, fontconfig
-, freetype
-, fetchurl
-, gdk-pixbuf
-, glib
-, gtk2
-, gtk3
-, libpulseaudio
-, makeWrapper
-, nspr
-, nss
-, pango
-, udev
-, xorg
-, libuuid
-, at-spi2-core
-, libsecret
-, coreutils
-, mesa
-, gnome
-}:
+{ stdenv, lib, libxkbcommon, libdrm, alsaLib, atk, at-spi2-atk, cairo, cups
+, dbus, dpkg, expat, fontconfig, freetype, fetchurl, gdk-pixbuf, glib, gtk2
+, gtk3, libpulseaudio, makeWrapper, nspr, nss, pango, udev, xorg, libuuid
+, at-spi2-core, libsecret, coreutils, mesa, gnome }:
 
 let
   version = "5.5.3";
@@ -78,15 +49,14 @@ let
     gnome.gnome-keyring
   ];
 
-in
-
-stdenv.mkDerivation {
+in stdenv.mkDerivation {
   pname = "inkdrop";
   inherit version;
   allowUnfree = true;
 
   src = fetchurl {
-    url = "https://d3ip0rje8grhnl.cloudfront.net/v${version}/inkdrop_${version}_amd64.deb";
+    url =
+      "https://d3ip0rje8grhnl.cloudfront.net/v${version}/inkdrop_${version}_amd64.deb";
     hash = "sha256-HWaMNBJrMUbVlPZmpw224irYFM2/6owZrBUlAL23Z0E=";
   };
 
@@ -130,4 +100,3 @@ stdenv.mkDerivation {
     maintainers = [ maintainers.danielgm ];
   };
 }
-

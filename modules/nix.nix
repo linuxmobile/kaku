@@ -1,12 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  inputs',
-  lib,
-  self,
-  ...
-}: {
+{ config, pkgs, inputs, inputs', lib, self, ... }: {
   environment.systemPackages = [
     # we need git for flakes
     pkgs.git
@@ -25,15 +17,16 @@
     };
 
     # pin the registry to avoid downloading and evaling a new nixpkgs version every time
-    registry = lib.mapAttrs (_: v: {flake = v;}) inputs;
+    registry = lib.mapAttrs (_: v: { flake = v; }) inputs;
 
     # set the path for channels compat
-    nixPath = lib.mapAttrsToList (key: _: "${key}=flake:${key}") config.nix.registry;
+    nixPath =
+      lib.mapAttrsToList (key: _: "${key}=flake:${key}") config.nix.registry;
 
     settings = {
       auto-optimise-store = true;
       builders-use-substitutes = true;
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [ "nix-command" "flakes" ];
       flake-registry = "/etc/nix/registry.json";
 
       # for direnv GC roots
@@ -51,11 +44,9 @@
         #"helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
       ];
 
-      trusted-users = ["root" "@wheel"];
+      trusted-users = [ "root" "@wheel" ];
     };
   };
 
-  nixpkgs = {
-    config.allowUnfree = true;
-  };
+  nixpkgs = { config.allowUnfree = true; };
 }

@@ -1,9 +1,5 @@
-{
-  default,
-  pkgs,
-  ...
-}: let
-  w = pkgs.wlogout;
+{ default, pkgs, ... }:
+let w = pkgs.wlogout;
 in {
   xdg.configFile."wlogout/style.css".text = ''
     * {

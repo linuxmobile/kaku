@@ -1,8 +1,4 @@
-{
-  pkgs,
-  default,
-  ...
-}: {
+{ pkgs, default, ... }: {
   # notification daemon
   services.dunst = {
     enable = true;
@@ -36,7 +32,7 @@
         word_wrap = "yes";
       };
 
-      fullscreen_delay_everything = {fullscreen = "delay";};
+      fullscreen_delay_everything = { fullscreen = "delay"; };
 
       urgency_critical = {
         background = default.xcolors.bg;

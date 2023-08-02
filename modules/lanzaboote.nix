@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, lib, ... }:
 # lanzaboote config
 {
   boot = {
@@ -24,5 +20,5 @@
     };
   };
 
-  environment.systemPackages = [pkgs.sbctl];
+  environment.systemPackages = [ pkgs.sbctl ];
 }

@@ -1,9 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}:
-{
+{ lib, pkgs, ... }: {
   programs.vscode = {
     enable = true;
     enableExtensionUpdateCheck = true;
@@ -29,8 +24,7 @@
         ms-vsliveshare.vsliveshare
         astro-build.astro-vscode
         bradlc.vscode-tailwindcss
-      ]
-      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "copilot-chat";
           publisher = "github";
@@ -48,7 +42,8 @@
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.colorTheme" = "Catppuccin Macchiato";
       "catppuccin.accentColor" = "mauve";
-      "editor.fontFamily" = "Cartograph CF Nerd Font, Material Design Icons, 'monospace', monospace";
+      "editor.fontFamily" =
+        "Cartograph CF Nerd Font, Material Design Icons, 'monospace', monospace";
       "editor.fontSize" = 10;
       "editor.fontLigatures" = true;
       "workbench.fontAliasing" = "antialiased";
@@ -81,13 +76,13 @@
       "security.workspace.trust.enabled" = false;
       "explorer.confirmDelete" = false;
       "breadcrumbs.enabled" = true;
-      "telemetry.telemetryLevel"= "off";
-      "workbench.startupEditor"= "newUntitledFile";
-      "editor.cursorBlinking"= "expand";
-      "security.workspace.trust.untrustedFiles"= "open";
-      "security.workspace.trust.banner"= "never";
-      "security.workspace.trust.startupPrompt"= "never";
-      "workbench.sideBar.location"= "right";
+      "telemetry.telemetryLevel" = "off";
+      "workbench.startupEditor" = "newUntitledFile";
+      "editor.cursorBlinking" = "expand";
+      "security.workspace.trust.untrustedFiles" = "open";
+      "security.workspace.trust.banner" = "never";
+      "security.workspace.trust.startupPrompt" = "never";
+      "workbench.sideBar.location" = "right";
     };
   };
 }

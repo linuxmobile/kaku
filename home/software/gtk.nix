@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{ pkgs, config, ... }: {
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Original-Classic";
@@ -28,18 +24,14 @@
     theme = {
       name = "Catppuccin-Mocha-Compact-Mauve-dark";
       package = pkgs.catppuccin-gtk.override {
-        accents = ["mauve"];
+        accents = [ "mauve" ];
         size = "compact";
         variant = "mocha";
       };
     };
 
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme=1;
-    };
-    
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme=1;
-    };
+    gtk3.extraConfig = { gtk-application-prefer-dark-theme = 1; };
+
+    gtk4.extraConfig = { gtk-application-prefer-dark-theme = 1; };
   };
 }

@@ -1,18 +1,19 @@
 {
-  systems = ["x86_64-linux"];
+  systems = [ "x86_64-linux" ];
 
-  perSystem = {pkgs, ...}: {
+  perSystem = { pkgs, ... }: {
     packages = {
       # instant repl with automatic flake loading
-      repl = pkgs.callPackage ./repl {};
+      repl = pkgs.callPackage ./repl { };
 
-      catppuccin-plymouth = pkgs.callPackage ./catppuccin-plymouth {};
+      catppuccin-plymouth = pkgs.callPackage ./catppuccin-plymouth { };
 
-      xwaylandvideobridge = pkgs.libsForQt5.callPackage ./xwaylandvideobridge {};
+      xwaylandvideobridge =
+        pkgs.libsForQt5.callPackage ./xwaylandvideobridge { };
 
-      nvchad = pkgs.callPackage ./nvchad {};
+      nvchad = pkgs.callPackage ./nvchad { };
 
-      inkdrop = pkgs.callPackage ./inkdrop {};
+      inkdrop = pkgs.callPackage ./inkdrop { };
 
     };
   };

@@ -1,10 +1,4 @@
-{
-  lib,
-  pkgs,
-  config,
-  default,
-  ...
-}:
+{ lib, pkgs, config, default, ... }:
 # greetd display manager
 let
   greetdHyprlandConfig = pkgs.writeText "greetd-hyprland-config" ''
@@ -24,7 +18,7 @@ in {
   environment.systemPackages = with pkgs; [
     # theme packages
     (catppuccin-gtk.override {
-      accents = ["mauve"];
+      accents = [ "mauve" ];
       size = "compact";
       variant = "mocha";
     })

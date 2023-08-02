@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   suspendScript = pkgs.writeShellScript "suspend-script" ''
     ${pkgs.pipewire}/bin/pw-cli i all | ${pkgs.ripgrep}/bin/rg running
     # only suspend if audio isn't running
@@ -20,11 +21,9 @@ in {
         command = "${pkgs.swaylock-effects}/bin/swaylock -fF";
       }
     ];
-    timeouts = [
-      {
-        timeout = 330;
-        command = suspendScript.outPath;
-      }
-    ];
+    timeouts = [{
+      timeout = 330;
+      command = suspendScript.outPath;
+    }];
   };
 }

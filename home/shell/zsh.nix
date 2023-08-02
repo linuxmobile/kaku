@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{ config, pkgs, lib, ... }: {
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -62,10 +57,12 @@
     '';
 
     shellAliases = {
-      installed = "nix-store --query --requisites /run/current-system | cut -d- -f2- | sort | uniq | sk";
+      installed =
+        "nix-store --query --requisites /run/current-system | cut -d- -f2- | sort | uniq | sk";
       installedall = "nix-store --query --requisites /run/current-system | sk";
       cleanup = "sudo nix-collect-garbage --delete-older-than 1d";
-      listgen = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
+      listgen =
+        "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
       forceclean = "sudo nix-collect-garbage -d";
       nixremove = "nix-store --gc";
       bloat = "nix path-info -Sh /run/current-system";
@@ -74,7 +71,6 @@
       cleanram = "sudo sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'";
       trimall = "sudo fstrim -va";
       temp = "cd /tmp/";
-
 
       # git
       g = "git";
@@ -95,12 +91,13 @@
       cat = "bat --style=plain";
       l = "exa -lF --time-style=long-iso --icons";
       la = "exa -lah --tree";
-      ls = "exa -h --git --icons --color=auto --group-directories-first -s extension";
+      ls =
+        "exa -h --git --icons --color=auto --group-directories-first -s extension";
       tree = "exa --tree --icons --tree";
 
       # myself
       run = "pnpm run";
     };
-    shellGlobalAliases = {exa = "exa --icons --git";};
+    shellGlobalAliases = { exa = "exa --icons --git"; };
   };
 }
