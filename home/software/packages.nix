@@ -28,9 +28,16 @@
     gcc
     nodejs
     nodePackages.pnpm
+
+    glow
     # libsixel # image support for foot
 
     neofetch
     gnome.file-roller
+
+    # nvim servers
+    nixfmt
+    rnix-lsp
+    deno
   ];
 }

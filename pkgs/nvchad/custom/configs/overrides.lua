@@ -27,6 +27,7 @@ M.mason = {
     "html-lsp",
     "astro-language-server",
     "tailwindcss-language-server",
+    "unocss-language-server",
     "typescript-language-server",
     "deno",
     "prettier",

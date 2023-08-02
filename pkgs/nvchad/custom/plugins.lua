@@ -1,5 +1,5 @@
 ---@diagnostic disable: different-requires
-local overrides = require "custom.configs.overrides"
+local overrides = require ("custom.configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -88,12 +88,9 @@ local plugins = {
   },
 
   {
-    "iamcco/markdown-preview.nvim",
+    "ellisonleao/glow.nvim",
     event = "VeryLazy",
-    run = "cd app && pnpm install",
-    setup = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
+    cmd = "Glow",
     ft = { "markdown" },
   },
 
