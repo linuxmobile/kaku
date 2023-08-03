@@ -42,6 +42,12 @@
           version = "5.8.0";
           sha256 = "sha256-IU/looiu6tluAp8u6MeSNCd7B8SSMZ6CEZ64mMsTNmU=";
         }
+        {
+          name = "unocss";
+          publisher = "antfu";
+          version = "0.54.1";
+          sha256 = "sha256-Jlwm1INhA+o2gZmYB8e9RBENJaeSxroCk2YzarYAWHQ=";
+        }
       ];
     userSettings = {
       "workbench.iconTheme" = "catppuccin-perfect-mocha";
