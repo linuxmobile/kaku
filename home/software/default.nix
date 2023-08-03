@@ -18,7 +18,7 @@
     ./discord.nix
     ./webcord/default.nix
     ./obs.nix
-    # ./vscode.nix
+    ./vscode.nix
   ];
 
   programs = {

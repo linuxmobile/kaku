@@ -17,7 +17,6 @@
         usernamehw.errorlens
         eamodio.gitlens
         dbaeumer.vscode-eslint
-        # icrawl.discord-vscode
 
         esbenp.prettier-vscode
         kamadorueda.alejandra
@@ -26,25 +25,31 @@
         bradlc.vscode-tailwindcss
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
-          name = "copilot-chat";
-          publisher = "github";
-          version = "0.5.2023072701";
-          sha256 = "sha256-pmEACc4LGOipionf1SypUYjng+WHfuD1WhVEvXiQcbQ=";
+          name = "catppuccin-perfect-icons";
+          publisher = "thang-nm";
+          version = "0.21.10";
+          sha256 = "sha256-6qQPKB0LlBYAMEYPpjl6NAJyqutLFv+g+XGw4hTV1Nw=";
         }
         {
-          name = "discord-presence";
+          name = "copilot-chat";
+          publisher = "GitHub";
+          version = "0.5.2023072701";
+          sha256 = "sha256-Jt5WBX/ETehIPOh+Vdn4Rsqe2ueBsba7B6IZQ0r/QHI=";
+        }
+        {
+          name = "discord-vscode";
           publisher = "icrawl";
           version = "5.8.0";
-          sha256 = "sha256-Ud3YviqpBDd2xzAVGw0/ylJAtU9tQbuU6DedLJjtHfY=";
+          sha256 = "sha256-IU/looiu6tluAp8u6MeSNCd7B8SSMZ6CEZ64mMsTNmU=";
         }
       ];
     userSettings = {
-      "workbench.iconTheme" = "material-icon-theme";
+      "workbench.iconTheme" = "catppuccin-perfect-mocha";
       "workbench.colorTheme" = "Catppuccin Macchiato";
       "catppuccin.accentColor" = "mauve";
       "editor.fontFamily" =
-        "Cartograph CF Nerd Font, Material Design Icons, 'monospace', monospace";
-      "editor.fontSize" = 10;
+        "Cartograph CF Nerd Font, Catppuccin Perfect Mocha, 'monospace', monospace";
+      "editor.fontSize" = 12;
       "editor.fontLigatures" = true;
       "workbench.fontAliasing" = "antialiased";
       "files.trimTrailingWhitespace" = true;
