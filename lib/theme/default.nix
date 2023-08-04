@@ -19,7 +19,7 @@
 
   # TODO: Change this later
   wallpaper = builtins.fetchurl {
-    url = "https://i.imgur.com/8Elk2Pv.png";
-    sha256 = "1yv64hmv1l95nf20nbkwab8ixgzsimb4grqk07rq0bvsidh8qjxh";
+    url = "https://raw.githubusercontent.com/redyf/wallpapers/main/lofi.gif";
+    sha256 = "sha256-0FUN4tfsHTdWymBtLzSUJq0701f9Ia5tdPyN7MxHwVY=";
   };
 }

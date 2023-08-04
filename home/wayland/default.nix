@@ -8,6 +8,7 @@
     # ./swaybg.nix
     ./swayidle.nix
     ./swaylock.nix
+    ./swww.nix
   ];
 
   home.packages = with pkgs; [
@@ -16,8 +17,9 @@
     slurp
 
     # idle/lock
-    swaybg
+    # swaybg
     swaylock-effects
+    swww
 
     # utils
     wf-recorder

@@ -21,8 +21,6 @@ in {
         "wl-paste --type image --watch cliphist store"
         "xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1"
         "echo 'Xft.dpi: 130' | xrdb -merge"
-        "swww init"
-        "swww -img ${homeDir}/.wallpapers/lofi.gif"
       ];
       xwayland = { force_zero_scaling = true; };
       input = {
