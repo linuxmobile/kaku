@@ -23,7 +23,7 @@
       # "network"
     ];
     clock = {
-      format = " {:%H:%M}";
+      format = "󱑍 {:%H:%M}";
       tooltip = "true";
       tooltip-format = ''
         <big>{:%Y %B}</big>
@@ -137,7 +137,7 @@
     pulseaudio = {
       format = "{icon} {volume}%";
       format-muted = "󰝟";
-      format-icons = { default = [ "󰕿" "󰖀" "󰕾" ]; };
+      format-icons = { default = [ "󰕿" "󰖀" "󱄠" ]; };
       on-click = "bash ~/.scripts/volume mute";
       on-scroll-up = "bash ~/.scripts/volume up";
       on-scroll-down = "bash ~/.scripts/volume down";

@@ -60,8 +60,8 @@ in {
           new_optimizations = true;
           ignore_opacity = true;
           noise = "0.1";
-          # contrast = "1.2";
-          # brightness = "1.3";
+          contrast = "1.1";
+          brightness = "1.2";
           xray = true;
         };
         drop_shadow = true;

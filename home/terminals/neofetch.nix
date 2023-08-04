@@ -44,7 +44,7 @@
 			title_fqdn="off"
 
 			kernel_shorthand="on"
-			distro_shorthand="off"
+			distro_shorthand="on"
 			os_arch="off"
 			uptime_shorthand="on"
 			memory_percent="off"

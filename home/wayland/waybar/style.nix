@@ -20,7 +20,7 @@ in ''
   	}
 
   window#waybar {
-      background: rgba(16, 18, 19, 0.6);
+      background: rgba(16, 18, 19, 0.4);
       border-bottom: 1px solid #0c0e0f;
       color: #cdd6f4
   }
