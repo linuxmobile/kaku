@@ -60,11 +60,13 @@ in {
           new_optimizations = true;
           ignore_opacity = true;
           noise = "0.1";
+          # contrast = "1.2";
+          # brightness = "1.3";
           xray = true;
         };
         drop_shadow = true;
         shadow_ignore_window = true;
-        shadow_offset = "0 5";
+        shadow_offset = "0 8";
         shadow_range = 50;
         shadow_render_power = 3;
         "col.shadow" = "rgba(00000099)";
@@ -167,6 +169,7 @@ in {
         "opacity 0.80 0.70,class:^(org.kde.polkit-kde-authentication-agent-1)$"
         "opacity 0.80 0.80,class:^(org.telegram.desktop)$"
         "opacity 0.80 0.80,class:^(code-url-handler)$"
+        "opacity 0.80 0.80,title:^(Spotify)$"
 
         "float,class:^(org.kde.polkit-kde-authentication-agent-1)$"
         "float,class:^(pavucontrol)$"
