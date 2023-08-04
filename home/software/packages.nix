@@ -11,6 +11,7 @@
     betterdiscordctl
     xfce.thunar
     xfce.thunar-archive-plugin
+    ps_mem
 
     # misc
     libnotify
