@@ -1,13 +1,9 @@
-{
-  config,
-  pkgs,
-  lib,
-  default,
-  ...
-}: let
+{ config, default, ... }:
+let
   inherit (default) colors;
 
   pointer = config.home.pointerCursor;
+  homeDir = config.home.homeDirectory;
 in {
   wayland.windowManager.hyprland = {
     settings = {
@@ -26,9 +22,7 @@ in {
         "xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1"
         "echo 'Xft.dpi: 130' | xrdb -merge"
       ];
-      xwayland = {
-        force_zero_scaling = true;
-      };
+      xwayland = { force_zero_scaling = true; };
       input = {
         kb_layout = "latam";
         follow_mouse = 1;
@@ -46,8 +40,10 @@ in {
         gaps_in = 5;
         gaps_out = 5;
         border_size = 2;
-        "col.active_border" = "rgb(${colors.base}) rgb(${colors.mantle}) 270deg";
-        "col.inactive_border" = "rgb(${colors.crust}) rgb(${colors.mantle}) 270deg";
+        "col.active_border" =
+          "rgb(${colors.base}) rgb(${colors.mantle}) 270deg";
+        "col.inactive_border" =
+          "rgb(${colors.crust}) rgb(${colors.mantle}) 270deg";
         # group borders
         "col.group_border_active" = "rgb(${colors.pink})";
         "col.group_border" = "rgb(${colors.surface0})";
@@ -58,18 +54,21 @@ in {
       decoration = {
         rounding = 5;
         multisample_edges = true;
-        blur = true;
-        blur_size = 6;
-        blur_passes = 3;
-        blur_new_optimizations = true;
-        blur_ignore_opacity = true;
+        blur = {
+          size = 6;
+          passes = 3;
+          new_optimizations = true;
+          ignore_opacity = true;
+          noise = "0.1";
+          xray = true;
+        };
         drop_shadow = true;
         shadow_ignore_window = true;
         shadow_offset = "0 5";
         shadow_range = 50;
         shadow_render_power = 3;
         "col.shadow" = "rgba(00000099)";
-        blurls = ["gtk-layer-shell" "waybar" "lockscreen"];
+        blurls = [ "gtk-layer-shell" "waybar" "lockscreen" ];
       };
       animation = {
         bezier = [
@@ -94,14 +93,13 @@ in {
         pseudotile = true;
         preserve_split = true;
       };
-      master = {
-        new_is_master = true;
-      };
+      master = { new_is_master = true; };
 
       "$VIDEODIR" = "$HOME/Videos";
-      "$NOTIFY" = "notify-send -h string:x-canonical-private-synchronouse:hypr-cfg -u low";
-      "$SCREENSHOT" = "~/.config/hypr/scripts/screensht";
-      "$COLORPICKER" = "~/.config/hypr/scripts/colorpicker";
+      "$NOTIFY" =
+        "notify-send -h string:x-canonical-private-synchronouse:hypr-cfg -u low";
+      "$SCREENSHOT" = "${homeDir}/.config/hypr/scripts/screensht";
+      "$COLORPICKER" = "${homeDir}/.config/hypr/scripts/colorpicker";
 
       bind = [
         "$MOD, Escape, exec, wlogout -p layer-shell"
@@ -138,26 +136,18 @@ in {
         "$MODSHIFT, A, movetoworkspace, special"
         "$MOD, C, exec, hyprctl dispatch centerwindow"
 
-        "${builtins.concatStringsSep "\n" (builtins.genList (
-          x: let
-            ws = let
-              c = (x + 1) / 10;
-            in
-              builtins.toString (x + 1 - (c * 10));
+        "${builtins.concatStringsSep "\n" (builtins.genList (x:
+          let
+            ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
           in ''
             bind = $MOD, ${ws}, workspace, ${toString (x + 1)}
             bind = $MODSHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}
-          ''
-        )
-        10)}"
+          '') 10)}"
 
         "$MOD, mouse_down, workspace, e-1"
         "$MOD, mouse_up, workspace, e+1"
       ];
-      bindm = [
-        "$MOD, mouse:272, movewindow"
-        "$MOD, mouse:273, resizewindow"
-      ];
+      bindm = [ "$MOD, mouse:272, movewindow" "$MOD, mouse:273, resizewindow" ];
       windowrulev2 = [
         "opacity 0.90 0.90,class:^(org.wezfurlong.wezterm)$"
         "opacity 0.90 0.90,class:^(Brave-browser)$"

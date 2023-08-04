@@ -13,7 +13,7 @@
   terminal = {
     font = "CartographCF Nerd Font";
     name = "wezterm";
-    opacity = 0.9;
+    opacity = 0.7;
     size = 9;
   };
 
