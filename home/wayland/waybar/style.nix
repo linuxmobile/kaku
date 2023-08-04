@@ -11,15 +11,16 @@ in ''
   * {
       border: none;
       border-radius: 0px;
-      font-family: LigaSFMono Nerd Font, Iosevka, FontAwesome, Noto Sans CJK;
+      /* font-family: LigaSFMono Nerd Font, Iosevka, FontAwesome, Noto Sans CJK; */
       /* font-family: Iosevka, FontAwesome, Noto Sans CJK; */
+      font-family: JetBrainsMono Nerd Font, FontAwesome, Noto Sans CJK;
       font-size: 12px;
       font-style: normal;
       min-height: 0;
   	}
 
   window#waybar {
-      background: rgba(16, 18, 19, 0.8);
+      background: rgba(16, 18, 19, 0.6);
       border-bottom: 1px solid #0c0e0f;
       color: #cdd6f4
   }

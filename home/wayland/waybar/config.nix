@@ -57,8 +57,8 @@
       on-click = "playerctl previous";
       on-click-right = "playerctl next";
       format-icons = {
-        Playing = "<span foreground='#6791eb'>󰐌 </span>";
-        Paused = "<span foreground='#cdd6f4'>󰏥 </span>";
+        Playing = "<span foreground='#6791eb'>󰓇 </span>";
+        Paused = "<span foreground='#cdd6f4'>󰓇 </span>";
       };
     };
 
@@ -72,8 +72,8 @@
       on-click = "playerctl previous";
       on-click-right = "playerctl next";
       format-icons = {
-        Playing = "<span foreground='#6791eb'>󰐌 </span>";
-        Paused = "<span foreground='#cdd6f4'>󰏥 </span>";
+        Playing = "<span foreground='#6791eb'>󰓇 </span>";
+        Paused = "<span foreground='#cdd6f4'>󰓇 </span>";
       };
     };
 
@@ -151,8 +151,7 @@
     };
     "custom/launcher" = {
       format = "";
-      on-click = "bash $HOME/.config/rofi/launcher.sh";
-      on-click-right = "bash $HOME/.config/rofi/run.sh";
+      on-click = "notify-send -t 1 'swww' '1' & ~/.config/hypr/scripts/wall";
       tooltip = "false";
     };
 
