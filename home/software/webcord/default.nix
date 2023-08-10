@@ -4,8 +4,8 @@ let
   catppuccin-mocha = pkgs.fetchFromGitHub {
     owner = "catppuccin";
     repo = "discord";
-    rev = "4ad2a3886992fec64ad5e2a99f97c101e82f819d";
-    hash = "sha256-i06KaxGIEX4DcF0EguQrHNfHVIWXi6BMLxvFThcfSys=";
+    rev = "c04f4bd43e571c19551e0e5da2d534408438564c";
+    hash = "sha256-3uEVrR2T39Pj0puUwUPuUfXcCPoOq2lNHL8UpppTOiU=";
   };
 in {
   home.packages = with pkgs;

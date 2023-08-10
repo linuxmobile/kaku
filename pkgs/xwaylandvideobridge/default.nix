@@ -8,7 +8,7 @@ stdenv.mkDerivation {
     domain = "invent.kde.org";
     owner = "system";
     repo = "xwaylandvideobridge";
-    rev = "9853b50f2494f458e8d103aac631c52a5352b4c9";
+    rev = "16091a997d40eb9e5a46f3f0eecceff8fe348c87";
     hash = "sha256-enGDIPGdEA9DaqIiVUprdnGuuuQ/B2dq8H7nnid61QE=";
   };
 
@@ -18,7 +18,7 @@ stdenv.mkDerivation {
     (fetchpatch {
       url =
         "https://aur.archlinux.org/cgit/aur.git/plain/cursor-mode.patch?h=xwaylandvideobridge-cursor-mode-2-git";
-      hash = "sha256-649kCs3Fsz8VCgGpZ952Zgl8txAcTgakLoMusaJQYa4";
+      hash = "sha256-EgEQe6TloKzn4Qu5iP6MCIb6jJqXRGZOv58t+50dpCs=";
     })
   ];
 
@@ -34,8 +34,8 @@ stdenv.mkDerivation {
         domain = "invent.kde.org";
         owner = "plasma";
         repo = "kpipewire";
-        rev = "600505677474a513be4ea8cdc8586f666be7626d"; # Plasma/5.27 branch
-        hash = "sha256-ME/9xOyRvvPDiYB1SkJLMk4vtarlIgYdlereBrYTcL4=";
+        rev = "176ac3da53dd09cc4d4ce37910c62c5cfb5dd190"; # Plasma/5.27 branch
+        hash = "sha256-u+CGk/jm5pHTPJYwKHwHc01c9E+ElsfKkzYg5NfIaJ8=";
       };
     }))
   ];
