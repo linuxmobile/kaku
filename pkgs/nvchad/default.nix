@@ -1,5 +1,4 @@
-{ lib, stdenv, pkgs }:
-
+{ lib, stdenv, pkgs, }:
 let custom = ./custom;
 in stdenv.mkDerivation {
   pname = "nvchad";
@@ -9,7 +8,7 @@ in stdenv.mkDerivation {
     owner = "NvChad";
     repo = "NvChad";
     rev = "refs/heads/v2.0";
-    sha256 = "sha256-Dh649epL1/PuStYphMwTLZ76iWu0IfAy9OTLdVG82GU=";
+    sha256 = "sha256-u5zF9UuNt+ndeWMCpKbebYYW8TR+nLeBvcMy3blZiQw=";
   };
 
   installPhase = ''
@@ -17,6 +16,8 @@ in stdenv.mkDerivation {
     cp -r * "$out/"
     mkdir -p "$out/lua/custom"
     cp -r ${custom}/* "$out/lua/custom/"
+    touch "$out/lazy-lock.json"
+    chmod -R 0777 "$out/lazy-lock.json"
   '';
 
   meta = with lib; {

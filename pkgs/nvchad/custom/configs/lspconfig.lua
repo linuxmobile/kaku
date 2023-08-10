@@ -10,4 +10,12 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach,
     capabilities = capabilities,
   }
+
+  lspconfig.tailwindcss.setup {
+    cmd = { "tailwindcss-language-server", "--stdio" },
+    filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "astro" },
+    root_dir = lspconfig.util.root_pattern("tailwind.config.js", "tailwind.config.ts"),
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
 end

@@ -2,16 +2,13 @@ local M = {}
 
 M.treesitter = {
   ensure_installed = {
-    "vim",
     "lua",
-    "html",
     "css",
     "javascript",
     "astro",
     "tsx",
     "typescript",
     "markdown",
-    "markdown_inline",
     "nix",
   },
 }
@@ -24,12 +21,10 @@ M.mason = {
 
     -- web dev stuff
     "css-lsp",
-    "html-lsp",
     "astro-language-server",
     "tailwindcss-language-server",
     "unocss-language-server",
     "typescript-language-server",
-    "deno",
     "prettier",
     "json-lsp",
     "marksman",
