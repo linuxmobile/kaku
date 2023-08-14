@@ -5,9 +5,8 @@ local M = {}
 local highlights = require "custom.configs.highlights"
 
 M.ui = {
-  theme = "rxyhn",
+  theme = "rosepine",
   transparency = true,
-
   statusline = {
     theme = "minimal", -- default/vscode/vscode_colored/minimal
     separator_style = "round", -- default/round/block/arrow
@@ -25,7 +24,7 @@ M.ui = {
   cmp = {
     icons = true,
     lspkind_text = true,
-    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+    style = "atom_colored", -- default/flat_light/flat_dark/atom/atom_colored
     border_color = "default", -- only applicable for "default" style, use color names from base30 variables
     selected_item_bg = "colored", -- colored / simple
   },
