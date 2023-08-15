@@ -88,13 +88,6 @@ local plugins = {
   },
 
   {
-    "ellisonleao/glow.nvim",
-    event = "VeryLazy",
-    cmd = "Glow",
-    ft = { "markdown" },
-  },
-
-  {
     "andweeb/presence.nvim",
     event = "VeryLazy",
     config = function()

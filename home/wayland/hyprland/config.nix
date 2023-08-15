@@ -194,7 +194,7 @@ in {
 
         "tile, title:^(Spotify)$"
         "workspace 9 silent, title:^(Spotify)$"
-        "workspace 3, title:^(.*(Disc|WebC)ord.*)$"
+        "workspace 4, title:^(.*(Disc|WebC)ord.*)$"
 
         "idleinhibit focus, class:^(mpv|.+exe)$"
         "idleinhibit focus, class:^(firefox)$, title:^(.*YouTube.*)$"

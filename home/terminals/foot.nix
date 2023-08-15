@@ -1,42 +1,52 @@
 { default, ... }: {
   programs.foot = {
     enable = true;
-    server.enable = true;
     settings = {
       main = {
-        term = "xterm-256color";
-        font = "${default.terminal.font}";
-        # dpi-aware = "auto";
-        pad = "4x4 center";
+        font =
+          "${default.terminal.font}:size=${toString default.terminal.size}";
+        box-drawings-uses-font-glyphs = "yes";
+        dpi-aware = "yes";
+        pad = "4x4center";
+        notify = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
+        selection-target = "clipboard";
+      };
+      scrollback = {
+        lines = 10000;
+        multiplier = 3;
+      };
+      url = {
+        launch = "xdg-open \${url}";
+        label-letters = "sadfjklewcmpgh";
+        osc8-underline = "url-mode";
+        protocols = "http, https, ftp, ftps, file";
+        uri-characters = ''
+          abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.,~:;/?#@!$&%*+="'()[]'';
       };
       cursor = {
-        color = "1a1026 d9e0ee";
-        blink = false;
-        style = "block";
+        style = "beam";
         beam-thickness = "2";
-        underline-thickness = "2";
       };
       colors = {
-        # Catppuccin Espresso
-        alpha = "0.8";
-        foreground = "CDD6F4"; # Text
-        background = "11111B"; # Base
-        regular0 = "45475A"; # Surface 1
-        regular1 = "F38BA8"; # red
-        regular2 = "A6E3A1"; # green
-        regular3 = "F9E2AF"; # yellow
-        regular4 = "89B4FA"; # blue
-        regular5 = "F5C2E7"; # pink
-        regular6 = "94E2D5"; # teal
-        regular7 = "BAC2DE"; # Subtext 1
-        bright0 = "585B70"; # Surface 2
-        bright1 = "F38BA8"; # red
-        bright2 = "A6E3A1"; # green
-        bright3 = "F9E2AF"; # yellow
-        bright4 = "89B4FA"; # blue
-        bright5 = "F5C2E7"; # pink
-        bright6 = "94E2D5"; # teal
-        bright7 = "A6ADC8"; # Subtext 0
+        alpha = default.terminal.opacity;
+        foreground = "DED7D0"; # Text
+        background = "1E1D23"; # Base
+        regular0 = "2E2930"; # Surface 1
+        regular1 = "D95555"; # red
+        regular2 = "7EC49D"; # green
+        regular3 = "EFD472"; # yellow
+        regular4 = "8BB8D0"; # blue
+        regular5 = "BDA9D4"; # pink
+        regular6 = "B898DD"; # teal
+        regular7 = "cccccc"; # Subtext 1
+        bright0 = "29292E"; # Surface 2
+        bright1 = "D95555"; # red
+        bright2 = "7EC49D"; # green
+        bright3 = "EFD472"; # yellow
+        bright4 = "8BB8D0"; # blue
+        bright5 = "BDA9D4"; # pink
+        bright6 = "B898DD"; # teal
+        bright7 = "1A191E"; # Subtext 0
       };
       tweak = {
         font-monospace-warn = "no";
