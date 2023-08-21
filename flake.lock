@@ -448,31 +448,7 @@
         "nh": "nh",
         "nix-index-db": "nix-index-db",
         "nixpkgs": "nixpkgs_2",
-        "rust-overlay": "rust-overlay",
         "spicetify-nix": "spicetify-nix"
-      }
-    },
-    "rust-overlay": {
-      "inputs": {
-        "flake-utils": [
-          "fu"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1692065371,
-        "narHash": "sha256-1uKLJT89aDS2IlT5oM9vOe6yL34teNvs+b6DZNA5RAM=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "4ea85def89eceac6b5e327fd3628dcb9ba5add2e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
       }
     },
     "spicetify-nix": {
