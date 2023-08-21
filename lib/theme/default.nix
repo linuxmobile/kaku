@@ -13,13 +13,14 @@
   terminal = {
     font = "CartographCF Nerd Font";
     name = "wezterm";
-    opacity = 0.7;
+    opacity = 1.0;
     size = 9;
   };
 
   # TODO: Change this later
   wallpaper = builtins.fetchurl {
-    url = "https://i.imgur.com/8Elk2Pv.png";
-    sha256 = "1yv64hmv1l95nf20nbkwab8ixgzsimb4grqk07rq0bvsidh8qjxh";
+    url =
+      "https://raw.githubusercontent.com/linuxmobile/hyprland-dots/Sakura/.wallpapers/dark.png";
+    sha256 = "sha256-g8UkaWP0xycLYEOxCOzGY/PjwzLHY+P492tcxTrFJt8=";
   };
 }

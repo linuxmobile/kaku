@@ -1,37 +1,39 @@
 rec {
-  rosewater = "f5e0dc";
-  flamingo = "f2cdcd";
-  pink = "f5c2e7";
-  mauve = "cba6f7";
-  red = "f38ba8";
-  maroon = "eba0ac";
-  peach = "fab387";
-  yellow = "f9e2af";
-  green = "a6e3a1";
-  teal = "94e2d5";
-  sky = "89dceb";
-  sapphire = "74c7ec";
-  blue = "89b4fa";
-  lavender = "b4befe";
+  foreground = "e0def4";
+  background = "191724";
+  darker = "21202e";
+  bg2 = "26233a";
+  mbg = "1f1d2e";
 
-  text = "cdd6f4";
-  subtext1 = "bac2de";
-  subtext0 = "a6adc8";
-  overlay2 = "9399b2";
-  overlay1 = "7f849c";
-  overlay0 = "6c7086";
+  cursorColor = "151521";
+  contrast = "151521";
+  cursorline = "161623";
+  comment = "6c7086";
 
-  surface2 = "1c272b";
-  surface1 = "131e22";
-  surface0 = "0d181c";
+  color0 = "1f1d2e";
+  color8 = "26233a";
 
-  base = "0c0e0f";
-  mantle = "292137";
-  crust = "101b1f";
+  color1 = "eb6f92";
+  color9 = "eb6f92";
 
-  fg = text;
-  bg = base;
-  bg1 = surface0;
-  border = "28283d";
-  shadow = crust;
+  color2 = "f6c177";
+  color10 = "f6c177";
+
+  color3 = "ebbcba";
+  color11 = "ebbcba";
+
+  color4 = "31748f";
+  color12 = "31748f";
+
+  color5 = "c4a7e7";
+  color13 = "c4a7e7";
+
+  color6 = "9ccfd8";
+  color14 = "9ccfd8";
+
+  color7 = "6e6a86";
+  color15 = "908caa";
+
+  bg = background;
+  fg = foreground;
 }

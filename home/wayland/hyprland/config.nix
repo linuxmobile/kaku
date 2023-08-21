@@ -41,12 +41,12 @@ in {
         gaps_out = 5;
         border_size = 2;
         "col.active_border" =
-          "rgb(${colors.base}) rgb(${colors.mantle}) 270deg";
+          "rgb(${colors.background}) rgb(${colors.color8}) 270deg";
         "col.inactive_border" =
-          "rgb(${colors.crust}) rgb(${colors.mantle}) 270deg";
+          "rgb(${colors.contrast}) rgb(${colors.color4}) 270deg";
         # group borders
-        "col.group_border_active" = "rgb(${colors.pink})";
-        "col.group_border" = "rgb(${colors.surface0})";
+        "col.group_border_active" = "rgb(${colors.color5})";
+        "col.group_border" = "rgb(${colors.contrast})";
         "no_border_on_floating" = false;
         layout = "dwindle";
         no_cursor_warps = true;

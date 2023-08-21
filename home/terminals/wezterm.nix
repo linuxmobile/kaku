@@ -13,7 +13,7 @@
 
             return {
               font_size = ${toString default.terminal.size},
-              
+
              -- Font config
               font = font_with_fallback(font_name),
       	      font_rules = {

@@ -1,53 +1,81 @@
-{ pkgs, default, ... }: {
+{ pkgs, default, ... }:{
   # notification daemon
   services.dunst = {
     enable = true;
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
-    };
     settings = {
       global = {
-        alignment = "center";
-        corner_radius = 5;
         follow = "mouse";
-        font = "Roboto 10";
-        format = "<b>%s</b>\\n%b";
-        frame_width = 1;
-        offset = "5x5";
-        horizontal_padding = 8;
+        width = 500;
+        origin = "top-right";
+        alignment = "left";
+        vertical_alignment = "center";
+        ellipsize = "middle";
+        offset = "15x15";
+        padding = 15;
+        horizontal_padding = 15;
+        text_icon_padding = 15;
         icon_position = "left";
-        indicate_hidden = "yes";
-        markup = "yes";
+        min_icon_size = 48;
         max_icon_size = 64;
+        progress_bar = true;
+        progress_bar_height = 8;
+        progress_bar_frame_width = 1;
+        progress_bar_min_width = 150;
+        progress_bar_max_width = 300;
+        separator_height = 2;
+        frame_width = 2;
+        frame_color = default.xcolors.color4;
+        separator_color = "frame";
+        corner_radius = 8;
+        transparency = 0;
+        gap_size = 8;
+        line_height = 0;
+        notification_limit = 0;
+        idle_threshold = 120;
+        history_length = 20;
+        show_age_threshold = 60;
+        markup = "full";
+        font = "AestheticIosevka Nerd Font Mono";
+        format =
+          "<span size='x-large' font_desc='Iosevka Nerd Font 10' foreground='${default.xcolors.fg}'>%a</span>\\n%s\\n%b";
+        word_wrap = "yes";
+        sort = "yes";
+        shrink = "no";
+        indicate_hidden = "yes";
+        sticky_history = "yes";
+        ignore_newline = "no";
+        show_indicators = "no";
+        stack_duplicates = true;
+        always_run_script = true;
+        hide_duplicate_count = false;
+        ignore_dbusclose = false;
+        force_xwayland = false;
+        force_xinerama = false;
         mouse_left_click = "do_action";
         mouse_middle_click = "close_all";
         mouse_right_click = "close_current";
-        padding = 8;
-        plain_text = "no";
-        separator_color = "auto";
-        separator_height = 1;
-        show_indicators = false;
-        shrink = "no";
-        word_wrap = "yes";
       };
 
       fullscreen_delay_everything = { fullscreen = "delay"; };
-
+      logger = {
+        summary = "*";
+        body = "*";
+        script = "~/.config/eww/scripts/notification_logger.zsh";
+      };
       urgency_critical = {
         background = default.xcolors.bg;
         foreground = default.xcolors.fg;
-        frame_color = default.xcolors.red;
+        frame_color = default.xcolors.color4;
       };
       urgency_low = {
         background = default.xcolors.bg;
         foreground = default.xcolors.fg;
-        frame_color = default.xcolors.blue;
+        frame_color = default.xcolors.color4;
       };
       urgency_normal = {
         background = default.xcolors.bg;
         foreground = default.xcolors.fg;
-        frame_color = default.xcolors.mauve;
+        frame_color = default.xcolors.color4;
       };
     };
   };

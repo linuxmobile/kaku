@@ -8,7 +8,6 @@
         bbenoist.nix
 
         catppuccin.catppuccin-vsc
-        mvllow.rose-pine
         pkief.material-icon-theme
 
         formulahendry.auto-close-tag
@@ -23,12 +22,19 @@
         ms-vsliveshare.vsliveshare
         astro-build.astro-vscode
         bradlc.vscode-tailwindcss
+        vscodevim.vim
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "catppuccin-perfect-icons";
           publisher = "thang-nm";
           version = "0.21.10";
           sha256 = "sha256-6qQPKB0LlBYAMEYPpjl6NAJyqutLFv+g+XGw4hTV1Nw=";
+        }
+        {
+          name = "rose-pine";
+          publisher = "mvllow";
+          version = "2.8.1";
+          sha256 = "sha256-aSzayTeFnbZjsO9AH8bOhlcil5lVNA4wpjCwp+1UCZ4=";
         }
         {
           name = "copilot-chat";
@@ -51,7 +57,7 @@
       ];
     userSettings = {
       "workbench.iconTheme" = "catppuccin-perfect-mocha";
-      "workbench.colorTheme" = "Catppuccin Macchiato";
+      "workbench.colorTheme" = "Rosé Pine";
       "catppuccin.accentColor" = "mauve";
       "editor.fontFamily" =
         "Cartograph CF Nerd Font, Catppuccin Perfect Mocha, 'monospace', monospace";
@@ -94,6 +100,11 @@
       "security.workspace.trust.banner" = "never";
       "security.workspace.trust.startupPrompt" = "never";
       "workbench.sideBar.location" = "right";
+      "editor.tabSize" = 2;
+      "editor.wordWrap" = "on";
+      "[typescriptreact]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
     };
   };
 }

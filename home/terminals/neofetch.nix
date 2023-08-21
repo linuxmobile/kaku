@@ -98,7 +98,8 @@
 			image_backend="iterm2"
 			#image_source="auto"
 			# image_source="$HOME/.config/neofetch/images/nix.png"
-			image_source="$HOME/.config/neofetch/images/nixos.png"
+			# image_source="$HOME/.config/neofetch/images/nixos.png"
+			image_source="$HOME/.config/neofetch/images/neofetchblack.png"
 			ascii_distro="auto"
 			ascii_colors=(distro)
 			ascii_bold="on"

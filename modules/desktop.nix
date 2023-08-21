@@ -69,8 +69,12 @@
     geoclue2.enable = true;
 
     gnome.gnome-keyring.enable = true;
-
-    # xserver.displayManager.sddm.enable = true;
+    
+    xserver = {
+      enable = true;
+      displayManager.sddm.enable = true;
+    };
+    hardware.openrgb.enable = true;
 
     logind.extraConfig = ''
       HandlePowerKey=suspend

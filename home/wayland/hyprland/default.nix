@@ -1,11 +1,5 @@
-{
-  inputs',
-  lib,
-  pkgs,
-  self',
-  ...
-}: {
-  imports = [./config.nix];
+{ inputs', lib, pkgs, self', ... }: {
+  imports = [ ./config.nix ];
 
   home.packages = with pkgs; [
     seatd
@@ -16,7 +10,8 @@
   ];
 
   # start swayidle as part of hyprland, not sway
-  systemd.user.services.swayidle.Install.WantedBy = lib.mkForce ["hyprland-session.target"];
+  systemd.user.services.swayidle.Install.WantedBy =
+    lib.mkForce [ "hyprland-session.target" ];
 
   # enable hyprland
   wayland.windowManager.hyprland.enable = true;
