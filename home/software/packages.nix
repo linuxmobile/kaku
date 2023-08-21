@@ -2,7 +2,6 @@
   home.packages = with pkgs; [
     # messaging
     tdesktop
-    self'.packages.inkdrop
 
     pavucontrol
     neovim-unwrapped

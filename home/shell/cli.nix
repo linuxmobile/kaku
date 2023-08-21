@@ -9,14 +9,8 @@
     file
     du-dust
     duf
-    fd
     ripgrep
-    trash-cli
     zoxide
-    fzf
-
-    # file managers
-    ranger
   ];
 
   programs = {

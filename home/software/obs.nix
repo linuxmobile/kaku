@@ -5,7 +5,6 @@
       plugins = [
         pkgs.obs-studio-plugins.obs-gstreamer
         pkgs.obs-studio-plugins.obs-pipewire-audio-capture
-        # pkgs.obs-studio-plugins.obs-vkcapture
         pkgs.obs-studio-plugins.wlrobs
       ];
     };
