@@ -8,7 +8,6 @@ local mappings = {
     q = { ":q<cr>", "Quit" },
     w = { ":wq<cr>", "Save & Quit" },
     s = { ":w<cr>", "Save" },
-    f = { ":lua vim.lsp.buf.format()<CR>", "Format file" },
     x = { ":bdelete<cr>", "Close" },
   },
   f = {
@@ -17,6 +16,7 @@ local mappings = {
     g = { ":Telescope oldfiles<cr>", "Recently Opened" },
     r = { ":Telescope live_grep<cr>", "Find String" },
     c = { ":lua require('themes.schemer').setup(require('telescope.themes').get_dropdown{})<cr>", "Change Colorschemes" }
+    m = { ":lua vim.lsp.buf.format()<CR>", "Format file" },
   },
   G = {
     name = "Grapple",

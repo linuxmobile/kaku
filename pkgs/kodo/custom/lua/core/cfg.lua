@@ -1,6 +1,10 @@
 local M = {}
 local stats = require("lazy").stats()
+
+-- STATUSLINE --
 M.statusstyle = 'fancy'
+
+-- DASHBOARD --
 local logos = setmetatable({
     TEXT = [[
 ██╗  ██╗ ██████╗       ██████╗  ██████╗
@@ -55,5 +59,6 @@ M.dashboard = {
   }
 }
 
+-- COLORSCHEME --
 M.colorscheme = 'rose'
 return M

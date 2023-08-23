@@ -3,11 +3,6 @@
 {
   imports = [ ./wlogout.nix ];
 
-  home.file.".config" = {
-    source = ./config;
-    recursive = true;
-  };
-
   xdg.configFile = {
     "btop/themes/rose-pine.theme".source = pkgs.fetchurl {
       url =

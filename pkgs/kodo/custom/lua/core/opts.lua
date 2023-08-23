@@ -3,12 +3,16 @@ local opt = vim.opt
 local diagnostic = vim.diagnostic
 local g = vim.g
 local config = require("core.cfg")
-opt.hidden = true
+
+-- GLOBALS --
 g.code_action_menu_window_border = 'single'
 opt.ch = 0
 g.currentTheme = config.colorscheme
 g.theme_cache = vim.fn.stdpath "data" .. "/colors_data/"
 g.statusStyle = config.statusstyle
+
+-- OPTIONS --
+opt.hidden = true
 opt.pumheight = 10
 opt.fileencoding = 'utf-8'
 opt.splitbelow = true
@@ -57,7 +61,7 @@ opt.shortmess:append "sI"
 --local color = require("core.cfg").colorscheme
 --vim.cmd.colorscheme(color)
 
--- Disabling some built in plugins
+-- Disabling some built in plugins --
 local builtins = {
   "2html_plugin",
   "getscript",

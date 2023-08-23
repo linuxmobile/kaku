@@ -37,7 +37,8 @@ require 'nvim-tree'.setup {
     },
   },
   filters = {
-    exclude = { '.git', 'node_modules', '.cache' },
+    dotfiles = true,
+    custom = { "node_modules" },
   },
   update_focused_file = {
     enable = true,

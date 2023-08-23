@@ -11,10 +11,11 @@ local plugins = {
     dependencies = {
       -- format & linting
       {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-          require "custom.configs.null-ls"
-        end,
+        "williamboman/mason-lspconfig.nvim"
+        -- "jose-elias-alvarez/null-ls.nvim",
+        -- config = function()
+        --  require "custom.configs.null-ls"
+        -- end,
       },
     },
     config = function()

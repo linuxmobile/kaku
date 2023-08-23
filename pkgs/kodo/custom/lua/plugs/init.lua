@@ -82,6 +82,7 @@ lazy.setup({
     "williamboman/mason.nvim",
     cmd = {
       "MasonInstall",
+      "MasonInstallAll",
       "MasonUninstall",
       "Mason",
       lazy = true,
@@ -91,10 +92,17 @@ lazy.setup({
     config = function() require('plugs.lsp.mason') end,
   },
   {
-    "terrortylor/nvim-comment",
-    keys = { "<leader>", 'g' },
-    config = function() require('plugs.util.comments') end,
-    lazy = true,
+    "numToStr/Comment.nvim",
+    keys = {
+      { "gcc", mode = "n", desc = "Comment toggle current line" },
+      { "gc", mode = { "n", "o" }, desc = "Comment toggle linewise" },
+      { "gc", mode = "x", desc = "Comment toggle linewise (visual)" },
+      { "gbc", mode = "n", desc = "Comment toggle current block" },
+      { "gb", mode = { "n", "o" }, desc = "Comment toggle blockwise" },
+      { "gb", mode = "x", desc = "Comment toggle blockwise (visual)" },
+    },
+    config = function() require('Comment').setup() end,
+    event = 'CursorHold',
   },
   -- The funs begins
   {
@@ -102,6 +110,12 @@ lazy.setup({
     event = { "BufReadPost", "BufNewFile", "CursorHold" },
     lazy = true,
     cmd = { "LspInfo", "LspInstall", "LspUninstall", "LspStart" },
+    dependencies = {
+      {
+        "folke/neodev.nvim",
+        "williamboman/mason-lspconfig.nvim"
+      },
+    },
     config = function()
       require "plugs.lsp.lspconfig"
     end,
@@ -174,15 +188,16 @@ lazy.setup({
     lazy = true,
     config = function() require("plugs.util.symbols") end
   },
-  {
-    'code-biscuits/nvim-biscuits',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-    },
-    lazy = true,
-    config = function() require("plugs.lsp.biscuits") end,
-    event = 'CursorHold',
-  },
+  -- {
+  --   'code-biscuits/nvim-biscuits',
+  --   dependencies = {
+  --     'nvim-treesitter/nvim-treesitter',
+  --   },
+  --   lazy = true,
+  --   config = function() require("plugs.lsp.biscuits") end,
+  --   event = 'CursorHold',
+  --   cmd = 'TSUpdate',
+  -- },
   {
     "cbochs/grapple.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
