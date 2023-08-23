@@ -4,7 +4,7 @@ lazy.setup({
   {
     'nvim-treesitter/nvim-treesitter',
     run = ":TSUpdate",
-    lazy = true,
+    event = "VeryLazy",
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     config = function() require('plugs.ts.treesitter') end
   },
@@ -28,30 +28,30 @@ lazy.setup({
 
   {
     'kyazdani42/nvim-tree.lua',
-    lazy = true,
+    event = "VeryLazy",
     cmd = "NvimTreeToggle",
     config = function() require('plugs.util.nvim-tree') end
   },
   {
     "folke/which-key.nvim",
     keys = { "<leader>", ' ', "'", "`" },
-    lazy = true,
+    event = "VeryLazy",
     config = function() require('plugs.util.which-key') end
   },
   {
     'nvim-lua/plenary.nvim',
-    lazy = true,
+    event = "VeryLazy",
   },
   {
     'nvim-telescope/telescope.nvim',
     cmd = "Telescope",
-    lazy = true,
+    event = "VeryLazy",
     dependencies = { 'plenary.nvim' },
     config = function() require('plugs.util.telescope') end
   },
   {
     "akinsho/toggleterm.nvim",
-    lazy = true,
+    event = "VeryLazy",
     config = function() require('plugs.util.toggleterm') end,
     cmd = "ToggleTerm",
   },
@@ -80,12 +80,12 @@ lazy.setup({
   },
   {
     "williamboman/mason.nvim",
+    event = "VeryLazy",
     cmd = {
       "MasonInstall",
       "MasonInstallAll",
       "MasonUninstall",
       "Mason",
-      lazy = true,
       "MasonUninstallAll",
       "MasonLog",
     },
@@ -108,7 +108,7 @@ lazy.setup({
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPost", "BufNewFile", "CursorHold" },
-    lazy = true,
+    event = "VeryLazy",
     cmd = { "LspInfo", "LspInstall", "LspUninstall", "LspStart" },
     dependencies = {
       {
@@ -125,7 +125,7 @@ lazy.setup({
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
-    lazy = true,
+    event = "VeryLazy",
     dependencies = {
       {
         -- snippet plugin
@@ -169,23 +169,23 @@ lazy.setup({
   },
   {
     "LnL7/vim-nix",
-    lazy = true,
+    event = "VeryLazy",
     ft = 'nix',
   },
   {
     "nvim-telescope/telescope-ui-select.nvim",
-    lazy = true
+    event = "VeryLazy",
   },
   {
     'kevinhwang91/nvim-ufo',
-    lazy = true,
+    event = "VeryLazy",
     event = 'CursorHold',
     dependencies = 'kevinhwang91/promise-async'
   },
   {
     'simrat39/symbols-outline.nvim',
     cmd = "SymbolsOutline",
-    lazy = true,
+    event = "VeryLazy",
     config = function() require("plugs.util.symbols") end
   },
   -- {
@@ -201,7 +201,7 @@ lazy.setup({
   {
     "cbochs/grapple.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    lazy = true,
+    event = "VeryLazy",
     config = function() require("plugs.util.grapple") end,
     cmd = {
       "GrappleCycle",
@@ -217,7 +217,7 @@ lazy.setup({
   {
     'phaazon/hop.nvim',
     branch = 'v2',
-    lazy = true,
+    event = "VeryLazy",
     cmd = {
       "HopAnywhere",
       "HopChar1",
@@ -231,7 +231,7 @@ lazy.setup({
   },
   {
     "goolord/alpha-nvim",
-    lazy = true,
+    event = "VeryLazy",
     cmd = {
       "Alpha",
       "AlphaRedraw"
