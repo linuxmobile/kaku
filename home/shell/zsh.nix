@@ -74,6 +74,9 @@
       trimall = "sudo fstrim -va";
       temp = "cd /tmp/";
 
+      test-build = "sudo nixos-rebuild test --flake .#linudev";
+      switch-build = "sudo nixos-rebuild switch --flake .#linudev";
+
       # git
       g = "git";
       commit = "git add . && git commit -m";
