@@ -279,4 +279,32 @@ lazy.setup({
       require("nvim-surround").setup {}
     end,
   },
+  {
+    "max397574/better-escape.nvim",
+    event = "InsertEnter",
+    config = function()
+      require("better_escape").setup()
+    end,
+  },
+  {
+    "folke/zen-mode.nvim",
+    event = "VeryLazy",
+    opts = {
+      plugins = {
+        twilight = { enabled = true },
+        gitsigns = { enabled = false },
+      },
+    },
+    dependencies = {
+      {
+        "folke/twilight.nvim",
+        event = "VeryLazy",
+        -- ft = { "markdown", "lua", "javascript", "typescript", "typescriptreact", "javascriptreact", "html", "css", "astro" },
+        treesitter = true,
+        dimming = {
+          alpha = 0.25,
+        },
+      },
+    },
+  }
 })
