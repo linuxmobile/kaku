@@ -18,6 +18,8 @@
       (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     ];
 
+    enableDefaultPackages = false;
+
     # user defined fonts
     # the reason there's Noto Color Emoji everywhere is to override DejaVu's
     # B&W emojis that would sometimes show instead of some Color emojis
@@ -69,7 +71,7 @@
     geoclue2.enable = true;
 
     gnome.gnome-keyring.enable = true;
-    
+
     xserver = {
       enable = true;
       displayManager.sddm.enable = true;
