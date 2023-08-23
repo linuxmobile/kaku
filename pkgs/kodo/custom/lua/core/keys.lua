@@ -153,4 +153,4 @@ vim.api.nvim_set_keymap('n', '<leader>/', '<cmd>lua require("Comment.api").toggl
 map('v', '<leader>/', '<ESC><cmd>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', { noremap = true, silent = true })
 
 -- ZENMODE --
-map('n', '<leader>zm', 'require("zen-mode").toggle({ window = { width = .85 } })', { noremap = true, silent = true })
+map('n', '<leader>zm', ':ZenMode<CR>', { noremap = true, silent = true })
