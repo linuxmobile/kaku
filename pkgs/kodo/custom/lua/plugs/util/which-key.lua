@@ -12,11 +12,14 @@ local mappings = {
   },
   f = {
     name = 'Telescope',
+    a = { ":Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find All Files" },
+    b = { ":Telescope buffers <CR>", "Find Buffers" },
+    c = { ":lua require('themes.schemer').setup(require('telescope.themes').get_dropdown{})<cr>", "Change Colorschemes" },
     f = { ":Telescope find_files<cr>", "Find Files" },
-    g = { ":Telescope oldfiles<cr>", "Recently Opened" },
-    r = { ":Telescope live_grep<cr>", "Find String" },
-    c = { ":lua require('themes.schemer').setup(require('telescope.themes').get_dropdown{})<cr>", "Change Colorschemes" }
-    m = { ":lua vim.lsp.buf.format()<CR>", "Format file" },
+    h = { ":Telescope help_tags<cr>", "Find Help" },
+    r = { ":Telescope oldfiles<cr>", "Recently Opened" },
+    w = { ":Telescope live_grep <CR>", "Find Word" },
+    z = { ":Telescope current_buffer_fuzzy_find <CR>", "Find in Buffer" },
   },
   G = {
     name = "Grapple",

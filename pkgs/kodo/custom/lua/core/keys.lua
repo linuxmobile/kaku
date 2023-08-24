@@ -64,8 +64,8 @@ map('n', '<leader>fa', '<cmd>Telescope find_files follow=true no_ignore=true hid
 map('n', '<leader>fw', '<cmd> Telescope live_grep <CR>', { noremap = true, silent = true })
 map('n', '<leader>fb', '<cmd> Telescope buffers <CR>', { noremap = true, silent = true })
 map('n', '<leader>fh', '<cmd> Telescope help_tags <CR>', { noremap = true, silent = true })
-map('n', '<leader>fo', '<cmd> Telescope oldfiles <CR>', { noremap = true, silent = true })
 map('n', '<leader>fz', '<cmd> Telescope current_buffer_fuzzy_find <CR>', { noremap = true, silent = true })
+map('n', '<leader>fr', '<cmd> Telescope oldfiles <CR>', { noremap = true, silent = true })
 
 -- TELESCOPE GIT --
 map('n', '<leader>cm', '<cmd> Telescope git_commits <CR>', { noremap = true, silent = true })
@@ -91,3 +91,6 @@ map('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', { noremap = 
 map('n', '<leader>ra', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
 map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
 map('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
+
+map('n', '<A-l>', ':vsplit<CR>', { noremap = true, silent = true })
+map('n', '<A-j>', ':split<CR>', { noremap = true, silent = true })
