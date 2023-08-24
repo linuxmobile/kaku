@@ -6,7 +6,7 @@ local M = {}
 
 M.on_attach = function(client, _)
   client.server_capabilities.documentFormattingProvider = true
-  client.server_capabilities.documentRangeFormattingProvider = true 
+  client.server_capabilities.documentRangeFormattingProvider = true
   client.server_capabilities.semanticTokensProvider = nil
 end
 
@@ -62,6 +62,20 @@ lspconfig.tailwindcss.setup {
   root_dir = lspconfig.util.root_pattern("tailwind.config.js", "tailwind.config.ts", "tailwind.config.cjs"),
   on_attach = on_attach,
   capabilities = capabilities,
+}
+lspconfig.unocss.setup {
+  capabilities = {
+    textDocument = {
+      formatting = nil
+    }
+  }
+}
+lspconfig.emmet_ls.setup {
+  capabilities = {
+    textDocument = {
+      formatting = nil
+    }
+  }
 }
 require('ufo').setup()
 return M
