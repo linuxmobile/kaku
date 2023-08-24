@@ -51,8 +51,8 @@ map('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 map('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 -- TOGGLE TERM --
-map('n', '<A-h>', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true }) -- horizontal
-map('t', '<A-h>', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true }) -- horizontal
+map('n', '<A-h>', '<cmd>ToggleTerm direction=horizontal<CR>', { noremap = true, silent = true }) -- horizontal
+map('t', '<A-h>', '<cmd>ToggleTerm direction=horizontal<CR>', { noremap = true, silent = true }) -- horizontal
 map('n', '<A-v>', '<cmd>ToggleTerm direction=vertical size=50<CR>', { noremap = true, silent = true }) -- vertical
 map('t', '<A-v>', '<cmd>ToggleTerm direction=vertical size=50<CR>', { noremap = true, silent = true }) -- vertical
 map('n', '<A-i>', '<cmd>ToggleTerm direction=float<CR>', { noremap = true, silent = true }) -- floating
