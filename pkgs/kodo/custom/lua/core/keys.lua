@@ -51,9 +51,12 @@ map('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 map('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 -- TOGGLE TERM --
--- map('n', '<A-h>', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true }) -- horizontal
+map('n', '<A-h>', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true }) -- horizontal
+map('t', '<A-h>', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true }) -- horizontal
 map('n', '<A-v>', '<cmd>ToggleTerm direction=vertical size=50<CR>', { noremap = true, silent = true }) -- vertical
+map('t', '<A-v>', '<cmd>ToggleTerm direction=vertical size=50<CR>', { noremap = true, silent = true }) -- vertical
 map('n', '<A-i>', '<cmd>ToggleTerm direction=float<CR>', { noremap = true, silent = true }) -- floating
+map('t', '<A-i>', '<cmd>ToggleTerm direction=float<CR>', { noremap = true, silent = true }) -- floating
 
 -- TELESCOPE --
 map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
@@ -73,7 +76,6 @@ map('n', 'zM', ':lua require("ufo").closeAllFolds<CR>', { noremap = true, silent
 
 -- COMMENT --
 map('n', '<leader>/', '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', { noremap = true, silent = true })
--- map('n', '<leader>/', ':CommentToggle<CR>', { noremap = true, silent = true })
 map('v', '<leader>/', '<ESC><cmd>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', { noremap = true, silent = true })
 
 -- ZENMODE --
