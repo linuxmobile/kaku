@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ pkgs, ... }:
 # manage files in ~
 {
   imports = [ ./wlogout.nix ];

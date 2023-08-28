@@ -1,4 +1,4 @@
-{ pkgs, self', ... }: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     # messaging
     tdesktop

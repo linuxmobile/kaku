@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, inputs', lib, self, ... }: {
+{ config, pkgs, inputs, inputs', lib, ... }: {
   environment.systemPackages = [
     # we need git for flakes
     pkgs.git

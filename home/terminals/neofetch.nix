@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 {
   home.packages = [ pkgs.neofetch ];
   home.file.".config/neofetch/config.conf".text = ''
@@ -23,7 +23,7 @@
 			# info "" locale
 			# info "" uptime
 				prin "" "github.com/linuxmobile"
-		
+
 
 			# info "GPU Driver" gpu_driver  # Linux/macOS only
 			# info "CPU Usage" cpu_usage

@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, ... }:
+{ pkgs, lib, ... }:
 with lib;
 let
   rosepine-theme = pkgs.fetchFromGitHub {

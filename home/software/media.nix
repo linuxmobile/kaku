@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 # media - control and enjoy audio/video
 {
   imports = [ ./rnnoise.nix ./spicetify.nix ];

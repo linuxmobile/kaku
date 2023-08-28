@@ -1,4 +1,4 @@
-{ pkgs, default, ... }:{
+{ default, ... }:{
   # notification daemon
   services.dunst = {
     enable = true;

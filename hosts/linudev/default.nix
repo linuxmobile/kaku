@@ -1,4 +1,4 @@
-{ config, pkgs, self, ... }: {
+{ config, pkgs, ... }: {
   imports = [ ./hardware-configuration.nix ];
 
   boot = {

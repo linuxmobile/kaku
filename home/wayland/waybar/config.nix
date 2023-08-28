@@ -1,4 +1,4 @@
-{ config, pkgs, lib, osConfig, ... }: {
+_: {
   mainBar = {
     position = "top";
     layer = "top";
@@ -11,15 +11,15 @@
       [ "custom/launcher" "custom/playerctl" "custom/playerlabel" ];
     modules-center = [
       "wlr/workspaces"
-      # "cpu" 
-      # "memory" 
+      # "cpu"
+      # "memory"
       # "disk"
     ];
     modules-right = [
       "tray"
       "pulseaudio"
       "clock"
-      # "custom/randwall" 
+      # "custom/randwall"
       # "network"
     ];
     clock = {

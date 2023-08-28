@@ -60,5 +60,5 @@ M.dashboard = {
 }
 
 -- COLORSCHEME --
-M.colorscheme = 'rose'
+M.colorscheme = 'everblush'
 return M

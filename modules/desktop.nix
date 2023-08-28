@@ -1,4 +1,4 @@
-{ inputs', pkgs, self, self', ... }: {
+{ pkgs, self', ... }: {
   boot.plymouth = {
     enable = false;
     themePackages = [ self'.packages.catppuccin-plymouth ];
