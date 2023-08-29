@@ -8,8 +8,8 @@
     overwriteAssets = true;
     sidebarConfig = true;
     enabledCustomApps = with spicePkgs.apps; [ lyrics-plus new-releases ];
-    theme = spicePkgs.themes.catppuccin-mocha;
-    colorScheme = "mauve";
+    theme = spicePkgs.themes.Blossom;
+    colorScheme = "dark";
     enabledExtensions = with spicePkgs.extensions; [
       hidePodcasts
       shuffle

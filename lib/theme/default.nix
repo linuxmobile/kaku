@@ -20,7 +20,7 @@
   # TODO: Change this later
   wallpaper = builtins.fetchurl {
     url =
-      "https://raw.githubusercontent.com/linuxmobile/hyprland-dots/Sakura/.wallpapers/dark.png";
-    sha256 = "sha256-g8UkaWP0xycLYEOxCOzGY/PjwzLHY+P492tcxTrFJt8=";
+      "https://raw.githubusercontent.com/linuxmobile/hyprland-dots/Sakura/.wallpapers/catgirl.jpg";
+    sha256 = "sha256-5ON6GQ1yEFF/6ChUVgWAlLO9PnvGEBfGOeyOcWlGMlM=";
   };
 }

@@ -1,4 +1,8 @@
-{ lib, pkgs, ... }: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   programs.vscode = {
     enable = true;
     enableExtensionUpdateCheck = true;
@@ -23,12 +27,19 @@
         astro-build.astro-vscode
         bradlc.vscode-tailwindcss
         vscodevim.vim
-      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      ]
+      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "catppuccin-perfect-icons";
           publisher = "thang-nm";
           version = "0.21.10";
           sha256 = "sha256-6qQPKB0LlBYAMEYPpjl6NAJyqutLFv+g+XGw4hTV1Nw=";
+        }
+        {
+          name = "Everblush";
+          publisher = "mangeshrex";
+          version = "0.1.1";
+          sha256 = "sha256-hqRf3BGQMwFEpOMzpELMKmjS1eg4yPqgTiHQEwi7RUw=";
         }
         {
           name = "rose-pine";
@@ -57,10 +68,9 @@
       ];
     userSettings = {
       "workbench.iconTheme" = "catppuccin-perfect-mocha";
-      "workbench.colorTheme" = "Rosé Pine";
+      "workbench.colorTheme" = "Everblush";
       "catppuccin.accentColor" = "mauve";
-      "editor.fontFamily" =
-        "Cartograph CF Nerd Font, Catppuccin Perfect Mocha, 'monospace', monospace";
+      "editor.fontFamily" = "Cartograph CF Nerd Font, Catppuccin Perfect Mocha, 'monospace', monospace";
       "editor.fontSize" = 12;
       "editor.fontLigatures" = true;
       "workbench.fontAliasing" = "antialiased";

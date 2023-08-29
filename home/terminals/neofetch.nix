@@ -49,7 +49,7 @@
     			uptime_shorthand="on"
     			memory_percent="off"
     			memory_unit="mib"
-    			package_managers="on"
+    			package_managers="off"
     			shell_path="off"
     			shell_version="on"
     			speed_type="bios_limit"

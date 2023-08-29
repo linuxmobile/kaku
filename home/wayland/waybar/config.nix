@@ -50,7 +50,7 @@ _: {
     "custom/playerctl" = {
       format = "{icon}";
       return-type = "json";
-      max-length = 64;
+      max-length = 25;
       exec = ''
         playerctl -a metadata --format '{"text": "{{artist}} - {{markup_escape(title)}}", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}' -F'';
       on-click-middle = "playerctl play-pause";
@@ -65,7 +65,7 @@ _: {
     "custom/playerlabel" = {
       format = "<span>{}</span>";
       return-type = "json";
-      max-length = 48;
+      max-length = 25;
       exec = ''
         playerctl -a metadata --format '{"text": "{{artist}} - {{markup_escape(title)}}", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}' -F'';
       on-click-middle = "playerctl play-pause";
@@ -95,19 +95,19 @@ _: {
     memory = {
       format = "󰍛 {}%";
       format-alt = "󰍛 {used}/{total} GiB";
-      interval = 5;
+      interval = 30;
     };
 
     cpu = {
       format = "󰻠 {usage}%";
       format-alt = "󰻠 {avg_frequency} GHz";
-      interval = 5;
+      interval = 10;
     };
 
     disk = {
       format = "󰋊 {}%";
       format-alt = "󰋊 {used}/{total} GiB";
-      interval = 5;
+      interval = 30;
       path = "/";
     };
 
@@ -122,8 +122,8 @@ _: {
     };
 
     tray = {
-      icon-size = 16;
-      spacing = 5;
+      icon-size = 18;
+      spacing = 10;
     };
 
     backlight = {
@@ -136,13 +136,14 @@ _: {
 
     pulseaudio = {
       format = "{icon} {volume}%";
-      format-muted = "󰝟";
-      format-icons = { default = [ "󰕿" "󰖀" "󱄠" ]; };
+      format-muted = "";
+      format-icons = { default = [ "" "" "" ]; };
       on-click = "bash ~/.scripts/volume mute";
       on-scroll-up = "bash ~/.scripts/volume up";
       on-scroll-down = "bash ~/.scripts/volume down";
       scroll-step = 5;
       on-click-right = "pavucontrol";
+      tooltip = false;
     };
     "custom/randwall" = {
       format = "󰏘";
@@ -152,7 +153,7 @@ _: {
     "custom/launcher" = {
       format = "";
       # on-click = "notify-send -t 1 'swww' '1' & ~/.config/hypr/scripts/wall";
-      tooltip = "false";
+      tooltip = false;
     };
 
     "custom/wf-recorder" = {
