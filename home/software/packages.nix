@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     # messaging
     tdesktop
@@ -30,6 +30,8 @@
     nodePackages.pnpm
 
     glow
+    libratbag
+    piper
     # libsixel # image support for foot
 
     neofetch

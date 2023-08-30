@@ -1,7 +1,11 @@
-{ pkgs, self', ... }: {
+{
+  pkgs,
+  self',
+  ...
+}: {
   boot.plymouth = {
     enable = false;
-    themePackages = [ self'.packages.catppuccin-plymouth ];
+    themePackages = [self'.packages.catppuccin-plymouth];
     theme = "catppuccin-mocha";
   };
 
@@ -15,7 +19,7 @@
       noto-fonts-emoji
       roboto
       # nerdfonts
-      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
     ];
 
     enableDefaultPackages = false;
@@ -24,10 +28,10 @@
     # the reason there's Noto Color Emoji everywhere is to override DejaVu's
     # B&W emojis that would sometimes show instead of some Color emojis
     fontconfig.defaultFonts = {
-      serif = [ "Noto Serif" "Noto Color Emoji" ];
-      sansSerif = [ "Noto Sans" "Noto Color Emoji" ];
-      monospace = [ "CartographCF Nerd Font" "Noto Color Emoji" ];
-      emoji = [ "Noto Color Emoji" ];
+      serif = ["Noto Serif" "Noto Color Emoji"];
+      sansSerif = ["Noto Sans" "Noto Color Emoji"];
+      monospace = ["CartographCF Nerd Font" "Noto Color Emoji"];
+      emoji = ["Noto Color Emoji"];
     };
   };
 
@@ -36,8 +40,8 @@
 
   hardware = {
     opengl = {
-      extraPackages = with pkgs; [ libva vaapiVdpau libvdpau-va-gl ];
-      extraPackages32 = with pkgs.pkgsi686Linux; [ vaapiVdpau libvdpau-va-gl ];
+      extraPackages = with pkgs; [libva vaapiVdpau libvdpau-va-gl];
+      extraPackages32 = with pkgs.pkgsi686Linux; [vaapiVdpau libvdpau-va-gl];
     };
   };
 
@@ -97,7 +101,9 @@
     # upower.enable = true;
 
     # needed for GNOME services outside of GNOME Desktop
-    dbus.packages = [ pkgs.gcr ];
+    dbus.packages = [pkgs.gcr];
+
+    ratbagd.enable = true;
   };
 
   security = {
@@ -110,6 +116,6 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 }

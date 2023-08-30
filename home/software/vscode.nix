@@ -26,7 +26,6 @@
         ms-vsliveshare.vsliveshare
         astro-build.astro-vscode
         bradlc.vscode-tailwindcss
-        vscodevim.vim
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
