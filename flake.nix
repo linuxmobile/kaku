@@ -2,14 +2,18 @@
   description = "linuxmobile Config. Take Care about it";
 
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "x86_64-linux" ];
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = ["x86_64-linux"];
 
-      imports = [ ./home/profiles ./hosts ./lib ./modules ./pkgs ];
+      imports = [./home/profiles ./hosts ./lib ./modules ./pkgs];
 
-      perSystem = { config, pkgs, ... }: {
+      perSystem = {
+        config,
+        pkgs,
+        ...
+      }: {
         devShells.default = pkgs.mkShell {
-          packages = [ pkgs.alejandra pkgs.git config.packages.repl ];
+          packages = [pkgs.alejandra pkgs.git config.packages.repl];
           name = "nixland";
           DIRENV_LOG_FORMAT = "";
         };
@@ -73,6 +77,11 @@
 
     spicetify-nix = {
       url = "github:the-argus/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

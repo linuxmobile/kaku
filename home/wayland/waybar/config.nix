@@ -7,8 +7,7 @@ _: {
     margin-bottom = 0;
     margin-left = 0;
     margin-right = 0;
-    modules-left =
-      [ "custom/launcher" "custom/playerctl" "custom/playerlabel" ];
+    modules-left = ["custom/launcher" "custom/playerctl" "custom/playerlabel"];
     modules-center = [
       "wlr/workspaces"
       # "cpu"
@@ -33,17 +32,16 @@ _: {
 
     "wlr/workspaces" = {
       active-only = false;
-      all-outputs = true;
+      all-outputs = false;
       disable-scroll = false;
       on-scroll-up = "hyprctl dispatch workspace e-1";
       on-scroll-down = "hyprctl dispatch workspace e+1";
       format = "{icon}";
       on-click = "activate";
-      format-icons = {
-        urgent = "";
-        active = "";
-        default = "";
-        sort-by-number = true;
+      show-special = "false";
+      sort-by-number = true;
+      persistent_workspaces = {
+        "*" = 10;
       };
     };
 
@@ -87,9 +85,9 @@ _: {
       format-charging = "{capacity}% ";
       format-plugged = "{capacity}% ";
       format-alt = "{icon} {time}";
-      # "format-good"= "", // An empty format will hide the module
+      # "format-good"= "", # An empty format will hide the module
       # "format-full"= "";
-      format-icons = [ "" "" "" "" "" ];
+      format-icons = ["" "" "" "" ""];
     };
 
     memory = {
@@ -129,7 +127,7 @@ _: {
     backlight = {
       # "device"= "acpi_video1";
       format = "{icon} {percent}%";
-      format-icons = [ "" "" "" "" "" "" "" "" "" ];
+      format-icons = ["" "" "" "" "" "" "" "" ""];
       #	"on-scroll-up"=;
       #	"on-scroll-down"=;
     };
@@ -137,7 +135,7 @@ _: {
     pulseaudio = {
       format = "{icon} {volume}%";
       format-muted = "";
-      format-icons = { default = [ "" "" "" ]; };
+      format-icons = {default = ["" "" ""];};
       on-click = "bash ~/.scripts/volume mute";
       on-scroll-up = "bash ~/.scripts/volume up";
       on-scroll-down = "bash ~/.scripts/volume down";
