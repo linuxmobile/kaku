@@ -11,6 +11,8 @@
     xfce.thunar
     xfce.thunar-archive-plugin
     ps_mem
+    figma-linux
+    figma-agent
 
     # misc
     libnotify
@@ -28,6 +30,11 @@
     gcc
     nodejs
     nodePackages.pnpm
+    jq
+    socat
+    mpc-cli
+    mpdris2
+    catimg
 
     glow
     libratbag

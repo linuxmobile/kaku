@@ -214,6 +214,8 @@ in {
         "noanim,class:^(xwaylandvideobridge)$"
         "nofocus,class:^(xwaylandvideobridge)$"
         "noinitialfocus,class:^(xwaylandvideobridge)$"
+        "noblur,class:^(xwaylandvideobridge)$"
+        "noshadow,class:^(xwaylandvideobridge)$"
       ];
       layerrule = [
         "blur, ^(gtk-layer-shell|anyrun)$"

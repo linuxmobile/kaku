@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{pkgs, ...}:
 # Wayland config
 {
   imports = [
@@ -9,6 +9,7 @@
     ./swayidle.nix
     ./swaylock.nix
     ./swww.nix
+    ./eww.nix
   ];
 
   home.packages = with pkgs; [
@@ -27,6 +28,7 @@
     wlogout
     hyprpicker
     wlsunset
+    eww-wayland
   ];
 
   # make stuff work on wayland
@@ -41,7 +43,7 @@
   systemd.user.targets.tray = {
     Unit = {
       Description = "Home Manager System Tray";
-      Requires = [ "graphical-session-pre.target" ];
+      Requires = ["graphical-session-pre.target"];
     };
   };
 }
