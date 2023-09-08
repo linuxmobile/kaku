@@ -11,8 +11,6 @@
     xfce.thunar
     xfce.thunar-archive-plugin
     ps_mem
-    figma-linux
-    figma-agent
 
     # misc
     libnotify

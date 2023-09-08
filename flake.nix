@@ -82,7 +82,6 @@
 
     split-monitor-workspaces = {
       url = "github:Duckonaut/split-monitor-workspaces";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

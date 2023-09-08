@@ -3,12 +3,6 @@
   self',
   ...
 }: {
-  boot.plymouth = {
-    enable = false;
-    themePackages = [self'.packages.catppuccin-plymouth];
-    theme = "catppuccin-mocha";
-  };
-
   fonts = {
     packages = with pkgs; [
       # icon fonts
@@ -76,11 +70,11 @@
 
     gnome.gnome-keyring.enable = true;
 
-    xserver = {
-      enable = true;
-      displayManager.sddm.enable = true;
-    };
-    hardware.openrgb.enable = true;
+    # xserver = {
+    #   enable = false;
+    #   displayManager.sddm.enable = true;
+    # };
+    # hardware.openrgb.enable = true;
 
     logind.extraConfig = ''
       HandlePowerKey=suspend
@@ -103,7 +97,7 @@
     # needed for GNOME services outside of GNOME Desktop
     dbus.packages = [pkgs.gcr];
 
-    ratbagd.enable = true;
+    # ratbagd.enable = false;
   };
 
   security = {
