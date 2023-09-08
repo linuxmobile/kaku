@@ -11,7 +11,7 @@
       [
         bbenoist.nix
 
-        catppuccin.catppuccin-vsc
+        # catppuccin.catppuccin-vsc
         pkief.material-icon-theme
 
         formulahendry.auto-close-tag
@@ -23,7 +23,7 @@
 
         esbenp.prettier-vscode
         kamadorueda.alejandra
-        ms-vsliveshare.vsliveshare
+        # ms-vsliveshare.vsliveshare
         astro-build.astro-vscode
         bradlc.vscode-tailwindcss
       ]
@@ -39,12 +39,6 @@
           publisher = "mangeshrex";
           version = "0.1.1";
           sha256 = "sha256-hqRf3BGQMwFEpOMzpELMKmjS1eg4yPqgTiHQEwi7RUw=";
-        }
-        {
-          name = "rose-pine";
-          publisher = "mvllow";
-          version = "2.8.1";
-          sha256 = "sha256-aSzayTeFnbZjsO9AH8bOhlcil5lVNA4wpjCwp+1UCZ4=";
         }
         {
           name = "copilot-chat";

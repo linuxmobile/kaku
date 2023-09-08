@@ -9,7 +9,7 @@ _: {
     margin-right = 0;
     modules-left = ["custom/launcher" "custom/playerctl" "custom/playerlabel"];
     modules-center = [
-      "wlr/workspaces"
+      "hyprland/workspaces"
       # "cpu"
       # "memory"
       # "disk"
@@ -30,7 +30,7 @@ _: {
       format-alt = " {:%d/%m}";
     };
 
-    "wlr/workspaces" = {
+    "hyprland/workspaces" = {
       active-only = false;
       all-outputs = false;
       disable-scroll = false;
