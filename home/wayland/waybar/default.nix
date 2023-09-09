@@ -14,7 +14,6 @@ in {
   home.packages = with pkgs; [python39Packages.requests];
   programs.waybar = {
     enable = true;
-    # package = inputs.hyprland.packages.${pkgs.system}.waybar-hyprland;
     settings = waybar_config;
     style = waybar_style;
   };

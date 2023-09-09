@@ -78,7 +78,7 @@ in {
         shadow_range = 50;
         shadow_render_power = 3;
         "col.shadow" = "rgba(00000099)";
-        blurls = ["gtk-layer-shell" "waybar" "lockscreen"];
+        blurls = ["waybar" "lockscreen"];
       };
       animation = {
         bezier = [
@@ -197,20 +197,10 @@ in {
         "float,title:^(Confirm to replace files)$"
         "float,title:^(File Operation Progress)$"
 
-        "noshadow, floating:0"
-
-        "tile, title:^(Spotify)$"
-        "workspace 9 silent, title:^(Spotify)$"
-        "workspace 4, title:^(.*(Disc|WebC)ord.*)$"
-
         "idleinhibit focus, class:^(mpv|.+exe)$"
         "idleinhibit focus, class:^(firefox)$, title:^(.*YouTube.*)$"
         "idleinhibit fullscreen, class:^(firefox)$"
         "idleinhibit fullscreen,class:^(Brave-browser)$"
-
-        "rounding 0, xwayland:1, floating:1"
-        "center, class:^(.*jetbrains.*)$, title:^(Confirm Exit|Open Project|win424|win201|splash)$"
-        "size 640 400, class:^(.*jetbrains.*)$, title:^(splash)$"
 
         "opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$"
         "noanim,class:^(xwaylandvideobridge)$"

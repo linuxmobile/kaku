@@ -32,16 +32,17 @@ _: {
 
     "hyprland/workspaces" = {
       active-only = false;
-      all-outputs = false;
+      all-outputs = true;
       disable-scroll = false;
       on-scroll-up = "hyprctl dispatch workspace e-1";
       on-scroll-down = "hyprctl dispatch workspace e+1";
       format = "{icon}";
       on-click = "activate";
-      show-special = "false";
-      sort-by-number = true;
-      persistent_workspaces = {
-        "*" = 10;
+      format-icons = {
+        urgent = "";
+        active = "";
+        default = "";
+        sort-by-number = true;
       };
     };
 
