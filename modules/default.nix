@@ -19,13 +19,13 @@ in {
           inputs.agenix.nixosModules.default
           inputs.hm.nixosModule
           inputs.hyprland.nixosModules.default
+          inputs.nh.nixosModules.default
           inputs.lanzaboote.nixosModules.lanzaboote
           module_args
           ./system.nix
-          # ./network.nix
           ./nix.nix
+          # ./pam.nix
           ./security.nix
-          # ./greetd.nix
         ];
       };
     }
@@ -34,11 +34,7 @@ in {
   flake.nixosModules = {
     core = import ./system.nix;
     desktop = import ./desktop.nix;
-    # gamemode = import ./gamemode.nix;
-    # greetd = import ./greetd.nix;
     lanzaboote = import ./lanzaboote.nix;
-    # minimal = import ./minimal.nix;
-    # network = import ./network.nix;
     nix = import ./nix.nix;
   };
 }

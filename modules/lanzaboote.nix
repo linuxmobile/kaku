@@ -1,11 +1,15 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  ...
+}:
 # lanzaboote config
 {
   boot = {
     bootspec.enable = true;
     initrd = {
       systemd.enable = true;
-      # supportedFilesystems = ["ext4"];
+      supportedFilesystems = ["xfs"];
     };
     lanzaboote = {
       enable = true;
@@ -20,5 +24,5 @@
     };
   };
 
-  environment.systemPackages = [ pkgs.sbctl ];
+  environment.systemPackages = [pkgs.sbctl];
 }

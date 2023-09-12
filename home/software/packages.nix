@@ -33,6 +33,7 @@
     mpc-cli
     mpdris2
     catimg
+    bun
 
     glow
     libratbag

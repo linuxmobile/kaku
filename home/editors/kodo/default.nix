@@ -1,5 +1,5 @@
-{ self', ... }: {
-  programs.neovim = { enable = true; };
+{self, ...}: {
+  programs.neovim = {enable = true;};
 
-  home.file = { ".config/nvim/".source = "${self'.packages.kodo}"; };
+  home.file = {".config/nvim/".source = "${self.packages.kodo}";};
 }

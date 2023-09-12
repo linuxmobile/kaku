@@ -2,13 +2,11 @@
   pkgs,
   lib,
   config,
-  osConfig,
-  inputs,
   default,
   ...
 }:
 with lib; let
-  waybar_config = import ./config.nix {inherit osConfig config lib pkgs;};
+  waybar_config = import ./config.nix {};
   waybar_style = import ./style.nix {inherit default;};
 in {
   home.packages = with pkgs; [python39Packages.requests];

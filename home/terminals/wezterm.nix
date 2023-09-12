@@ -1,4 +1,4 @@
-{ default, ... }: {
+{default, ...}: {
   programs.wezterm = {
     enable = true;
     colorSchemes = {

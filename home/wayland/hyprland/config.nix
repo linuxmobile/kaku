@@ -1,7 +1,6 @@
 {
   config,
   default,
-  inputs',
   ...
 }: let
   inherit (default) colors;
@@ -10,7 +9,7 @@
   homeDir = config.home.homeDirectory;
 in {
   wayland.windowManager.hyprland = {
-    # plugins = [inputs'.split-monitor-workspaces.packages.split-monitor-workspaces];
+    # plugins = [inputs.split-monitor-workspaces.packages.${pkgs.system}.default];
     settings = {
       "$MOD" = "SUPER";
       exec-once = [
@@ -19,7 +18,7 @@ in {
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "echo latam > /tmp/kb_layout"
         "wlsunset -t 5200 -S 9:00 -s 19:30"
-        "waybar"
+        "eww open bar"
         "dunst"
         "xwaylandvideobridge"
         "wl-paste --type text --watch cliphist store"
@@ -109,6 +108,7 @@ in {
       "$NOTIFY" = "notify-send -h string:x-canonical-private-synchronouse:hypr-cfg -u low";
       "$SCREENSHOT" = "${homeDir}/.config/hypr/scripts/screensht";
       "$COLORPICKER" = "${homeDir}/.config/hypr/scripts/colorpicker";
+      "$LAYERS" = "^(eww-.+|bar|system-menu|anyrun|gtk-layer-shell|dunst)$";
 
       bind = [
         "$MOD, Escape, exec, wlogout -p layer-shell"
@@ -210,10 +210,13 @@ in {
         "noshadow,class:^(xwaylandvideobridge)$"
       ];
       layerrule = [
-        "blur, ^(gtk-layer-shell|anyrun)$"
-        "ignorezero, ^(gtk-layer-shell|anyrun)$"
+        "ignorezero, ^(gtk-layer-shell|anyrun|dunst)$"
         "blur, notifications"
         "blur, launcher"
+        "blur, $LAYERS"
+        "ignorealpha 0, $LAYERS"
+        "ignorealpha 0.5, ^(eww-(music|calendar)|system-menu|anyrun)$"
+        "xray 1, ^(bar|gtk-layer-shell)$"
       ];
     };
   };

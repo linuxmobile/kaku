@@ -1,15 +1,19 @@
-{ config, pkgs, ... }: {
-  imports = [ ./hardware-configuration.nix ];
+{pkgs, ...}: {
+  imports = [./hardware-configuration.nix];
 
   boot = {
     # load modules on boot
-    kernelModules = [ "amdgpu" ];
+    kernelModules = ["amdgpu"];
     # use latest kernel
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
     kernelParams = [
       "amd_pstate=active"
-      "amd_iommu=on"
+      "amd_iommu=pt"
       "nvme_core.default_ps_max_latency_us=0"
+      "quiet"
+      "loglevel=3"
+      "systemd.show_status=auto"
+      "rd.udev.log_level=3"
     ];
   };
 
@@ -25,14 +29,10 @@
     DefaultTimeoutStopSec=10s
   '';
 
-  environment.systemPackages = [ config.boot.kernelPackages.cpupower ];
-
   networking.hostName = "aesthetic";
 
   programs = {
-    # enable hyprland and required options
     hyprland.enable = true;
-    # steam.enable = true;
   };
 
   services = {
