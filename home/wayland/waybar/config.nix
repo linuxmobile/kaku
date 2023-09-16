@@ -2,7 +2,7 @@ _: {
   mainBar = {
     position = "top";
     layer = "top";
-    height = 16;
+    height = 12;
     margin-top = 0;
     margin-bottom = 0;
     margin-left = 0;
@@ -14,16 +14,16 @@ _: {
       # "memory"
       # "disk"
     ];
+
     modules-right = [
       "tray"
       "pulseaudio"
       "clock"
-      # "custom/randwall"
-      # "network"
     ];
+
     clock = {
       format = "󱑍 {:%H:%M}";
-      tooltip = "true";
+      tooltip = false;
       tooltip-format = ''
         <big>{:%Y %B}</big>
         <tt><small>{calendar}</small></tt>'';
@@ -38,12 +38,17 @@ _: {
       on-scroll-down = "hyprctl dispatch workspace e+1";
       format = "{icon}";
       on-click = "activate";
-      format-icons = {
-        urgent = "";
-        active = "";
-        default = "";
-        sort-by-number = true;
+      show-special = "false";
+      sort-by-number = true;
+      persistent_workspaces = {
+        "*" = 10;
       };
+    };
+
+    "image" = {
+      exec = "bash ~/.scripts/album_art.sh";
+      size = 18;
+      interval = 10;
     };
 
     "custom/playerctl" = {
@@ -59,6 +64,7 @@ _: {
         Playing = "<span foreground='#6791eb'>󰓇 </span>";
         Paused = "<span foreground='#cdd6f4'>󰓇 </span>";
       };
+      tooltip = false;
     };
 
     "custom/playerlabel" = {
@@ -74,21 +80,7 @@ _: {
         Playing = "<span foreground='#6791eb'>󰓇 </span>";
         Paused = "<span foreground='#cdd6f4'>󰓇 </span>";
       };
-    };
-
-    battery = {
-      states = {
-        good = 95;
-        warning = 30;
-        critical = 15;
-      };
-      format = "{icon}  {capacity}%";
-      format-charging = "{capacity}% ";
-      format-plugged = "{capacity}% ";
-      format-alt = "{icon} {time}";
-      # "format-good"= "", # An empty format will hide the module
-      # "format-full"= "";
-      format-icons = ["" "" "" "" ""];
+      tooltip = false;
     };
 
     memory = {
@@ -110,27 +102,10 @@ _: {
       path = "/";
     };
 
-    network = {
-      format-wifi = "󰤨";
-      format-ethernet = " {ifname}: Aesthetic";
-      format-linked = " {ifname} (No IP)";
-      format-disconnected = "󰤭";
-      format-alt = " {ifname}: {ipaddr}/{cidr}";
-      tooltip-format = "{essid}";
-      on-click-right = "nm-connection-editor";
-    };
-
     tray = {
       icon-size = 18;
       spacing = 10;
-    };
-
-    backlight = {
-      # "device"= "acpi_video1";
-      format = "{icon} {percent}%";
-      format-icons = ["" "" "" "" "" "" "" "" ""];
-      #	"on-scroll-up"=;
-      #	"on-scroll-down"=;
+      tooltip = false;
     };
 
     pulseaudio = {
@@ -144,31 +119,12 @@ _: {
       on-click-right = "pavucontrol";
       tooltip = false;
     };
-    "custom/randwall" = {
-      format = "󰏘";
-      on-click = "bash $HOME/.config/hypr/randwall.sh";
-      on-click-right = "bash $HOME/.config/hypr/wall.sh";
-    };
+
     "custom/launcher" = {
-      format = "";
+      format = "";
+      size = 18;
       # on-click = "notify-send -t 1 'swww' '1' & ~/.config/hypr/scripts/wall";
       tooltip = false;
-    };
-
-    "custom/wf-recorder" = {
-      format = "{}";
-      interval = "once";
-      exec = "echo ''";
-      tooltip = "false";
-      exec-if = "pgrep 'wf-recorder'";
-      on-click = "exec ./scripts/wlrecord.sh";
-      signal = 8;
-    };
-
-    "custom/hyprpicker" = {
-      format = "󰈋";
-      on-click = "hyprpicker -a -f hex";
-      on-click-right = "hyprpicker -a -f rgb";
     };
   };
 }

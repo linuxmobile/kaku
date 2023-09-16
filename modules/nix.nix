@@ -7,6 +7,7 @@
 }: {
   environment.systemPackages = [
     pkgs.git
+    pkgs.pciutils
   ];
   environment.variables.FLAKE = "/home/linuxmobile/Dev/nixland";
 

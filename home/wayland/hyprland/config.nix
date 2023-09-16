@@ -1,5 +1,7 @@
 {
   config,
+  inputs,
+  pkgs,
   default,
   ...
 }: let
@@ -9,7 +11,7 @@
   homeDir = config.home.homeDirectory;
 in {
   wayland.windowManager.hyprland = {
-    # plugins = [inputs.split-monitor-workspaces.packages.${pkgs.system}.default];
+    plugins = [inputs.split-monitor-workspaces.packages.${pkgs.system}.default];
     settings = {
       "$MOD" = "SUPER";
       exec-once = [
@@ -18,9 +20,9 @@ in {
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "echo latam > /tmp/kb_layout"
         "wlsunset -t 5200 -S 9:00 -s 19:30"
-        "eww open bar"
+        "waybar"
         "dunst"
-        "xwaylandvideobridge"
+        # "xwaylandvideobridge"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1"
@@ -49,8 +51,8 @@ in {
         gaps_in = 5;
         gaps_out = 5;
         border_size = 2;
-        "col.active_border" = "rgb(${colors.background}) rgb(${colors.color8}) 270deg";
-        "col.inactive_border" = "rgb(${colors.contrast}) rgb(${colors.color4}) 270deg";
+        "col.active_border" = "rgb(${colors.contrast}) rgb(${colors.contrast}) 270deg";
+        "col.inactive_border" = "rgb(${colors.background}) rgb(${colors.color8}) 270deg";
         # group borders
         "col.group_border_active" = "rgb(${colors.color5})";
         "col.group_border" = "rgb(${colors.contrast})";
@@ -59,7 +61,7 @@ in {
         no_cursor_warps = true;
       };
       decoration = {
-        rounding = 5;
+        rounding = 3;
         multisample_edges = true;
         blur = {
           size = 6;
@@ -142,19 +144,19 @@ in {
 
         "$MOD, A, togglespecialworkspace"
         "$MOD, A, exec, $NOTIFY 'Toggled special workspace'"
-        "$MODSHIFT, A, movetoworkspace, special"
+        "$MODSHIFT, A, split-movetoworkspace, special"
         "$MOD, C, exec, hyprctl dispatch centerwindow"
 
         "${builtins.concatStringsSep "\n" (builtins.genList (x: let
             ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
           in ''
-            bind = $MOD, ${ws}, workspace, ${toString (x + 1)}
-            bind = $MODSHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}
+            bind = $MOD, ${ws}, split-workspace, ${toString (x + 1)}
+            bind = $MODSHIFT, ${ws}, split-movetoworkspace, ${toString (x + 1)}
           '')
           10)}"
 
-        "$MOD, mouse_down, workspace, e-1"
-        "$MOD, mouse_up, workspace, e+1"
+        "$MOD, mouse_down, split-workspace, e-1"
+        "$MOD, mouse_up, split-workspace, e+1"
       ];
       bindm = ["$MOD, mouse:272, movewindow" "$MOD, mouse:273, resizewindow"];
       windowrulev2 = [

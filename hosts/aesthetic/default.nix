@@ -8,13 +8,13 @@
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
     kernelParams = [
       "amd_pstate=active"
-      "amd_iommu=pt"
       "nvme_core.default_ps_max_latency_us=0"
       "quiet"
       "loglevel=3"
       "systemd.show_status=auto"
       "rd.udev.log_level=3"
     ];
+    supportedFilesystems = ["ntfs"];
   };
 
   boot.loader = {

@@ -36,8 +36,6 @@
     bun
 
     glow
-    libratbag
-    piper
     # libsixel # image support for foot
 
     neofetch

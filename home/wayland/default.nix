@@ -9,23 +9,13 @@
   imports = [
     ./anyrun.nix
     ./hyprland
-    # ./waybar
+    ./waybar
     ./swaybg.nix
     ./swayidle.nix
     ./swaylock.nix
     # ./swww.nix
-    ./eww
+    # ./eww
   ];
-
-  programs.eww-hyprland = {
-    enable = true;
-    # temp fix until https://github.com/NixOS/nixpkgs/pull/249515 lands. after that,
-    # eww's nixpkgs has to be updated
-    package = inputs.eww.packages.${pkgs.system}.eww-wayland.overrideAttrs (old: {
-      nativeBuildInputs = old.nativeBuildInputs ++ [pkgs.wrapGAppsHook];
-      buildInputs = lib.lists.remove pkgs.gdk-pixbuf (old.buildInputs ++ [pkgs.librsvg]);
-    });
-  };
 
   home.packages = with pkgs; [
     # screenshot
@@ -35,7 +25,6 @@
     # idle/lock
     swaybg
     swaylock-effects
-    # swww
 
     # utils
     wf-recorder
@@ -43,7 +32,6 @@
     wlogout
     hyprpicker
     wlsunset
-    # eww-wayland
   ];
 
   # make stuff work on wayland
