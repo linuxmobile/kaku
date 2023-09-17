@@ -24,7 +24,7 @@
 
     [input]
     ; method = pulse
-    ; source = auto
+    source = auto
     ; method = alsa
     ; source = hw:Loopback,1
     ; method = fifo
@@ -84,7 +84,7 @@
     ; waves = 0
     ; gravity = 100
     ; ignore = 0
-    noise_reduction = 0.77
+    noise_reduction = 0.75
 
 
     [eq]

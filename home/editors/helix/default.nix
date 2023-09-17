@@ -48,7 +48,6 @@
           tab = "⇥";
         };
       };
-
       keys.normal.space.u = {
         f = ":format"; # format using LSP formatter
         w = ":set whitespace.render all";
