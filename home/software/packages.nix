@@ -34,7 +34,7 @@
     mpdris2
     catimg
     bun
- 
+
     glow
     # libsixel # image support for foot
 
