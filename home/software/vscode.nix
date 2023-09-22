@@ -58,8 +58,7 @@
     userSettings = {
       "workbench.iconTheme" = "catppuccin-perfect-mocha";
       "workbench.colorTheme" = "Everblush";
-      "catppuccin.accentColor" = "mauve";
-      "editor.fontFamily" = "Cartograph CF Nerd Font, Catppuccin Perfect Mocha, 'monospace', monospace";
+      "editor.fontFamily" = "CartographCF Nerd Font, JetBrainsMono Nerd Font Mono, JetBrains Mono, 'monospace', monospace";
       "editor.fontSize" = 12;
       "editor.fontLigatures" = true;
       "workbench.fontAliasing" = "antialiased";

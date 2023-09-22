@@ -1,4 +1,7 @@
-{ colorlib, lib, }: rec {
+{
+  colorlib,
+  lib,
+}: rec {
   colors = import ./colors.nix;
   # #RRGGBB
   xcolors = lib.mapAttrs (_: colorlib.x) colors;
@@ -19,8 +22,7 @@
 
   # TODO: Change this later
   wallpaper = builtins.fetchurl {
-    url =
-      "https://raw.githubusercontent.com/linuxmobile/hyprland-dots/Sakura/.wallpapers/catgirl.jpg";
+    url = "https://raw.githubusercontent.com/linuxmobile/hyprland-dots/Sakura/.wallpapers/catgirl.jpg";
     sha256 = "sha256-5ON6GQ1yEFF/6ChUVgWAlLO9PnvGEBfGOeyOcWlGMlM=";
   };
 }
