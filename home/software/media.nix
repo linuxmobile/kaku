@@ -8,6 +8,7 @@
     pavucontrol
     playerctl
     pamixer
+    alsa-utils
     # images
     imv
 
