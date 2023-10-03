@@ -1,6 +1,6 @@
 {
   pkgs,
-  self',
+  lib,
   ...
 }: {
   fonts = {
@@ -37,10 +37,11 @@
       extraPackages = with pkgs; [libva vaapiVdpau libvdpau-va-gl];
       extraPackages32 = with pkgs.pkgsi686Linux; [vaapiVdpau libvdpau-va-gl];
     };
+    pulseaudio.enable = lib.mkForce false;
   };
 
   # enable location service
-  # location.provider = "geoclue2";
+  location.provider = "geoclue2";
 
   nix = {
     # package = inputs'.nix-super.packages.nix;
@@ -48,12 +49,10 @@
       substituters = [
         "https://hyprland.cachix.org"
         "https://cache.privatevoid.net"
-        #"https://nix-gaming.cachix.org"
       ];
       trusted-public-keys = [
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "cache.privatevoid.net:SErQ8bvNWANeAvtsOESUwVYr2VJynfuc9JRwlzTTkVg="
-        #"nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
       ];
     };
   };
@@ -91,13 +90,8 @@
       # lowLatency.enable = true;
     };
 
-    # battery info & stuff
-    # upower.enable = true;
-
     # needed for GNOME services outside of GNOME Desktop
     dbus.packages = [pkgs.gcr];
-
-    # ratbagd.enable = false;
   };
 
   security = {

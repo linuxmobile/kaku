@@ -1,8 +1,13 @@
-{ default, pkgs, ... }: {
+{
+  default,
+  pkgs,
+  ...
+}: {
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;
-    settings = let inherit (default) xcolors;
+    settings = let
+      inherit (default) xcolors;
     in {
       clock = true;
       font = "Jost *";

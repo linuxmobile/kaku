@@ -1,4 +1,9 @@
-{pkgs, ...}:
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 # Wayland config
 {
   imports = [
@@ -8,8 +13,8 @@
     ./swaybg.nix
     ./swayidle.nix
     ./swaylock.nix
-    ./swww.nix
-    ./eww.nix
+    # ./swww.nix
+    # ./eww
   ];
 
   home.packages = with pkgs; [
@@ -20,7 +25,6 @@
     # idle/lock
     swaybg
     swaylock-effects
-    # swww
 
     # utils
     wf-recorder
@@ -28,7 +32,6 @@
     wlogout
     hyprpicker
     wlsunset
-    eww-wayland
   ];
 
   # make stuff work on wayland

@@ -1,4 +1,4 @@
-{ default, ... }:{
+{default, ...}: {
   # notification daemon
   services.dunst = {
     enable = true;
@@ -36,8 +36,7 @@
         show_age_threshold = 60;
         markup = "full";
         font = "AestheticIosevka Nerd Font Mono";
-        format =
-          "<span size='x-large' font_desc='Iosevka Nerd Font 10' foreground='${default.xcolors.fg}'>%a</span>\\n%s\\n%b";
+        format = "<span size='x-large' font_desc='Iosevka Nerd Font 10' foreground='${default.xcolors.fg}'>%a</span>\\n%s\\n%b";
         word_wrap = "yes";
         sort = "yes";
         shrink = "no";
@@ -56,7 +55,7 @@
         mouse_right_click = "close_current";
       };
 
-      fullscreen_delay_everything = { fullscreen = "delay"; };
+      fullscreen_delay_everything = {fullscreen = "delay";};
       logger = {
         summary = "*";
         body = "*";

@@ -1,13 +1,14 @@
 {pkgs, ...}:
 # media - control and enjoy audio/video
 {
-  imports = [./rnnoise.nix ./spicetify.nix ./mpd.nix ./ncmpcpp.nix];
+  imports = [./rnnoise.nix ./spicetify.nix];
 
   home.packages = with pkgs; [
     # audio control
     pavucontrol
     playerctl
     pamixer
+    alsa-utils
     # images
     imv
 
@@ -24,6 +25,5 @@
 
   services = {
     playerctld.enable = true;
-    mpdris2.enable = true;
   };
 }

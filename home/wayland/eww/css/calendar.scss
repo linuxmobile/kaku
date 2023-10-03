@@ -1,0 +1,29 @@
+.calendar-window {
+  @include window;
+}
+
+calendar {
+  margin: .3rem;
+  padding: .2rem;
+
+  :selected {
+    background: $bg1;
+    border-radius: 100%;
+    padding: .3rem .5rem;
+  }
+
+  .header {
+    color: $subtext1;
+  }
+
+  .highlight {
+    color: $maroon;
+    font-weight: bold;
+  }
+
+  .button { padding: .5rem .3rem; }
+
+  :indeterminate {
+    color: $subtext1;
+  }
+}

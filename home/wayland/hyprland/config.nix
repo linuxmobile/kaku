@@ -1,7 +1,8 @@
 {
   config,
+  inputs,
+  pkgs,
   default,
-  inputs',
   ...
 }: let
   inherit (default) colors;
@@ -10,7 +11,7 @@
   homeDir = config.home.homeDirectory;
 in {
   wayland.windowManager.hyprland = {
-    # plugins = [inputs'.split-monitor-workspaces.packages.split-monitor-workspaces];
+    plugins = [inputs.split-monitor-workspaces.packages.${pkgs.system}.default];
     settings = {
       "$MOD" = "SUPER";
       exec-once = [
@@ -21,7 +22,7 @@ in {
         "wlsunset -t 5200 -S 9:00 -s 19:30"
         "waybar"
         "dunst"
-        "xwaylandvideobridge"
+        # "xwaylandvideobridge"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1"
@@ -50,8 +51,8 @@ in {
         gaps_in = 5;
         gaps_out = 5;
         border_size = 2;
-        "col.active_border" = "rgb(${colors.background}) rgb(${colors.color8}) 270deg";
-        "col.inactive_border" = "rgb(${colors.contrast}) rgb(${colors.color4}) 270deg";
+        "col.active_border" = "rgb(${colors.contrast}) rgb(${colors.contrast}) 270deg";
+        "col.inactive_border" = "rgb(${colors.background}) rgb(${colors.color8}) 270deg";
         # group borders
         "col.group_border_active" = "rgb(${colors.color5})";
         "col.group_border" = "rgb(${colors.contrast})";
@@ -60,7 +61,7 @@ in {
         no_cursor_warps = true;
       };
       decoration = {
-        rounding = 5;
+        rounding = 3;
         multisample_edges = true;
         blur = {
           size = 6;
@@ -78,7 +79,7 @@ in {
         shadow_range = 50;
         shadow_render_power = 3;
         "col.shadow" = "rgba(00000099)";
-        blurls = ["gtk-layer-shell" "waybar" "lockscreen"];
+        blurls = ["waybar" "lockscreen"];
       };
       animation = {
         bezier = [
@@ -109,6 +110,7 @@ in {
       "$NOTIFY" = "notify-send -h string:x-canonical-private-synchronouse:hypr-cfg -u low";
       "$SCREENSHOT" = "${homeDir}/.config/hypr/scripts/screensht";
       "$COLORPICKER" = "${homeDir}/.config/hypr/scripts/colorpicker";
+      "$LAYERS" = "^(eww-.+|bar|system-menu|anyrun|gtk-layer-shell|dunst)$";
 
       bind = [
         "$MOD, Escape, exec, wlogout -p layer-shell"
@@ -142,19 +144,19 @@ in {
 
         "$MOD, A, togglespecialworkspace"
         "$MOD, A, exec, $NOTIFY 'Toggled special workspace'"
-        "$MODSHIFT, A, movetoworkspace, special"
+        "$MODSHIFT, A, split-movetoworkspace, special"
         "$MOD, C, exec, hyprctl dispatch centerwindow"
 
         "${builtins.concatStringsSep "\n" (builtins.genList (x: let
             ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
           in ''
-            bind = $MOD, ${ws}, workspace, ${toString (x + 1)}
-            bind = $MODSHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}
+            bind = $MOD, ${ws}, split-workspace, ${toString (x + 1)}
+            bind = $MODSHIFT, ${ws}, split-movetoworkspace, ${toString (x + 1)}
           '')
           10)}"
 
-        "$MOD, mouse_down, workspace, e-1"
-        "$MOD, mouse_up, workspace, e+1"
+        "$MOD, mouse_down, split-workspace, e-1"
+        "$MOD, mouse_up, split-workspace, e+1"
       ];
       bindm = ["$MOD, mouse:272, movewindow" "$MOD, mouse:273, resizewindow"];
       windowrulev2 = [
@@ -197,20 +199,10 @@ in {
         "float,title:^(Confirm to replace files)$"
         "float,title:^(File Operation Progress)$"
 
-        "noshadow, floating:0"
-
-        "tile, title:^(Spotify)$"
-        "workspace 9 silent, title:^(Spotify)$"
-        "workspace 4, title:^(.*(Disc|WebC)ord.*)$"
-
         "idleinhibit focus, class:^(mpv|.+exe)$"
         "idleinhibit focus, class:^(firefox)$, title:^(.*YouTube.*)$"
         "idleinhibit fullscreen, class:^(firefox)$"
         "idleinhibit fullscreen,class:^(Brave-browser)$"
-
-        "rounding 0, xwayland:1, floating:1"
-        "center, class:^(.*jetbrains.*)$, title:^(Confirm Exit|Open Project|win424|win201|splash)$"
-        "size 640 400, class:^(.*jetbrains.*)$, title:^(splash)$"
 
         "opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$"
         "noanim,class:^(xwaylandvideobridge)$"
@@ -220,10 +212,13 @@ in {
         "noshadow,class:^(xwaylandvideobridge)$"
       ];
       layerrule = [
-        "blur, ^(gtk-layer-shell|anyrun)$"
-        "ignorezero, ^(gtk-layer-shell|anyrun)$"
+        "ignorezero, ^(gtk-layer-shell|anyrun|dunst)$"
         "blur, notifications"
         "blur, launcher"
+        "blur, $LAYERS"
+        "ignorealpha 0, $LAYERS"
+        "ignorealpha 0.5, ^(eww-(music|calendar)|system-menu|anyrun)$"
+        "xray 1, ^(bar|gtk-layer-shell)$"
       ];
     };
   };

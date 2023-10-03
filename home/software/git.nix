@@ -1,5 +1,10 @@
-{ pkgs, default, ... }: {
-  home.packages = [ pkgs.gh ];
+{
+  pkgs,
+  default,
+  config,
+  ...
+}: {
+  home.packages = [pkgs.gh];
 
   programs.git = {
     enable = true;
@@ -13,12 +18,11 @@
 
     delta = {
       enable = true;
-      options.map-styles =
-        "bold purple => syntax ${default.xcolors.color4}, bold cyan => syntax ${default.xcolors.color3}";
+      options.map-styles = "bold purple => syntax ${default.xcolors.color4}, bold cyan => syntax ${default.xcolors.color3}";
     };
 
     extraConfig = {
-      init = { defaultBranch = "main"; };
+      init = {defaultBranch = "main";};
       diff.colorMoved = "default";
       merge.conflictstyle = "diff3";
     };
@@ -38,10 +42,9 @@
         log --pretty=format:"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)" --graph --date=relative --decorate --all'';
       llog = ''
         log --graph --name-status --pretty=format:"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset" --date=relative'';
-      edit-unmerged =
-        "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; hx `f`";
+      edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; hx `f`";
     };
 
-    ignores = [ "*~" "*.swp" "*result*" ".direnv" "node_modules" ];
+    ignores = ["*~" "*.swp" "*result*" ".direnv" "node_modules"];
   };
 }

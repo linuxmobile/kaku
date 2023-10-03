@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -7,7 +12,7 @@
       dl = "$HOME/Downloads";
       docs = "$HOME/Documents";
       dev = "$HOME/Dev";
-      dots = "$HOME/Dev/dotfiles";
+      dots = "$HOME/Dev/nixland";
       pics = "$HOME/Pictures";
       vids = "$HOME/Videos";
       nixpkgs = "$HOME/Dev/git/nixpkgs";
@@ -59,12 +64,10 @@
     '';
 
     shellAliases = {
-      installed =
-        "nix-store --query --requisites /run/current-system | cut -d- -f2- | sort | uniq | sk";
+      installed = "nix-store --query --requisites /run/current-system | cut -d- -f2- | sort | uniq | sk";
       installedall = "nix-store --query --requisites /run/current-system | sk";
       cleanup = "sudo nix-collect-garbage --delete-older-than 1d";
-      listgen =
-        "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
+      listgen = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
       forceclean = "sudo nix-collect-garbage -d";
       nixremove = "nix-store --gc";
       bloat = "nix path-info -Sh /run/current-system";
@@ -74,8 +77,8 @@
       trimall = "sudo fstrim -va";
       temp = "cd /tmp/";
 
-      test-build = "sudo nixos-rebuild test --flake .#linudev";
-      switch-build = "sudo nixos-rebuild switch --flake .#linudev";
+      test-build = "sudo nixos-rebuild test --flake .#aesthetic";
+      switch-build = "sudo nixos-rebuild switch --flake .#aesthetic";
 
       # git
       g = "git";
@@ -94,15 +97,14 @@
       ps = "procs";
       # rm = "trash-cli";
       cat = "bat --style=plain";
-      l = "exa -lF --time-style=long-iso --icons";
-      la = "exa -lah --tree";
-      ls =
-        "exa -h --git --icons --color=auto --group-directories-first -s extension";
-      tree = "exa --tree --icons --tree";
+      l = "eza -lF --time-style=long-iso --icons";
+      la = "eza -lah --tree";
+      ls = "eza -h --git --icons --color=auto --group-directories-first -s extension";
+      tree = "eza --tree --icons --tree";
 
       # myself
       run = "pnpm run";
     };
-    shellGlobalAliases = { exa = "exa --icons --git"; };
+    shellGlobalAliases = {eza = "eza --icons --git";};
   };
 }

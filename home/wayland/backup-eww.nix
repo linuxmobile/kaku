@@ -1,8 +1,4 @@
-{
-  config,
-  default,
-  ...
-}: {
+{default, ...}: {
   home.file.".config/eww/style/_colors.scss".text = ''
     $background : ${default.xcolors.background};
     $foreground : ${default.xcolors.foreground};

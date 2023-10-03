@@ -33,10 +33,9 @@
     mpc-cli
     mpdris2
     catimg
+    bun
 
     glow
-    libratbag
-    piper
     # libsixel # image support for foot
 
     neofetch

@@ -1,11 +1,12 @@
 {
   imports = [
     # ../../editors/nvchad
-    ../../editors/kodo
+    # ../../editors/kodo
+    ../../editors/helix
     ../../software
     ../../software/dunst.nix
     ../../wayland
   ];
 
-  home.sessionVariables = { GDK_SCALE = "1"; };
+  home.sessionVariables = {GDK_SCALE = "1";};
 }

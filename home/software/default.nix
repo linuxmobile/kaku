@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{config, ...}: {
   imports = [
     ../shell/nix.nix
     ../terminals/wezterm.nix
@@ -24,21 +24,11 @@
   programs = {
     brave = {
       enable = true;
-      extensions = [
-        # Ublock Origin
-        # {id = "cjpalhdlnbpafiamejdnhcphjbkeiagm";}
-      ];
     };
 
     gpg = {
       enable = true;
       homedir = "${config.xdg.dataHome}/gnupg";
-    };
-
-    password-store = {
-      enable = true;
-      package = pkgs.pass.withExtensions (exts: [ exts.pass-otp ]);
-      settings.PASSWORD_STORE_DIR = "${config.xdg.dataHome}/password-store";
     };
   };
 
@@ -48,7 +38,6 @@
       enableSshSupport = true;
       pinentryFlavor = "gnome3";
     };
-
     syncthing.enable = true;
   };
 }
