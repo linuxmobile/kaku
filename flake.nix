@@ -49,13 +49,6 @@
 
     fu.url = "github:numtide/flake-utils";
 
-    helix = {
-      url = "github:helix-editor/helix";
-      inputs.parts.follows = "flake-parts";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.rust-overlay.follows = "rust-overlay";
-    };
-
     hm = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -84,12 +77,6 @@
     spicetify-nix = {
       url = "github:the-argus/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "fu";
     };
 
     split-monitor-workspaces = {
