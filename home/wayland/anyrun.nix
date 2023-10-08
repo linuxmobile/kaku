@@ -13,7 +13,6 @@
         rink
         shell
         translate
-        inputs.anyrun-nixos-options.packages.${pkgs.system}.default
       ];
 
       width.fraction = 0.3;
