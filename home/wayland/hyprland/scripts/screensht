@@ -39,7 +39,7 @@ function check_dir() {
 	fi
 }
 
-function get_latest_img() { 
+function get_latest_img() {
     _LATEST_IMAGE_=$(/run/current-system/sw/bin/ls -th $_SCREENSHOT_DIR_ | grep -vE '.screensht.png$' | grep -E '.png$' | head -n 1)
 
     if [[ $( echo "$_LATEST_IMAGE_" | wc -w ) -eq 0 ]]; then
@@ -93,7 +93,7 @@ function convert() {
     magick convert "$_target_file_" -gravity North -background $_BG_COLOR_ -splice 0x$(( $_BG_SIZE_ / 2 )) "$_target_file_" >> $_LOG_FILE_ 2>&1
     check
 
-    magick convert "$_target_file_" -profile /nix/store/mdfpcp5vlp4prl0mjf0kgz9q3m0qm97q-colord-1.4.6/share/color/icc/colord/sRGB.icc "$_target_file_" >> $_LOG_FILE_ 2>&1
+    magick convert "$_target_file_" -profile /nix/store/v18xjz8rpw7azxgz89j8sz801hdgzchj-colord-1.4.6/share/color/icc/colord/sRGB.icc "$_target_file_" >> $_LOG_FILE_ 2>&1
     check
 }
 
@@ -125,7 +125,7 @@ function main() {
     convert
 
 	mv $_LATEST_IMAGE_ $_ORIGINAL_DIR_
-    
+
     _end_job_=$(date +%s)
     summary $_start_job_ $_end_job_
 }

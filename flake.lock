@@ -261,11 +261,25 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1696635169,
         "narHash": "sha256-gOjLe7maQ58erN/9ykb6d2ePAU7QAT1D8u7qin9gt+c=",
+||||||| d351be1
+        "lastModified": 1695509808,
+        "narHash": "sha256-rW6kfjLLYDB9xGJwoFkSNzcmLJCcN7VcD+YnDPbEM2c=",
+=======
+        "lastModified": 1696145345,
+        "narHash": "sha256-3dM7I/d4751SLPJah0to1WBlWiyzIiuCEUwJqwBdmr4=",
+>>>>>>> refactor
         "owner": "nix-community",
         "repo": "home-manager",
+<<<<<<< HEAD
         "rev": "b2a2133c9a0b0aa4d06d72b5891275f263ee08df",
+||||||| d351be1
+        "rev": "2d27bdcd640759a5fb1b48125fee7280adad95f7",
+=======
+        "rev": "6f9b5b83ad1f470b3d11b8a9fe1d5ef68c7d0e30",
+>>>>>>> refactor
         "type": "github"
       },
       "original": {
@@ -283,11 +297,25 @@
         "xdph": "xdph"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1696690533,
         "narHash": "sha256-qFqBLiNefLsnwu/19Xxsn+UienE1Wde+3doY1MRGeJ4=",
+||||||| d351be1
+        "lastModified": 1695495703,
+        "narHash": "sha256-ZC7o5QisZHc0TC2SWTy2G8DeuUPAfDr2/zTrYNLhXaE=",
+=======
+        "lastModified": 1696165790,
+        "narHash": "sha256-18Yt3o3sjieqgOSjUXW8Apn6JuHLTKEJDt5k40sAf2A=",
+>>>>>>> refactor
         "owner": "hyprwm",
         "repo": "Hyprland",
+<<<<<<< HEAD
         "rev": "728a8bb48e0f7de1cbe1ad13fb469754c3d0bc97",
+||||||| d351be1
+        "rev": "2c4a06eb547e11e818bbc94d90ecb1b32de21c21",
+=======
+        "rev": "9ec656a37df103edc111e8e48cdfe89528dfe92e",
+>>>>>>> refactor
         "type": "github"
       },
       "original": {
@@ -401,11 +429,25 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1696410458,
         "narHash": "sha256-ohrrFywK7WIHEGWosBVRFZF5D2q2AeIGFGp9mMZRc40=",
+||||||| d351be1
+        "lastModified": 1694697985,
+        "narHash": "sha256-tAa0pyDOazvMfEjDhajcyLadu5a3euSMzzwia37J8x8=",
+=======
+        "lastModified": 1696021232,
+        "narHash": "sha256-YtbcN4I5S85XRdYFnORCJfbd5z6l8uVp8r3wI48vPs0=",
+>>>>>>> refactor
         "owner": "nix-community",
         "repo": "lanzaboote",
+<<<<<<< HEAD
         "rev": "ac43ac3024f814fcf3a3bab41873019109521442",
+||||||| d351be1
+        "rev": "7f92dd1e7b0ff92c65856cd9015f651c151f0229",
+=======
+        "rev": "8154cef11cdde65a7a1f75319c95dfe038b2df46",
+>>>>>>> refactor
         "type": "github"
       },
       "original": {
@@ -538,11 +580,25 @@
     },
     "nixpkgs_3": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1696604326,
         "narHash": "sha256-YXUNI0kLEcI5g8lqGMb0nh67fY9f2YoJsILafh6zlMo=",
+||||||| d351be1
+        "lastModified": 1695145219,
+        "narHash": "sha256-Eoe9IHbvmo5wEDeJXKFOpKUwxYJIOxKUesounVccNYk=",
+=======
+        "lastModified": 1696019113,
+        "narHash": "sha256-X3+DKYWJm93DRSdC5M6K5hLqzSya9BjibtBsuARoPco=",
+>>>>>>> refactor
         "owner": "NixOS",
         "repo": "nixpkgs",
+<<<<<<< HEAD
         "rev": "87828a0e03d1418e848d3dd3f3014a632e4a4f64",
+||||||| d351be1
+        "rev": "5ba549eafcf3e33405e5f66decd1a72356632b96",
+=======
+        "rev": "f5892ddac112a1e9b3612c39af1b72987ee5783a",
+>>>>>>> refactor
         "type": "github"
       },
       "original": {
@@ -760,18 +816,38 @@
       "flake": false,
       "locked": {
         "host": "gitlab.freedesktop.org",
+<<<<<<< HEAD
         "lastModified": 1696410538,
         "narHash": "sha256-ecDhdYLXWHsxMv+EWG36mCNDvzRbu9qfjH7dLxL7aGM=",
+||||||| d351be1
+        "lastModified": 1695277534,
+        "narHash": "sha256-LEIUGXvKR5DYFQUTavC3yifcObvG4XZUUHfxXmu8nEM=",
+=======
+        "lastModified": 1695919988,
+        "narHash": "sha256-4RBgIZHaVqH0m1POnfzYRzwCWxifIKH4xQ0kCn2LGkA=",
+>>>>>>> refactor
         "owner": "wlroots",
         "repo": "wlroots",
+<<<<<<< HEAD
         "rev": "3406c1b17a4a7e6d4e2a7d9c1176affa72bce1bc",
+||||||| d351be1
+        "rev": "98a745d926d8048bc30aef11b421df207a01c279",
+=======
+        "rev": "c2aa7fd965cb7ee8bed24f4122b720aca8f0fc1e",
+>>>>>>> refactor
         "type": "gitlab"
       },
       "original": {
         "host": "gitlab.freedesktop.org",
         "owner": "wlroots",
         "repo": "wlroots",
+<<<<<<< HEAD
         "rev": "3406c1b17a4a7e6d4e2a7d9c1176affa72bce1bc",
+||||||| d351be1
+        "rev": "98a745d926d8048bc30aef11b421df207a01c279",
+=======
+        "rev": "c2aa7fd965cb7ee8bed24f4122b720aca8f0fc1e",
+>>>>>>> refactor
         "type": "gitlab"
       }
     },

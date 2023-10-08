@@ -11,7 +11,7 @@
   homeDir = config.home.homeDirectory;
 in {
   wayland.windowManager.hyprland = {
-    plugins = [inputs.split-monitor-workspaces.packages.${pkgs.system}.default];
+    # plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.system}.default ];
     settings = {
       "$MOD" = "SUPER";
       exec-once = [
@@ -143,19 +143,19 @@ in {
 
         "$MOD, A, togglespecialworkspace"
         "$MOD, A, exec, $NOTIFY 'Toggled special workspace'"
-        "$MODSHIFT, A, split-movetoworkspace, special"
+        "$MODSHIFT, A, movetoworkspace, special"
         "$MOD, C, exec, hyprctl dispatch centerwindow"
 
         "${builtins.concatStringsSep "\n" (builtins.genList (x: let
             ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
           in ''
-            bind = $MOD, ${ws}, split-workspace, ${toString (x + 1)}
-            bind = $MODSHIFT, ${ws}, split-movetoworkspace, ${toString (x + 1)}
+            bind = $MOD, ${ws}, workspace, ${toString (x + 1)}
+            bind = $MODSHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}
           '')
           10)}"
 
-        "$MOD, mouse_down, split-workspace, e-1"
-        "$MOD, mouse_up, split-workspace, e+1"
+        "$MOD, mouse_down, workspace, e-1"
+        "$MOD, mouse_up, workspace, e+1"
       ];
       bindm = ["$MOD, mouse:272, movewindow" "$MOD, mouse:273, resizewindow"];
       windowrulev2 = [

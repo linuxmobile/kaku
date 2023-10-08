@@ -7,9 +7,6 @@
       [
         bbenoist.nix
 
-        # catppuccin.catppuccin-vsc
-        pkief.material-icon-theme
-
         formulahendry.auto-close-tag
         christian-kohler.path-intellisense
         naumovs.color-highlight
@@ -31,10 +28,10 @@
           sha256 = "sha256-6qQPKB0LlBYAMEYPpjl6NAJyqutLFv+g+XGw4hTV1Nw=";
         }
         {
-          name = "Everblush";
-          publisher = "mangeshrex";
-          version = "0.1.1";
-          sha256 = "sha256-hqRf3BGQMwFEpOMzpELMKmjS1eg4yPqgTiHQEwi7RUw=";
+          name = "gentle-vintage-dark-theme";
+          publisher = "MaoShizhong";
+          version = "0.3.4";
+          sha256 = "sha256-4W6gp1zzAdakqpcEevd2IA6ncQtAyjp/veDA6XHFRig=";
         }
         {
           name = "copilot-chat";
@@ -57,8 +54,9 @@
       ];
     userSettings = {
       "workbench.iconTheme" = "catppuccin-perfect-mocha";
-      "workbench.colorTheme" = "Everblush";
-      "editor.fontFamily" = "CartographCF Nerd Font, JetBrainsMono Nerd Font Mono, JetBrains Mono, 'monospace', monospace";
+      "workbench.colorTheme" = "Gentle Vintage Dark";
+      "catppuccin.accentColor" = "mauve";
+      "editor.fontFamily" = "Cartograph CF Nerd Font, Catppuccin Perfect Mocha, 'monospace', monospace";
       "editor.fontSize" = 12;
       "editor.fontLigatures" = true;
       "workbench.fontAliasing" = "antialiased";
