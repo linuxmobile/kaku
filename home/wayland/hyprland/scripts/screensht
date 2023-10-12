@@ -93,7 +93,7 @@ function convert() {
     magick convert "$_target_file_" -gravity North -background $_BG_COLOR_ -splice 0x$(( $_BG_SIZE_ / 2 )) "$_target_file_" >> $_LOG_FILE_ 2>&1
     check
 
-    magick convert "$_target_file_" -profile /nix/store/v18xjz8rpw7azxgz89j8sz801hdgzchj-colord-1.4.6/share/color/icc/colord/sRGB.icc "$_target_file_" >> $_LOG_FILE_ 2>&1
+    magick convert "$_target_file_" -profile /nix/store/wlqakyimcr0pmsxv38zi6zcac5b6md42-colord-1.4.6/share/color/icc/colord/sRGB.icc "$_target_file_" >> $_LOG_FILE_ 2>&1
     check
 }
 

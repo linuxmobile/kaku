@@ -1,7 +1,7 @@
 {
   config,
-  inputs,
-  pkgs,
+  # inputs,
+  # pkgs,
   default,
   ...
 }: let
@@ -14,6 +14,28 @@ in {
     # plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.system}.default ];
     settings = {
       "$MOD" = "SUPER";
+      env = ''
+        GTK_THEME,Juno;
+        XDG_SESSION_TYPE,wayland
+        XDG_SESSION_DESKTOP,Hyprland
+
+        GDK_BACKEND,wayland
+        QT_QPA_PLATFORM,wayland
+        QT_QPA_PLATFORMTHEME,qt5ct
+        QT_WAYLAND_DISABLE_WINDOWDECORATION,1
+        QT_AUTO_SCREEN_SCALE_FACTOR,1
+        QT_WAYLAND_DISABLE_WINDOWDECORATION,1
+
+        SDL_VIDEODRIVER,wayland
+        _JAVA_AWT_WM_NONREPARENTING,1
+        WLR_NO_HARDWARE_CURSORS,1
+        WLR_DRM_NO_ATOMIC,1
+
+        MOZ_DISABLE_RDD_SANDBOX,1
+        MOZ_ENABLE_WAYLAND,1
+
+        OZONE_PLATFORM,wayland
+      '';
       exec-once = [
         "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"

@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   home.packages = with pkgs; [
     # archives
     zip
@@ -22,14 +26,13 @@
       };
       themes = {
         Catppuccin-mocha = builtins.readFile (pkgs.fetchurl {
-          url =
-            "https://raw.githubusercontent.com/catppuccin/bat/main/Catppuccin-mocha.tmTheme";
+          url = "https://raw.githubusercontent.com/catppuccin/bat/main/Catppuccin-mocha.tmTheme";
           hash = "sha256-qMQNJGZImmjrqzy7IiEkY5IhvPAMZpq0W6skLLsng/w=";
         });
       };
     };
 
-    exa.enable = true;
+    eza.enable = true;
     ssh.enable = true;
     btop.enable = true;
 

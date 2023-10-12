@@ -4,9 +4,6 @@
     tdesktop
 
     pavucontrol
-    neovim-unwrapped
-    vscode
-    brave
     betterdiscordctl
     xfce.thunar
     xfce.thunar-archive-plugin
@@ -24,22 +21,16 @@
     rizin
     xcolor
     htop
-    cargo
-    gcc
     nodejs
     nodePackages.pnpm
     jq
     socat
-    mpc-cli
-    mpdris2
     catimg
     bun
 
-    glow
-    # libsixel # image support for foot
-
     neofetch
     gnome.file-roller
+    pywal
 
     # nvim servers
     nixfmt

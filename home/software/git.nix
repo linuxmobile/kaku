@@ -1,7 +1,6 @@
 {
   pkgs,
   default,
-  config,
   ...
 }: {
   home.packages = [pkgs.gh];

@@ -9,11 +9,7 @@
 with lib; let
   parentConfig = config;
 
-  pamOpts = {
-    config,
-    name,
-    ...
-  }: let
+  pamOpts = {name, ...}: let
     cfg = config;
 
     config = parentConfig;
@@ -860,416 +856,419 @@ in {
   ###### interface
 
   options = {
-    security.pam.loginLimits = mkOption {
-      default = [];
-      type = limitsType;
-      example = [
-        {
-          domain = "ftp";
-          type = "hard";
-          item = "nproc";
-          value = "0";
-        }
-        {
-          domain = "@student";
-          type = "-";
-          item = "maxlogins";
-          value = "4";
-        }
-      ];
+    security = {
+      wrappers = {
+        unix_chkpwd = {
+          setuid = true;
+          owner = "root";
+          group = "root";
+          source = "${pkgs.pam}/bin/unix_chkpwd";
+        };
+      };
+      pam = {
+        loginLimits = mkoption {
+          default = [];
+          type = limitsType;
+          example = [
+            {
+              domain = "ftp";
+              type = "hard";
+              item = "nproc";
+              value = "0";
+            }
+            {
+              domain = "@student";
+              type = "-";
+              item = "maxlogins";
+              value = "4";
+            }
+          ];
 
-      description = lib.mdDoc ''
-        Define resource limits that should apply to users or groups.
-        Each item in the list should be an attribute set with a
-        {var}`domain`, {var}`type`,
-        {var}`item`, and {var}`value`
-        attribute.  The syntax and semantics of these attributes
-        must be that described in {manpage}`limits.conf(5)`.
+          description = lib.mdDoc ''
+            Define resource limits that should apply to users or groups.
+            Each item in the list should be an attribute set with a
+            {var}`domain`, {var}`type`,
+            {var}`item`, and {var}`value`
+            attribute.  The syntax and semantics of these attributes
+            must be that described in {manpage}`limits.conf(5)`.
 
-        Note that these limits do not apply to systemd services,
-        whose limits can be changed via {option}`systemd.extraConfig`
-        instead.
-      '';
-    };
+            Note that these limits do not apply to systemd services,
+            whose limits can be changed via {option}`systemd.extraConfig`
+            instead.
+          '';
+        };
+        services = mkOption {
+          default = {};
+          type = with types; attrsOf (submodule pamOpts);
+          description = lib.mdDoc ''
+            This option defines the PAM services.  A service typically
+            corresponds to a program that uses PAM,
+            e.g. {command}`login` or {command}`passwd`.
+            Each attribute of this set defines a PAM service, with the attribute name
+            defining the name of the service.
+          '';
+        };
+        makeHomeDir.skelDirectory = mkOption {
+          type = types.str;
+          default = "/var/empty";
+          example = "/etc/skel";
+          description = lib.mdDoc ''
+            Path to skeleton directory whose contents are copied to home
+            directories newly created by `pam_mkhomedir`.
+          '';
+        };
+        enableSSHAgentAuth = mkOption {
+          type = types.bool;
+          default = false;
+          description = lib.mdDoc ''
+            Enable sudo logins if the user's SSH agent provides a key
+            present in {file}`~/.ssh/authorized_keys`.
+            This allows machines to exclusively use SSH keys instead of
+            passwords.
+          '';
+        };
+        enableOTPW = mkEnableOption (lib.mdDoc "the OTPW (one-time password) PAM module");
+        krb5 = {
+          enable = mkOption {
+            default = config.krb5.enable;
+            defaultText = literalExpression "config.krb5.enable";
+            type = types.bool;
+            description = lib.mdDoc ''
+              Enables Kerberos PAM modules (`pam-krb5`,
+              `pam-ccreds`).
 
-    security.pam.services = mkOption {
-      default = {};
-      type = with types; attrsOf (submodule pamOpts);
-      description = lib.mdDoc ''
-        This option defines the PAM services.  A service typically
-        corresponds to a program that uses PAM,
-        e.g. {command}`login` or {command}`passwd`.
-        Each attribute of this set defines a PAM service, with the attribute name
-        defining the name of the service.
-      '';
-    };
+              If set, users can authenticate with their Kerberos password.
+              This requires a valid Kerberos configuration
+              (`config.krb5.enable` should be set to
+              `true`).
 
-    security.pam.makeHomeDir.skelDirectory = mkOption {
-      type = types.str;
-      default = "/var/empty";
-      example = "/etc/skel";
-      description = lib.mdDoc ''
-        Path to skeleton directory whose contents are copied to home
-        directories newly created by `pam_mkhomedir`.
-      '';
-    };
+              Note that the Kerberos PAM modules are not necessary when using SSS
+              to handle Kerberos authentication.
+            '';
+          };
+        };
+        p11 = {
+          enable = mkOption {
+            default = false;
+            type = types.bool;
+            description = lib.mdDoc ''
+              Enables P11 PAM (`pam_p11`) module.
 
-    security.pam.enableSSHAgentAuth = mkOption {
-      type = types.bool;
-      default = false;
-      description = lib.mdDoc ''
-        Enable sudo logins if the user's SSH agent provides a key
-        present in {file}`~/.ssh/authorized_keys`.
-        This allows machines to exclusively use SSH keys instead of
-        passwords.
-      '';
-    };
+              If set, users can log in with SSH keys and PKCS#11 tokens.
 
-    security.pam.enableOTPW = mkEnableOption (lib.mdDoc "the OTPW (one-time password) PAM module");
+              More information can be found [here](https://github.com/OpenSC/pam_p11).
+            '';
+          };
 
-    security.pam.krb5 = {
-      enable = mkOption {
-        default = config.krb5.enable;
-        defaultText = literalExpression "config.krb5.enable";
-        type = types.bool;
-        description = lib.mdDoc ''
-          Enables Kerberos PAM modules (`pam-krb5`,
-          `pam-ccreds`).
+          control = mkOption {
+            default = "sufficient";
+            type = types.enum ["required" "requisite" "sufficient" "optional"];
+            description = lib.mdDoc ''
+              This option sets pam "control".
+              If you want to have multi factor authentication, use "required".
+              If you want to use the PKCS#11 device instead of the regular password,
+              use "sufficient".
 
-          If set, users can authenticate with their Kerberos password.
-          This requires a valid Kerberos configuration
-          (`config.krb5.enable` should be set to
-          `true`).
+              Read
+              {manpage}`pam.conf(5)`
+              for better understanding of this option.
+            '';
+          };
+        };
+        u2f = {
+          enable = mkOption {
+            default = false;
+            type = types.bool;
+            description = lib.mdDoc ''
+              Enables U2F PAM (`pam-u2f`) module.
 
-          Note that the Kerberos PAM modules are not necessary when using SSS
-          to handle Kerberos authentication.
-        '';
+              If set, users listed in
+              {file}`$XDG_CONFIG_HOME/Yubico/u2f_keys` (or
+              {file}`$HOME/.config/Yubico/u2f_keys` if XDG variable is
+              not set) are able to log in with the associated U2F key. The path can
+              be changed using {option}`security.pam.u2f.authFile` option.
+
+              File format is:
+              `username:first_keyHandle,first_public_key: second_keyHandle,second_public_key`
+              This file can be generated using {command}`pamu2fcfg` command.
+
+              More information can be found [here](https://developers.yubico.com/pam-u2f/).
+            '';
+          };
+
+          authFile = mkOption {
+            default = null;
+            type = with types; nullOr path;
+            description = lib.mdDoc ''
+              By default `pam-u2f` module reads the keys from
+              {file}`$XDG_CONFIG_HOME/Yubico/u2f_keys` (or
+              {file}`$HOME/.config/Yubico/u2f_keys` if XDG variable is
+              not set).
+
+              If you want to change auth file locations or centralize database (for
+              example use {file}`/etc/u2f-mappings`) you can set this
+              option.
+
+              File format is:
+              `username:first_keyHandle,first_public_key: second_keyHandle,second_public_key`
+              This file can be generated using {command}`pamu2fcfg` command.
+
+              More information can be found [here](https://developers.yubico.com/pam-u2f/).
+            '';
+          };
+
+          appId = mkOption {
+            default = null;
+            type = with types; nullOr str;
+            description = lib.mdDoc ''
+              By default `pam-u2f` module sets the application
+              ID to `pam://$HOSTNAME`.
+
+              When using {command}`pamu2fcfg`, you can specify your
+              application ID with the `-i` flag.
+
+              More information can be found [here](https://developers.yubico.com/pam-u2f/Manuals/pam_u2f.8.html)
+            '';
+          };
+
+          origin = mkOption {
+            default = null;
+            type = with types; nullOr str;
+            description = lib.mdDoc ''
+              By default `pam-u2f` module sets the origin
+              to `pam://$HOSTNAME`.
+              Setting origin to an host independent value will allow you to
+              reuse credentials across machines
+
+              When using {command}`pamu2fcfg`, you can specify your
+              application ID with the `-o` flag.
+
+              More information can be found [here](https://developers.yubico.com/pam-u2f/Manuals/pam_u2f.8.html)
+            '';
+          };
+
+          control = mkOption {
+            default = "sufficient";
+            type = types.enum ["required" "requisite" "sufficient" "optional"];
+            description = lib.mdDoc ''
+              This option sets pam "control".
+              If you want to have multi factor authentication, use "required".
+              If you want to use U2F device instead of regular password, use "sufficient".
+
+              Read
+              {manpage}`pam.conf(5)`
+              for better understanding of this option.
+            '';
+          };
+
+          debug = mkOption {
+            default = false;
+            type = types.bool;
+            description = lib.mdDoc ''
+              Debug output to stderr.
+            '';
+          };
+
+          interactive = mkOption {
+            default = false;
+            type = types.bool;
+            description = lib.mdDoc ''
+              Set to prompt a message and wait before testing the presence of a U2F device.
+              Recommended if your device doesn’t have a tactile trigger.
+            '';
+          };
+
+          cue = mkOption {
+            default = false;
+            type = types.bool;
+            description = lib.mdDoc ''
+              By default `pam-u2f` module does not inform user
+              that he needs to use the u2f device, it just waits without a prompt.
+
+              If you set this option to `true`,
+              `cue` option is added to `pam-u2f`
+              module and reminder message will be displayed.
+            '';
+          };
+        };
+        ussh = {
+          enable = mkOption {
+            default = false;
+            type = types.bool;
+            description = lib.mdDoc ''
+              Enables Uber's USSH PAM (`pam-ussh`) module.
+
+              This is similar to `pam-ssh-agent`, except that
+              the presence of a CA-signed SSH key with a valid principal is checked
+              instead.
+
+              Note that this module must both be enabled using this option and on a
+              per-PAM-service level as well (using `usshAuth`).
+
+              More information can be found [here](https://github.com/uber/pam-ussh).
+            '';
+          };
+
+          caFile = mkOption {
+            default = null;
+            type = with types; nullOr path;
+            description = lib.mdDoc ''
+              By default `pam-ussh` reads the trusted user CA keys
+              from {file}`/etc/ssh/trusted_user_ca`.
+
+              This should be set the same as your `TrustedUserCAKeys`
+              option for sshd.
+            '';
+          };
+
+          authorizedPrincipals = mkOption {
+            default = null;
+            type = with types; nullOr commas;
+            description = lib.mdDoc ''
+              Comma-separated list of authorized principals to permit; if the user
+              presents a certificate with one of these principals, then they will be
+              authorized.
+
+              Note that `pam-ussh` also requires that the certificate
+              contain a principal matching the user's username. The principals from
+              this list are in addition to those principals.
+
+              Mutually exclusive with `authorizedPrincipalsFile`.
+            '';
+          };
+
+          authorizedPrincipalsFile = mkOption {
+            default = null;
+            type = with types; nullOr path;
+            description = lib.mdDoc ''
+              Path to a list of principals; if the user presents a certificate with
+              one of these principals, then they will be authorized.
+
+              Note that `pam-ussh` also requires that the certificate
+              contain a principal matching the user's username. The principals from
+              this file are in addition to those principals.
+
+              Mutually exclusive with `authorizedPrincipals`.
+            '';
+          };
+
+          group = mkOption {
+            default = null;
+            type = with types; nullOr str;
+            description = lib.mdDoc ''
+              If set, then the authenticating user must be a member of this group
+              to use this module.
+            '';
+          };
+
+          control = mkOption {
+            default = "sufficient";
+            type = types.enum ["required" "requisite" "sufficient" "optional"];
+            description = lib.mdDoc ''
+              This option sets pam "control".
+              If you want to have multi factor authentication, use "required".
+              If you want to use the SSH certificate instead of the regular password,
+              use "sufficient".
+
+              Read
+              {manpage}`pam.conf(5)`
+              for better understanding of this option.
+            '';
+          };
+        };
+        yubico = {
+          enable = mkOption {
+            default = false;
+            type = types.bool;
+            description = lib.mdDoc ''
+              Enables Yubico PAM (`yubico-pam`) module.
+
+              If set, users listed in
+              {file}`~/.yubico/authorized_yubikeys`
+              are able to log in with the associated Yubikey tokens.
+
+              The file must have only one line:
+              `username:yubikey_token_id1:yubikey_token_id2`
+              More information can be found [here](https://developers.yubico.com/yubico-pam/).
+            '';
+          };
+          control = mkOption {
+            default = "sufficient";
+            type = types.enum ["required" "requisite" "sufficient" "optional"];
+            description = lib.mdDoc ''
+              This option sets pam "control".
+              If you want to have multi factor authentication, use "required".
+              If you want to use Yubikey instead of regular password, use "sufficient".
+
+              Read
+              {manpage}`pam.conf(5)`
+              for better understanding of this option.
+            '';
+          };
+          id = mkOption {
+            example = "42";
+            type = types.str;
+            description = lib.mdDoc "client id";
+          };
+
+          debug = mkOption {
+            default = false;
+            type = types.bool;
+            description = lib.mdDoc ''
+              Debug output to stderr.
+            '';
+          };
+          mode = mkOption {
+            default = "client";
+            type = types.enum ["client" "challenge-response"];
+            description = lib.mdDoc ''
+              Mode of operation.
+
+              Use "client" for online validation with a YubiKey validation service such as
+              the YubiCloud.
+
+              Use "challenge-response" for offline validation using YubiKeys with HMAC-SHA-1
+              Challenge-Response configurations. See the man-page ykpamcfg(1) for further
+              details on how to configure offline Challenge-Response validation.
+
+              More information can be found [here](https://developers.yubico.com/yubico-pam/Authentication_Using_Challenge-Response.html).
+            '';
+          };
+          challengeResponsePath = mkOption {
+            default = null;
+            type = types.nullOr types.path;
+            description = lib.mdDoc ''
+              If not null, set the path used by yubico pam module where the challenge expected response is stored.
+
+              More information can be found [here](https://developers.yubico.com/yubico-pam/Authentication_Using_Challenge-Response.html).
+            '';
+          };
+        };
+        enableEcryptfs = mkEnableOption (lib.mdDoc "eCryptfs PAM module (mounting ecryptfs home directory on login)");
+        enableFscrypt = mkEnableOption (lib.mdDoc ''
+          Enables fscrypt to automatically unlock directories with the user's login password.
+
+          This also enables a service at security.pam.services.fscrypt which is used by
+          fscrypt to verify the user's password when setting up a new protector. If you
+          use something other than pam_unix to verify user passwords, please remember to
+          adjust this PAM service.
+        '');
       };
     };
 
-    security.pam.p11 = {
-      enable = mkOption {
-        default = false;
-        type = types.bool;
-        description = lib.mdDoc ''
-          Enables P11 PAM (`pam_p11`) module.
-
-          If set, users can log in with SSH keys and PKCS#11 tokens.
-
-          More information can be found [here](https://github.com/OpenSC/pam_p11).
-        '';
-      };
-
-      control = mkOption {
-        default = "sufficient";
-        type = types.enum ["required" "requisite" "sufficient" "optional"];
-        description = lib.mdDoc ''
-          This option sets pam "control".
-          If you want to have multi factor authentication, use "required".
-          If you want to use the PKCS#11 device instead of the regular password,
-          use "sufficient".
-
-          Read
-          {manpage}`pam.conf(5)`
-          for better understanding of this option.
-        '';
-      };
-    };
-
-    security.pam.u2f = {
-      enable = mkOption {
-        default = false;
-        type = types.bool;
-        description = lib.mdDoc ''
-          Enables U2F PAM (`pam-u2f`) module.
-
-          If set, users listed in
-          {file}`$XDG_CONFIG_HOME/Yubico/u2f_keys` (or
-          {file}`$HOME/.config/Yubico/u2f_keys` if XDG variable is
-          not set) are able to log in with the associated U2F key. The path can
-          be changed using {option}`security.pam.u2f.authFile` option.
-
-          File format is:
-          `username:first_keyHandle,first_public_key: second_keyHandle,second_public_key`
-          This file can be generated using {command}`pamu2fcfg` command.
-
-          More information can be found [here](https://developers.yubico.com/pam-u2f/).
-        '';
-      };
-
-      authFile = mkOption {
+    users = {
+      motd = mkOption {
         default = null;
-        type = with types; nullOr path;
-        description = lib.mdDoc ''
-          By default `pam-u2f` module reads the keys from
-          {file}`$XDG_CONFIG_HOME/Yubico/u2f_keys` (or
-          {file}`$HOME/.config/Yubico/u2f_keys` if XDG variable is
-          not set).
-
-          If you want to change auth file locations or centralize database (for
-          example use {file}`/etc/u2f-mappings`) you can set this
-          option.
-
-          File format is:
-          `username:first_keyHandle,first_public_key: second_keyHandle,second_public_key`
-          This file can be generated using {command}`pamu2fcfg` command.
-
-          More information can be found [here](https://developers.yubico.com/pam-u2f/).
-        '';
+        example = "Today is Sweetmorn, the 4th day of The Aftermath in the YOLD 3178.";
+        type = types.nullOr types.lines;
+        description = lib.mdDoc "Message of the day shown to users when they log in.";
       };
-
-      appId = mkOption {
+      motdFile = mkOption {
         default = null;
-        type = with types; nullOr str;
-        description = lib.mdDoc ''
-          By default `pam-u2f` module sets the application
-          ID to `pam://$HOSTNAME`.
-
-          When using {command}`pamu2fcfg`, you can specify your
-          application ID with the `-i` flag.
-
-          More information can be found [here](https://developers.yubico.com/pam-u2f/Manuals/pam_u2f.8.html)
-        '';
-      };
-
-      origin = mkOption {
-        default = null;
-        type = with types; nullOr str;
-        description = lib.mdDoc ''
-          By default `pam-u2f` module sets the origin
-          to `pam://$HOSTNAME`.
-          Setting origin to an host independent value will allow you to
-          reuse credentials across machines
-
-          When using {command}`pamu2fcfg`, you can specify your
-          application ID with the `-o` flag.
-
-          More information can be found [here](https://developers.yubico.com/pam-u2f/Manuals/pam_u2f.8.html)
-        '';
-      };
-
-      control = mkOption {
-        default = "sufficient";
-        type = types.enum ["required" "requisite" "sufficient" "optional"];
-        description = lib.mdDoc ''
-          This option sets pam "control".
-          If you want to have multi factor authentication, use "required".
-          If you want to use U2F device instead of regular password, use "sufficient".
-
-          Read
-          {manpage}`pam.conf(5)`
-          for better understanding of this option.
-        '';
-      };
-
-      debug = mkOption {
-        default = false;
-        type = types.bool;
-        description = lib.mdDoc ''
-          Debug output to stderr.
-        '';
-      };
-
-      interactive = mkOption {
-        default = false;
-        type = types.bool;
-        description = lib.mdDoc ''
-          Set to prompt a message and wait before testing the presence of a U2F device.
-          Recommended if your device doesn’t have a tactile trigger.
-        '';
-      };
-
-      cue = mkOption {
-        default = false;
-        type = types.bool;
-        description = lib.mdDoc ''
-          By default `pam-u2f` module does not inform user
-          that he needs to use the u2f device, it just waits without a prompt.
-
-          If you set this option to `true`,
-          `cue` option is added to `pam-u2f`
-          module and reminder message will be displayed.
-        '';
-      };
-    };
-
-    security.pam.ussh = {
-      enable = mkOption {
-        default = false;
-        type = types.bool;
-        description = lib.mdDoc ''
-          Enables Uber's USSH PAM (`pam-ussh`) module.
-
-          This is similar to `pam-ssh-agent`, except that
-          the presence of a CA-signed SSH key with a valid principal is checked
-          instead.
-
-          Note that this module must both be enabled using this option and on a
-          per-PAM-service level as well (using `usshAuth`).
-
-          More information can be found [here](https://github.com/uber/pam-ussh).
-        '';
-      };
-
-      caFile = mkOption {
-        default = null;
-        type = with types; nullOr path;
-        description = lib.mdDoc ''
-          By default `pam-ussh` reads the trusted user CA keys
-          from {file}`/etc/ssh/trusted_user_ca`.
-
-          This should be set the same as your `TrustedUserCAKeys`
-          option for sshd.
-        '';
-      };
-
-      authorizedPrincipals = mkOption {
-        default = null;
-        type = with types; nullOr commas;
-        description = lib.mdDoc ''
-          Comma-separated list of authorized principals to permit; if the user
-          presents a certificate with one of these principals, then they will be
-          authorized.
-
-          Note that `pam-ussh` also requires that the certificate
-          contain a principal matching the user's username. The principals from
-          this list are in addition to those principals.
-
-          Mutually exclusive with `authorizedPrincipalsFile`.
-        '';
-      };
-
-      authorizedPrincipalsFile = mkOption {
-        default = null;
-        type = with types; nullOr path;
-        description = lib.mdDoc ''
-          Path to a list of principals; if the user presents a certificate with
-          one of these principals, then they will be authorized.
-
-          Note that `pam-ussh` also requires that the certificate
-          contain a principal matching the user's username. The principals from
-          this file are in addition to those principals.
-
-          Mutually exclusive with `authorizedPrincipals`.
-        '';
-      };
-
-      group = mkOption {
-        default = null;
-        type = with types; nullOr str;
-        description = lib.mdDoc ''
-          If set, then the authenticating user must be a member of this group
-          to use this module.
-        '';
-      };
-
-      control = mkOption {
-        default = "sufficient";
-        type = types.enum ["required" "requisite" "sufficient" "optional"];
-        description = lib.mdDoc ''
-          This option sets pam "control".
-          If you want to have multi factor authentication, use "required".
-          If you want to use the SSH certificate instead of the regular password,
-          use "sufficient".
-
-          Read
-          {manpage}`pam.conf(5)`
-          for better understanding of this option.
-        '';
-      };
-    };
-
-    security.pam.yubico = {
-      enable = mkOption {
-        default = false;
-        type = types.bool;
-        description = lib.mdDoc ''
-          Enables Yubico PAM (`yubico-pam`) module.
-
-          If set, users listed in
-          {file}`~/.yubico/authorized_yubikeys`
-          are able to log in with the associated Yubikey tokens.
-
-          The file must have only one line:
-          `username:yubikey_token_id1:yubikey_token_id2`
-          More information can be found [here](https://developers.yubico.com/yubico-pam/).
-        '';
-      };
-      control = mkOption {
-        default = "sufficient";
-        type = types.enum ["required" "requisite" "sufficient" "optional"];
-        description = lib.mdDoc ''
-          This option sets pam "control".
-          If you want to have multi factor authentication, use "required".
-          If you want to use Yubikey instead of regular password, use "sufficient".
-
-          Read
-          {manpage}`pam.conf(5)`
-          for better understanding of this option.
-        '';
-      };
-      id = mkOption {
-        example = "42";
-        type = types.str;
-        description = lib.mdDoc "client id";
-      };
-
-      debug = mkOption {
-        default = false;
-        type = types.bool;
-        description = lib.mdDoc ''
-          Debug output to stderr.
-        '';
-      };
-      mode = mkOption {
-        default = "client";
-        type = types.enum ["client" "challenge-response"];
-        description = lib.mdDoc ''
-          Mode of operation.
-
-          Use "client" for online validation with a YubiKey validation service such as
-          the YubiCloud.
-
-          Use "challenge-response" for offline validation using YubiKeys with HMAC-SHA-1
-          Challenge-Response configurations. See the man-page ykpamcfg(1) for further
-          details on how to configure offline Challenge-Response validation.
-
-          More information can be found [here](https://developers.yubico.com/yubico-pam/Authentication_Using_Challenge-Response.html).
-        '';
-      };
-      challengeResponsePath = mkOption {
-        default = null;
+        example = "/etc/motd";
         type = types.nullOr types.path;
-        description = lib.mdDoc ''
-          If not null, set the path used by yubico pam module where the challenge expected response is stored.
-
-          More information can be found [here](https://developers.yubico.com/yubico-pam/Authentication_Using_Challenge-Response.html).
-        '';
+        description = lib.mdDoc "A file containing the message of the day shown to users when they log in.";
       };
-    };
-
-    security.pam.enableEcryptfs = mkEnableOption (lib.mdDoc "eCryptfs PAM module (mounting ecryptfs home directory on login)");
-    security.pam.enableFscrypt = mkEnableOption (lib.mdDoc ''
-      Enables fscrypt to automatically unlock directories with the user's login password.
-
-      This also enables a service at security.pam.services.fscrypt which is used by
-      fscrypt to verify the user's password when setting up a new protector. If you
-      use something other than pam_unix to verify user passwords, please remember to
-      adjust this PAM service.
-    '');
-
-    users.motd = mkOption {
-      default = null;
-      example = "Today is Sweetmorn, the 4th day of The Aftermath in the YOLD 3178.";
-      type = types.nullOr types.lines;
-      description = lib.mdDoc "Message of the day shown to users when they log in.";
-    };
-
-    users.motdFile = mkOption {
-      default = null;
-      example = "/etc/motd";
-      type = types.nullOr types.path;
-      description = lib.mdDoc "A file containing the message of the day shown to users when they log in.";
     };
   };
 
@@ -1298,15 +1297,6 @@ in {
       ++ optionals config.security.pam.u2f.enable [pkgs.pam_u2f];
 
     boot.supportedFilesystems = optionals config.security.pam.enableEcryptfs ["ecryptfs"];
-
-    security.wrappers = {
-      unix_chkpwd = {
-        setuid = true;
-        owner = "root";
-        group = "root";
-        source = "${pkgs.pam}/bin/unix_chkpwd";
-      };
-    };
 
     environment.etc = mapAttrs' makePAMService config.security.pam.services;
 

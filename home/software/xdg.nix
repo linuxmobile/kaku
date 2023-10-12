@@ -1,6 +1,5 @@
-{ config, ... }:
-let
-  browser = [ "brave.desktop" ];
+{config, ...}: let
+  browser = ["brave.desktop"];
 
   # XDG MIME types
   associations = {
@@ -12,20 +11,20 @@ let
     "application/xhtml+xml" = browser;
     "text/html" = browser;
     "x-scheme-handler/about" = browser;
-    "x-scheme-handler/chrome" = [ "chromium-browser.desktop" ];
+    "x-scheme-handler/chrome" = ["chromium-browser.desktop"];
     "x-scheme-handler/ftp" = browser;
     "x-scheme-handler/http" = browser;
     "x-scheme-handler/https" = browser;
     "x-scheme-handler/unknown" = browser;
 
-    "audio/*" = [ "mpv.desktop" ];
-    "video/*" = [ "mpv.dekstop" ];
-    "image/*" = [ "imv.desktop" ];
+    "audio/*" = ["mpv.desktop"];
+    "video/*" = ["mpv.dekstop"];
+    "image/*" = ["imv.desktop"];
     "application/json" = browser;
-    "application/pdf" = [ "org.pwmt.zathura.desktop.desktop" ];
-    "x-scheme-handler/discord" = [ "discord.desktop" ];
-    "x-scheme-handler/spotify" = [ "spotify.desktop" ];
-    "x-scheme-handler/tg" = [ "telegramdesktop.desktop" ];
+    "application/pdf" = ["org.pwmt.zathura.desktop.desktop"];
+    "x-scheme-handler/discord" = ["discord.desktop"];
+    "x-scheme-handler/spotify" = ["spotify.desktop"];
+    "x-scheme-handler/tg" = ["telegramdesktop.desktop"];
   };
 in {
   xdg = {
@@ -40,14 +39,6 @@ in {
     userDirs = {
       enable = true;
       createDirectories = true;
-      documents = "$HOME/Documents";
-      download = "$HOME/Downloads";
-      videos = "$HOME/Videos";
-      music = "$HOME/Music";
-      pictures = "$HOME/Pictures";
-      desktop = "$HOME/Desktop";
-      publicShare = "$HOME/Share";
-      templates = "$HOME/Templates";
       extraConfig = {
         XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
         XDG_DEV_DIR = "$HOME/Dev";

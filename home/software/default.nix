@@ -9,8 +9,8 @@
     ./media.nix
     ./git.nix
     ./gtk.nix
-    ./packages.nix
     ./qt.nix
+    ./packages.nix
     ./spicetify.nix
     ./xdg.nix
 

@@ -15,7 +15,6 @@
       dots = "$HOME/Dev/nixland";
       pics = "$HOME/Pictures";
       vids = "$HOME/Videos";
-      nixpkgs = "$HOME/Dev/git/nixpkgs";
     };
     dotDir = ".config/zsh";
     history = {

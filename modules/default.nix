@@ -5,7 +5,9 @@
   ...
 }: let
   # system-agnostic args
-  module_args._module.args = {inherit default inputs self;};
+  module_args._module.args = {
+    inherit default inputs self;
+  };
 in {
   imports = [
     {
@@ -15,16 +17,20 @@ in {
 
         # NixOS modules
         sharedModules = [
-          {home-manager.useGlobalPkgs = true;}
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+            };
+          }
           inputs.agenix.nixosModules.default
           inputs.hm.nixosModule
           inputs.hyprland.nixosModules.default
           inputs.nh.nixosModules.default
-          inputs.lanzaboote.nixosModules.lanzaboote
           module_args
-          ./system.nix
-          ./nix.nix
-          # ./pam.nix
+
+          self.nixosModules.core
+          self.nixosModules.nix
           ./security.nix
         ];
       };
@@ -32,9 +38,8 @@ in {
   ];
 
   flake.nixosModules = {
-    core = import ./system.nix;
+    core = import ./core.nix;
     desktop = import ./desktop.nix;
-    lanzaboote = import ./lanzaboote.nix;
     nix = import ./nix.nix;
   };
 }
