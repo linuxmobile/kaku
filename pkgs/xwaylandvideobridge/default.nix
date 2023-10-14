@@ -26,7 +26,7 @@ stdenv.mkDerivation {
   patches = [
     (fetchpatch {
       url = "https://aur.archlinux.org/cgit/aur.git/plain/cursor-mode.patch?h=xwaylandvideobridge-cursor-mode-2-git";
-      hash = "sha256-ynxv914irLRAfjo0mjrXkcr++Sdxzvd9b2RvvA0HBGo=";
+      hash = "sha256-649kCs3Fsz8VCgGpZ952Zgl8txAcTgakLoMusaJQYa4=";
     })
   ];
 
