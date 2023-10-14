@@ -15,20 +15,18 @@
     duf
     ripgrep
     zoxide
+    fd
+    killall
+    yazi
   ];
 
   programs = {
     bat = {
       enable = true;
       config = {
-        pager = "less -FR";
-        theme = "Catppuccin-mocha";
-      };
-      themes = {
-        Catppuccin-mocha = builtins.readFile (pkgs.fetchurl {
-          url = "https://raw.githubusercontent.com/catppuccin/bat/main/Catppuccin-mocha.tmTheme";
-          hash = "sha256-qMQNJGZImmjrqzy7IiEkY5IhvPAMZpq0W6skLLsng/w=";
-        });
+        pager = "never";
+        style = "plain";
+        theme = "base16";
       };
     };
 
@@ -44,6 +42,14 @@
         "--preview 'exa --icons --git --color always -T -L 3 {} | head -200'"
         "--exact"
       ];
+    };
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+    dircolors = {
+      enable = true;
+      enableZshIntegration = true;
     };
   };
 }

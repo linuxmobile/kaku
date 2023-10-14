@@ -46,20 +46,6 @@
         gnupg_path=$(ls $XDG_RUNTIME_DIR/gnupg)
         export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gnupg/$gnupg_path/S.gpg-agent.ssh"
       ''}
-
-      ${lib.optionalString config.programs.kitty.enable ''
-        if test -n "$KITTY_INSTALLATION_DIR"; then
-          export KITTY_SHELL_INTEGRATION="enabled"
-          autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
-          kitty-integration
-          unfunction kitty-integration
-        fi
-      ''}
-
-      # run programs that are not in PATH with comma
-      command_not_found_handler() {
-        ${pkgs.comma}/bin/comma "$@"
-      }
     '';
 
     shellAliases = {

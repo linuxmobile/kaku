@@ -2,7 +2,7 @@
   programs.vscode = {
     enable = true;
     enableExtensionUpdateCheck = true;
-    enableUpdateCheck = true;
+    enableUpdateCheck = false;
     extensions = with pkgs.vscode-extensions;
       [
         bbenoist.nix
