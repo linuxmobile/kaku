@@ -18,7 +18,6 @@
           (lib.makeBinPath [
             marksman
             nil
-            nodePackages.bash-language-server
             nodePackages.vscode-css-languageserver-bin
             nodePackages.vscode-langservers-extracted
             nodePackages.typescript-language-server
