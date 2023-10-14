@@ -15,6 +15,7 @@
       "rd.udev.log_level=3"
     ];
     supportedFilesystems = ["ntfs"];
+    tmp.cleanOnBoot = true;
   };
 
   boot.loader = {

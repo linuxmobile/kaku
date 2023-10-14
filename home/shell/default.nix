@@ -14,7 +14,7 @@ in {
     # enable scrolling in git diff
     DELTA_PAGER = "less -R";
 
-    EDITOR = "nvim";
+    EDITOR = "hx";
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
     MANROFFOPT = "-c";
     DIRENV_LOG_FORMAT = "";

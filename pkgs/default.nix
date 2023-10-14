@@ -9,9 +9,9 @@
       xwaylandvideobridge =
         pkgs.libsForQt5.callPackage ./xwaylandvideobridge {};
 
-      nvchad = pkgs.callPackage ./nvchad {};
+      # nvchad = pkgs.callPackage ./nvchad {};
 
-      kodo = pkgs.callPackage ./kodo {};
+      # kodo = pkgs.callPackage ./kodo {};
     };
   };
 }

@@ -14,15 +14,15 @@
 
   # linuxmobile font -> AestheticIosevka Nerd Font Mono
   terminal = {
-    font = "CartographCF Nerd Font";
+    font = "Maple Mono SC NF";
     name = "wezterm";
-    opacity = 1.0;
+    opacity = 0.9;
     size = 9;
   };
 
   # TODO: Change this later
   wallpaper = builtins.fetchurl {
-    url = "https://raw.githubusercontent.com/linuxmobile/hyprland-dots/Sakura/.wallpapers/catgirl.jpg";
-    sha256 = "sha256-5ON6GQ1yEFF/6ChUVgWAlLO9PnvGEBfGOeyOcWlGMlM=";
+    url = "https://i.postimg.cc/nHgTxD3L/IMG-20230317-222628.png";
+    sha256 = "sha256-UUKSyOFC7M+cqK/YiItWLp0Myp3IIJOadr5i+eE3COw=";
   };
 }

@@ -13,7 +13,7 @@
         ...
       }: {
         devShells.default = pkgs.mkShell {
-          packages = [pkgs.alejandra pkgs.git config.packages.repl];
+          packages = [pkgs.alejandra pkgs.git config.packages.repl pkgs.nodePackages.prettier];
           name = "nixland";
           DIRENV_LOG_FORMAT = "";
         };
@@ -70,6 +70,12 @@
 
     spicetify-nix = {
       url = "github:the-argus/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    helix = {
+      url = "github:SoraTenshi/helix/new-daily-driver";
+      inputs.flake-utils.follows = "fu";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

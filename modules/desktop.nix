@@ -8,11 +8,14 @@
       # icon fonts
       material-symbols
       # normal fonts
-      lexend
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
       roboto
+
+      maple-mono
+      maple-mono-NF
+      maple-mono-SC-NF
       # nerdfonts
       (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
     ];
@@ -22,12 +25,12 @@
     # user defined fonts
     # the reason there's Noto Color Emoji everywhere is to override DejaVu's
     # B&W emojis that would sometimes show instead of some Color emojis
-    # fontconfig.defaultFonts = {
-    #   serif = ["Noto Serif" "Noto Color Emoji"];
-    #   sansSerif = ["Noto Sans" "Noto Color Emoji"];
-    #   monospace = ["CartographCF Nerd Font" "Noto Color Emoji"];
-    #   emoji = ["Noto Color Emoji"];
-    # };
+    fontconfig.defaultFonts = {
+      serif = ["Noto Serif"];
+      sansSerif = ["Noto Sans"];
+      monospace = ["Maple Mono SC NF"];
+      # emoji = ["Noto Color Emoji"];
+    };
   };
 
   # use Wayland where possible (electron)
@@ -64,11 +67,11 @@
     seahorse.enable = true;
   };
 
-  qt = {
-    enable = true;
-    platformTheme = "gtk2";
-    style = "gtk2";
-  };
+  #qt = {
+  #  enable = true;
+  #  platformTheme = "gtk2";
+  #  style = "gtk2";
+  #};
 
   services = {
     # provide location
@@ -90,7 +93,7 @@
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
-      jack.enable = true;
+      # jack.enable = true;
       pulse.enable = true;
 
       # see https://github.com/fufexan/nix-gaming/#pipewire-low-latency

@@ -40,12 +40,6 @@
           sha256 = "sha256-Jt5WBX/ETehIPOh+Vdn4Rsqe2ueBsba7B6IZQ0r/QHI=";
         }
         {
-          name = "discord-vscode";
-          publisher = "icrawl";
-          version = "5.8.0";
-          sha256 = "sha256-IU/looiu6tluAp8u6MeSNCd7B8SSMZ6CEZ64mMsTNmU=";
-        }
-        {
           name = "unocss";
           publisher = "antfu";
           version = "0.54.1";
@@ -55,13 +49,12 @@
     userSettings = {
       "workbench.iconTheme" = "catppuccin-perfect-mocha";
       "workbench.colorTheme" = "Gentle Vintage Dark";
-      "catppuccin.accentColor" = "mauve";
-      "editor.fontFamily" = "Cartograph CF Nerd Font, Catppuccin Perfect Mocha, 'monospace', monospace";
+      "editor.fontFamily" = "Maple Mono SC NF, Catppuccin Perfect Mocha, 'monospace', monospace";
       "editor.fontSize" = 12;
       "editor.fontLigatures" = true;
       "workbench.fontAliasing" = "antialiased";
       "files.trimTrailingWhitespace" = true;
-      "terminal.integrated.fontFamily" = "Cartograph CF Nerd Font";
+      "terminal.integrated.fontFamily" = "Maple Mono SC NF";
       "window.titleBarStyle" = "custom";
       "terminal.integrated.automationShell.linux" = "nix-shell";
       "terminal.integrated.defaultProfile.linux" = "zsh";

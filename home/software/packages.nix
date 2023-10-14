@@ -33,8 +33,8 @@
     pywal
 
     # nvim servers
-    nixfmt
-    rnix-lsp
-    deno
+    # nixfmt
+    # rnix-lsp
+    # deno
   ];
 }
