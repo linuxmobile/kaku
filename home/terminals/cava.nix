@@ -7,10 +7,10 @@
   home.file.".config/cava/config".text = ''
     [general]
     ; mode = normal
-    framerate = 60
+    ; framerate = 60
     ; autosens = 1
     ; overshoot = 20
-    sensitivity = 50
+    ; sensitivity = 50
     ; bars = 0
     ; bar_width = 2
     ; bar_spacing = 1
@@ -24,7 +24,7 @@
 
     [input]
     ; method = pulse
-    source = auto
+    ; source = auto
     ; method = alsa
     ; source = hw:Loopback,1
     ; method = fifo
@@ -60,23 +60,16 @@
     ; foreground = '#33cccc'
 
 
-    gradient = 1
-    gradient_count = 8
-    gradient_color_1 = '${default.xcolors.color0}'
-    gradient_color_2 = '${default.xcolors.color8}'
-    gradient_color_3 = '${default.xcolors.color14}'
-    gradient_color_4 = '${default.xcolors.color6}'
-    gradient_color_5 = '${default.xcolors.color12}'
-    gradient_color_6 = '${default.xcolors.color4}'
-    gradient_color_7 = '${default.xcolors.color9}'
-    gradient_color_8 = '${default.xcolors.color1}'
-
-    ; gradient_color_1 = '#D5CADE'
-    ; gradient_color_2 = '#DCC7CC'
-    ; gradient_color_3 = '#E8C4AE'
-    ; gradient_color_4 = '#F1C096'
-    ; gradient_color_5 = '#F6BE89'
-    ; gradient_color_6 = '#FDBC78'
+    ; gradient = 1
+    ; gradient_count = 8
+    ; gradient_color_1 = '${default.xcolors.color0}'
+    ; gradient_color_2 = '${default.xcolors.color8}'
+    ; gradient_color_3 = '${default.xcolors.color14}'
+    ; gradient_color_4 = '${default.xcolors.color6}'
+    ; gradient_color_5 = '${default.xcolors.color12}'
+    ; gradient_color_6 = '${default.xcolors.color4}'
+    ; gradient_color_7 = '${default.xcolors.color9}'
+    ; gradient_color_8 = '${default.xcolors.color1}'
 
     [smoothing]
     ; integral = 77

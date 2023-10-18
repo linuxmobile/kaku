@@ -26,12 +26,12 @@
     };
 
     theme = {
-      name = "Catppuccin-Mocha-Compact-Lavender-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = ["lavender"];
-        tweaks = ["rimless" "black"];
-        size = "compact";
-        variant = "mocha";
+      name = "gruvbox-dark";
+      package = pkgs.gruvbox-dark-gtk.override {
+        #   accents = ["lavender"];
+        #   tweaks = ["rimless" "black"];
+        #   size = "compact";
+        #   variant = "mocha";
       };
     };
 

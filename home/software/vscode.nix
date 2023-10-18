@@ -28,10 +28,10 @@
           sha256 = "sha256-6qQPKB0LlBYAMEYPpjl6NAJyqutLFv+g+XGw4hTV1Nw=";
         }
         {
-          name = "rose-pine-burnt";
-          publisher = "SulSami";
-          version = "1.0.3";
-          sha256 = "sha256-EgDxfzL++nUSZB1Gx/vBoH2jbojxxTKPs28iS2Z8jxM=";
+          name = "mayukaithemevsc";
+          publisher = "GulajavaMinistudio";
+          version = "3.2.4";
+          sha256 = "sha256-V2hAxIVu2YWonwcIG+9n300b88jzPOnKYUFt1okSX4w=";
         }
         {
           name = "copilot-chat";
@@ -48,7 +48,7 @@
       ];
     userSettings = {
       "workbench.iconTheme" = "catppuccin-perfect-mocha";
-      "workbench.colorTheme" = "Rosé Pine Burnt";
+      "workbench.colorTheme" = "Mayukai Mirage Gruvbox Darktooth";
       "editor.fontFamily" = "Maple Mono SC NF, Catppuccin Perfect Mocha, 'monospace', monospace";
       "editor.fontSize" = 12;
       "editor.fontLigatures" = true;

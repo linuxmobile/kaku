@@ -111,16 +111,16 @@ _: {
       format = "{icon} {volume}%";
       format-muted = "";
       format-icons = {default = ["" "" ""];};
-      on-click = "bash ~/.scripts/volume mute";
-      on-scroll-up = "bash ~/.scripts/volume up";
-      on-scroll-down = "bash ~/.scripts/volume down";
+      on-click = "bash ~/.config/hypr/scripts/volume mute";
+      on-scroll-up = "bash ~/.config/hypr/scripts/volume up";
+      on-scroll-down = "bash ~/.config/hypr/scripts/volume down";
       scroll-step = 5;
       on-click-right = "pavucontrol";
       tooltip = false;
     };
 
     "custom/launcher" = {
-      format = "";
+      format = "{}";
       size = 18;
       # on-click = "notify-send -t 1 'swww' '1' & ~/.config/hypr/scripts/wall";
       tooltip = false;

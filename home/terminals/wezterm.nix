@@ -87,7 +87,7 @@
            },
          },
 
-        color_scheme = "followSystem",
+        color_scheme = "GruvboxDarkHard",
         window_background_opacity = ${toString default.terminal.opacity},
         warn_about_missing_glyphs = false,
         enable_scroll_bar = false,
