@@ -14,7 +14,7 @@
     sidebarConfig = true;
     enabledCustomApps = with spicePkgs.apps; [lyrics-plus new-releases];
     theme = spicePkgs.themes.text;
-    colorScheme = "gruvbox";
+    colorScheme = "kanagawa";
     enabledExtensions = with spicePkgs.extensions; [
       hidePodcasts
       shuffle

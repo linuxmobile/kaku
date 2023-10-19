@@ -70,7 +70,7 @@
       list > #plugin:hover { padding: .6rem; }
 
       box#main {
-        background: rgba(20, 22, 23, .5);
+        background: rgba(31, 31, 40, .5);
         box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1), 0 0 0 1px rgba(0, 0, 0, .5);
         border-radius: 24px;
         padding: .3rem;

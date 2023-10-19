@@ -15,7 +15,7 @@ in ''
     min-height: 0;
   }
   window#waybar {
-    background: rgba(20,22,23,.85);
+    background: rgba(31,31,40,.85);
     transition-property: background-color;
     transition-duration: .5s;
     color: ${default.xcolors.fg}

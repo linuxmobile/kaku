@@ -30,7 +30,6 @@
 
     neofetch
     gnome.file-roller
-    pywal
 
     # nvim servers
     # nixfmt
