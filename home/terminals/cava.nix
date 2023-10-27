@@ -61,15 +61,15 @@
 
 
     ; gradient = 1
-    ; gradient_count = 8
-    ; gradient_color_1 = '${default.xcolors.color0}'
-    ; gradient_color_2 = '${default.xcolors.color8}'
-    ; gradient_color_3 = '${default.xcolors.color14}'
-    ; gradient_color_4 = '${default.xcolors.color6}'
-    ; gradient_color_5 = '${default.xcolors.color12}'
-    ; gradient_color_6 = '${default.xcolors.color4}'
-    ; gradient_color_7 = '${default.xcolors.color9}'
-    ; gradient_color_8 = '${default.xcolors.color1}'
+    gradient_count = 8
+    gradient_color_1 = '${default.xcolors.color10}'
+    gradient_color_2 = '${default.xcolors.color10}'
+    gradient_color_3 = '${default.xcolors.color10}'
+    gradient_color_4 = '${default.xcolors.color10}'
+    gradient_color_5 = '${default.xcolors.color3}'
+    gradient_color_6 = '${default.xcolors.color3}'
+    gradient_color_7 = '${default.xcolors.color1}'
+    gradient_color_8 = '${default.xcolors.color1}'
 
     [smoothing]
     ; integral = 77

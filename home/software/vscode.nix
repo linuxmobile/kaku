@@ -25,7 +25,7 @@
           name = "catppuccin-perfect-icons";
           publisher = "thang-nm";
           version = "0.21.24";
-          sha256 = "sha256-6qQPKB0LlBYAMEYPpjl6NAJyqutLFv+g+XGw4hTV1Nw=";
+          sha256 = "sha256-ax2n0YyO7q4LkrPBbik2P+s/s3tZZick91kvZsfWsVc=";
         }
         {
           name = "kanagawa";
@@ -37,13 +37,13 @@
           name = "copilot-chat";
           publisher = "GitHub";
           version = "0.9.2023101301";
-          sha256 = "sha256-Jt5WBX/ETehIPOh+Vdn4Rsqe2ueBsba7B6IZQ0r/QHI=";
+          sha256 = "sha256-srhMLmLil6qgeAxJRMKz+MmqVJeX8N5f7WYN+CrV9B0=";
         }
         {
           name = "unocss";
           publisher = "antfu";
           version = "0.56.5";
-          sha256 = "sha256-Jlwm1INhA+o2gZmYB8e9RBENJaeSxroCk2YzarYAWHQ=";
+          sha256 = "sha256-diwvMl88Nfq3QPm6AygiQpoFm82hSelpnU5KCOSU0pE=";
         }
       ];
     userSettings = {

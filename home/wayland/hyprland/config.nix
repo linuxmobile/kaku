@@ -76,8 +76,8 @@ in {
         "col.active_border" = "rgb(${colors.bg2}) rgb(${colors.bg2}) 270deg";
         "col.inactive_border" = "rgb(${colors.contrast}) rgb(${colors.contrast}) 270deg";
         # group borders
-        "col.group_border_active" = "rgb(${colors.color5})";
-        "col.group_border" = "rgb(${colors.contrast})";
+        #"col.group_border_active" = "rgb(${colors.color5})";
+        #"col.group_border" = "rgb(${colors.contrast})";
         "no_border_on_floating" = false;
         layout = "dwindle";
         no_cursor_warps = true;
@@ -182,8 +182,8 @@ in {
       bindm = ["$MOD, mouse:272, movewindow" "$MOD, mouse:273, resizewindow"];
       windowrulev2 = [
         "opacity 0.90 0.90,class:^(org.wezfurlong.wezterm)$"
-        "opacity 0.90 0.90,class:^(Brave-browser)$"
-        "opacity 0.90 0.90,class:^(brave-browser)$"
+        # "opacity 0.90 0.90,class:^(Brave-browser)$"
+        # "opacity 0.90 0.90,class:^(brave-browser)$"
         "opacity 0.80 0.80,class:^(Steam)$"
         "opacity 0.80 0.80,class:^(steam)$"
         "opacity 0.80 0.80,class:^(steamwebhelper)$"

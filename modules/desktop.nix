@@ -26,8 +26,8 @@
     # the reason there's Noto Color Emoji everywhere is to override DejaVu's
     # B&W emojis that would sometimes show instead of some Color emojis
     fontconfig.defaultFonts = {
-      serif = ["Noto Serif"];
-      sansSerif = ["Noto Sans"];
+      serif = ["SF Pro Display"];
+      sansSerif = ["SF Pro Display"];
       monospace = ["Maple Mono SC NF"];
       # emoji = ["Noto Color Emoji"];
     };
