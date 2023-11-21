@@ -1,9 +1,13 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [./hardware-configuration.nix];
 
   boot = {
     # load modules on boot
-    kernelModules = ["amdgpu"];
+    kernelModules = ["amdgpu" "v4l2loopback"];
     # use latest kernel
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
     kernelParams = [
@@ -14,8 +18,9 @@
       "systemd.show_status=auto"
       "rd.udev.log_level=3"
     ];
-    supportedFilesystems = ["ntfs"];
+    extraModulePackages = [config.boot.kernelPackages.v4l2loopback];
     tmp.cleanOnBoot = true;
+    supportedFilesystems = ["ntfs"];
   };
 
   boot.loader = {

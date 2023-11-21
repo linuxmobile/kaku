@@ -15,9 +15,9 @@
   # linuxmobile font -> AestheticIosevka Nerd Font Mono
   terminal = {
     font = "Maple Mono SC NF";
-    name = "wezterm";
+    name = "foot";
     opacity = 0.9;
-    size = 9;
+    size = 10;
   };
 
   # TODO: Change this later

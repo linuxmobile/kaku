@@ -182,6 +182,7 @@ in {
       bindm = ["$MOD, mouse:272, movewindow" "$MOD, mouse:273, resizewindow"];
       windowrulev2 = [
         "opacity 0.90 0.90,class:^(org.wezfurlong.wezterm)$"
+        "opacity 0.90 0.90,class:^(foot)$"
         # "opacity 0.90 0.90,class:^(Brave-browser)$"
         # "opacity 0.90 0.90,class:^(brave-browser)$"
         "opacity 0.80 0.80,class:^(Steam)$"

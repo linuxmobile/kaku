@@ -13,7 +13,7 @@
         ...
       }: {
         devShells.default = pkgs.mkShell {
-          packages = [pkgs.alejandra pkgs.git config.packages.repl pkgs.nodePackages.prettier];
+          packages = [pkgs.alejandra pkgs.git config.packages.repl];
           name = "nixland";
           DIRENV_LOG_FORMAT = "";
         };
@@ -55,7 +55,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lanzaboote.url = "github:nix-community/lanzaboote";
+    # lanzaboote.url = "github:nix-community/lanzaboote";
 
     nh = {
       url = "github:viperML/nh";
@@ -70,12 +70,6 @@
 
     spicetify-nix = {
       url = "github:MichaelPachec0/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    helix = {
-      url = "github:SoraTenshi/helix/new-daily-driver";
-      inputs.flake-utils.follows = "fu";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

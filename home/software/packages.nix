@@ -30,10 +30,6 @@
 
     neofetch
     gnome.file-roller
-
-    # nvim servers
-    # nixfmt
-    # rnix-lsp
-    # deno
+    scrcpy
   ];
 }

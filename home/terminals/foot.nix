@@ -1,13 +1,12 @@
-{ default, ... }: {
+{default, ...}: {
   programs.foot = {
     enable = true;
     settings = {
       main = {
-        font =
-          "${default.terminal.font}:size=${toString default.terminal.size}";
+        font = "${default.terminal.font}:size=${toString default.terminal.size}";
         box-drawings-uses-font-glyphs = "yes";
         dpi-aware = "yes";
-        pad = "4x4center";
+        pad = "25x25center";
         notify = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
         selection-target = "clipboard";
       };
