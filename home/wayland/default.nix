@@ -7,14 +7,14 @@
 # Wayland config
 {
   imports = [
+    # ../software/ags
+    # ./ags
     ./anyrun.nix
     ./hyprland
+    ./hyprpaper.nix
     ./waybar
-    ./swaybg.nix
     ./swayidle.nix
     ./swaylock.nix
-    # ./swww.nix
-    # ./eww
   ];
 
   home.packages = with pkgs; [
@@ -27,8 +27,8 @@
     swaylock-effects
 
     # utils
-    wf-recorder
     wl-clipboard
+    wl-screenrec
     wlogout
     hyprpicker
     wlsunset

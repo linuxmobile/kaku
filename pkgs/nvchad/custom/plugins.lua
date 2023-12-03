@@ -70,12 +70,24 @@ local plugins = {
   },
 
   {
-    "folke/twilight.nvim",
+    "folke/zen-mode.nvim",
     event = "VeryLazy",
-    ft = { "markdown", "lua", "javascript", "typescript", "typescriptreact", "javascriptreact", "html", "css", "astro" },
-    treesitter = true,
-    dimming = {
-      alpha = 0.25,
+    opts = {
+      plugins = {
+        twilight = { enabled = true },
+        gitsigns = { enabled = false },
+      },
+    },
+    dependencies = {
+      {
+        "folke/twilight.nvim",
+        event = "VeryLazy",
+        -- ft = { "markdown", "lua", "javascript", "typescript", "typescriptreact", "javascriptreact", "html", "css", "astro" },
+        treesitter = true,
+        dimming = {
+          alpha = 0.25,
+        },
+      },
     },
   },
 
@@ -85,14 +97,6 @@ local plugins = {
     event = "InsertEnter",
     config = function()
       require "custom.configs.copilot"
-    end,
-  },
-
-  {
-    "andweeb/presence.nvim",
-    event = "VeryLazy",
-    config = function()
-      require "custom.configs.presence"
     end,
   },
 }

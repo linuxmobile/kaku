@@ -36,6 +36,11 @@
       inputs.home-manager.follows = "hm";
     };
 
+    ags = {
+      url = "github:Aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -54,6 +59,8 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprpaper.url = "github:hyprwm/hyprpaper";
 
     # lanzaboote.url = "github:nix-community/lanzaboote";
 

@@ -64,6 +64,7 @@ in {
         vrr = 0;
         vfr = true;
         disable_splash_rendering = true;
+        force_default_wallpaper = 0;
       };
       general = {
         monitor = [
@@ -99,7 +100,7 @@ in {
         shadow_offset = "0 8";
         shadow_range = 50;
         shadow_render_power = 3;
-        "col.shadow" = "rgba(00000099)";
+        "col.shadow" = "rgba(00000055)";
         blurls = ["waybar" "lockscreen"];
       };
       animation = {
@@ -131,6 +132,7 @@ in {
       "$NOTIFY" = "notify-send -h string:x-canonical-private-synchronouse:hypr-cfg -u low";
       "$SCREENSHOT" = "${homeDir}/.config/hypr/scripts/screensht";
       "$COLORPICKER" = "${homeDir}/.config/hypr/scripts/colorpicker";
+      "$BLURTOGGLE" = "${homeDir}/.config/hypr/scripts/blurtoggle";
       "$LAYERS" = "^(eww-.+|bar|system-menu|anyrun|gtk-layer-shell|dunst)$";
 
       bind = [
@@ -143,6 +145,7 @@ in {
         ", Print, exec, $SCREENSHOT full"
         "$MODSHIFT, S, exec, $SCREENSHOT area"
         "$MODSHIFT, X, exec, $COLORPICKER"
+        "$MOD, B, exec, $BLURTOGGLE"
 
         "$MOD, D, exec, pkill .${default.launcher}-wrapped || run-as-service ${default.launcher}"
         "$MOD, Return, exec, run-as-service ${default.terminal.name}"
@@ -183,8 +186,8 @@ in {
       windowrulev2 = [
         "opacity 0.90 0.90,class:^(org.wezfurlong.wezterm)$"
         "opacity 0.90 0.90,class:^(foot)$"
-        # "opacity 0.90 0.90,class:^(Brave-browser)$"
-        # "opacity 0.90 0.90,class:^(brave-browser)$"
+        "opacity 0.90 0.90,class:^(Brave-browser)$"
+        "opacity 0.90 0.90,class:^(brave-browser)$"
         "opacity 0.80 0.80,class:^(Steam)$"
         "opacity 0.80 0.80,class:^(steam)$"
         "opacity 0.80 0.80,class:^(steamwebhelper)$"

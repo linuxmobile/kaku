@@ -28,6 +28,10 @@
         source = ./scripts/colorpicker;
         executable = true;
       };
+      ".config/hypr/scripts/blurtoggle" = {
+        source = ./scripts/blurtoggle;
+        executable = true;
+      };
     };
   };
 
