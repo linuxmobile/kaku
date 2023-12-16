@@ -4,7 +4,7 @@ lazy.setup({
   {
     'nvim-treesitter/nvim-treesitter',
     run = ":TSUpdate",
-    event = "VeryLazy",
+    lazy = true,
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     config = function() require('plugs.ts.treesitter') end
   },
@@ -15,50 +15,60 @@ lazy.setup({
   },
   {
     'NvChad/nvim-colorizer.lua',
-    event = 'CursorHold',
+    event = 'BufRead',
     config = function() require('plugs.ui.colorizer') end,
     lazy = true
   },
   {
     "nvim-tree/nvim-web-devicons",
-    event = 'CursorHold',
+    event = 'BufRead',
     config = function() require('plugs.ui.devicons') end,
     lazy = true,
   },
-
+  {
+    {
+      "lukas-reineke/indent-blankline.nvim",
+      main = "ibl",
+      opts = {},
+      event = "BufReadPost",
+      config = function()
+        require("ibl").setup()
+      end
+    }
+  },
   {
     'kyazdani42/nvim-tree.lua',
-    event = "VeryLazy",
+    lazy = true,
     cmd = "NvimTreeToggle",
     config = function() require('plugs.util.nvim-tree') end
   },
   {
     "folke/which-key.nvim",
     keys = { "<leader>", ' ', "'", "`" },
-    event = "VeryLazy",
+    lazy = true,
     config = function() require('plugs.util.which-key') end
   },
   {
     'nvim-lua/plenary.nvim',
-    event = "VeryLazy",
+    lazy = true,
   },
   {
     'nvim-telescope/telescope.nvim',
     cmd = "Telescope",
-    event = "VeryLazy",
+    lazy = true,
     dependencies = { 'plenary.nvim' },
     config = function() require('plugs.util.telescope') end
   },
   {
     "akinsho/toggleterm.nvim",
-    event = "VeryLazy",
+    lazy = true,
     config = function() require('plugs.util.toggleterm') end,
     cmd = "ToggleTerm",
   },
   {
     "lewis6991/gitsigns.nvim",
     lazy = true,
-    event = 'CursorHold',
+    event = { "BufRead" },
     config = function()
       require('gitsigns').setup {
         signs = {
@@ -73,14 +83,7 @@ lazy.setup({
     end
   },
   {
-    "lukas-reineke/indent-blankline.nvim",
-    lazy = true,
-    config = function() require('plugs.ui.indentlines') end,
-    event = 'CursorHold',
-  },
-  {
     "williamboman/mason.nvim",
-    event = "VeryLazy",
     cmd = {
       "MasonInstall",
       "MasonInstallAll",
@@ -89,6 +92,7 @@ lazy.setup({
       "MasonUninstallAll",
       "MasonLog",
     },
+    lazy = true,
     config = function() require('plugs.lsp.mason') end,
   },
   {
@@ -102,13 +106,13 @@ lazy.setup({
       { "gb", mode = "x", desc = "Comment toggle blockwise (visual)" },
     },
     config = function() require('Comment').setup() end,
-    event = 'CursorHold',
+    event = { "BufRead" },
   },
   -- The funs begins
   {
     "neovim/nvim-lspconfig",
-    event = { "BufReadPost", "BufNewFile", "CursorHold" },
-    event = "VeryLazy",
+    event = { "BufReadPost", "BufNewFile" },
+    lazy = true,
     cmd = { "LspInfo", "LspInstall", "LspUninstall", "LspStart" },
     dependencies = {
       {
@@ -125,12 +129,13 @@ lazy.setup({
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
-    event = "VeryLazy",
+    lazy = true,
     dependencies = {
       {
         -- snippet plugin
         "L3MON4D3/LuaSnip",
         lazy = true,
+        dependencies = "rafamadriz/friendly-snippets",
         config = function()
           require("plugs.lsp.luasnip")
         end,
@@ -169,39 +174,38 @@ lazy.setup({
   },
   {
     "LnL7/vim-nix",
-    event = "VeryLazy",
+    lazy = true,
     ft = 'nix',
   },
   {
     "nvim-telescope/telescope-ui-select.nvim",
-    event = "VeryLazy",
+    lazy = true,
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = { "BufReadPost", "InsertEnter" },
+    opts = {
+      signs = false,
+
+    }
   },
   {
     'kevinhwang91/nvim-ufo',
-    event = "VeryLazy",
-    event = 'CursorHold',
+    lazy = true,
+    event = "BufReadPost",
     dependencies = 'kevinhwang91/promise-async'
   },
   {
     'simrat39/symbols-outline.nvim',
     cmd = "SymbolsOutline",
-    event = "VeryLazy",
+    lazy = true,
     config = function() require("plugs.util.symbols") end
   },
-  -- {
-  --   'code-biscuits/nvim-biscuits',
-  --   dependencies = {
-  --     'nvim-treesitter/nvim-treesitter',
-  --   },
-  --   lazy = true,
-  --   config = function() require("plugs.lsp.biscuits") end,
-  --   event = 'CursorHold',
-  --   cmd = 'TSUpdate',
-  -- },
   {
     "cbochs/grapple.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    event = "VeryLazy",
+    lazy = true,
     config = function() require("plugs.util.grapple") end,
     cmd = {
       "GrappleCycle",
@@ -217,7 +221,7 @@ lazy.setup({
   {
     'phaazon/hop.nvim',
     branch = 'v2',
-    event = "VeryLazy",
+    lazy = true,
     cmd = {
       "HopAnywhere",
       "HopChar1",
@@ -231,13 +235,21 @@ lazy.setup({
   },
   {
     "goolord/alpha-nvim",
-    event = "VeryLazy",
+    lazy = true,
     cmd = {
       "Alpha",
       "AlphaRedraw"
     },
     config = function()
       require("plugs.ui.alpha")
+    end
+  },
+  {
+    "chadcat7/prism",
+    lazy = true,
+    event = "VeryLazy",
+    config = function()
+      require("plugs.ui.prism")
     end
   },
   {
@@ -265,15 +277,14 @@ lazy.setup({
   },
   {
     "andweeb/presence.nvim",
-    lazy = true,
-    event = "VeryLazy",
+    event = { "BufReadPost" },
     config = function()
       require ("plugs.util.presence")
     end,
   },
   {
     "kylechui/nvim-surround",
-    event = "VeryLazy",
+    lazy = true,
     ft = { "markdown", "lua", "javascript", "typescript", "typescriptreact", "javascriptreact", "html", "css", "astro" },
     config = function()
       require("nvim-surround").setup {}
@@ -288,7 +299,7 @@ lazy.setup({
   },
   {
     "folke/zen-mode.nvim",
-    event = "VeryLazy",
+    lazy = true,
     opts = {
       plugins = {
         twilight = { enabled = true },
@@ -298,7 +309,7 @@ lazy.setup({
     dependencies = {
       {
         "folke/twilight.nvim",
-        event = "VeryLazy",
+        lazy = true,
         -- ft = { "markdown", "lua", "javascript", "typescript", "typescriptreact", "javascriptreact", "html", "css", "astro" },
         treesitter = true,
         dimming = {
@@ -306,5 +317,9 @@ lazy.setup({
         },
       },
     },
+  },
+  {
+    "wuelnerdotexe/vim-astro",
+    ft = "astro"
   },
 })

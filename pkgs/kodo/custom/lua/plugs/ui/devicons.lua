@@ -2,7 +2,6 @@ local devicons = require("nvim-web-devicons")
 
 local config = {
   override = {
-    a = { icon = "", name = "Astro"},
     c = { icon = "", name = "C" },
     css = { icon = "", name = "CSS" },
     deb = { icon = "", name = "Deb" },
@@ -11,6 +10,7 @@ local config = {
       name = "Dockerfile",
     },
     md = { icon = "" },
+    astro = { icon = "󰑣", name = "SVELTE" },
     html = { icon = "", name = "HTML" },
     jpeg = { icon = " ", name = "JPEG" },
     jpg = { icon = " ", name = "JPG" },

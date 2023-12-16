@@ -7,7 +7,7 @@ vim.cmd [[
         call luaeval('require("ui.buf.fn").close_buffer(_A)', a:bufnr)
   endfunction]]
 
-vim.cmd "function! ToggleTheme(a,b,c,d) \n lua require('themes').toggleTheme() \n endfunction"
+vim.cmd "function! ToggleTheme(a,b,c,d) \n lua require('prism.themer'):random() \n endfunction"
 vim.cmd "function! CloseAll(a,b,c,d) \n q \n endfunction"
 vim.api.nvim_create_user_command("BufflinePrev", function()
   require("ui.buf.fn").tabuflinePrev()

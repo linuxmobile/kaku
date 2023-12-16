@@ -35,8 +35,10 @@ local mappings = {
   l = {
     name = "Misc",
     l = { ":Lazy<cr>", "Open Lazy" },
+    t = { ":TroubleToggle<cr>", "Open Trouble" },
     c = { ":lua require('telescope') vim.lsp.buf.code_action()<cr>", "Show Code Actions" },
     m = { ":Mason<cr>", "Open Mason" },
+    n = { ":Neogit<cr>", "Open Neogit" },
     s = { ":SymbolsOutline<cr>", "Overview of file" },
     w = { ":SessionSave<cr>", "Save this session" }
   },

@@ -16,7 +16,7 @@ require 'nvim-tree'.setup {
         git = true,
         folder = true,
         file = true,
-        folder_arrow = true,
+        folder_arrow = false,
       }
     }
   },
@@ -37,8 +37,7 @@ require 'nvim-tree'.setup {
     },
   },
   filters = {
-    dotfiles = true,
-    custom = { "node_modules" },
+    exclude = { '.git', 'node_modules', '.cache' },
   },
   update_focused_file = {
     enable = true,

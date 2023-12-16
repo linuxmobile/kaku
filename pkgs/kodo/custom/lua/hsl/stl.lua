@@ -1,18 +1,18 @@
-local themes = require("themes")
-local colors = themes.getCurrentTheme()
+local utils = require("prism.utils")
+local colors = require("prism.themer"):getColors()
 
 return {
   StalineFolderIcon = { bg = colors.color1, fg = colors.black },
   StalineFolderSep = { bg = colors.black, fg = colors.color1 },
   --StalineFolderText = { bg = colors.cursorline, fg = colors.color1 },
-  StalineFolderText = { bg = themes.darken(colors.color1, colors.background, 0.05), fg = colors.color1 },
+  StalineFolderText = { bg = utils.darken(colors.color1, colors.black, 0.05), fg = colors.color1 },
 
   StalineFilename = { bg = colors.background, fg = colors.color7 },
   StalineFilenameFancy = { bg = colors.cursorline, fg = colors.color7 },
   StalineFilenameSep = { fg = colors.cursorline, bg = colors.black },
   StalineLogo = { bg = colors.black, fg = colors.color12 },
   --StalineProgress = { bg = colors.cursorline, fg = colors.color2 },
-  StalineProgress = { bg = themes.darken(colors.color2, colors.background, 0.05), fg = colors.color2 },
+  StalineProgress = { bg = utils.darken(colors.color2, colors.black, 0.05), fg = colors.color2 },
   StalineProgressSep = { bg = colors.color8, fg = colors.color10 },
   StalineProgressIcon = { bg = colors.color10, fg = colors.color8 },
   StalineBranch = { bg = colors.background, fg = colors.comment },
@@ -41,14 +41,14 @@ return {
   StalineLspHintsIcon = { bg = colors.black, fg = colors.color6 },
   StalineLspWarningIcon = { bg = colors.black, fg = colors.color11 },
   --StalineLspNameNormal = { bg = colors.cursorline, fg = colors.color5 },
-  StalineLspNameNormal = { bg = themes.darken(colors.color5, colors.background, 0.07), fg = colors.color5 },
-  StalineLspName = { bg = themes.darken(colors.color5, colors.background, 0.07), fg = colors.color5 },
+  StalineLspNameNormal = { bg = utils.darken(colors.color5, colors.black, 0.07), fg = colors.color5 },
+  StalineLspName = { bg = utils.darken(colors.color5, colors.black, 0.07), fg = colors.color5 },
   StalineLspIcon = { bg = colors.color13, fg = colors.black },
   StalineDiffAdd = { bg = colors.background, fg = colors.color10 },
-  StalineDiffAddFancy = { bg = themes.darken(colors.color2, colors.background, 0.07), fg = colors.color10 },
+  StalineDiffAddFancy = { bg = utils.darken(colors.color2, colors.black, 0.07), fg = colors.color10 },
   StalineDiffChange = { bg = colors.background, fg = colors.color11 },
-  StalineDiffChangeFancy = { bg = themes.darken(colors.color11, colors.background, 0.07), fg = colors.color11 },
-  StalineDiffRemoveFancy = { bg = themes.darken(colors.color9, colors.background, 0.07), fg = colors.color9 },
+  StalineDiffChangeFancy = { bg = utils.darken(colors.color11, colors.black, 0.07), fg = colors.color11 },
+  StalineDiffRemoveFancy = { bg = utils.darken(colors.color9, colors.black, 0.07), fg = colors.color9 },
   StalineDiffRemove = { bg = colors.background, fg = colors.color9 },
   StalineDefaultFile = { bg = colors.background, fg = colors.foreground },
 }

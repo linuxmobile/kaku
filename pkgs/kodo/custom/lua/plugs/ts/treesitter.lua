@@ -11,8 +11,6 @@ require 'nvim-treesitter.configs'.setup {
 
   highlight = {
     additional_vim_regex_highlighting = false,
-    enable = true,
-    use_languagetree = true,
   },
   autotag = { -- Auto tag html
     enable = true,

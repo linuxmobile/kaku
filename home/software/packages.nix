@@ -31,5 +31,7 @@
     neofetch
     gnome.file-roller
     scrcpy
+
+    gcc
   ];
 }

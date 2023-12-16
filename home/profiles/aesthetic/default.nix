@@ -1,7 +1,7 @@
 {
   imports = [
     # ../../editors/nvchad
-    #../../editors/kodo
+    ../../editors/kodo
     # ../../editors/helix
     ../../software
     ../../software/dunst.nix
