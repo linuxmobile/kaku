@@ -1,45 +1,45 @@
 rec {
-  foreground = "dcd7ba";
-  background = "1f1f28";
+  foreground = "dfdddd";
+  background = "0d0d0d";
   darker = "090618";
-  mbg = "141320";
-  bg2 = "141320";
-  cursorColor = "dcd7ba";
+  mbg = "171717";
+  bg2 = "171717";
+  cursorColor = "dfdddd";
   contrast = "262631";
-  cursorline = "262631";
+  cursorline = "272727";
   comment = "2C2C3A";
 
   # Black
-  color0 = "090618";
-  color8 = "727169";
+  color0 = "1b1b1b";
+  color8 = "272727";
 
   # Red
-  color1 = "c34043";
-  color9 = "e82424";
+  color1 = "c14d53";
+  color9 = "da4b52";
 
   # Green
-  color2 = "76946a";
-  color10 = "98bb6c";
+  color2 = "56966e";
+  color10 = "57a274";
 
   # Yellow
-  color3 = "c0a36e";
-  color11 = "e6c384";
+  color3 = "dc8c61";
+  color11 = "e1956c";
 
   # Blue
-  color4 = "7e9cd8";
-  color12 = "7fb4ca";
+  color4 = "6e95bd";
+  color12 = "6fadea";
 
   # Magenta
-  color5 = "957fb8";
-  color13 = "938aa9";
+  color5 = "a56db1";
+  color13 = "d466e9";
 
   # Cyan
-  color6 = "6a9589";
-  color14 = "7aa89f";
+  color6 = "6a9f98";
+  color14 = "63b4b5";
 
   # White
-  color7 = "c8c093";
-  color15 = "dcd7ba";
+  color7 = "b7b7b7";
+  color15 = "a4b5b5";
 
   bg = background;
   fg = foreground;

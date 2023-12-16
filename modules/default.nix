@@ -31,6 +31,7 @@ in {
 
           self.nixosModules.core
           self.nixosModules.nix
+          self.nixosModules.network
           ./security.nix
         ];
       };
@@ -41,5 +42,6 @@ in {
     core = import ./core.nix;
     desktop = import ./desktop.nix;
     nix = import ./nix.nix;
+    network = import ./network.nix;
   };
 }

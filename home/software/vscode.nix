@@ -24,31 +24,31 @@
         {
           name = "catppuccin-perfect-icons";
           publisher = "thang-nm";
-          version = "0.21.24";
+          version = "0.21.28";
           sha256 = "sha256-ax2n0YyO7q4LkrPBbik2P+s/s3tZZick91kvZsfWsVc=";
         }
         {
-          name = "kanagawa";
-          publisher = "qufiwefefwoyn";
-          version = "1.5.1";
-          sha256 = "sha256-AGGioXcK/fjPaFaWk2jqLxovUNR59gwpotcSpGNbj1c=";
+          name = "tsuki";
+          publisher = "re1san";
+          version = "0.6.0";
+          sha256 = "sha256-AP3RnO3v0OfO3d3bHRy5sjHEjwLGUxI/sEdLtGOxE2c=";
         }
         {
           name = "copilot-chat";
           publisher = "GitHub";
-          version = "0.9.2023101301";
+          version = "0.12.2023121401";
           sha256 = "sha256-srhMLmLil6qgeAxJRMKz+MmqVJeX8N5f7WYN+CrV9B0=";
         }
         {
           name = "unocss";
           publisher = "antfu";
-          version = "0.56.5";
+          version = "0.58.0";
           sha256 = "sha256-diwvMl88Nfq3QPm6AygiQpoFm82hSelpnU5KCOSU0pE=";
         }
       ];
     userSettings = {
       "workbench.iconTheme" = "catppuccin-perfect-mocha";
-      "workbench.colorTheme" = "Kanagawa";
+      "workbench.colorTheme" = "Tsuki";
       "editor.fontFamily" = "Maple Mono SC NF, Catppuccin Perfect Mocha, 'monospace', monospace";
       "editor.fontSize" = 12;
       "editor.fontLigatures" = true;

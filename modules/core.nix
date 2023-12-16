@@ -62,5 +62,5 @@
   zramSwap.enable = true;
 
   # don't touch this
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 }

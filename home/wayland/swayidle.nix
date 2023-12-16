@@ -17,12 +17,12 @@ in {
       }
       {
         event = "lock";
-        command = "${pkgs.swaylock-effects}/bin/swaylock -fF";
+        command = "${pkgs.swaylock-effects}/bin/swaylock";
       }
     ];
     timeouts = [
       {
-        timeout = 500;
+        timeout = 900;
         command = suspendScript.outPath;
       }
     ];

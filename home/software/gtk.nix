@@ -14,8 +14,8 @@
   gtk = {
     enable = true;
     font = {
-      name = "Roboto";
-      package = pkgs.roboto;
+      name = "Lexend";
+      package = pkgs.lexend;
     };
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
@@ -26,13 +26,7 @@
     };
 
     theme = {
-      name = "gruvbox-dark";
-      package = pkgs.gruvbox-dark-gtk.override {
-        #   accents = ["lavender"];
-        #   tweaks = ["rimless" "black"];
-        #   size = "compact";
-        #   variant = "mocha";
-      };
+      name = "Mori-gtk";
     };
 
     gtk3.extraConfig = {

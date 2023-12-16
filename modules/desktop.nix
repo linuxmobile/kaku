@@ -16,6 +16,8 @@
       maple-mono
       maple-mono-NF
       maple-mono-SC-NF
+
+      lexend
       # nerdfonts
       (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
     ];
@@ -26,8 +28,8 @@
     # the reason there's Noto Color Emoji everywhere is to override DejaVu's
     # B&W emojis that would sometimes show instead of some Color emojis
     fontconfig.defaultFonts = {
-      serif = ["SF Pro Display"];
-      sansSerif = ["SF Pro Display"];
+      serif = ["Lexend"];
+      sansSerif = ["Lexend"];
       monospace = ["Maple Mono SC NF"];
       # emoji = ["Noto Color Emoji"];
     };
@@ -51,11 +53,9 @@
     settings = {
       substituters = [
         "https://anyrun.cachix.org"
-        "https://nix-gaming.cachix.org"
         "https://hyprland.cachix.org"
       ];
       trusted-public-keys = [
-        "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
       ];
@@ -117,6 +117,7 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    xdgOpenUsePortal = true;
+    config.common.default = ["gtk"];
   };
 }

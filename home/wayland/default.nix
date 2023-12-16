@@ -8,11 +8,11 @@
 {
   imports = [
     # ../software/ags
-    # ./ags
+    ./ags
     ./anyrun.nix
     ./hyprland
     ./hyprpaper.nix
-    ./waybar
+    # ./waybar
     ./swayidle.nix
     ./swaylock.nix
   ];
@@ -21,10 +21,6 @@
     # screenshot
     grim
     slurp
-
-    # idle/lock
-    swaybg
-    swaylock-effects
 
     # utils
     wl-clipboard
