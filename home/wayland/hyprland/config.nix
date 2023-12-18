@@ -15,7 +15,6 @@ in {
     settings = {
       "$MOD" = "SUPER";
       env = ''
-        GTK_THEME,Juno;
         XDG_SESSION_TYPE,wayland
         XDG_SESSION_DESKTOP,Hyprland
 
@@ -42,8 +41,8 @@ in {
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "echo latam > /tmp/kb_layout"
         "wlsunset -t 5200 -S 9:00 -s 19:30"
-        "waybar"
-        "dunst"
+        "ags -b hypr"
+        # "waybar"
         # "xwaylandvideobridge"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
@@ -57,6 +56,7 @@ in {
         follow_mouse = 1;
         sensitivity = 0;
         force_no_accel = 1;
+        accel_profile = "flat";
       };
       misc = {
         disable_autoreload = true;
@@ -133,7 +133,7 @@ in {
       "$SCREENSHOT" = "${homeDir}/.config/hypr/scripts/screensht";
       "$COLORPICKER" = "${homeDir}/.config/hypr/scripts/colorpicker";
       "$BLURTOGGLE" = "${homeDir}/.config/hypr/scripts/blurtoggle";
-      "$LAYERS" = "^(eww-.+|bar|system-menu|anyrun|gtk-layer-shell|dunst)$";
+      "$LAYERS" = "^(eww-.+|bar|system-menu|anyrun|gtk-layer-shell|osd[0-9]|dunst)$";
 
       bind = [
         "$MOD, Escape, exec, wlogout -p layer-shell"
@@ -209,7 +209,6 @@ in {
         "float,class:^(pavucontrol)$"
         "float,title:^(Media viewer)$"
         "float,title:^(Volume Control)$"
-        "float,title:^(Picture-in-Picture)$"
         "float,class:^(Viewnior)$"
         "float,title:^(DevTools)$"
         "float,class:^(file_progress)$"
@@ -223,11 +222,18 @@ in {
         "float,title:^(branchdialog)$"
         "float,title:^(Confirm to replace files)$"
         "float,title:^(File Operation Progress)$"
+        "float,class:^(com.github.Aylur.ags)$"
+
+        "float, title:^(Picture-in-Picture)$"
+        "pin, title:^(Picture-in-Picture)$"
 
         "idleinhibit focus, class:^(mpv|.+exe)$"
         "idleinhibit focus, class:^(firefox)$, title:^(.*YouTube.*)$"
         "idleinhibit fullscreen, class:^(firefox)$"
         "idleinhibit fullscreen,class:^(Brave-browser)$"
+
+        "workspace special silent, title:^(.*is sharing (your screen|a window)\.)$"
+        "workspace special silent, title:^(Firefox — Sharing Indicator)$"
 
         "opacity 0.0 override 0.0 override,class:^(xwaylandvideobridge)$"
         "noanim,class:^(xwaylandvideobridge)$"
@@ -242,7 +248,7 @@ in {
         "blur, launcher"
         "blur, $LAYERS"
         "ignorealpha 0, $LAYERS"
-        "ignorealpha 0.5, ^(eww-(music|calendar)|system-menu|anyrun)$"
+        "ignorealpha 0.2, ^(eww-(music|calendar)|system-menu|anyrun)$"
         "xray 1, ^(bar|gtk-layer-shell)$"
       ];
     };

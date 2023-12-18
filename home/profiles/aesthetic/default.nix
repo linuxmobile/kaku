@@ -4,7 +4,7 @@
     ../../editors/kodo
     # ../../editors/helix
     ../../software
-    ../../software/dunst.nix
+    # ../../software/dunst.nix
     ../../wayland
   ];
 

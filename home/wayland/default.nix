@@ -11,7 +11,7 @@
     ./ags
     ./anyrun.nix
     ./hyprland
-    ./hyprpaper.nix
+    # ./hyprpaper.nix
     # ./waybar
     ./swayidle.nix
     ./swaylock.nix

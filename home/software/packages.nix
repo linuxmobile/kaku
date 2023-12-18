@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     # messaging
     tdesktop
@@ -33,5 +33,10 @@
     scrcpy
 
     gcc
+    emmet-ls
+    nixfmt
+    rnix-lsp
+    deno
+    cargo
   ];
 }
