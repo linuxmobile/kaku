@@ -17,7 +17,7 @@
 <a href="https://nixos.org/"><img src="https://img.shields.io/badge/NixOS-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8AADF4"></a> 
 
 
-<p align="center"><img src="https://i.imgur.com/NbxQ8MY.png" width=600px></p>
+<p align="center"><img src="https://i.imgur.com/WTkJxA2.jpg" width=600px></p>
 
 <h2 align="center">革 | kaku</h2>
 
