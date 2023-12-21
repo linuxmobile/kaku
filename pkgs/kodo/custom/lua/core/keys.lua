@@ -66,6 +66,7 @@ map('n', '<leader>fb', '<cmd> Telescope buffers <CR>', { noremap = true, silent 
 map('n', '<leader>fh', '<cmd> Telescope help_tags <CR>', { noremap = true, silent = true })
 map('n', '<leader>fz', '<cmd> Telescope current_buffer_fuzzy_find <CR>', { noremap = true, silent = true })
 map('n', '<leader>fr', '<cmd> Telescope oldfiles <CR>', { noremap = true, silent = true })
+map('n', '<leader>fc', '<cmd> PrismTelescope <CR>', { noremap = true, silent = true })
 
 -- TELESCOPE GIT --
 map('n', '<leader>cm', '<cmd> Telescope git_commits <CR>', { noremap = true, silent = true })
