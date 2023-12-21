@@ -113,10 +113,10 @@ git clone --depth 1 https://github.com/linuxmobile/kaku /mnt/etc/nixos
 ### ⚠ <sup><sub><samp>DON'T FORGET IT</samp></sub></sup>
 
 ```bash
-sudo nixos-generate-config --dir --force /mnt/etc/nixos/hosts/linudev
+sudo nixos-generate-config --dir --force /mnt/etc/nixos/hosts/aesthetic
 
 # Remove configuration.nix 
-rm -rf /mnt/etc/nixos/hosts/linudev/configuration.nix
+rm -rf /mnt/etc/nixos/hosts/aesthetic/configuration.nix
 ```
 
 - Install Dotfiles Using Flake
@@ -126,7 +126,7 @@ rm -rf /mnt/etc/nixos/hosts/linudev/configuration.nix
 cd mnt/etc/nixos/
 
 # Install
-nixos-install --flake kaku#linudev
+nixos-install --flake .#aesthetic
 ```
 
 - Reboot
