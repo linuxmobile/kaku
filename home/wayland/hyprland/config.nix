@@ -203,7 +203,8 @@ in {
         "opacity 0.80 0.70,class:^(org.kde.polkit-kde-authentication-agent-1)$"
         "opacity 0.80 0.80,class:^(org.telegram.desktop)$"
         "opacity 0.80 0.80,class:^(code-url-handler)$"
-        "opacity 0.80 0.80,title:^(Spotify)$"
+        "opacity 0.80 0.80,title:^(Spotify( Premium)?)$"
+        "opacity 0.80 0.80,title:^(Spotify( Free)?)$"
 
         "float,class:^(org.kde.polkit-kde-authentication-agent-1)$"
         "float,class:^(pavucontrol)$"

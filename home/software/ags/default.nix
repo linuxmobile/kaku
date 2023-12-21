@@ -12,8 +12,7 @@
     inotify-tools
     procps
     ripgrep
-    sassc
-    swww
+    dart-sass
   ];
 
   cfg = config.programs.ags;

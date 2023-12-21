@@ -26,7 +26,13 @@
     };
 
     theme = {
-      name = "Mori-gtk";
+      name = "Colloid-Dark";
+      package = pkgs.colloid-gtk-theme.override {
+        #   accents = ["lavender"];
+        tweaks = ["rimless" "black" "float"];
+        #   size = "compact";
+        #   variant = "mocha";
+      };
     };
 
     gtk3.extraConfig = {

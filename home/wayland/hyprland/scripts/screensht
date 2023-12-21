@@ -7,8 +7,8 @@ _SCREENSHOT_DIR_=$HOME/Pictures/Screenshots
 _ORIGINAL_DIR_=$_SCREENSHOT_DIR_/Original
 _LOG_FILE_="$_SCREENSHOT_DIR_/.screensht.log"
 # Color
-_FG_COLOR_='#FBF1C7'
-_BG_COLOR_='#1D2021'
+_FG_COLOR_='#dfdddd'
+_BG_COLOR_='#0d0d0d'
 _BG_SIZE_=10
 # Border Size Applied when value greater than or equal 3
 _BORDER_SIZE_=0
@@ -17,7 +17,7 @@ _ROUNDED_CORNER_=8
 # Author Config
 _AUTHOR_POST_=('South' '+0+15')
 _AUTHOR_NAME_=" $USER"
-_AUTHOR_COLOR_='#b8bb26'
+_AUTHOR_COLOR_='#d466e9'
 # Get Lists Font With "convert -list font | grep -iE 'font:.*' | nl"
 _FONT_SIZE_=11
 _FONT_='Maple-Mono-SC-NF-Regular'
@@ -25,7 +25,7 @@ _FONT_='Maple-Mono-SC-NF-Regular'
 function check() {
   if [[ $? -eq 1 && ${PIPESTATUS[0]} -eq 1 ]]; then
     _end_job_=$(date +%s)
-    summary $_start_job_ $_end_job_ 'failed' && dunstify -u critical -t 3000 -a "Screenshot Tool" "Screensht" >>$_LOG_FILE_ 2>&1
+    summary $_start_job_ $_end_job_ 'failed' && notify-send -u critical -t 3000 -a "Screenshot Tool" "Screensht" >>$_LOG_FILE_ 2>&1
     exit 1
   fi
 }
@@ -40,7 +40,7 @@ function check_dir() {
 }
 
 function get_latest_img() {
-  _LATEST_IMAGE_=$(/run/current-system/sw/bin/ls -th $_SCREENSHOT_DIR_ | grep -vE '.screensht.png$' | grep -E '.png$' | head -n 1)
+  _LATEST_IMAGE_=$(/etc/profiles/per-user/linuxmobile/bin/eza -rth $_SCREENSHOT_DIR_ | rg -v '.screensht.png$' | rg '.png$' | head -n 1)
 
   if [[ $(echo "$_LATEST_IMAGE_" | wc -w) -eq 0 ]]; then
     exit 1
@@ -107,7 +107,7 @@ function summary() {
     wl-copy <"$_target_file_" >>$_LOG_FILE_ 2>&1
 
     message="${_notif_message_} Runtime: $hours hours, $minutes minutes, $seconds seconds"
-    dunstify -i "$_target_file_" -t 10000 "Screenshot Tool" "$message" -a "Screenshot Tool"
+    notify-send "Screenshot Tool" "$message" -i "$_target_file_" -t 10000 -a "Screenshot Tool"
   fi
 }
 

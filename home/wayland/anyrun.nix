@@ -1,8 +1,7 @@
-{
-  pkgs,
-  inputs,
-  osConfig,
-  ...
+{ pkgs
+, inputs
+, osConfig
+, ...
 }: {
   programs.anyrun = {
     enable = true;
