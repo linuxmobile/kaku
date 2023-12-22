@@ -1,45 +1,19 @@
-{pkgs, ...}: {
-  home.packages = [pkgs.neofetch];
+{ pkgs, ... }: {
+  home.packages = [ pkgs.neofetch ];
   home.file.".config/neofetch/config.conf".text = ''
     print_info() {
-    	# info title
-    	# info underline
     	prin ""
     	prin "$(color 1)L I N U X  |  M O B I L E"
     	prin _____________________
-    	info "" distro
-    	info "" model
-    # info "" cpu
-    # info "" gpu
-    	info "" memory
-    # info "" kernel
-    	info "" packages
-    # info "" resolution
-    	info "" term
-    # info "" shell
-    	info "" de
-    #  prin "" "Hyprland"
-    # info "" locale
-    # info "" uptime
+      info "\e[34m  " distro
+      info "\e[31m " kernel
+    	info "\e[33m󰍛 " memory
+    	info "\e[32m " term
+    	info "\e[35m " de
     	prin "" "github.com/linuxmobile"
-
-
-    # info "GPU Driver" gpu_driver  # Linux/macOS only
-    # info "CPU Usage" cpu_usage
-    # info "Disk" disk
-    # info "Battery" battery
-    # info "Font" font
-    # info "Song" song
-    # [[ "$player" ]] && prin "Music Player" "$player"
-    # info "Local IP" local_ip
-    # info "Public IP" public_ip
-    # info "Users" users
-    # info "Locale" locale  # This only works on glibc systems.
-
-    # info cols
-    prin "$(mypad) $(color 1)▂▂ $(color 2)▂▂ $(color 3)▂▂ $(color 4)▂▂ $(color 5)▂▂ $(color 6)▂▂ $(color 7)▂▂ "
-    prin _____________________
-    }
+      prin "$(mypad) $(color 1)▂▂ $(color 2)▂▂ $(color 3)▂▂ $(color 4)▂▂ $(color 5)▂▂ $(color 6)▂▂ $(color 7)▂▂ "
+      prin _____________________
+      }
     title_fqdn="off"
 
     kernel_shorthand="on"
@@ -96,10 +70,8 @@
     # Flag:     --backend
     image_backend="iterm2"
     #image_source="auto"
-    # image_source="$HOME/.config/neofetch/images/nix.png"
-    # image_source="$HOME/.config/neofetch/images/nixos.png"
-    image_source="$HOME/.config/neofetch/images/gruv.jpg"
-    # image_source="$HOME/.config/neofetch/images/neofetchblack.png"
+    image_source="$HOME/.config/neofetch/images/nix.png"
+    # image_source="$HOME/.config/neofetch/images/gruv.jpg"
     ascii_distro="auto"
     ascii_colors=(distro)
     ascii_bold="on"

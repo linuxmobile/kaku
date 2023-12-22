@@ -1,16 +1,15 @@
-{
-  inputs,
-  pkgs,
-  ...
+{ inputs
+, pkgs
+, ...
 }: {
-  imports = [./languages.nix];
+  imports = [ ./languages.nix ];
 
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.${pkgs.system}.default.overrideAttrs (self: {
       makeWrapperArgs = with pkgs;
         self.makeWrapperArgs
-        or []
+          or [ ]
         ++ [
           "--suffix"
           "PATH"
@@ -21,6 +20,7 @@
             nodePackages.vscode-css-languageserver-bin
             nodePackages.vscode-langservers-extracted
             nodePackages.typescript-language-server
+            tailwindcss-language-server
           ])
         ];
     });
@@ -40,7 +40,7 @@
           rainbow-option = "dim";
         };
         lsp.display-inlay-hints = true;
-        statusline.center = ["position-percentage"];
+        statusline.center = [ "position-percentage" ];
         true-color = true;
         whitespace.characters = {
           newline = "↴";

@@ -1,6 +1,6 @@
-{
-  colorlib,
-  lib,
+{ colorlib
+, lib
+,
 }: rec {
   colors = import ./colors.nix;
   # #RRGGBB
@@ -22,7 +22,7 @@
 
   # TODO: Change this later
   wallpaper = builtins.fetchurl {
-    url = "https://i.imgur.com/qZZkdDs.jpg";
-    sha256 = "sha256:1wzid1kzl4crzd5jn6nypqafkh48z2xzm6cpx145zmj6k6p1pish";
+    url = "https://i.imgur.com/s8MR4o3.jpg";
+    sha256 = "sha256:00gf7ainxfiymghyfgj8hwkjfbk2sr49n6mhsh6kjmzvyhkf377i";
   };
 }

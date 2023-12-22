@@ -1,15 +1,16 @@
-{
-  config,
-  # inputs,
+{ config
+, # inputs,
   # pkgs,
-  default,
-  ...
-}: let
+  default
+, ...
+}:
+let
   inherit (default) colors;
 
   pointer = config.home.pointerCursor;
   homeDir = config.home.homeDirectory;
-in {
+in
+{
   wayland.windowManager.hyprland = {
     # plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.system}.default ];
     settings = {
@@ -42,6 +43,7 @@ in {
         "echo latam > /tmp/kb_layout"
         "wlsunset -t 5200 -S 9:00 -s 19:30"
         "ags -b hypr"
+        # "swww init"
         # "waybar"
         # "xwaylandvideobridge"
         "wl-paste --type text --watch cliphist store"
@@ -50,7 +52,7 @@ in {
         "echo 'Xft.dpi: 130' | xrdb -merge"
         "hyprctl dispatcher focusmonitor 1"
       ];
-      xwayland = {force_zero_scaling = true;};
+      xwayland = { force_zero_scaling = true; };
       input = {
         kb_layout = "latam";
         follow_mouse = 1;
@@ -101,7 +103,7 @@ in {
         shadow_range = 50;
         shadow_render_power = 3;
         "col.shadow" = "rgba(00000055)";
-        blurls = ["waybar" "lockscreen"];
+        blurls = [ "waybar" "lockscreen" ];
       };
       animation = {
         bezier = [
@@ -126,7 +128,7 @@ in {
         pseudotile = true;
         preserve_split = true;
       };
-      master = {new_is_master = true;};
+      master = { new_is_master = true; };
 
       "$VIDEODIR" = "$HOME/Videos";
       "$NOTIFY" = "notify-send -h string:x-canonical-private-synchronouse:hypr-cfg -u low";
@@ -182,7 +184,20 @@ in {
         "$MOD, mouse_down, workspace, e-1"
         "$MOD, mouse_up, workspace, e+1"
       ];
-      bindm = ["$MOD, mouse:272, movewindow" "$MOD, mouse:273, resizewindow"];
+
+      bindle = let e = "exec, ags -b hypr"; in
+        [
+          "$MOD, Tab, ${e} -t overview"
+        ];
+
+      bindl = let e = "exec, ags -b hypr -r"; in
+        [
+          "$MOD, F3, ${e} 'audio.speaker.isMuted = !audio.speaker.isMuted'"
+          "$MOD, F4, ${e} 'audio.speaker.volume += 0.02; indicator.speaker()'"
+          "$MOD, F5, ${e} 'audio.speaker.volume -= 0.02; indicator.speaker()'"
+        ];
+
+      bindm = [ "$MOD, mouse:272, movewindow" "$MOD, mouse:273, resizewindow" ];
       windowrulev2 = [
         "opacity 0.90 0.90,class:^(org.wezfurlong.wezterm)$"
         "opacity 0.90 0.90,class:^(foot)$"

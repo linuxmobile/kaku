@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   suspendScript = pkgs.writeShellScript "suspend-script" ''
     ${pkgs.pipewire}/bin/pw-cli i all | ${pkgs.ripgrep}/bin/rg running
     # only suspend if audio isn't running
@@ -6,7 +7,8 @@
       ${pkgs.systemd}/bin/systemctl suspend
     fi
   '';
-in {
+in
+{
   # screen idle
   services.swayidle = {
     enable = true;
@@ -22,7 +24,7 @@ in {
     ];
     timeouts = [
       {
-        timeout = 900;
+        timeout = 1200;
         command = suspendScript.outPath;
       }
     ];
