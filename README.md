@@ -33,7 +33,7 @@
 
 <a href="#octocat--hi-there-thanks-for-dropping-by">
   <picture>
-    <img alt="" align="right" width="400px" src="https://i.imgur.com/WTkJxA2.jpg"/>
+    <img alt="" align="right" width="400px" src="https://i.imgur.com/wxN00dP.png"/>
   </picture>
 </a>
 
