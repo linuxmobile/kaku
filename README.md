@@ -43,7 +43,7 @@
   [starship](https://github.com/starship/starship) Cross Shell Platform!
 - **Terminal** • [WezTerm](https://github.com/wez/wezterm) 💻 A powerful term
   with gpu support!
-- **Panel** • [Waybar](https://aur.archlinux.org/packages/waybar-hyprland-git)🍧
+- **Panel** • [AGS](https://github.com/Aylur/ags)🍧
   Patched waybar following hyprland faq!
 - **Notify Daemon** • [Dunst](https://github.com/dunst-project/dunst) 🍃
   Minimalist and functional!
