@@ -1,6 +1,6 @@
-{ colorlib
-, lib
-,
+{
+  colorlib,
+  lib,
 }: rec {
   colors = import ./colors.nix;
   # #RRGGBB
@@ -16,6 +16,7 @@
   terminal = {
     font = "Maple Mono SC NF";
     name = "foot";
+    exec = "start"; # command used to execute programs
     opacity = 0.9;
     size = 10;
   };

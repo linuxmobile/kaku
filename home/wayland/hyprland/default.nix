@@ -40,5 +40,14 @@
     lib.mkForce ["hyprland-session.target"];
 
   # enable hyprland
-  wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland = {
+    enable = true;
+    systemd = {
+      variables = ["--all"];
+      extraCommands = [
+        "systemctl --user stop graphical-session.target"
+        "systemctl --user start hyprland-session.target"
+      ];
+    };
+  };
 }

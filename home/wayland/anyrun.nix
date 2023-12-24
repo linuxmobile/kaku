@@ -1,7 +1,9 @@
-{ pkgs
-, inputs
-, osConfig
-, ...
+{
+  pkgs,
+  inputs,
+  osConfig,
+  default,
+  ...
 }: {
   programs.anyrun = {
     enable = true;
@@ -75,10 +77,12 @@
         padding: .3rem;
       }
     '';
-    extraConfigFiles."nixos-options.ron".text = ''
+
+    extraConfigFiles."applications.ron".text = ''
       Config(
-        options_path: "${osConfig.system.build.manual.optionsJSON}/share/doc/nixos/options.json",
+        desktop_actions: false,
         max_entries: 5,
+        terminal: Some("${default.terminal.name}"),
       )
     '';
   };

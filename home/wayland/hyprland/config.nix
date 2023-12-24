@@ -173,6 +173,11 @@ in
         "$MODSHIFT, A, movetoworkspace, special"
         "$MOD, C, exec, hyprctl dispatch centerwindow"
 
+        "$MOD, K, movefocus, u"
+        "$MOD, J, movefocus, d"
+        "$MOD, L, movefocus, r"
+        "$MOD, H, movefocus, l"
+
         "${builtins.concatStringsSep "\n" (builtins.genList (x: let
             ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
           in ''
