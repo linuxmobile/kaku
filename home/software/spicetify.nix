@@ -14,8 +14,8 @@
       overwriteAssets = true;
       sidebarConfig = true;
       enabledCustomApps = with spicePkgs.apps; [ lyrics-plus new-releases ];
-      theme = spicePkgs.themes.text;
-      colorScheme = "Spotify";
+      theme = spicePkgs.themes.Dribbblish;
+      colorScheme = "catpuccin-mocha";
       enabledExtensions = with spicePkgs.extensions; [
         hidePodcasts
         shuffle
