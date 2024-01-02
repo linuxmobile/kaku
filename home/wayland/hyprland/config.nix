@@ -161,15 +161,12 @@ in
         "$MOD, S, togglesplit"
 
         "$MODSHIFT, Space, workspaceopt, allfloat"
-        "$MODSHIFT, Space, exec, $NOTIFY 'Toggled All floating'"
         "$MODSHIFT, P, workspaceopt, allpseudotile"
-        "$MODSHIFT, P, exec, $NOTIFY ' Toggled All pseudotile'"
 
         "$MOD, Tab, cyclenext"
         "$MOD, Tab, bringactivetotop"
 
         "$MOD, A, togglespecialworkspace"
-        "$MOD, A, exec, $NOTIFY 'Toggled special workspace'"
         "$MODSHIFT, A, movetoworkspace, special"
         "$MOD, C, exec, hyprctl dispatch centerwindow"
 

@@ -46,7 +46,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     fu.url = "github:numtide/flake-utils";
+
+    helix = {
+      url = "github:helix-editor/helix";
+      inputs.flake-utils.follows = "fu";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     hm = {
       url = "github:nix-community/home-manager";
@@ -67,7 +78,6 @@
     nh = {
       url = "github:viperML/nh";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
     };
 
     nix-index-db = {

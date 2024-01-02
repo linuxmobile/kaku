@@ -1,14 +1,12 @@
-{
-  pkgs,
-  lib,
-  ...
+{ pkgs
+, ...
 }:
 # configuration shared by all hosts
 {
   documentation.dev.enable = false;
 
   # enable zsh autocompletion for system packages (systemd, etc)
-  environment.pathsToLink = ["/share/zsh"];
+  environment.pathsToLink = [ "/share/zsh" ];
 
   time.timeZone = "America/Argentina/Buenos_Aires";
 
@@ -42,9 +40,9 @@
       autosuggestions.enable = true;
       syntaxHighlighting = {
         enable = true;
-        patterns = {"rm -rf *" = "fg=black,bg=red";};
-        styles = {"alias" = "fg=magenta";};
-        highlighters = ["main" "brackets" "pattern"];
+        patterns = { "rm -rf *" = "fg=black,bg=red"; };
+        styles = { "alias" = "fg=magenta"; };
+        highlighters = [ "main" "brackets" "pattern" ];
       };
     };
   };
@@ -55,7 +53,7 @@
   users.users.linuxmobile = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [ "networkmanager" "wheel" ];
   };
 
   # compresses half the ram for use as swap

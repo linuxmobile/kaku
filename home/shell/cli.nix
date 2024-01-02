@@ -1,7 +1,5 @@
-{
-  config,
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
   home.packages = with pkgs; [
     # archives
@@ -17,7 +15,6 @@
     zoxide
     fd
     killall
-    yazi
   ];
 
   programs = {

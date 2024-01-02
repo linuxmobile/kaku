@@ -5,9 +5,18 @@
   programs.helix.languages = {
     language =
       let
+        astro-lsp = lang: {
+          command = "astro-ls";
+          args = [ "--stdio" ];
+          config.typescript.tsdk = "${pkgs.typescript}/lib/node_modules/typescript/lib/";
+        };
         deno = lang: {
           command = "${pkgs.deno}/bin/deno";
           args = [ "fmt" "-" "--ext" lang ];
+        };
+        emmet-lsp = lang: {
+          command = "${pkgs.nodePackages.emmet-ls}/bin/emmet-ls";
+          args = [ "--stdio" ];
         };
         prettier = lang: {
           command = "${pkgs.nodePackages.prettier}/bin/prettier";
@@ -18,6 +27,10 @@
           formatter = prettier e;
         });
         langs = [ "css" "scss" "json" "html" ];
+        unocss-lsp = lang: {
+          command = "unocss-language-server";
+          args = [ "--stdio" ];
+        };
       in
       [
         {
@@ -46,6 +59,16 @@
           name = "typescript";
           auto-format = true;
           language-servers = [ "deno-lsp" ];
+        }
+        {
+          name = "astro";
+          auto-format = true;
+          formatter =
+            {
+              command = "${pkgs.nodePackages.prettier}/bin/prettier";
+              args = [ "--parser" "astro" ];
+            };
+          language-servers = [ "astro-lsp" "emmet-lsp" ];
         }
       ]
       ++ prettierLangs langs;

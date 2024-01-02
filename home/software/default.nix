@@ -1,4 +1,4 @@
-{config, ...}: {
+{ config, ... }: {
   imports = [
     ../shell/nix.nix
     ../terminals/wezterm.nix
@@ -12,6 +12,7 @@
     ./qt.nix
     ./packages.nix
     ./spicetify.nix
+    ./yazi
     ./xdg.nix
 
     # Apps
