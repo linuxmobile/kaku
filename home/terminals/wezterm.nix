@@ -1,6 +1,7 @@
-{default, ...}: {
+{default, inputs, pkgs, ...}: {
   programs.wezterm = {
     enable = true;
+    package = inputs.self.packages.${pkgs.system}.wezterm;
     colorSchemes = {
       followSystem = {
         background = "${default.xcolors.background}";
@@ -99,7 +100,7 @@
           top = 25,
           bottom = 25,
         },
-        enable_wayland = false,
+        enable_wayland = true,
         check_for_updates = false,
         default_cursor_style = "SteadyBar",
         automatically_reload_config = true,

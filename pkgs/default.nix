@@ -12,6 +12,8 @@
       # nvchad = pkgs.callPackage ./nvchad {};
 
       kodo = pkgs.callPackage ./kodo {};
+
+      wezterm = pkgs.callPackage ./wezterm {};
     };
   };
 }

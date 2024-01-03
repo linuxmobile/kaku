@@ -15,7 +15,7 @@
   # linuxmobile font -> AestheticIosevka Nerd Font Mono
   terminal = {
     font = "Maple Mono SC NF";
-    name = "foot";
+    name = "wezterm";
     exec = "start"; # command used to execute programs
     opacity = 0.9;
     size = 10;

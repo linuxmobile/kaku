@@ -76,7 +76,8 @@
       gitrm = "git ls-files --deleted -z | xargs -0 git rm";
 
       m = "mkdir -p";
-      fcd = "cd $(find -type d | fzf)";
+      fcd = "cd $(find -type d | sk)";
+      fm = "yazi";
       # grep = "ripgrep";
       du = "du-dust";
       ps = "procs";

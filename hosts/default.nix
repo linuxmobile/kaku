@@ -11,6 +11,7 @@
       modules =
         [
           ./aesthetic
+          # ../modules/greetd.nix
           ../modules/desktop.nix
           {
             home-manager.users.linuxmobile.imports =
