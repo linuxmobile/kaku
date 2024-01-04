@@ -15,7 +15,7 @@
       sidebarConfig = true;
       enabledCustomApps = with spicePkgs.apps; [ lyrics-plus new-releases ];
       theme = spicePkgs.themes.Dribbblish;
-      colorScheme = "catpuccin-mocha";
+      colorScheme = "gruvbox";
       enabledExtensions = with spicePkgs.extensions; [
         hidePodcasts
         shuffle

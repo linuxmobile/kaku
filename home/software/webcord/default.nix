@@ -11,7 +11,7 @@ in
 {
   home.packages = with pkgs;
     [
-      webcord-vencord # webcord with vencord extension installed
+      webcord # webcord with vencord extension installed
     ];
 
   xdg.configFile = {

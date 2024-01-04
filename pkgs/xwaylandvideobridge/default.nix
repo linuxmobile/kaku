@@ -23,6 +23,13 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = [ cmake extra-cmake-modules pkg-config wrapQtAppsHook ];
 
+  patches = [
+    (fetchpatch {
+      url = "https://aur.archlinux.org/cgit/aur.git/plain/cursor-mode.patch?h=xwaylandvideobridge-cursor-mode-2-git";
+      hash = "sha256-649kCs3Fsz8VCgGpZ952Zgl8txAcTgakLoMusaJQYa4=";
+    })
+  ];
+
   buildInputs = [
     qt5.qtbase
     qt5.qtquickcontrols2

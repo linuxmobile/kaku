@@ -13,7 +13,8 @@
       jaq
       xorg.xprop
       inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
-      self.packages.${pkgs.system}.xwaylandvideobridge
+      # self.packages.${pkgs.system}.xwaylandvideobridge
+      xwaylandvideobridge
     ];
     file = {
       ".config/hypr/scripts/volume" = {

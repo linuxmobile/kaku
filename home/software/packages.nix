@@ -1,13 +1,14 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     # messaging
     tdesktop
 
-    pavucontrol
     betterdiscordctl
     xfce.thunar
     xfce.thunar-archive-plugin
     ps_mem
+
+    vesktop
 
     # misc
     libnotify
@@ -33,10 +34,8 @@
     scrcpy
 
     gcc
-    emmet-ls
     nixfmt
     rnix-lsp
-    deno
     cargo
   ];
 }
