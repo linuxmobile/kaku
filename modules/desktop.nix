@@ -19,7 +19,7 @@
 
       lexend
       # nerdfonts
-      (nerdfonts.override {fonts = ["FiraCode" "JetBrainsMono"];})
+      (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
     ];
 
     enableDefaultPackages = false;
@@ -82,10 +82,6 @@
 
     gvfs.enable = true;
 
-    # xserver = {
-    #   enable = false;
-    #   displayManager.sddm.enable = true;
-    # };
     # hardware.openrgb.enable = true;
 
     logind.extraConfig = ''
@@ -104,7 +100,10 @@
     };
 
     # needed for GNOME services outside of GNOME Desktop
-    dbus.packages = [pkgs.gcr];
+    dbus = {
+      implementation = "broker";
+      packages = [pkgs.gcr];
+    };
   };
 
   security = {
@@ -118,7 +117,7 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    config = { 
+    config = {
       common.default = ["gtk"];
       hyprland.default = ["gtk" "hyprland"];
     };
