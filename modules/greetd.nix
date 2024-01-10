@@ -1,11 +1,9 @@
-{
-  config, lib, pkgs, ...
-}: {
+{}: {
   services.greetd = let
-  session = {
-    command = "Hyprland";
-    user = "linuxmobile";
-  };
+    session = {
+      command = "Hyprland";
+      user = "linuxmobile";
+    };
   in {
     enable = true;
     settings = {

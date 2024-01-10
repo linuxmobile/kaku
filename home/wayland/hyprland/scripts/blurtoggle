@@ -1,9 +1,11 @@
 #!/run/current-system/sw/bin/bash
-HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==2{print $2}')
-if [ "$HYPRGAMEMODE" = 1 ] ; then
-    hyprctl --batch "\
-        keyword decoration:blur:enabled 0"
-    exit
-fi
 
+BLURTOGGLE=$(hyprctl getoption animations:enabled | awk 'NR==2{print $2}')
+
+if [ "$BLURTOGGLE" = 1 ]; then
+  hyprctl --batch "keyword decoration:blur:enabled 0"
+  exit
+else
+  hyprctl --batch "keyword decoration:blur:enabled 1"
+fi
 hyprctl reload

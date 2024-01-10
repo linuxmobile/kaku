@@ -68,6 +68,8 @@
           W = ":set whitespace.render none";
         };
 
+        tab = ["goto_next_buffer"];
+
         A-j = ["extend_to_line_bounds" "delete_selection" "paste_after"];
         A-k = ["extend_to_line_bounds" "delete_selection" "move_line_up" "paste_before"];
         A-h = ["delete_selection" "move_char_left" "paste_before"];

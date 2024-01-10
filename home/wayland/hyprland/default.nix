@@ -2,7 +2,6 @@
   inputs,
   lib,
   pkgs,
-  self,
   ...
 }: {
   imports = [./config.nix];

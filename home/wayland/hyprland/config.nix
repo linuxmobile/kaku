@@ -1,16 +1,15 @@
-{ config
-, # inputs,
+{
+  config,
+  # inputs,
   # pkgs,
-  default
-, ...
-}:
-let
+  default,
+  ...
+}: let
   inherit (default) colors;
 
   pointer = config.home.pointerCursor;
   homeDir = config.home.homeDirectory;
-in
-{
+in {
   wayland.windowManager.hyprland = {
     # plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.system}.default ];
     settings = {
@@ -52,7 +51,7 @@ in
         "echo 'Xft.dpi: 130' | xrdb -merge"
         "hyprctl dispatcher focusmonitor 1"
       ];
-      xwayland = { force_zero_scaling = true; };
+      xwayland = {force_zero_scaling = true;};
       input = {
         kb_layout = "latam";
         follow_mouse = 1;
@@ -103,7 +102,7 @@ in
         shadow_range = 50;
         shadow_render_power = 3;
         "col.shadow" = "rgba(00000055)";
-        blurls = [ "waybar" "lockscreen" "popup" ];
+        blurls = ["waybar" "lockscreen"];
       };
       animation = {
         bezier = [
@@ -128,7 +127,7 @@ in
         pseudotile = true;
         preserve_split = true;
       };
-      master = { new_is_master = true; };
+      master = {new_is_master = true;};
 
       "$VIDEODIR" = "$HOME/Videos";
       "$NOTIFY" = "notify-send -h string:x-canonical-private-synchronouse:hypr-cfg -u low";
@@ -187,24 +186,27 @@ in
         "$MOD, mouse_up, workspace, e+1"
       ];
 
-      bindle = let e = "exec, ags -b hypr"; in
-        [
-          "$MOD, Tab, ${e} -t overview"
-        ];
+      bindle = let
+        e = "exec, ags -b hypr";
+      in [
+        "$MOD, Tab, ${e} -t overview"
+      ];
 
-      bindl = let e = "exec, ags -b hypr -r"; in
-        [
-          "$MOD, F3, ${e} 'audio.speaker.isMuted = !audio.speaker.isMuted'"
-          "$MOD, F4, ${e} 'audio.speaker.volume += 0.02; indicator.speaker()'"
-          "$MOD, F5, ${e} 'audio.speaker.volume -= 0.02; indicator.speaker()'"
-        ];
+      bindl = let
+        e = "exec, ags -b hypr -r";
+      in [
+        "$MOD, F3, ${e} 'audio.speaker.isMuted = !audio.speaker.isMuted'"
+        "$MOD, F4, ${e} 'audio.speaker.volume += 0.02; indicator.speaker()'"
+        "$MOD, F5, ${e} 'audio.speaker.volume -= 0.02; indicator.speaker()'"
+      ];
 
-      bindm = [ "$MOD, mouse:272, movewindow" "$MOD, mouse:273, resizewindow" ];
+      bindm = ["$MOD, mouse:272, movewindow" "$MOD, mouse:273, resizewindow"];
       windowrulev2 = [
         "opacity 0.90 0.90,class:^(org.wezfurlong.wezterm)$"
         "opacity 0.90 0.90,class:^(foot)$"
         "opacity 0.90 0.90,class:^(Brave-browser)$"
         "opacity 0.90 0.90,class:^(brave-browser)$"
+        "opacity 0.90 0.90,class:^(firefox)$"
         "opacity 0.80 0.80,class:^(Steam)$"
         "opacity 0.80 0.80,class:^(steam)$"
         "opacity 0.80 0.80,class:^(steamwebhelper)$"
@@ -214,8 +216,7 @@ in
         "opacity 0.80 0.80,class:^(file-roller)$"
         "opacity 0.80 0.80,class:^(nwg-look)$"
         "opacity 0.80 0.80,class:^(qt5ct)$"
-        "opacity 0.80 0.80,class:^(discord)$"
-        "opacity 0.80 0.80,class:^(WebCord)$"
+        "opacity 0.80 0.80,class:^(VencordDesktop|Webcord|discord|Discord)"
         "opacity 0.80 0.70,class:^(pavucontrol)$"
         "opacity 0.80 0.70,class:^(org.kde.polkit-kde-authentication-agent-1)$"
         "opacity 0.80 0.80,class:^(org.telegram.desktop)$"

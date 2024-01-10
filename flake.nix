@@ -2,24 +2,24 @@
   description = "linuxmobile Config. Take Care about it";
 
   outputs = inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "x86_64-linux" ];
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = ["x86_64-linux"];
 
-      imports = [ ./home/profiles ./hosts ./lib ./modules ./pkgs ];
+      imports = [./home/profiles ./hosts ./lib ./modules ./pkgs];
 
-      perSystem =
-        { config
-        , pkgs
-        , ...
-        }: {
-          devShells.default = pkgs.mkShell {
-            packages = [ pkgs.alejandra pkgs.git config.packages.repl ];
-            name = "nixland";
-            DIRENV_LOG_FORMAT = "";
-          };
-          # Nix Formatter
-          formatter = pkgs.alejandra;
+      perSystem = {
+        config,
+        pkgs,
+        ...
+      }: {
+        devShells.default = pkgs.mkShell {
+          packages = [pkgs.alejandra pkgs.git config.packages.repl];
+          name = "nixland";
+          DIRENV_LOG_FORMAT = "";
         };
+        # Nix Formatter
+        formatter = pkgs.alejandra;
+      };
     };
 
   inputs = {
@@ -48,6 +48,11 @@
 
     fenix = {
       url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -89,5 +94,7 @@
       url = "github:MichaelPachec0/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
   };
 }

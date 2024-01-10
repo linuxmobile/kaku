@@ -1,9 +1,9 @@
-{ pkgs
-, default
-, config
-, ...
+{
+  pkgs,
+  default,
+  ...
 }: {
-  home.packages = [ pkgs.gh ];
+  home.packages = [pkgs.gh];
 
   programs.git = {
     enable = true;
@@ -21,7 +21,7 @@
     };
 
     extraConfig = {
-      init = { defaultBranch = "main"; };
+      init = {defaultBranch = "main";};
       diff.colorMoved = "default";
       merge.conflictstyle = "diff3";
     };
@@ -44,6 +44,6 @@
       edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; hx `f`";
     };
 
-    ignores = [ "*~" "*.swp" "*result*" ".direnv" "node_modules" ];
+    ignores = ["*~" "*.swp" "*result*" ".direnv" "node_modules"];
   };
 }

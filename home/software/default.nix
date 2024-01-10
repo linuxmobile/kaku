@@ -10,14 +10,15 @@
     ../terminals/cava.nix
     ../terminals/neofetch.nix
     ./files
-    ./media.nix
+    ./firefox.nix
     ./git.nix
     ./gtk.nix
+    ./media.nix
     ./qt.nix
-    ./packages.nix
     ./spicetify.nix
-    ./yazi
+    ./packages.nix
     ./xdg.nix
+    ./yazi
 
     # Apps
     ./discord.nix
@@ -29,19 +30,6 @@
   programs = {
     brave = {
       enable = true;
-    };
-
-    firefox = {
-      enable = true;
-      package = pkgs.wrapFirefox pkgs.firefox-devedition-unwrapped {
-        extraPolicies = {
-          DisableFirefoxStudies = true;
-          DisablePocket = true;
-          DisableTelemetry = true;
-          DisableFirefoxAccounts = true;
-          PromptForDownloadLocation = true;
-        };
-      };
     };
 
     gpg = {
