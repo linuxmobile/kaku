@@ -3,17 +3,19 @@
 
   perSystem = {pkgs, ...}: {
     packages = {
+      biome = pkgs.callPackage ./biome {};
+
       # instant repl with automatic flake loading
       repl = pkgs.callPackage ./repl {};
-
-      xwaylandvideobridge =
-        pkgs.libsForQt5.callPackage ./xwaylandvideobridge {};
 
       # nvchad = pkgs.callPackage ./nvchad {};
 
       # kodo = pkgs.callPackage ./kodo {};
 
       wezterm = pkgs.callPackage ./wezterm {};
+
+      xwaylandvideobridge =
+        pkgs.libsForQt5.callPackage ./xwaylandvideobridge {};
     };
   };
 }

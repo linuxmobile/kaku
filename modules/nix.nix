@@ -8,6 +8,7 @@
   environment.systemPackages = [
     pkgs.git
     pkgs.pciutils
+    pkgs.nixos-icons
   ];
   environment.variables.FLAKE = "/home/linuxmobile/Dev/nixland";
 

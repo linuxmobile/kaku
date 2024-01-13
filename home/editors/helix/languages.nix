@@ -5,6 +5,10 @@
 }: {
   programs.helix.languages = {
     language = let
+      biome = lang: {
+        command = "biome";
+        args = ["format" lang];
+      };
       deno = lang: {
         command = "${pkgs.deno}/bin/deno";
         args = ["fmt" "-" "--ext" lang];
@@ -18,35 +22,17 @@
         formatter = prettier e;
       });
       langs = ["css" "scss" "json" "html"];
+
+      commonAutoPairs = {
+        "(" = "(";
+        ")" = ")";
+        "{" = "}";
+        "[" = "]";
+        "<" = "<";
+        ">" = ">";
+      };
     in
       [
-        {
-          name = "bash";
-          auto-format = true;
-          formatter = {
-            command = "${pkgs.shfmt}/bin/shfmt";
-            args = ["-i" "2"];
-          };
-        }
-        {
-          name = "javascript";
-          auto-format = true;
-          language-servers = ["deno-lsp"];
-        }
-        {
-          name = "json";
-          formatter = deno "json";
-        }
-        {
-          name = "markdown";
-          auto-format = true;
-          formatter = deno "md";
-        }
-        {
-          name = "typescript";
-          auto-format = true;
-          language-servers = ["deno-lsp"];
-        }
         {
           name = "astro";
           auto-format = true;
@@ -55,6 +41,82 @@
             args = ["--parser" "astro"];
           };
           language-servers = ["astro-lsp" "emmet-lsp"];
+          auto-pairs = commonAutoPairs;
+        }
+        {
+          name = "bash";
+          auto-format = true;
+          formatter = {
+            command = "${pkgs.shfmt}/bin/shfmt";
+            args = ["-i" "2"];
+          };
+          auto-pairs = commonAutoPairs;
+        }
+        {
+          name = "javascript";
+          auto-format = true;
+          language-servers = [
+            {
+              name = "typescript-language-server";
+              except-features = ["format"];
+            }
+            "biome"
+          ];
+          auto-pairs = commonAutoPairs;
+        }
+        {
+          name = "json";
+          formatter = biome "json";
+          language-servers = [
+            {
+              name = "typescript-language-server";
+              except-features = ["format"];
+            }
+            "biome"
+          ];
+          auto-pairs = commonAutoPairs;
+        }
+        {
+          name = "jsx";
+          auto-format = true;
+          language-servers = [
+            {
+              name = "typescript-language-server";
+              except-features = ["format"];
+            }
+            "biome"
+          ];
+          auto-pairs = commonAutoPairs;
+        }
+        {
+          name = "markdown";
+          auto-format = true;
+          formatter = deno "md";
+          auto-pairs = commonAutoPairs;
+        }
+        {
+          name = "typescript";
+          auto-format = true;
+          language-servers = [
+            {
+              name = "typescript-language-server";
+              except-features = ["format"];
+            }
+            "biome"
+          ];
+          auto-pairs = commonAutoPairs;
+        }
+        {
+          name = "tsx";
+          auto-format = true;
+          language-servers = [
+            {
+              name = "typescript-language-server";
+              except-features = ["format"];
+            }
+            "biome"
+          ];
+          auto-pairs = commonAutoPairs;
         }
       ]
       ++ prettierLangs langs;
@@ -67,9 +129,9 @@
         config.typescript.tsdk = "${pkgs.typescript}/lib/node_modules/typescript/lib/";
       };
 
-      nil = {
-        command = lib.getExe pkgs.nil;
-        config.nil.formatting.command = ["${lib.getExe pkgs.alejandra}" "-q"];
+      biome = {
+        command = "biome";
+        args = ["lsp-proxy"];
       };
 
       deno-lsp = {
@@ -100,6 +162,16 @@
         args = ["--stdio"];
       };
 
+      nil = {
+        command = lib.getExe pkgs.nil;
+        config.nil.formatting.command = ["${lib.getExe pkgs.alejandra}" "-q"];
+      };
+
+      unocss-lsp = {
+        command = "unocss-language-server";
+        args = ["--stdio"];
+      };
+
       vscode-css-language-server = {
         command = "${pkgs.nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
         args = ["--stdio"];
@@ -108,11 +180,6 @@
           css.validate.enable = true;
           scss.validate.enable = true;
         };
-      };
-
-      unocss-lsp = {
-        command = "unocss-language-server";
-        args = ["--stdio"];
       };
     };
   };

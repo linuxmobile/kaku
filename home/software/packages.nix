@@ -9,6 +9,7 @@
     ps_mem
 
     vesktop
+    youtube-tui
 
     # misc
     libnotify

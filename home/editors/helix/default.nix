@@ -16,6 +16,7 @@
           "PATH"
           ":"
           (lib.makeBinPath [
+            inputs.self.packages.${pkgs.system}.biome
             emmet-ls
             marksman
             nil
@@ -23,7 +24,6 @@
             nodePackages.vscode-langservers-extracted
             nodePackages.typescript-language-server
             nodePackages."@astrojs/language-server"
-            tailwindcss-language-server
             typescript
           ])
         ];

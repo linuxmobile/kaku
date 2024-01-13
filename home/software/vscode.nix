@@ -52,11 +52,9 @@
       "editor.fontFamily" = "Maple Mono SC NF, Catppuccin Perfect Mocha, 'monospace', monospace";
       "editor.fontSize" = 12;
       "editor.fontLigatures" = true;
-      "workbench.fontAliasing" = "antialiased";
       "files.trimTrailingWhitespace" = true;
       "terminal.integrated.fontFamily" = "Maple Mono SC NF";
       "window.titleBarStyle" = "custom";
-      "terminal.integrated.automationShell.linux" = "nix-shell";
       "terminal.integrated.defaultProfile.linux" = "zsh";
       "terminal.integrated.cursorBlinking" = true;
       "terminal.integrated.enableBell" = false;
@@ -73,11 +71,9 @@
       "editor.guides.indentation" = true;
       "editor.guides.bracketPairs" = true;
       "editor.bracketPairColorization.enabled" = true;
-      "window.nativeTabs" = true;
       "window.restoreWindows" = "all";
       "window.menuBarVisibility" = "toggle";
       "workbench.panel.defaultLocation" = "right";
-      "workbench.editor.tabCloseButton" = "left";
       "workbench.list.smoothScrolling" = true;
       "security.workspace.trust.enabled" = false;
       "explorer.confirmDelete" = false;
@@ -91,6 +87,7 @@
       "workbench.sideBar.location" = "right";
       "editor.tabSize" = 2;
       "editor.wordWrap" = "on";
+      "workbench.editor.tabActionLocation" = "left";
       "[typescriptreact]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
