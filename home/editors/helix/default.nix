@@ -29,8 +29,19 @@
         ];
     });
 
+    themes = {
+      tokyonight_transparent = {
+        "inherits" = "tokyonight";
+        "ui.virtual.inlay-hint" = {
+          fg = "surface1";
+          modifiers = ["italic"];
+        };
+        "ui.background" = "{}";
+      };
+    };
+
     settings = {
-      theme = "base16_transparent";
+      theme = "tokyonight_transparent";
       editor = {
         color-modes = true;
         cursorline = true;
@@ -39,16 +50,33 @@
           normal = "block";
           select = "underline";
         };
+        bufferline = "always";
+        true-color = true;
+        soft-wrap.enable = true;
         indent-guides = {
           render = true;
           rainbow-option = "dim";
         };
-        lsp.display-inlay-hints = true;
-        statusline.center = ["position-percentage"];
-        true-color = true;
+        lsp = {
+          display-messages = true;
+          display-inlay-hints = true;
+        };
+        gutters = ["diagnostics" "line-numbers" "spacer" "diff"];
+        statusline = {
+          left = ["mode" "selections" "spinner" "file-name" "total-line-numbers"];
+          center = [];
+          right = ["diagnostics" "file-encoding" "file-line-ending" "file-type" "position-percentage" "position"];
+          mode = {
+            normal = "NORMAL";
+            insert = "INSERT";
+            select = "SELECT";
+          };
+        };
         whitespace.characters = {
-          newline = "↴";
-          tab = "⇥";
+          space = "·";
+          nbsp = "⍽";
+          tab = "→";
+          newline = "⤶";
         };
       };
 
