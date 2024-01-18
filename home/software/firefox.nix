@@ -22,6 +22,7 @@
         bitwarden
         sponsorblock
         refined-github
+        react-devtools
       ];
       search.force = true;
       search.engines = {

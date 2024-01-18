@@ -9,7 +9,7 @@
     # load modules on boot
     kernelModules = ["amdgpu" "v4l2loopback"];
     # use latest kernel
-    kernelPackages = pkgs.linuxPackages_xanmod_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "amd_pstate=active"
       "nvme_core.default_ps_max_latency_us=0"

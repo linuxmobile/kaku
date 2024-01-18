@@ -5,9 +5,9 @@
   imports = [
     ../shell/nix.nix
     ../terminals/wezterm.nix
-    # ../terminals/foot.nix
     ../terminals/cava.nix
     ../terminals/neofetch.nix
+    ./bottom.nix
     ./files
     ./firefox.nix
     ./git.nix
@@ -20,8 +20,6 @@
     ./yazi
 
     # Apps
-    ./discord.nix
-    ./webcord/default.nix
     ./obs.nix
     ./vscode.nix
   ];

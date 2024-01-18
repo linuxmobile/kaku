@@ -29,7 +29,6 @@
 
     eza.enable = true;
     ssh.enable = true;
-    btop.enable = true;
 
     skim = {
       enable = true;

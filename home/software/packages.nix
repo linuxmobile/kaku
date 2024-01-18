@@ -3,13 +3,11 @@
     # messaging
     tdesktop
 
-    betterdiscordctl
     xfce.thunar
     xfce.thunar-archive-plugin
     ps_mem
 
     vesktop
-    youtube-tui
 
     # misc
     libnotify
@@ -22,7 +20,6 @@
     cliphist
     rizin
     xcolor
-    htop
     nodejs
     nodePackages.pnpm
     jq
@@ -32,11 +29,5 @@
 
     neofetch
     gnome.file-roller
-    scrcpy
-
-    gcc
-    nixfmt
-    rnix-lsp
-    cargo
   ];
 }

@@ -14,15 +14,14 @@
       overwriteAssets = true;
       sidebarConfig = true;
       enabledCustomApps = with spicePkgs.apps; [ lyrics-plus new-releases ];
-      theme = spicePkgs.themes.Dribbblish;
-      colorScheme = "gruvbox";
+      theme = spicePkgs.themes.text;
+      colorScheme = "spotify";
       enabledExtensions = with spicePkgs.extensions; [
         hidePodcasts
         shuffle
         adblock
         playlistIcons
         lastfm
-        genre
         historyShortcut
         bookmark
         fullAlbumDate
