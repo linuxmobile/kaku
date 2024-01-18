@@ -37,6 +37,7 @@
           modifiers = ["italic"];
         };
         "ui.background" = "{}";
+        "ui.text" = "{}";
       };
     };
 
