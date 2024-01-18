@@ -10,11 +10,11 @@
     kernelModules = ["amdgpu" "v4l2loopback"];
     # use latest kernel
     kernelPackages = pkgs.linuxPackages_latest;
+    consoleLogLevel = 3;
     kernelParams = [
       "amd_pstate=active"
       "nvme_core.default_ps_max_latency_us=0"
       "quiet"
-      "loglevel=3"
       "systemd.show_status=auto"
       "rd.udev.log_level=3"
     ];
