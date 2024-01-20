@@ -8,6 +8,7 @@
     ps_mem
 
     vesktop
+    discordo
 
     # misc
     libnotify

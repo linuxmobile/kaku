@@ -98,6 +98,9 @@
         };
 
         tab = ["goto_next_buffer"];
+        S-tab = ["goto_previous_buffer"];
+
+        space = { x = ":buffer-close";};
 
         A-j = ["extend_to_line_bounds" "delete_selection" "paste_after"];
         A-k = ["extend_to_line_bounds" "delete_selection" "move_line_up" "paste_before"];

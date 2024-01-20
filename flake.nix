@@ -95,6 +95,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sss = {
+      url = "github:SergioRibera/sss";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
   };
 }

@@ -12,7 +12,7 @@
       jaq
       xorg.xprop
       inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
-      # self.packages.${pkgs.system}.xwaylandvideobridge
+      # inputs.sss.packages.${pkgs.system}.sss
       xwaylandvideobridge
     ];
     file = {

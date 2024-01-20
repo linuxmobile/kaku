@@ -601,6 +601,7 @@
         "nix-index-db": "nix-index-db",
         "nixpkgs": "nixpkgs_4",
         "spicetify-nix": "spicetify-nix",
+        "sss": "sss",
         "xdg-portal-hyprland": "xdg-portal-hyprland"
       }
     },
@@ -664,6 +665,26 @@
       "original": {
         "owner": "MichaelPachec0",
         "repo": "spicetify-nix",
+        "type": "github"
+      }
+    },
+    "sss": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1705706930,
+        "narHash": "sha256-2UoQjmgpwp41okYjF1D7LzTF1ERssT2pQYqaAMU5i8g=",
+        "owner": "SergioRibera",
+        "repo": "sss",
+        "rev": "8d078412764750d557ffc7d9d0c2d074dbd23439",
+        "type": "github"
+      },
+      "original": {
+        "owner": "SergioRibera",
+        "repo": "sss",
         "type": "github"
       }
     },
