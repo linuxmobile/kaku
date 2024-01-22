@@ -55,12 +55,16 @@
         {
           name = "javascript";
           auto-format = true;
+          formatter = {
+            command = "biome";
+            args = ["format" "--stdin-file-path" "a.ts"];
+          };
           language-servers = [
             {
               name = "typescript-language-server";
               except-features = ["format"];
             }
-            "biome"
+            "biome-lsp"
           ];
           auto-pairs = commonAutoPairs;
         }
@@ -72,19 +76,23 @@
               name = "typescript-language-server";
               except-features = ["format"];
             }
-            "biome"
+            "biome-lsp"
           ];
           auto-pairs = commonAutoPairs;
         }
         {
           name = "jsx";
           auto-format = true;
+          formatter = {
+            command = "biome";
+            args = ["format" "--stdin-file-path" "a.ts"];
+          };
           language-servers = [
             {
               name = "typescript-language-server";
               except-features = ["format"];
             }
-            "biome"
+            "biome-lsp"
           ];
           auto-pairs = commonAutoPairs;
         }
@@ -97,24 +105,32 @@
         {
           name = "typescript";
           auto-format = true;
+          formatter = {
+            command = "biome";
+            args = ["format" "--stdin-file-path" "a.ts"];
+          };
           language-servers = [
             {
               name = "typescript-language-server";
               except-features = ["format"];
             }
-            "biome"
+            "biome-lsp"
           ];
           auto-pairs = commonAutoPairs;
         }
         {
           name = "tsx";
           auto-format = true;
+          formatter = {
+            command = "biome";
+            args = ["format" "--stdin-file-path" "a.ts"];
+          };
           language-servers = [
             {
               name = "typescript-language-server";
               except-features = ["format"];
             }
-            "biome"
+            "biome-lsp"
           ];
           auto-pairs = commonAutoPairs;
         }
@@ -129,7 +145,7 @@
         config.typescript.tsdk = "${pkgs.typescript}/lib/node_modules/typescript/lib/";
       };
 
-      biome = {
+      biome-lsp = {
         command = "biome";
         args = ["lsp-proxy"];
       };

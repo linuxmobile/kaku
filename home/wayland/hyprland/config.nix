@@ -76,8 +76,8 @@ in {
         gaps_in = 5;
         gaps_out = 5;
         border_size = 1;
-        "col.active_border" = "rgb(${colors.bg2}) rgb(${colors.bg2}) 270deg";
-        "col.inactive_border" = "rgb(${colors.contrast}) rgb(${colors.contrast}) 270deg";
+        "col.active_border" = "rgb(${colors.color1}) rgb(${colors.color1}) 270deg";
+        "col.inactive_border" = "rgb(${colors.darker}) rgb(${colors.darker}) 270deg";
         # group borders
         #"col.group_border_active" = "rgb(${colors.color5})";
         #"col.group_border" = "rgb(${colors.contrast})";

@@ -11,7 +11,7 @@
         foreground = "${default.xcolors.foreground}";
         selection_bg = "${default.xcolors.color15}";
         selection_fg = "${default.xcolors.background}";
-        split = "${default.xcolors.mbg}";
+        split = "${default.xcolors.darker}";
         ansi = [
           "${default.xcolors.color0}"
           "${default.xcolors.color1}"

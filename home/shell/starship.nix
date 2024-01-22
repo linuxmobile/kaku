@@ -17,20 +17,20 @@
       };
 
       directory = {
-        format = "[]($style)[  ](bg:${default.xcolors.mbg} fg:${default.xcolors.color4})[$path](bg:${default.xcolors.mbg} fg:${default.xcolors.color7} bold)[ ]($style)";
-        style = "bg:none fg:${default.xcolors.mbg}";
+        format = "[]($style)[  ](bg:${default.xcolors.darker} fg:${default.xcolors.color4})[$path](bg:${default.xcolors.darker} fg:${default.xcolors.color7} bold)[ ]($style)";
+        style = "bg:none fg:${default.xcolors.darker}";
         truncation_length = 3;
         truncate_to_repo = false;
       };
 
       git_branch = {
-        format = "[]($style)[[  ](bg:${default.xcolors.mbg} fg:${default.xcolors.color7} bold)$branch](bg:${default.xcolors.mbg} fg:${default.xcolors.color7})[ ]($style)";
-        style = "bg:none fg:${default.xcolors.mbg}";
+        format = "[]($style)[[  ](bg:${default.xcolors.darker} fg:${default.xcolors.color7} bold)$branch](bg:${default.xcolors.darker} fg:${default.xcolors.color7})[ ]($style)";
+        style = "bg:none fg:${default.xcolors.darker}";
       };
 
       git_status = {
-        format = "[]($style)[$all_status$ahead_behind](bg:${default.xcolors.mbg} fg:${default.xcolors.color7} bold)[ ]($style)";
-        style = "bg:none fg:${default.xcolors.mbg}";
+        format = "[]($style)[$all_status$ahead_behind](bg:${default.xcolors.darker} fg:${default.xcolors.color7} bold)[ ]($style)";
+        style = "bg:none fg:${default.xcolors.darker}";
         conflicted = "=";
         ahead = "⇡$\{count\}";
         behind = "⇣$\{count\} ";
@@ -46,9 +46,9 @@
 
       cmd_duration = {
         min_time = 1;
-        format = "[]($style)[[  ](bg:${default.xcolors.mbg} fg:${default.xcolors.color4} bold)$duration](bg:${default.xcolors.mbg} fg:${default.xcolors.color7} bold)[]($style)";
+        format = "[]($style)[[  ](bg:${default.xcolors.darker} fg:${default.xcolors.color4} bold)$duration](bg:${default.xcolors.darker} fg:${default.xcolors.color7} bold)[]($style)";
         disabled = false;
-        style = "bg:none fg:${default.xcolors.mbg}";
+        style = "bg:none fg:${default.xcolors.darker}";
       };
 
       nix_shell = {
