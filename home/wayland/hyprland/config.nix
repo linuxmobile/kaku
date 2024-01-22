@@ -63,6 +63,7 @@ in {
         disable_autoreload = true;
         animate_mouse_windowdragging = false;
         vrr = 0;
+        no_direct_scanout = false;
         vfr = true;
         disable_splash_rendering = true;
         force_default_wallpaper = 0;
@@ -249,7 +250,10 @@ in {
         "idleinhibit focus, class:^(mpv|.+exe)$"
         "idleinhibit focus, class:^(firefox)$, title:^(.*YouTube.*)$"
         "idleinhibit fullscreen, class:^(firefox)$"
-        "idleinhibit fullscreen,class:^(Brave-browser)$"
+        "idleinhibit fullscreen, class:^(Brave-browser)$"
+
+        "dimaround, class:^(xdg-desktop-portal-gtk)$"
+        "dimaround, class:^(polkit-gnome-authentication-agent-1)$"
 
         "workspace special silent, title:^(.*is sharing (your screen|a window)\.)$"
         "workspace special silent, title:^(Firefox — Sharing Indicator)$"
