@@ -91,21 +91,26 @@
       };
 
       keys.normal = {
-        space.u = {
-          f = ":format"; # format using LSP formatter
-          w = ":set whitespace.render all";
-          W = ":set whitespace.render none";
-        };
+        A-j = ["extend_to_line_bounds" "delete_selection" "paste_after"];
+        A-k = ["extend_to_line_bounds" "delete_selection" "move_line_up" "paste_before"];
+        A-h = ["delete_selection" "move_char_left" "paste_before"];
+        A-l = ["delete_selection" "move_char_right" "paste_after"];
+
+        C-h = ["jump_view_left"];
+        C-j = ["jump_view_down"];
+        C-k = ["jump_view_up"];
+        C-l = ["jump_view_right"];
 
         tab = ["goto_next_buffer"];
         S-tab = ["goto_previous_buffer"];
 
         space = { x = ":buffer-close";};
 
-        A-j = ["extend_to_line_bounds" "delete_selection" "paste_after"];
-        A-k = ["extend_to_line_bounds" "delete_selection" "move_line_up" "paste_before"];
-        A-h = ["delete_selection" "move_char_left" "paste_before"];
-        A-l = ["delete_selection" "move_char_right" "paste_after"];
+        space.u = {
+          f = ":format"; # format using LSP formatter
+          w = ":set whitespace.render all";
+          W = ":set whitespace.render none";
+        };
       };
     };
   };
