@@ -23,7 +23,7 @@
 
   # TODO: Change this later
   wallpaper = builtins.fetchurl {
-    url = "https://i.imgur.com/s8MR4o3.jpg";
-    sha256 = "sha256:00gf7ainxfiymghyfgj8hwkjfbk2sr49n6mhsh6kjmzvyhkf377i";
+    url = "https://i.imgur.com/5WKwB1q.jpg";
+    sha256 = "sha256:054kfavfjfcxnk9fw270knwlw4smr7350dj7d18pxs9b9dnk2q7d";
   };
 }

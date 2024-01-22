@@ -57,7 +57,7 @@
           auto-format = true;
           formatter = {
             command = "biome";
-            args = ["format" "--stdin-file-path" "a.ts"];
+            args = ["format" "--stdin-file-path" "a.js"];
           };
           language-servers = [
             {
@@ -85,7 +85,7 @@
           auto-format = true;
           formatter = {
             command = "biome";
-            args = ["format" "--stdin-file-path" "a.ts"];
+            args = ["format" "--stdin-file-path" "a.jsx"];
           };
           language-servers = [
             {
@@ -123,7 +123,7 @@
           auto-format = true;
           formatter = {
             command = "biome";
-            args = ["format" "--stdin-file-path" "a.ts"];
+            args = ["format" "--stdin-file-path" "a.tsx"];
           };
           language-servers = [
             {
