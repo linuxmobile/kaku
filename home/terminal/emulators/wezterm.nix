@@ -17,6 +17,11 @@
       local font_name = "Maple Mono SC NF"
 
       return {
+
+        colors = {
+          background = "#14171b"
+        },
+        
         font_size = 10,
 
        -- Font config
