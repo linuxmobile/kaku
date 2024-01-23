@@ -2,7 +2,6 @@
 # Wayland config
 {
   imports = [
-    ./anyrun.nix
     ./hyprland
     ./swaylock.nix
     ./wlogout.nix

@@ -1,9 +1,9 @@
 {
-  config,
   pkgs,
   ...
 }: {
   imports = [
+    ./anyrun
     ./browsers/brave.nix
     ./browsers/firefox.nix
     ./media

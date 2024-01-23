@@ -1,17 +1,10 @@
-{
-  config,
-  # inputs,
-  # pkgs,
-  default,
-  ...
-}: let
-  inherit (default) colors;
-
+{config, ...}: let
+  variant = config.theme.name;
+  c = config.programs.matugen.theme.colors.colors_android.${variant};
   pointer = config.home.pointerCursor;
   homeDir = config.home.homeDirectory;
 in {
   wayland.windowManager.hyprland = {
-    # plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.system}.default ];
     settings = {
       "$MOD" = "SUPER";
       env = ''
@@ -76,11 +69,8 @@ in {
         gaps_in = 5;
         gaps_out = 5;
         border_size = 1;
-        "col.active_border" = "rgb(${colors.color1}) rgb(${colors.color1}) 270deg";
-        "col.inactive_border" = "rgb(${colors.darker}) rgb(${colors.darker}) 270deg";
-        # group borders
-        #"col.group_border_active" = "rgb(${colors.color5})";
-        #"col.group_border" = "rgb(${colors.contrast})";
+        "col.active_border" = "rgba(${c.color_accent_primary}88);";
+        "col.inactive_border" = "rgba(${c.color_accent_primary_variant}88)";
         "no_border_on_floating" = false;
         layout = "dwindle";
         no_cursor_warps = true;
@@ -149,8 +139,8 @@ in {
         "$MODSHIFT, X, exec, $COLORPICKER"
         "$MOD, B, exec, $BLURTOGGLE"
 
-        "$MOD, D, exec, pkill .${default.launcher}-wrapped || run-as-service ${default.launcher}"
-        "$MOD, Return, exec, run-as-service ${default.terminal.name}"
+        "$MOD, D, exec, pkill .anyrun-wrapped || run-as-service anyrun"
+        "$MOD, Return, exec, run-as-service wezterm"
         "$MODSHIFT, L, exec, loginctl lock-session"
 
         "$MOD, Q, killactive"

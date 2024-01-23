@@ -1,5 +1,5 @@
 {
-  default,
+  config,
   pkgs,
   ...
 }: {
@@ -7,35 +7,35 @@
     enable = true;
     package = pkgs.swaylock-effects;
     settings = let
-      inherit (default) xcolors;
+      c = config.programs.matugen.theme.colors.colors.${config.theme.name};
     in {
       clock = true;
       font = "Lexend";
-      image = default.wallpaper;
+      image = config.theme.wallpaper;
       indicator = true;
       effect-blur = "10x2";
       color = "#0c0e0f4d";
 
-      bs-hl-color = xcolors.color6;
-      key-hl-color = xcolors.foreground;
-      separator-color = xcolors.background;
-      text-color = xcolors.background;
+      bs-hl-color = c.error;
+      key-hl-color = c.tertiary;
+      separator-color = c.on_primary;
+      text-color = c.on_primary;
 
-      inside-color = xcolors.color6;
-      line-color = xcolors.color6;
-      ring-color = xcolors.background;
+      inside-color = c.primary;
+      line-color = c.primary;
+      ring-color = c.on_primary;
 
-      inside-clear-color = xcolors.color3;
-      line-clear-color = xcolors.color3;
-      ring-clear-color = xcolors.background;
+      inside-clear-color = c.secondary;
+      line-clear-color = c.secondary;
+      ring-clear-color = c.on_primary;
 
-      inside-ver-color = xcolors.color6;
-      line-ver-color = xcolors.color6;
-      ring-ver-color = xcolors.background;
+      inside-ver-color = c.primary;
+      line-ver-color = c.primary;
+      ring-ver-color = c.on_primary;
 
-      inside-wrong-color = xcolors.color6;
-      line-wrong-color = xcolors.color6;
-      ring-wrong-color = xcolors.background;
+      inside-wrong-color = c.error;
+      line-wrong-color = c.error;
+      ring-wrong-color = c.on_primary;
     };
   };
 }

@@ -6,7 +6,7 @@
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Original-Classic";
-    size = 20;
+    size = 16;
     gtk.enable = true;
     x11.enable = true;
   };
@@ -16,6 +16,7 @@
     font = {
       name = "Lexend";
       package = pkgs.lexend;
+      size = 9;
     };
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
@@ -26,15 +27,12 @@
     };
 
     theme = {
-      name = "Colloid-Dark";
-      package = pkgs.colloid-gtk-theme.override {
-        #   accents = ["lavender"];
-        tweaks = ["rimless" "black" "float"];
-        #   size = "compact";
-        #   variant = "mocha";
-      };
+      name =
+        if config.theme.name == "light"
+        then "adw-gtk3"
+        else "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
     };
-
     gtk3.extraConfig = {
       gtk-xft-antialias = 1;
       gtk-xft-hinting = 1;

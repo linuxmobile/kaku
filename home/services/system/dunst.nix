@@ -1,7 +1,12 @@
-{default, ...}: {
+{config, pkgs, ...}: {
   # notification daemon
-  services.dunst = {
+  services.dunst = let
+    xcolors = pkgs.lib.colors.xcolors config.programs.matugen.theme.colors;
+    variant = config.theme.name;
+    c = xcolors.colors.${variant};
+  in {
     enable = true;
+    inherit (config.gtk) iconTheme;
     settings = {
       global = {
         follow = "mouse";
@@ -24,7 +29,7 @@
         progress_bar_max_width = 300;
         separator_height = 2;
         frame_width = 2;
-        frame_color = default.xcolors.color6;
+        frame_color = c.error;
         separator_color = "frame";
         corner_radius = 8;
         transparency = 0;
@@ -35,8 +40,6 @@
         history_length = 20;
         show_age_threshold = 60;
         markup = "full";
-        font = "AestheticIosevka Nerd Font Mono";
-        format = "<span size='x-large' font_desc='Iosevka Nerd Font 10' foreground='${default.xcolors.fg}'>%a</span>\\n%s\\n%b";
         word_wrap = "yes";
         sort = "yes";
         shrink = "no";
@@ -62,19 +65,19 @@
         script = "~/.config/eww/scripts/notification_logger.zsh";
       };
       urgency_critical = {
-        background = default.xcolors.bg;
-        foreground = default.xcolors.fg;
-        frame_color = default.xcolors.color6;
+        background = c.error_container;
+        foreground = c.on_error_container;
+        frame_color = c.error;
       };
       urgency_low = {
-        background = default.xcolors.bg;
-        foreground = default.xcolors.fg;
-        frame_color = default.xcolors.color6;
+        background = c.secondary_container;
+        foreground = c.on_secondary_container;
+        frame_color = c.secondary;
       };
       urgency_normal = {
-        background = default.xcolors.bg;
-        foreground = default.xcolors.fg;
-        frame_color = default.xcolors.color6;
+        background = c.primary_container;
+        foreground = c.on_primary_container;
+        frame_color = c.primary;
       };
     };
   };

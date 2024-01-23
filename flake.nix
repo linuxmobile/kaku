@@ -75,6 +75,11 @@
 
     # lanzaboote.url = "github:nix-community/lanzaboote";
 
+    matugen = {
+      url = "github:InioX/matugen/module";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nh = {
       url = "github:viperML/nh";
       inputs.nixpkgs.follows = "nixpkgs";

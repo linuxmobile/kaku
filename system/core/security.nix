@@ -16,7 +16,7 @@
     # Do not accept IP source route packets (we're not a router)
     "net.ipv4.conf.all.accept_source_route" = 0;
     "net.ipv6.conf.all.accept_source_route" = 0;
-    # Don't send ICMP redirects (again, we're on a router)
+    # Don't send ICMP redirects (again, we're not a router)
     "net.ipv4.conf.all.send_redirects" = 0;
     "net.ipv4.conf.default.send_redirects" = 0;
     # Refuse ICMP redirects (MITM mitigations)
@@ -40,5 +40,17 @@
     "net.ipv4.tcp_congestion_control" = "bbr";
     "net.core.default_qdisc" = "cake";
   };
+
   boot.kernelModules = ["tcp_bbr"];
+
+  security = {
+    # allow wayland lockers to unlock the screen
+    pam.services.swaylock.text = "auth include login";
+
+    # userland niceness
+    rtkit.enable = true;
+
+    # don't ask for password for wheel group
+    sudo.wheelNeedsPassword = false;
+  };
 }

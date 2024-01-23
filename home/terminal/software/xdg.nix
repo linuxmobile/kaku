@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  default,
   ...
 }: let
   browser = ["firefox"];
@@ -68,8 +67,10 @@ in {
 
   # used by `gio open` and xdp-gtk
   home.packages = [
+    # used by `gio open` and xdp-gtk
     (pkgs.writeShellScriptBin "xdg-terminal-exec" ''
-      ${default.terminal.name} ${default.terminal.exec} "$@"
+      wezterm start "$@"
     '')
+    pkgs.xdg-utils
   ];
 }

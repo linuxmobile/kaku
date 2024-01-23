@@ -2,6 +2,9 @@
 , pkgs
 , ...
 }: {
+  imports = [
+    inputs.spicetify-nix.homeManagerModule
+  ];
   # themable spotify
   programs.spicetify =
     let

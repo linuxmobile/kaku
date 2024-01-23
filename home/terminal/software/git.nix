@@ -1,6 +1,6 @@
 {
   pkgs,
-  default,
+  config,
   ...
 }: {
   home.packages = [pkgs.gh];
@@ -15,13 +15,13 @@
     userName = "Braian A. Diez";
     userEmail = "bdiez19@gmail.com";
     signing = {
-      key = "51083039D2041B30";
+      key = "${config.home.homeDirectory}/.ssh/id_ed25519";
       signByDefault = true;
     };
 
     delta = {
       enable = true;
-      options.map-styles = "bold purple => syntax ${default.xcolors.color4}, bold cyan => syntax ${default.xcolors.color3}";
+      options.${config.theme.name} = true;
     };
 
     extraConfig = {
