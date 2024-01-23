@@ -1,5 +1,5 @@
 {
-  description = "linuxmobile Config. Take Care about it";
+  description = "LinuDev Configuration NixOs.";
 
   outputs = inputs:
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
@@ -43,11 +43,6 @@
 
     anyrun = {
       url = "github:Kirottu/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    fenix = {
-      url = "github:nix-community/fenix/monthly";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

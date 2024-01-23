@@ -1,46 +1,42 @@
 {
   config,
+  pkgs,
   ...
 }: {
   imports = [
-    ../shell/nix.nix
-    ../terminals/wezterm.nix
-    ../terminals/cava.nix
-    ../terminals/neofetch.nix
-    ./bottom.nix
-    ./files
-    ./firefox.nix
-    ./git.nix
+    ./browsers/brave.nix
+    ./browsers/firefox.nix
+    ./media
     ./gtk.nix
-    ./media.nix
-    ./qt.nix
-    ./packages.nix
-    ./spicetify.nix
-    ./xdg.nix
-    ./yazi
-
-    # Apps
-    ./obs.nix
-    ./vscode.nix
   ];
 
-  programs = {
-    brave = {
-      enable = true;
-    };
+  home.packages = with pkgs; [
+    # messaging
+    tdesktop
 
-    gpg = {
-      enable = true;
-      homedir = "${config.xdg.dataHome}/gnupg";
-    };
-  };
+    xfce.thunar
+    xfce.thunar-archive-plugin
+    ps_mem
 
-  services = {
-    gpg-agent = {
-      enable = true;
-      enableSshSupport = true;
-      pinentryFlavor = "gnome3";
-    };
-    syncthing.enable = true;
-  };
+    vesktop
+    discordo
+
+    # misc
+    colord
+    ffmpegthumbnailer
+    imagemagick
+    xfce.tumbler
+    xdotool
+    cliphist
+    rizin
+    xcolor
+    nodejs
+    nodePackages.pnpm
+    jq
+    socat
+    catimg
+    bun
+
+    gnome.file-roller
+  ];
 }

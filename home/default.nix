@@ -1,9 +1,12 @@
-{
+{inputs, ...}: {
+  imports = [
+    ./terminal
+    inputs.nix-index-db.hmModules.nix-index
+  ];
   home = {
     username = "linuxmobile";
     homeDirectory = "/home/linuxmobile";
     stateVersion = "23.11";
-    # extraOutputsToInstall = ["doc" "devdoc"];
   };
 
   # disable manuals as nmd fails to build often

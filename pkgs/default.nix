@@ -8,14 +8,7 @@
       # instant repl with automatic flake loading
       repl = pkgs.callPackage ./repl {};
 
-      # nvchad = pkgs.callPackage ./nvchad {};
-
-      # kodo = pkgs.callPackage ./kodo {};
-
       wezterm = pkgs.callPackage ./wezterm {};
-
-      xwaylandvideobridge =
-        pkgs.libsForQt5.callPackage ./xwaylandvideobridge {};
     };
   };
 }
