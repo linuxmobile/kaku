@@ -76,7 +76,7 @@
     # lanzaboote.url = "github:nix-community/lanzaboote";
 
     matugen = {
-      url = "github:InioX/matugen/module";
+      url = "github:InioX/matugen/release-plz-2023-12-23T19-38-04Z";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

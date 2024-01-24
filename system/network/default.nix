@@ -3,17 +3,6 @@
 {
   networking.networkmanager = {
     enable = true;
-    dns = "systemd-resolved";
-  };
-
-  services = {
-    openssh = {
-      enable = true;
-      settings.UseDns = true;
-    };
-
-    # DNS resolver
-    resolved.enable = true;
   };
 
   # Don't wait for network startup

@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, inputs, ...}: {
   imports = [
     ./anyrun
     ./browsers/brave.nix
@@ -22,6 +19,8 @@
     discordo
 
     # misc
+    pciutils
+    nixos-icons
     colord
     ffmpegthumbnailer
     imagemagick
@@ -38,5 +37,8 @@
     bun
 
     gnome.file-roller
+
+    inputs.matugen.packages.${pkgs.system}.default
+    inputs.sss.packages.${pkgs.system}.default
   ];
 }

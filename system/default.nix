@@ -9,6 +9,7 @@ let desktop = [
   ./programs
 
   ./services
+  ./services/greetd.nix
   ./services/pipewire.nix
 ];
 in {

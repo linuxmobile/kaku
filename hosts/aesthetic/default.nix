@@ -7,7 +7,7 @@
 
   boot = {
     # load modules on boot
-    kernelModules = ["amdgpu" "v4l2loopback"];
+    kernelModules = ["amdgpu"];
     kernelParams = [
       "amd_pstate=active"
       "nvme_core.default_ps_max_latency_us=0"
