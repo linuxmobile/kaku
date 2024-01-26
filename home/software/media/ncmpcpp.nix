@@ -15,7 +15,7 @@
       # Miscelaneous
       ncmpcpp_directory = "${config.home.homeDirectory}/.config/ncmpcpp";
       ignore_leading_the = true;
-      external_editor = "nvim";
+      external_editor = "hx";
       message_delay_time = 1;
       playlist_disable_highlight_delay = 2;
       autocenter_mode = "yes";

@@ -11,11 +11,10 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    extraConfig.gpg.format = "ssh";
     userName = "Braian A. Diez";
     userEmail = "bdiez19@gmail.com";
     signing = {
-      key = "${config.home.homeDirectory}/.ssh/id_ed25519";
+      key = "51083039D2041B30";
       signByDefault = true;
     };
 

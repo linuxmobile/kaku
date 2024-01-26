@@ -3,8 +3,8 @@
     ./anyrun
     ./browsers/brave.nix
     ./browsers/firefox.nix
-    ./media
     ./gtk.nix
+    ./media
   ];
 
   home.packages = with pkgs; [
