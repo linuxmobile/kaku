@@ -4,9 +4,9 @@
   ...
 }: let
   browser = ["firefox"];
-  imageViewer = ["org.gnome.Loupe"];
-  videoPlayer = ["io.github.celluloid_player.Celluloid"];
-  audioPlayer = ["io.bassi.Amberol"];
+  imageViewer = ["viewnior"];
+  videoPlayer = ["mpv"];
+  audioPlayer = ["termusic"];
 
   xdgAssociations = type: program: list:
     builtins.listToAttrs (map (e: {

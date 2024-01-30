@@ -1,6 +1,5 @@
 {config, ...}: let
-  variant = config.theme.name;
-  c = config.programs.matugen.theme.colors.colors_android.${variant};
+  c = config.programs.matugen.theme.colors.colors.${config.theme.name};
   pointer = config.home.pointerCursor;
   homeDir = config.home.homeDirectory;
 in {
@@ -65,8 +64,8 @@ in {
         gaps_in = 5;
         gaps_out = 5;
         border_size = 1;
-        "col.active_border" = "rgba(${c.color_accent_primary}88);";
-        "col.inactive_border" = "rgba(${c.color_accent_primary_variant}88)";
+        "col.active_border" = "rgb(${c.on_primary});";
+        "col.inactive_border" = "rgb(${c.inverse_on_surface})";
         "no_border_on_floating" = false;
         layout = "dwindle";
         no_cursor_warps = true;
@@ -118,7 +117,6 @@ in {
 
       "$VIDEODIR" = "$HOME/Videos";
       "$NOTIFY" = "notify-send -h string:x-canonical-private-synchronouse:hypr-cfg -u low";
-      "$SCREENSHOT" = "${homeDir}/.config/hypr/scripts/screensht";
       "$COLORPICKER" = "${homeDir}/.config/hypr/scripts/colorpicker";
       "$BLURTOGGLE" = "${homeDir}/.config/hypr/scripts/blurtoggle";
       "$LAYERS" = "^(eww-.+|bar|system-menu|anyrun|gtk-layer-shell|osd[0-9]|dunst)$";
@@ -130,8 +128,8 @@ in {
         "$MODSHIFT, V, exec, killall -s SIGINT wf-recorder"
         "$MODSHIFT, V, exec, $NOTIFY 'Recording stopped'"
 
-        ", Print, exec, $SCREENSHOT full"
-        "$MODSHIFT, S, exec, $SCREENSHOT area"
+        ", Print, exec, screenshot-full"
+        "$MODSHIFT, S, exec, screenshot-area"
         "$MODSHIFT, X, exec, $COLORPICKER"
         "$MOD, B, exec, $BLURTOGGLE"
 
@@ -174,13 +172,13 @@ in {
       ];
 
       bindle = let
-        e = "exec, ags -b hypr";
+        e = "exec, ags";
       in [
         "$MOD, Tab, ${e} -t overview"
       ];
 
       bindl = let
-        e = "exec, ags -b hypr -r";
+        e = "exec, ags -r";
       in [
         "$MOD, F3, ${e} 'audio.speaker.isMuted = !audio.speaker.isMuted'"
         "$MOD, F4, ${e} 'audio.speaker.volume += 0.02; indicator.speaker()'"

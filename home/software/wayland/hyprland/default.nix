@@ -19,10 +19,6 @@
         source = ./scripts/volume;
         executable = true;
       };
-      ".config/hypr/scripts/screensht" = {
-        source = ./scripts/screensht;
-        executable = true;
-      };
       ".config/hypr/scripts/colorpicker" = {
         source = ./scripts/colorpicker;
         executable = true;

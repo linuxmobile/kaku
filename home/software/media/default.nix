@@ -1,6 +1,9 @@
-{pkgs, ...}:
-{
-  imports = [./obs.nix ./rnnoise.nix ./spicetify.nix];
+{pkgs, ...}: {
+  imports = [
+    ./obs.nix
+    ./rnnoise.nix
+    ./spicetify.nix
+  ];
 
   home.packages = with pkgs; [
     # audio control
@@ -9,6 +12,9 @@
     alsa-utils
 
     # images
-    loupe
+    viewnior
+
+    # music
+    termusic
   ];
 }

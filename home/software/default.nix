@@ -39,6 +39,5 @@
     gnome.file-roller
 
     inputs.matugen.packages.${pkgs.system}.default
-    inputs.sss.packages.${pkgs.system}.default
   ];
 }

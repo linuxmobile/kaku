@@ -15,6 +15,10 @@
     procps
     ripgrep
     util-linux
+
+    sassc
+    swww
+    inotify-tools
   ];
 
   guiDeps = with pkgs; [

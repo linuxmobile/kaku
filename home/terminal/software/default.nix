@@ -8,6 +8,8 @@
     ./git.nix
     ./neofetch.nix
     ./nix.nix
+    ./screenshot-area.nix
+    ./screenshot-full.nix
     ./skim.nix
     ./transient-services.nix
     ./yazi
