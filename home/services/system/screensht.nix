@@ -30,5 +30,6 @@
       shadow = true;
       shadow-image = true;
     };
+    code.enable = true;
   };
 }

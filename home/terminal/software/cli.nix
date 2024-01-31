@@ -16,6 +16,8 @@
     jaq
     ripgrep
     killall
+
+    t-rec
   ];
 
   programs = {

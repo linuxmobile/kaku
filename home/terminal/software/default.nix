@@ -6,6 +6,7 @@
     ./cli.nix
     ./gpg.nix
     ./git.nix
+    ./gitui.nix
     ./neofetch.nix
     ./nix.nix
     ./screenshot-area.nix
