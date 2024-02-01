@@ -5,8 +5,10 @@
 }: {
   programs.zsh = {
     enable = true;
+
     enableAutosuggestions = true;
     autocd = true;
+
     dirHashes = {
       dl = "$HOME/Downloads";
       docs = "$HOME/Documents";
@@ -16,8 +18,16 @@
       vids = "$HOME/Videos";
     };
     dotDir = ".config/zsh";
+
+    syntaxHighlighting = {
+      enable = true;
+      highlighters = ["main" "brackets" "pattern" "cursor" "regexp" "root" "line"];
+    };
+
     history = {
       expireDuplicatesFirst = true;
+      ignoreDups = true;
+      ignoreSpace = true;
       path = "${config.xdg.dataHome}/zsh_history";
     };
 
@@ -29,15 +39,54 @@
       bindkey "^[OA" history-beginning-search-backward-end
       bindkey "^[OB" history-beginning-search-forward-end
 
-      # case insensitive tab completion
-      zstyle ':completion:*' completer _complete _ignored _approximate
-      zstyle ':completion:*' list-colors '\'
-      zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-      zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+      # General completion behavior
+      zstyle ':completion:*' completer _extensions _complete _approximate
+
+      # Use cache
+      zstyle ':completion:*' use-cache on
+      zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
+
+      # Complete the alias
+      zstyle ':completion:*' complete true
+
+      # Autocomplete options
+      zstyle ':completion:*' complete-options true
+
+      # Completion matching control
+      zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+      zstyle ':completion:*' keep-prefix true
+
+      # Group matches and describe
       zstyle ':completion:*' menu select
-      zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-      zstyle ':completion:*' verbose true
-      _comp_options+=(globdots)
+      zstyle ':completion:*' list-grouped false
+      zstyle ':completion:*' list-separator '''
+      zstyle ':completion:*' group-name '''
+      zstyle ':completion:*' verbose yes
+      zstyle ':completion:*:matches' group 'yes'
+      zstyle ':completion:*:warnings' format '%F{red}%B-- No match for: %d --%b%f'
+      zstyle ':completion:*:messages' format '%d'
+      zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
+      zstyle ':completion:*:descriptions' format '[%d]'
+
+      # Colors
+      zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
+
+      # case insensitive tab completion
+      zstyle ':completion:*:*:cd:*' tag-order local-directories directory-stack path-directories
+      zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
+      zstyle ':completion:*:-tilde-:*' group-order 'named-directories' 'path-directories' 'users' 'expand'
+      zstyle ':completion:*:*:-command-:*:*' group-order aliases builtins functions commands
+      zstyle ':completion:*' special-dirs true
+      zstyle ':completion:*' squeeze-slashes true
+
+      # Sort
+      zstyle ':completion:*' sort false
+      zstyle ":completion:*:git-checkout:*" sort false
+      zstyle ':completion:*' file-sort modification
+      zstyle ':completion:*:eza' sort false
+      zstyle ':completion:complete:*:options' sort false
+      zstyle ':completion:files' sort false
+
 
       export PATH=${config.home.homeDirectory}/.local/bin:${config.home.homeDirectory}/.local/share/nvim/mason/bin:$PATH
 
@@ -53,7 +102,6 @@
         installedall = "nix-store --query --requisites /run/current-system | sk";
         cleanup = "sudo nix-collect-garbage --delete-older-than 1d";
         listgen = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
-        forceclean = "sudo nix-collect-garbage -d";
         nixremove = "nix-store --gc";
         bloat = "nix path-info -Sh /run/current-system";
         c = "clear";
@@ -72,21 +120,30 @@
         pull = "git pull";
         gcld = "git clone --depth";
         gco = "git checkout";
-        gitgrep = "git ls-files | grep";
+        gitgrep = "git ls-files | rg";
         gitrm = "git ls-files --deleted -z | xargs -0 git rm";
 
-        m = "mkdir -p";
-        fcd = "cd $(find -type d | sk)";
-        fm = "yazi";
-        # grep = "ripgrep";
+        cat = "bat --theme=base16 --number --color=always --paging=never --tabs=2 --wrap=never";
+        cp = "cp -iv";
         du = "du-dust";
-        ps = "procs";
-        # rm = "trash-cli";
-        cat = "bat --style=plain";
+        fcd = "cd $(fd --type d | sk)";
+        fm = "yazi";
+        grep = "ripgrep";
         l = "eza -lF --time-style=long-iso --icons";
         la = "eza -lah --tree";
         ls = "eza -h --git --icons --color=auto --group-directories-first -s extension";
+        m = "mkdir -p";
+        mv = "mv -iv";
+        ps = "procs";
+        rm = "rm -iv";
+        tmusic = "termusic";
         tree = "eza --tree --icons --tree";
+
+        # youtube-dl
+        ytmp3 = "yt-dlp --ignore-errors -x --audio-format mp3 -f bestaudio --audio-quality 0 --embed-metadata --embed-thumbnail --output '%(title)s.%(ext)s'";
+        # systemctl
+        us = "systemctl --user";
+        rs = "sudo systemctl";
 
         # myself
         run = "pnpm run";

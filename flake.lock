@@ -541,16 +541,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1706549103,
-        "narHash": "sha256-2WgyXvIJT7yZIQt6NUSHHTQ8Xj5X2tKSUze0rkFIa0g=",
+        "lastModified": 1706782162,
+        "narHash": "sha256-vV3Ym/vMul9JCDuD5IhIpP8bA7oTu4SpWDDtrZU//lA=",
         "owner": "InioX",
         "repo": "matugen",
-        "rev": "132e6444ed13b2a0e835036275238de65a3d373a",
+        "rev": "702e91280133277cc74d55140a9190ac35873680",
         "type": "github"
       },
       "original": {
         "owner": "InioX",
-        "ref": "dev",
         "repo": "matugen",
         "type": "github"
       }

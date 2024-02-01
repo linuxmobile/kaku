@@ -18,6 +18,7 @@
     killall
 
     t-rec
+    yt-dlp
   ];
 
   programs = {

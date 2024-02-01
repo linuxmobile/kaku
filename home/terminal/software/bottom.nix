@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    (writeScriptBin "htop" ''exec btm'')
+    (writeScriptBin "btop" ''exec btm'')
+    (writeScriptBin "htop" ''exec btm -b'')
   ];
   programs.bottom = {
     enable = true;
