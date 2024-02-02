@@ -128,7 +128,7 @@
         du = "du-dust";
         fcd = "cd $(fd --type d | sk)";
         fm = "yazi";
-        grep = "ripgrep";
+        grep = "rg";
         l = "eza -lF --time-style=long-iso --icons";
         la = "eza -lah --tree";
         ls = "eza -h --git --icons --color=auto --group-directories-first -s extension";
