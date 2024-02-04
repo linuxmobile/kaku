@@ -17,7 +17,6 @@
     util-linux
 
     sassc
-    swww
     inotify-tools
   ];
 
@@ -39,7 +38,6 @@ in {
     Unit = {
       Description = "Aylur's Gtk Shell";
       PartOf = [
-        "tray.target"
         "graphical-session.target"
       ];
     };

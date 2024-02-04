@@ -20,6 +20,7 @@
             emmet-ls
             marksman
             nil
+            nodePackages.volar
             nodePackages.vscode-css-languageserver-bin
             nodePackages.vscode-langservers-extracted
             nodePackages.typescript-language-server
@@ -104,7 +105,7 @@
         tab = ["goto_next_buffer"];
         S-tab = ["goto_previous_buffer"];
 
-        space = { x = ":buffer-close";};
+        space = {x = ":buffer-close";};
 
         space.u = {
           f = ":format"; # format using LSP formatter

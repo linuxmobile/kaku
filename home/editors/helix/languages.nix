@@ -134,6 +134,18 @@
           ];
           auto-pairs = commonAutoPairs;
         }
+        {
+          name = "vue";
+          roots = ["package.json" "vue.config.js" "vue.config.ts"];
+          auto-format = true;
+          language-servers = [
+            {
+              name = "volar";
+              except-features = ["format"];
+            }
+          ];
+          auto-pairs = commonAutoPairs;
+        }
       ]
       ++ prettierLangs langs;
 
@@ -186,6 +198,12 @@
       unocss-lsp = {
         command = "unocss-language-server";
         args = ["--stdio"];
+      };
+
+      volar = {
+        command = "vue-language-server";
+        args = ["--stdio"];
+        config.typescript.tsdk = "${pkgs.typescript}/lib/node_modules/typescript/lib/";
       };
 
       vscode-css-language-server = {
