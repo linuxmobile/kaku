@@ -50,10 +50,11 @@ in {
       misc = {
         disable_autoreload = true;
         animate_mouse_windowdragging = false;
-        vrr = 0;
+        vrr = 1;
         no_direct_scanout = false;
         vfr = true;
         disable_splash_rendering = true;
+        disable_hyprland_logo = true;
         force_default_wallpaper = 0;
       };
       general = {
@@ -82,13 +83,14 @@ in {
           brightness = "1.2";
           xray = true;
         };
+        fullscreen_opacity = 1;
         drop_shadow = true;
         shadow_ignore_window = true;
         shadow_offset = "0 8";
         shadow_range = 50;
         shadow_render_power = 3;
         "col.shadow" = "rgba(00000055)";
-        blurls = ["waybar" "lockscreen"];
+        blurls = ["lockscreen"];
       };
       animation = {
         bezier = [
@@ -143,6 +145,7 @@ in {
         "$MOD, Space, togglefloating"
         "$MOD, P, pseudo"
         "$MOD, S, togglesplit"
+        "$MOD, O, toggleopaque"
 
         "$MODSHIFT, Space, workspaceopt, allfloat"
         "$MODSHIFT, P, workspaceopt, allpseudotile"
@@ -164,9 +167,9 @@ in {
           in ''
             bind = $MOD, ${ws}, workspace, ${toString (x + 1)}
             bind = $MODSHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}
+            bind = $MOD+CTRL, ${ws}, focusworkspaceoncurrentmonitor, ${toString (x + 1)}
           '')
           10)}"
-
         "$MOD, mouse_down, workspace, e-1"
         "$MOD, mouse_up, workspace, e+1"
       ];
