@@ -133,6 +133,7 @@
         la = "eza -lah --tree";
         ls = "eza -h --git --icons --color=auto --group-directories-first -s extension";
         m = "mkdir -p";
+        md = "inlyne";
         mv = "mv -iv";
         ps = "procs";
         rm = "rm -iv";
@@ -141,6 +142,7 @@
 
         # youtube-dl
         ytmp3 = "yt-dlp --ignore-errors -x --audio-format mp3 -f bestaudio --audio-quality 0 --embed-metadata --embed-thumbnail --output '%(title)s.%(ext)s'";
+
         # systemctl
         us = "systemctl --user";
         rs = "sudo systemctl";

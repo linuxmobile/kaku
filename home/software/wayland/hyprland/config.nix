@@ -90,7 +90,7 @@ in {
         shadow_range = 50;
         shadow_render_power = 3;
         "col.shadow" = "rgba(00000055)";
-        blurls = ["lockscreen"];
+        blurls = ["lockscreen" "waybar"];
       };
       animation = {
         bezier = [
@@ -211,6 +211,7 @@ in {
         "opacity 0.80 0.80,class:^(code-url-handler)$"
         "opacity 0.80 0.80,title:^(Spotify( Premium)?)$"
         "opacity 0.80 0.80,title:^(Spotify( Free)?)$"
+        "opacity 0.90 0.90, class:^(inlyne)$"
 
         "float,class:^(org.kde.polkit-kde-authentication-agent-1)$"
         "float,class:^(pavucontrol)$"

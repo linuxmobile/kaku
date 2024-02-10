@@ -12,11 +12,9 @@
         naumovs.color-highlight
         usernamehw.errorlens
         eamodio.gitlens
-        dbaeumer.vscode-eslint
 
         esbenp.prettier-vscode
         kamadorueda.alejandra
-        # ms-vsliveshare.vsliveshare
         astro-build.astro-vscode
         bradlc.vscode-tailwindcss
       ]
@@ -24,7 +22,7 @@
         {
           name = "catppuccin-perfect-icons";
           publisher = "thang-nm";
-          version = "0.21.28";
+          version = "0.21.31";
           sha256 = "sha256-ax2n0YyO7q4LkrPBbik2P+s/s3tZZick91kvZsfWsVc=";
         }
         {
@@ -36,13 +34,13 @@
         {
           name = "copilot-chat";
           publisher = "GitHub";
-          version = "0.12.2023121401";
+          version = "0.13.2024020701";
           sha256 = "sha256-srhMLmLil6qgeAxJRMKz+MmqVJeX8N5f7WYN+CrV9B0=";
         }
         {
           name = "unocss";
           publisher = "antfu";
-          version = "0.58.0";
+          version = "0.58.5";
           sha256 = "sha256-diwvMl88Nfq3QPm6AygiQpoFm82hSelpnU5KCOSU0pE=";
         }
       ];

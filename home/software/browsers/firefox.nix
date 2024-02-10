@@ -2,7 +2,14 @@
   pkgs,
   inputs,
   ...
-}: {
+}: let
+  stealthFox = pkgs.fetchFromGitHub {
+    owner = "vipintom";
+    repo = "stealthFox";
+    rev = "aa704470e9c1607135290114e7eade6c4fb741fc";
+    sha256 = "sha256-/XbEYLtWSOwUumBGe1DDn0AUB6b4jp2eguQogip35O4=";
+  };
+in {
   programs.firefox = {
     enable = true;
     package = pkgs.wrapFirefox pkgs.firefox-devedition-unwrapped {
@@ -21,8 +28,7 @@
         ublock-origin
         bitwarden
         sponsorblock
-        refined-github
-        react-devtools
+        sidebery
       ];
       search.force = true;
       search.engines = {
@@ -66,9 +72,9 @@
           updateInterval = 24 * 60 * 60 * 1000; # every day
           definedAliases = ["@nw"];
         };
-        "Bing".metaData.hidden = true;
-        "Amazon".metaData.hidden = true;
-        "Wikipedia".metaData.hidden = true;
+        Bing.metaData.hidden = true;
+        "Amazon.com".metaData.hidden = true;
+        "Wikipedia (en)".metaData.hidden = true;
         "Google".metaData.alias = "@g";
       };
       settings = {
@@ -254,6 +260,10 @@
 
         "intl.accept_languages" = "es-AR, es, en-US, en";
       };
+      userChrome = builtins.concatStringsSep "\n" (builtins.map builtins.readFile [
+        "${stealthFox}/stealthFox/chrome/userChrome.css"
+        "${stealthFox}/stealthFox/chrome/sidebar.css"
+      ]);
     };
   };
 }

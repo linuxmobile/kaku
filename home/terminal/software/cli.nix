@@ -7,6 +7,7 @@
 
     # misc
     libnotify
+    fontconfig
 
     # utils
     du-dust

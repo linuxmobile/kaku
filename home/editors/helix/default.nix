@@ -34,7 +34,6 @@
       tokyonight_transparent = {
         "inherits" = "tokyonight";
         "ui.virtual.inlay-hint" = {
-          fg = "surface1";
           modifiers = ["italic"];
         };
         "ui.background" = "{}";

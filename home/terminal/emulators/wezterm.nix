@@ -61,11 +61,6 @@
         disable_default_key_bindings = true,
         keys = {
           {
-            key = "q",
-            mods = "CTRL",
-            action = wezterm.action({ CloseCurrentPane = { confirm = false } }),
-          },
-          {
             key = "v",
             mods = "CTRL|SHIFT",
             action = wezterm.action({ PasteFrom = "Clipboard" }),
