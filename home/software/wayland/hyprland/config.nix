@@ -1,4 +1,8 @@
-{config, ...}: let
+{
+  config,
+  lib,
+  ...
+}: let
   c = config.programs.matugen.theme.colors.colors.${config.theme.name};
   pointer = config.home.pointerCursor;
   homeDir = config.home.homeDirectory;
@@ -90,24 +94,29 @@ in {
         shadow_range = 50;
         shadow_render_power = 3;
         "col.shadow" = "rgba(00000055)";
-        blurls = ["lockscreen" "waybar"];
+        blurls = ["lockscreen" "waybar" "popups"];
       };
       animation = {
         bezier = [
-          "wind, 0.05, 0.9, 0.1, 1.05"
-          "winIn, 0.1, 1.1, 0.1, 1.1"
-          "winOut, 0.3, -0.3, 0, 1"
-          "liner, 1, 1, 1, 1"
+          "fluent_decel, 0, 0.2, 0.4, 1"
+          "easeOutCirc, 0, 0.55, 0.45, 1"
+          "easeOutCubic, 0.33, 1, 0.68, 1"
+          "easeinoutsine, 0.37, 0, 0.63, 1"
         ];
         animation = [
-          "windows, 1, 6, wind, slide"
-          "windowsIn, 1, 6, winIn, slide"
-          "windowsOut, 1, 5, winOut, slide"
-          "windowsMove, 1, 5, wind, slide"
-          "border, 1, 1, liner"
-          "borderangle, 1, 30, liner, loop"
-          "fade, 1, 10, default"
-          "workspaces, 1, 5, wind"
+          "windowsIn, 1, 1.7, easeOutCubic, slide" # window open
+          "windowsOut, 1, 1.7, easeOutCubic, slide" # window close
+          "windowsMove, 1, 2.5, easeinoutsine, slide" # everything in between, moving, dragging, resizing
+
+          # fading
+          "fadeIn, 1, 3, easeOutCubic" # fade in (open) -> layers and windows
+          "fadeOut, 1, 3, easeOutCubic" # fade out (close) -> layers and windows
+          "fadeSwitch, 1, 5, easeOutCirc" # fade on changing activewindow and its opacity
+          "fadeShadow, 1, 5, easeOutCirc" # fade on changing activewindow for shadows
+          "fadeDim, 1, 6, fluent_decel" # the easing of the dimming of inactive windows
+          "border, 1, 2.7, easeOutCirc" # for animating the border's color switch speed
+          "workspaces, 1, 2, fluent_decel, slide" # styles: slide, slidevert, fade, slidefade, slidefadevert
+          "specialWorkspace, 1, 3, fluent_decel, slidevert"
         ];
       };
       dwindle = {
@@ -253,14 +262,26 @@ in {
         "noblur,class:^(xwaylandvideobridge)$"
         "noshadow,class:^(xwaylandvideobridge)$"
       ];
-      layerrule = [
-        "ignorezero, ^(gtk-layer-shell|anyrun|dunst)$"
-        "blur, notifications"
-        "blur, launcher"
-        "blur, $LAYERS"
-        "ignorealpha 0, $LAYERS"
-        "ignorealpha 0.2, ^(eww-(music|calendar)|system-menu|anyrun)$"
-        "xray 1, ^(bar|gtk-layer-shell)$"
+      layerrule = let
+        toRegex = list: let
+          elements = lib.concatStringsSep "|" list;
+        in "^(${elements})$";
+
+        ignorealpha = [
+          "calendar"
+          "notifications"
+          "osd"
+          "system-menu"
+
+          "anyrun"
+          "popups"
+        ];
+        layers = ignorealpha ++ ["bar" "gtk-layer-shell"];
+      in [
+        "blur, ${toRegex layers}"
+        "xray 1, ${toRegex ["bar" "gtk-layer-shell"]}"
+        "ignorealpha 0.2, ${toRegex ["bar" "gtk-layer-shell"]}"
+        "ignorealpha 0.5, ${toRegex (ignorealpha ++ ["music"])}"
       ];
     };
   };

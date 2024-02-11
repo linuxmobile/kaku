@@ -10,6 +10,7 @@
     fontconfig
 
     # utils
+    dijo
     du-dust
     duf
     fd
