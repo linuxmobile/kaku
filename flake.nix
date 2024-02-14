@@ -71,10 +71,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprpaper.url = "github:hyprwm/hyprpaper";
-
-    # lanzaboote.url = "github:nix-community/lanzaboote";
-
     matugen = {
       url = "github:InioX/matugen";
       inputs.nixpkgs.follows = "nixpkgs";

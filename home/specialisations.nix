@@ -27,10 +27,9 @@
   };
 
   theme = {
-    # specific to unsplash
     wallpaper = builtins.fetchurl {
-      url = "https://i.imgur.com/wgdLyPc.jpg";
-      sha256 = "sha256:054kfavfjfcxnk9fw270knwlw4smr7350dj7d18pxs9b9dnk2q7d";
+      url = "https://i.imgur.com/86TcH0R.jpeg";
+      sha256 = "sha256-UAilmAoLqjzxmlhdBl2rd6QMo3RhlEYl1r8spCi+RBY=";
     };
   };
 

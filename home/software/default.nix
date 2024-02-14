@@ -1,4 +1,8 @@
-{pkgs, inputs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./anyrun
     ./browsers/brave.nix
@@ -35,6 +39,7 @@
     socat
     catimg
     bun
+    swww
 
     gnome.file-roller
 

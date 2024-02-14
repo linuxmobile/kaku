@@ -18,6 +18,7 @@
 
     sassc
     inotify-tools
+    swww
   ];
 
   guiDeps = with pkgs; [

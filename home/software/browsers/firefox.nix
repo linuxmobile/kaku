@@ -3,11 +3,11 @@
   inputs,
   ...
 }: let
-  stealthFox = pkgs.fetchFromGitHub {
-    owner = "vipintom";
-    repo = "stealthFox";
-    rev = "aa704470e9c1607135290114e7eade6c4fb741fc";
-    sha256 = "sha256-/XbEYLtWSOwUumBGe1DDn0AUB6b4jp2eguQogip35O4=";
+  SilentFox = pkgs.fetchFromGitHub {
+    owner = "linuxmobile";
+    repo = "SilentFox";
+    rev = "45ad3cb7c26c79831786a11387e21788edd84fe6";
+    sha256 = "sha256-9Bj0M0CAch4CenM9TFXUkGa6nHwC6y24azCXcUFtU6M=";
   };
 in {
   programs.firefox = {
@@ -261,8 +261,7 @@ in {
         "intl.accept_languages" = "es-AR, es, en-US, en";
       };
       userChrome = builtins.concatStringsSep "\n" (builtins.map builtins.readFile [
-        "${stealthFox}/stealthFox/chrome/userChrome.css"
-        "${stealthFox}/stealthFox/chrome/sidebar.css"
+        "${SilentFox}/userChrome.css"
       ]);
     };
   };

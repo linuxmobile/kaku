@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   config,
   ...
@@ -27,10 +28,12 @@
     };
 
     theme = {
-      name = "Colloid-Dark";
-      package = pkgs.colloid-gtk-theme.override {
-        tweaks = ["rimless" "black" "float"];
-      };
+      # name = "Colloid-Dark";
+      # package = pkgs.colloid-gtk-theme.override {
+      #   tweaks = ["rimless" "black" "float"];
+      # };
+      name = "phocus";
+      package = inputs.self.packages.${pkgs.system}.phocus;
     };
     gtk3.extraConfig = {
       gtk-xft-antialias = 1;

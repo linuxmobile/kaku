@@ -19,7 +19,7 @@
       return {
 
         colors = {
-          background = "#14171b"
+          background = "#131313"
         },
         
         font_size = 10,
@@ -41,8 +41,8 @@
            },
          },
 
-        color_scheme = "tokyonight",
-        window_background_opacity = 0.9,
+        color_scheme = "Everblush",
+        window_background_opacity = 1.0,
         warn_about_missing_glyphs = false,
         enable_scroll_bar = false,
         enable_tab_bar = false,

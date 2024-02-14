@@ -1,9 +1,12 @@
 {
+  config,
   pkgs,
   ...
 }: {
   home.packages = [pkgs.cava];
-  home.file.".config/cava/config".text = ''
+  home.file.".config/cava/config".text = let
+    c = config.programs.matugen.theme.colors.colors.${config.theme.name};
+  in ''
     [general]
     ; mode = normal
     ; framerate = 60
@@ -59,8 +62,11 @@
     ; foreground = '#33cccc'
 
 
-    ; gradient = 1
-    gradient_count = 8
+    gradient = 1
+    gradient_count = 3
+    gradient_color_3 = '#${c.on_primary_fixed}'
+    gradient_color_2 = '#${c.primary_container}'
+    gradient_color_1 = '#${c.on_primary}'
 
     [smoothing]
     ; integral = 77

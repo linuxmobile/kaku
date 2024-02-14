@@ -21,7 +21,7 @@
     ../../services/system/syncthing.nix
 
     # wayland specific
-    ../../services/wayland/hyprpaper.nix
+    # ../../services/wayland/hyprpaper.nix
     ../../services/wayland/swayidle.nix
 
     # terminal emulators
