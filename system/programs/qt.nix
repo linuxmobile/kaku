@@ -1,6 +1,6 @@
 {
   qt = {
-    enable = true;
+    enable = false;
     platformTheme = "gtk2";
     style = "gtk2";
   };

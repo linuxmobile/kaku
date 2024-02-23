@@ -10,37 +10,21 @@ in {
   wayland.windowManager.hyprland = {
     settings = {
       "$MOD" = "SUPER";
-      env = ''
-        XDG_SESSION_TYPE,wayland
-        XDG_SESSION_DESKTOP,Hyprland
-
-        GDK_BACKEND,wayland
-        QT_QPA_PLATFORM,wayland
-        QT_QPA_PLATFORMTHEME,qt5ct
-        QT_WAYLAND_DISABLE_WINDOWDECORATION,1
-        QT_AUTO_SCREEN_SCALE_FACTOR,1
-        QT_WAYLAND_DISABLE_WINDOWDECORATION,1
-
-        SDL_VIDEODRIVER,wayland
-        _JAVA_AWT_WM_NONREPARENTING,1
-        WLR_NO_HARDWARE_CURSORS,1
-        WLR_DRM_NO_ATOMIC,1
-
-        MOZ_DISABLE_RDD_SANDBOX,1
-        MOZ_ENABLE_WAYLAND,1
-
-        OZONE_PLATFORM,wayland
-      '';
+      env = [
+        "QT_QPA_PLATFORM,wayland"
+        "QT_QPA_PLATFORMTHEME,qt5ct"
+        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+      ];
       exec-once = [
         "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "hyprlock"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "echo latam > /tmp/kb_layout"
         "wlsunset -t 5200 -S 9:00 -s 19:30"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1"
-        "echo 'Xft.dpi: 130' | xrdb -merge"
         "hyprctl dispatcher focusmonitor 1"
       ];
       xwayland = {force_zero_scaling = true;};
@@ -129,7 +113,6 @@ in {
       "$VIDEODIR" = "$HOME/Videos";
       "$NOTIFY" = "notify-send -h string:x-canonical-private-synchronouse:hypr-cfg -u low";
       "$COLORPICKER" = "${homeDir}/.config/hypr/scripts/colorpicker";
-      "$BLURTOGGLE" = "${homeDir}/.config/hypr/scripts/blurtoggle";
       "$LAYERS" = "^(eww-.+|bar|system-menu|anyrun|gtk-layer-shell|osd[0-9]|dunst)$";
 
       bind = [
@@ -142,7 +125,6 @@ in {
         ", Print, exec, screenshot-full"
         "$MODSHIFT, S, exec, screenshot-area"
         "$MODSHIFT, X, exec, $COLORPICKER"
-        "$MOD, B, exec, $BLURTOGGLE"
 
         "$MOD, D, exec, pkill .anyrun-wrapped || run-as-service anyrun"
         "$MOD, Return, exec, run-as-service wezterm"

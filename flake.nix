@@ -64,12 +64,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hypridle = {
+      url = "github:hyprwm/hypridle";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprland.url = "github:hyprwm/Hyprland";
 
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hyprpaper.url = "github:hyprwm/hyprpaper";
 
     matugen = {
       url = "github:InioX/matugen";
@@ -92,7 +104,7 @@
     };
 
     sss = {
-      url = "github:SergioRibera/sss";
+      url = "github:SergioRibera/sss/ddcea6d83e7bbcdef47f124c903456495d4c2aad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

@@ -21,6 +21,7 @@
 
     t-rec
     yt-dlp
+    cfspeedtest
   ];
 
   programs = {
