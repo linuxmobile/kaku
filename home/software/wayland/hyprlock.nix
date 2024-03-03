@@ -7,12 +7,16 @@ in {
   programs.hyprlock = {
     enable = true;
 
-    general.hide_cursor = false;
+    general = {
+      disable_loading_bar = true;
+      hide_cursor = false;
+      no_fade_in = true;
+    };
 
     backgrounds = [
       {
         monitor = "";
-        path = "${config.home.homeDirectory}/Pictures/Wallpapers/lovelace.png";
+        path = "${config.home.homeDirectory}/Pictures/Wallpapers/plants.png";
       }
     ];
 

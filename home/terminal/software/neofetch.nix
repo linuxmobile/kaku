@@ -70,8 +70,7 @@
     # Flag:     --backend
     image_backend="iterm2"
     #image_source="auto"
-    image_source="$HOME/.config/neofetch/images/nix.png"
-    # image_source="$HOME/.config/neofetch/images/gruv.jpg"
+    image_source="$HOME/.config/neofetch/images/plants.png"
     ascii_distro="auto"
     ascii_colors=(distro)
     ascii_bold="on"

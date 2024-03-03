@@ -20,9 +20,9 @@
       author = " linuxmobile";
       # copy = true;
       colors = {
-        background = c.on_secondary_fixed;
-        author = c.primary_fixed;
-        shadow = c.shadow;
+        background = c.on_primary;
+        author = c.secondary;
+        shadow = c.background;
       };
       fonts = "Maple Mono SC NF=11.0";
       radius = 8;
@@ -30,6 +30,5 @@
       shadow = true;
       shadow-image = true;
     };
-    code.enable = true;
   };
 }

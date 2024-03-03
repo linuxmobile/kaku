@@ -64,7 +64,7 @@
 
     gradient = 1
     gradient_count = 3
-    gradient_color_3 = '#${c.on_primary_fixed}'
+    gradient_color_3 = '#${c.primary}'
     gradient_color_2 = '#${c.primary_container}'
     gradient_color_1 = '#${c.on_primary}'
 

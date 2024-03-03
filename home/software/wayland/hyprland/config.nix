@@ -53,8 +53,8 @@ in {
         gaps_in = 5;
         gaps_out = 5;
         border_size = 1;
-        "col.active_border" = "rgb(${c.on_primary});";
-        "col.inactive_border" = "rgb(${c.inverse_on_surface})";
+        "col.active_border" = "rgb(${c.primary});";
+        "col.inactive_border" = "rgb(${c.on_primary})";
         "no_border_on_floating" = false;
         layout = "dwindle";
         no_cursor_warps = true;

@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.chromium = {
     enable = true;
-    package = pkgs.vivaldi;
+    package = pkgs.brave;
     commandLineArgs = [
       "--disable-gpu-driver-bug-workarounds"
       "--use-gl=egl"

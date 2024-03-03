@@ -31,18 +31,35 @@
     });
 
     themes = {
-      tokyonight_transparent = {
-        "inherits" = "tokyonight";
+      everblush_transparent = {
+        "inherits" = "everblush";
+        "ui.popup" = {
+          fg = "white";
+          bg = "black";
+        };
+        "ui.statusline" = {fg = "green";};
+        "ui.statusline.inactive" = {fg = "cursorline";};
+        "ui.statusline.normal" = {fg = "green";};
+        "ui.cursorline.primary" = {bg = "#1a1a1a";};
         "ui.virtual.inlay-hint" = {
+          fg = "black";
           modifiers = ["italic"];
         };
         "ui.background" = "{}";
-        "ui.text" = "{}";
+        palette = {
+          green = "#A9B665";
+          yellow = "#D8A657";
+          red = "#EA6962";
+          blue = "#7DAEA3";
+          magenta = "#D3869B";
+          cyan = "#89B482";
+          white = "#D4BE98";
+        };
       };
     };
 
     settings = {
-      theme = "tokyonight_transparent";
+      theme = "everblush_transparent";
       editor = {
         color-modes = true;
         cursorline = true;
@@ -64,9 +81,9 @@
         };
         gutters = ["diagnostics" "line-numbers" "spacer" "diff"];
         statusline = {
-          left = ["mode" "selections" "spinner" "file-name" "total-line-numbers"];
-          center = [];
-          right = ["diagnostics" "file-encoding" "file-line-ending" "file-type" "position-percentage" "position"];
+          left = ["mode" "version-control"];
+          center = ["spinner" "file-base-name"];
+          right = ["diagnostics" "file-encoding" "position" "position-percentage" "total-line-numbers"];
           mode = {
             normal = "NORMAL";
             insert = "INSERT";

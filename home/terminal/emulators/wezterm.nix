@@ -41,7 +41,7 @@
            },
          },
 
-        color_scheme = "Everblush",
+        color_scheme = "Gruvbox Material (Gogh)",
         window_background_opacity = 1.0,
         warn_about_missing_glyphs = false,
         enable_scroll_bar = false,
