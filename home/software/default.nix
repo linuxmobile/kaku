@@ -9,6 +9,7 @@
     ./browsers/firefox.nix
     ./gtk.nix
     ./media
+    ./tools/vencord.nix
   ];
 
   home.packages = with pkgs; [
@@ -21,6 +22,7 @@
 
     vesktop
     discordo
+    vencord
 
     # misc
     pciutils
@@ -39,7 +41,6 @@
     socat
     catimg
     bun
-    swww
 
     gnome.file-roller
 
