@@ -19,9 +19,9 @@
     ripgrep
     killall
 
-    t-rec
     yt-dlp
     cfspeedtest
+    onefetch
   ];
 
   programs = {
