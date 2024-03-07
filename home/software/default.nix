@@ -23,7 +23,6 @@
 
     vesktop
     discordo
-    vencord
 
     # misc
     pciutils
