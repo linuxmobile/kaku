@@ -14,14 +14,14 @@
         return wezterm.font_with_fallback(names, params)
       end
 
-      local font_name = "AestheticIosevka Nerd Font Mono"
+      local font_name = "AestheticIosevka NF"
 
       return {
 
         colors = {
           background = "#131313"
         },
-        
+
         font_size = 10,
 
        -- Font config

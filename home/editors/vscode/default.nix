@@ -48,7 +48,7 @@
       "workbench.iconTheme" = "catppuccin-perfect-mocha";
       "workbench.colorTheme" = "Tsuki";
       "editor.fontFamily" = "AestheticIosevka Nerd Font, Catppuccin Perfect Mocha, 'monospace', monospace";
-      "editor.fontSize" = 12;
+      "editor.fontSize" = 13;
       "editor.fontLigatures" = true;
       "files.trimTrailingWhitespace" = true;
       "terminal.integrated.fontFamily" = "AestheticIosevka Nerd Font Mono";
