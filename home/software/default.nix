@@ -7,6 +7,7 @@
     ./anyrun
     ./browsers/brave.nix
     ./browsers/firefox.nix
+    ./browsers/qutebrowser.nix
     ./gtk.nix
     ./media
     ./tools/vencord.nix

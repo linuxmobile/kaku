@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: {
   fonts = {
     packages = with pkgs; [
       # icon fonts
@@ -13,6 +13,8 @@
       maple-mono-NF
       maple-mono-SC-NF
 
+      inputs.aesthetic-iosevka.packages.${pkgs.system}.default
+
       lexend
       # nerdfonts
       (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
@@ -25,9 +27,9 @@
     # the reason there's Noto Color Emoji everywhere is to override DejaVu's
     # B&W emojis that would sometimes show instead of some Color emojis
     fontconfig.defaultFonts = {
-      serif = ["Lexend"];
-      sansSerif = ["Lexend"];
-      monospace = ["Maple Mono SC NF"];
+      serif = ["AestheticIosevka Nerd Font"];
+      sansSerif = ["AestheticIosevka Nerd Font"];
+      monospace = ["AestheticIosevka Nerd Font Mono"];
       # emoji = ["Noto Color Emoji"];
     };
   };

@@ -47,11 +47,11 @@
     userSettings = {
       "workbench.iconTheme" = "catppuccin-perfect-mocha";
       "workbench.colorTheme" = "Tsuki";
-      "editor.fontFamily" = "Maple Mono SC NF, Catppuccin Perfect Mocha, 'monospace', monospace";
+      "editor.fontFamily" = "AestheticIosevka Nerd Font, Catppuccin Perfect Mocha, 'monospace', monospace";
       "editor.fontSize" = 12;
       "editor.fontLigatures" = true;
       "files.trimTrailingWhitespace" = true;
-      "terminal.integrated.fontFamily" = "Maple Mono SC NF";
+      "terminal.integrated.fontFamily" = "AestheticIosevka Nerd Font Mono";
       "window.titleBarStyle" = "custom";
       "terminal.integrated.defaultProfile.linux" = "zsh";
       "terminal.integrated.cursorBlinking" = true;

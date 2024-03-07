@@ -16,20 +16,15 @@
       replaceColors = true;
       overwriteAssets = true;
       sidebarConfig = true;
-      enabledCustomApps = with spicePkgs.apps; [ lyrics-plus new-releases ];
+      # enabledCustomApps = with spicePkgs.apps; [ lyrics-plus new-releases ];
       theme = spicePkgs.themes.text;
-      colorScheme = "spotify";
+      colorScheme = "gruvbox";
       enabledExtensions = with spicePkgs.extensions; [
         hidePodcasts
-        shuffle
         adblock
         playlistIcons
-        lastfm
         historyShortcut
-        bookmark
         fullAlbumDate
-        groupSession
-        popupLyrics
       ];
     };
 }

@@ -20,11 +20,11 @@
       author = " linuxmobile";
       # copy = true;
       colors = {
-        background = c.on_primary;
+        background = c.on_secondary_fixed;
         author = c.secondary;
         shadow = c.background;
       };
-      fonts = "Maple Mono SC NF=11.0";
+      fonts = "AestheticIosevka Nerd Font Mono=11.0";
       radius = 8;
       save-format = "webp";
       shadow = true;

@@ -30,7 +30,7 @@ in {
       xwayland = {force_zero_scaling = true;};
       input = {
         kb_layout = "latam";
-        follow_mouse = 1;
+        follow_mouse = 2;
         sensitivity = 0;
         force_no_accel = 1;
         accel_profile = "flat";
@@ -53,14 +53,14 @@ in {
         gaps_in = 5;
         gaps_out = 5;
         border_size = 1;
-        "col.active_border" = "rgb(${c.primary});";
-        "col.inactive_border" = "rgb(${c.on_primary})";
+        "col.active_border" = "rgb(${c.on_primary})";
+        "col.inactive_border" = "rgb(${c.primary});";
         "no_border_on_floating" = false;
         layout = "dwindle";
         no_cursor_warps = true;
       };
       decoration = {
-        rounding = 3;
+        rounding = 1;
         blur = {
           size = 6;
           passes = 3;
@@ -71,6 +71,8 @@ in {
           brightness = "1.2";
           xray = true;
         };
+        dim_inactive = true;
+        dim_strength = "0.3";
         fullscreen_opacity = 1;
         drop_shadow = true;
         shadow_ignore_window = true;
@@ -128,7 +130,7 @@ in {
 
         "$MOD, D, exec, pkill .anyrun-wrapped || run-as-service anyrun"
         "$MOD, Return, exec, run-as-service wezterm"
-        "$MODSHIFT, L, exec, loginctl lock-session"
+        "CTRL_ALT, L, exec, loginctl lock-session"
 
         "$MOD, Q, killactive"
         "$MODSHIFT, Q, exit"
@@ -153,6 +155,16 @@ in {
         "$MOD, L, movefocus, r"
         "$MOD, H, movefocus, l"
 
+        "$MODSHIFT, K, movewindow, u"
+        "$MODSHIFT, J, movewindow, d"
+        "$MODSHIFT, L, movewindow, r"
+        "$MODSHIFT, H, movewindow, l"
+
+        "$MODCTRL, K, resizeactive,  0 -20"
+        "$MODCTRL, J, resizeactive,  0 20"
+        "$MODCTRL, L, resizeactive,  20 0"
+        "$MODCTRL, H, resizeactive, -20 0"
+
         "${builtins.concatStringsSep "\n" (builtins.genList (x: let
             ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
           in ''
@@ -165,44 +177,39 @@ in {
         "$MOD, mouse_up, workspace, e+1"
       ];
 
-      bindle = let
-        e = "exec, ags";
-      in [
-        "$MOD, Tab, ${e} -t overview"
-      ];
-
       bindl = let
-        e = "exec, ags -r";
+        e = "exec, wpctl";
       in [
-        "$MOD, F3, ${e} 'audio.speaker.isMuted = !audio.speaker.isMuted'"
-        "$MOD, F4, ${e} 'audio.speaker.volume += 0.02; indicator.speaker()'"
-        "$MOD, F5, ${e} 'audio.speaker.volume -= 0.02; indicator.speaker()'"
+        "$MOD, F3, ${e} set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "$MOD, F4, ${e} set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        "$MOD, F5, ${e} set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ];
 
       bindm = ["$MOD, mouse:272, movewindow" "$MOD, mouse:273, resizewindow"];
       windowrulev2 = [
-        "opacity 0.90 0.90,class:^(org.wezfurlong.wezterm)$"
-        "opacity 0.90 0.90,class:^(foot)$"
-        "opacity 0.90 0.90,class:^(Brave-browser)$"
-        "opacity 0.90 0.90,class:^(brave-browser)$"
-        "opacity 0.90 0.90,class:^(firefox)$"
-        "opacity 0.80 0.80,class:^(Steam)$"
-        "opacity 0.80 0.80,class:^(steam)$"
-        "opacity 0.80 0.80,class:^(steamwebhelper)$"
-        "opacity 0.80 0.80,class:^(Spotify)$"
-        "opacity 0.80 0.80,class:^(Code)$"
-        "opacity 0.80 0.80,class:^(thunar)$"
-        "opacity 0.80 0.80,class:^(file-roller)$"
-        "opacity 0.80 0.80,class:^(nwg-look)$"
-        "opacity 0.80 0.80,class:^(qt5ct)$"
-        "opacity 0.80 0.80,class:^(VencordDesktop|Webcord|discord|Discord)"
-        "opacity 0.80 0.70,class:^(pavucontrol)$"
-        "opacity 0.80 0.70,class:^(org.kde.polkit-kde-authentication-agent-1)$"
-        "opacity 0.80 0.80,class:^(org.telegram.desktop)$"
-        "opacity 0.80 0.80,class:^(code-url-handler)$"
-        "opacity 0.80 0.80,title:^(Spotify( Premium)?)$"
-        "opacity 0.80 0.80,title:^(Spotify( Free)?)$"
-        "opacity 0.90 0.90, class:^(inlyne)$"
+        # "opacity 0.90 0.90,class:^(org.wezfurlong.wezterm)$"
+        # "opacity 0.90 0.90,class:^(foot)$"
+        # "opacity 0.90 0.90,class:^(Brave-browser)$"
+        # "opacity 0.90 0.90,class:^(brave-browser)$"
+        # "opacity 0.90 0.90,class:^(firefox)$"
+        # "opacity 0.80 0.80,class:^(Steam)$"
+        # "opacity 0.80 0.80,class:^(steam)$"
+        # "opacity 0.80 0.80,class:^(steamwebhelper)$"
+        # "opacity 0.80 0.80,class:^(Spotify)$"
+        # "opacity 0.80 0.80,class:^(Code)$"
+        # "opacity 0.80 0.80,class:^(thunar)$"
+        # "opacity 0.80 0.80,class:^(file-roller)$"
+        # "opacity 0.80 0.80,class:^(nwg-look)$"
+        # "opacity 0.80 0.80,class:^(qt5ct)$"
+        # "opacity 0.80 0.80,class:^(VencordDesktop|Webcord|discord|Discord)"
+        # "opacity 0.80 0.70,class:^(pavucontrol)$"
+        # "opacity 0.80 0.70,class:^(org.kde.polkit-kde-authentication-agent-1)$"
+        # "opacity 0.80 0.80,class:^(org.telegram.desktop)$"
+        # "opacity 0.80 0.80,class:^(code-url-handler)$"
+        # "opacity 0.80 0.80,title:^(Spotify( Premium)?)$"
+        # "opacity 0.80 0.80,title:^(Spotify( Free)?)$"
+        # "opacity 0.90 0.90, class:^(inlyne)$"
+        # "opacity 0.90 0.90, class:^(org.qutebrowser.qutebrowser)$"
 
         "float,class:^(org.kde.polkit-kde-authentication-agent-1)$"
         "float,class:^(pavucontrol)$"

@@ -2,7 +2,7 @@
   variant = config.theme.name;
   c = config.programs.matugen.theme.colors.colors.${variant};
 
-  font_family = "Lexend";
+  font_family = "AestheticIosevka Nerd Font";
 in {
   programs.hyprlock = {
     enable = true;

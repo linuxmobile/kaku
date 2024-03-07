@@ -30,6 +30,8 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
+    aesthetic-iosevka.url = "github:alphatechnolog/aesthetic-iosevka";
+
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";

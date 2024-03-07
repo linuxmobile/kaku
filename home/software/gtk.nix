@@ -15,8 +15,7 @@
   gtk = {
     enable = true;
     font = {
-      name = "Lexend";
-      package = pkgs.lexend;
+      name = "AestheticIosevka Nerd Font";
       size = 9;
     };
 
