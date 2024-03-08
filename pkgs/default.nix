@@ -5,6 +5,8 @@
     packages = {
       biome = pkgs.callPackage ./biome {};
 
+      discordo = pkgs.callPackage ./discordo {};
+
       phocus = pkgs.callPackage ./phocus {};
 
       # instant repl with automatic flake loading

@@ -14,10 +14,6 @@
       xwaylandvideobridge
     ];
     file = {
-      ".config/hypr/scripts/volume" = {
-        source = ./scripts/volume;
-        executable = true;
-      };
       ".config/hypr/scripts/colorpicker" = {
         source = ./scripts/colorpicker;
         executable = true;
