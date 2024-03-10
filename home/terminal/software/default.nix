@@ -14,6 +14,7 @@
     ./screenshot-full.nix
     ./skim.nix
     ./transient-services.nix
+    ./twitch-hls-client.nix
     ./yazi
     ./xdg.nix
     ./zoxide.nix

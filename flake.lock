@@ -185,6 +185,28 @@
         "type": "github"
       }
     },
+    "fenix_2": {
+      "inputs": {
+        "nixpkgs": [
+          "twitch-hls-client",
+          "nixpkgs"
+        ],
+        "rust-analyzer-src": "rust-analyzer-src_2"
+      },
+      "locked": {
+        "lastModified": 1709965418,
+        "narHash": "sha256-xsKCrFDU6rU3oIqMP3IbuAGiJvsVeBTRqZvwN1p1q4c=",
+        "owner": "nix-community",
+        "repo": "fenix",
+        "rev": "24002092be13b2efe87700229d143b0d1eaa5d12",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "fenix",
+        "type": "github"
+      }
+    },
     "firefox-addons": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -766,6 +788,22 @@
     },
     "nixpkgs_11": {
       "locked": {
+        "lastModified": 1709703039,
+        "narHash": "sha256-6hqgQ8OK6gsMu1VtcGKBxKQInRLHtzulDo9Z5jxHEFY=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "9df3e30ce24fd28c7b3e2de0d986769db5d6225d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_12": {
+      "locked": {
         "lastModified": 1703961334,
         "narHash": "sha256-M1mV/Cq+pgjk0rt6VxoyyD+O8cOUiai8t9Q6Yyq4noY=",
         "owner": "NixOS",
@@ -930,6 +968,7 @@
         "nixpkgs": "nixpkgs_7",
         "spicetify-nix": "spicetify-nix",
         "sss": "sss",
+        "twitch-hls-client": "twitch-hls-client",
         "xdg-portal-hyprland": "xdg-portal-hyprland"
       }
     },
@@ -941,6 +980,23 @@
         "owner": "rust-lang",
         "repo": "rust-analyzer",
         "rev": "d410d4a2baf9e99b37b03dd42f06238b14374bf7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rust-lang",
+        "ref": "nightly",
+        "repo": "rust-analyzer",
+        "type": "github"
+      }
+    },
+    "rust-analyzer-src_2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1709904211,
+        "narHash": "sha256-Vv29QP5eIn9ZEapQzXHqwhjm46sddetiZScTWY0/dlA=",
+        "owner": "rust-lang",
+        "repo": "rust-analyzer",
+        "rev": "2397e7a887252aa995d3790164b34b6c76ed94b4",
         "type": "github"
       },
       "original": {
@@ -1141,6 +1197,41 @@
         "type": "github"
       }
     },
+    "systems_9": {
+      "locked": {
+        "lastModified": 1689347949,
+        "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "rev": "31732fcf5e8fea42e59c2488ad31a0e651500f68",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default-linux",
+        "type": "github"
+      }
+    },
+    "twitch-hls-client": {
+      "inputs": {
+        "fenix": "fenix_2",
+        "nixpkgs": "nixpkgs_11",
+        "systems": "systems_8"
+      },
+      "locked": {
+        "lastModified": 1710023055,
+        "narHash": "sha256-hFswqvf6bT7rp9XuHvfz+ugsWotILcZjf2hbPNzMgZQ=",
+        "owner": "2bc4",
+        "repo": "twitch-hls-client",
+        "rev": "10abc7901881eb0134b09bd6d65aad36badc81a0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "2bc4",
+        "repo": "twitch-hls-client",
+        "type": "github"
+      }
+    },
     "wlroots": {
       "flake": false,
       "locked": {
@@ -1164,8 +1255,8 @@
       "inputs": {
         "hyprland-protocols": "hyprland-protocols_2",
         "hyprlang": "hyprlang_6",
-        "nixpkgs": "nixpkgs_11",
-        "systems": "systems_8"
+        "nixpkgs": "nixpkgs_12",
+        "systems": "systems_9"
       },
       "locked": {
         "lastModified": 1708532964,

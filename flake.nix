@@ -104,6 +104,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    twitch-hls-client.url = "github:2bc4/twitch-hls-client/";
+
     xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
   };
 }
