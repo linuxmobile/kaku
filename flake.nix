@@ -10,12 +10,18 @@
       perSystem = {
         config,
         pkgs,
+        system,
         ...
       }: {
-        devShells.default = pkgs.mkShell {
-          packages = [pkgs.alejandra pkgs.git config.packages.repl];
-          name = "nixland";
-          DIRENV_LOG_FORMAT = "";
+        devShells = {
+          default = pkgs.mkShell {
+            packages = [pkgs.alejandra pkgs.git config.packages.repl];
+            name = "nixland";
+            DIRENV_LOG_FORMAT = "";
+          };
+          tauri = import ./shell/tauri.nix {inherit inputs system;};
+          rust = import ./shell/rust.nix {inherit inputs system;};
+          leptos = import ./shell/leptos.nix {inherit inputs system;};
         };
         # Nix Formatter
         formatter = pkgs.alejandra;
@@ -47,6 +53,8 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    fenix.url = "github:nix-community/fenix/monthly";
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
