@@ -201,12 +201,12 @@ in {
     };
 
     searchEngines = {
-      "DEFAULT" = "https://google.com/search?hl=en&q={}";
+      "DEFAULT" = "https://duckduckgo.com/?ia=web&q={}";
       "!d" = "https://duckduckgo.com/?ia=web&q={}";
       "!nw" = "https://nixos.wiki/index.php?search={}";
       "!np" = "https://search.nixos.org/packages?type=packages&query={}";
       "!hm" = "https://mipmip.github.io/home-manager-option-search/?query={}";
-      "!gh" = "https://github.com/search?o=desc&q={}&s=stars";
+      "!gs" = "https://github.com/search?o=desc&q={}&s=stars";
       "!gc" = "https://github.com/search?q={}&type=code";
       "!s" = "https://sourcegraph.com/search?patternType=standard&sm=1&q=context:global+{}";
       "!yt" = "https://youtube.com/results?search_query={}";
