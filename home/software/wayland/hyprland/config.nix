@@ -229,6 +229,7 @@ in {
         "float,title:^(Confirm to replace files)$"
         "float,title:^(File Operation Progress)$"
         "float,class:^(com.github.Aylur.ags)$"
+        "float,class:^(mpv)$"
 
         "float, title:^(Picture-in-Picture)$"
         "pin, title:^(Picture-in-Picture)$"

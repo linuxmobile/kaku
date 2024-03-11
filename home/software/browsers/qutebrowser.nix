@@ -36,6 +36,11 @@ in {
   programs.qutebrowser = {
     enable = true;
     loadAutoconfig = true;
+    keyBindings = {
+      normal = {
+        ";v" = "hint links spawn --detach mpv {hint-url}";
+      };
+    };
     settings = {
       auto_save.session = true;
       fonts = {
