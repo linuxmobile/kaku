@@ -5,24 +5,19 @@
   pkgs = inputs.nixpkgs.legacyPackages.${system};
   fenix = inputs.fenix;
   toolchain = fenix.packages.${system}.minimal.toolchain;
-  rust =
-    (import inputs.rust-overlay {
-      inherit (inputs) nixpkgs;
-    })
-    .rust-bin
-    .stable
-    .latest
-    .default;
 in
   pkgs.mkShell {
-    buildInputs = with pkgs; [
-      rust
-      cargo
-      openssl
-      pkg-config
-      rustup
-      toolchain
-    ];
+    buildInputs = with pkgs;
+      [
+        cargo
+        cargo-make
+        openssl
+        pkg-config
+        toolchain
+      ]
+      ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
+        darwin.apple_sdk.frameworks.SystemConfiguration
+      ];
 
     shellHook = ''
       echo "Bienvenido a tu entorno de desarrollo Rust."

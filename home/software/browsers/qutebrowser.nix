@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{lib, ...}: let
   bg0_hard = "#1d2021";
   bg0_soft = "#32302f";
   bg0_normal = "#282828";
@@ -39,6 +39,14 @@ in {
     keyBindings = {
       normal = {
         ";v" = "hint links spawn --detach mpv {hint-url}";
+        ",h" = lib.mkMerge [
+          "config-cycle tabs.show      never   always"
+          "config-cycle statusbar.show in-mode always"
+          "config-cycle scrolling.bar  never   always"
+        ];
+        ",s" = lib.mkMerge [
+          "config-cycle tabs.position  left   top"
+        ];
       };
     };
     settings = {
