@@ -27,6 +27,8 @@
       init = {defaultBranch = "main";};
       diff.colorMoved = "default";
       merge.conflictstyle = "diff3";
+      push.autoSetupRemote = true;
+      core.editor = "hx";
     };
 
     aliases = {
