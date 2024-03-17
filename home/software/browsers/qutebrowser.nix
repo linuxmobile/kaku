@@ -220,14 +220,15 @@ in {
     searchEngines = {
       "DEFAULT" = "https://duckduckgo.com/?ia=web&q={}";
       "!d" = "https://duckduckgo.com/?ia=web&q={}";
-      "!nw" = "https://nixos.wiki/index.php?search={}";
-      "!np" = "https://search.nixos.org/packages?type=packages&query={}";
-      "!hm" = "https://mipmip.github.io/home-manager-option-search/?query={}";
-      "!gs" = "https://github.com/search?o=desc&q={}&s=stars";
       "!gc" = "https://github.com/search?q={}&type=code";
+      "!g" = "https://www.google.com/search?hl=en&q={}";
+      "!gs" = "https://github.com/search?o=desc&q={}&s=stars";
+      "!hm" = "https://home-manager-options.extranix.com/?query={}";
+      "!np" = "https://search.nixos.org/packages?type=packages&query={}";
+      "!nw" = "https://nixos.wiki/index.php?search={}";
+      "!nf" = "https://noogle.dev/q?term={}&limit=50&page=1";
       "!s" = "https://sourcegraph.com/search?patternType=standard&sm=1&q=context:global+{}";
       "!yt" = "https://youtube.com/results?search_query={}";
-      "!g" = "https://www.google.com/search?hl=en&q={}";
     };
 
     # extraConfig = ''

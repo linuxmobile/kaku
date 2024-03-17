@@ -119,17 +119,17 @@ in {
 
       bind = [
         "$MOD, Escape, exec, wlogout -p layer-shell"
-        "$MOD, V, exec, wf-recorder -f $VIDEODIR/$(date +%Y-%m-%d_%H-%M-%S).mp4"
-        "$MOD, V, exec, $NOTIFY 'Recording started'"
-        "$MODSHIFT, V, exec, killall -s SIGINT wf-recorder"
-        "$MODSHIFT, V, exec, $NOTIFY 'Recording stopped'"
+        ", F9, exec, wl-screenrec -f $VIDEODIR/$(date +%Y-%m-%d_%H-%M-%S).mp4"
+        ", F9, exec, $NOTIFY 'Recording started'"
+        ", F10, exec, killall -s SIGINT wl-screenrec"
+        ", F10, exec, $NOTIFY 'Recording stopped'"
 
         ", Print, exec, screenshot-full"
         "$MODSHIFT, S, exec, screenshot-area"
         "$MODSHIFT, X, exec, $COLORPICKER"
 
         "$MOD, D, exec, pkill .anyrun-wrapped || run-as-service anyrun"
-        "$MOD, Return, exec, run-as-service wezterm"
+        "$MOD, Return, exec, run-as-service foot"
         "CTRL_ALT, L, exec, loginctl lock-session"
 
         "$MOD, Q, killactive"

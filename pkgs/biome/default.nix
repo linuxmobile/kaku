@@ -3,7 +3,7 @@
   rustPlatform,
   fetchFromGitHub,
   pkg-config,
-  libgit2_1_6,
+  libgit2,
   rust-jemalloc-sys,
   zlib,
   stdenv,
@@ -12,16 +12,16 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "biome";
-  version = "1.6.0";
+  version = "1.6.1";
 
   src = fetchFromGitHub {
     owner = "biomejs";
     repo = "biome";
     rev = "cli/v${version}";
-    hash = "sha256-lzY1Eh1jZixsKi+ObQlhzV4KSV7ZSGPBJtaO9ZiJjEk=";
+    hash = "sha256-JApGz2vDGU1IFmhyaT1noCRIP0YoucVvHq395/CJ1zA=";
   };
 
-  cargoHash = "sha256-Jj2i3FfL7hBzp1wKVzst+YHTgGuxtvLrGcAbGsgvgZg=";
+  cargoHash = "sha256-4m2xtj3FHd8DTS3BeUMVoo8Pzjkol96B6tvNyzqPhEo=";
 
   nativeBuildInputs = [
     pkg-config
@@ -29,7 +29,7 @@ rustPlatform.buildRustPackage rec {
 
   buildInputs =
     [
-      libgit2_1_6
+      libgit2
       rust-jemalloc-sys
       zlib
     ]
@@ -42,10 +42,16 @@ rustPlatform.buildRustPackage rec {
   ];
 
   cargoBuildFlags = ["-p=biome_cli"];
-  cargoTestFlags = cargoBuildFlags;
+  cargoTestFlags =
+    cargoBuildFlags
+    ++
+    # skip a broken test from v1.6.1 release
+    # this will be removed on the next version
+    ["-- --skip=diagnostics::test::termination_diagnostic_size"];
 
   env = {
     BIOME_VERSION = version;
+    LIBGIT2_NO_VENDOR = 1;
   };
 
   preCheck = ''

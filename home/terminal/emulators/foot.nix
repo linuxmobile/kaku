@@ -1,9 +1,10 @@
-{default, ...}: {
+{pkgs, ...}: {
+  home.packages = [pkgs.libsixel];
   programs.foot = {
     enable = true;
     settings = {
       main = {
-        font = "${default.terminal.font}:size=${toString default.terminal.size}";
+        font = "AestheticIosevka NF:size=10";
         box-drawings-uses-font-glyphs = "yes";
         dpi-aware = "yes";
         pad = "25x25center";
@@ -27,25 +28,25 @@
         beam-thickness = "2";
       };
       colors = {
-        alpha = default.terminal.opacity;
-        foreground = "dfdddd"; # Text
-        background = "0d0d0d"; # Base
-        regular0 = "1b1b1b"; # Surface 1
-        regular1 = "c14d53"; # red
-        regular2 = "56966e"; # green
-        regular3 = "dc8c61"; # yellow
-        regular4 = "6e95bd"; # blue
-        regular5 = "a56db1"; # pink
-        regular6 = "6a9f98"; # teal
-        regular7 = "b7b7b7"; # Subtext 1
-        bright0 = "272727"; # Surface 2
-        bright1 = "da4b52"; # red
-        bright2 = "57a274"; # green
-        bright3 = "e1956c"; # yellow
-        bright4 = "6fadea"; # blue
-        bright5 = "d466e9"; # pink
-        bright6 = "63b4b5"; # teal
-        bright7 = "a4b5b5"; # Subtext 0
+        alpha = 1.0;
+        foreground = "ebdbb2";
+        background = "131313";
+        regular0 = "3C3836"; # black
+        regular1 = "EA6962"; # red
+        regular2 = "A9B665"; # green
+        regular3 = "D8A657"; # yellow
+        regular4 = "7DAEA3"; # blue
+        regular5 = "D3869B"; # magenta
+        regular6 = "89B482"; # cyan
+        regular7 = "D4BE98"; # white
+        bright0 = "3C3836"; # bright black
+        bright1 = "EA6962"; # bright red
+        bright2 = "A9B665"; # bright green
+        bright3 = "D8A657"; # bright yellow
+        bright4 = "7DAEA3"; # bright blue
+        bright5 = "D3869B"; # bright magenta
+        bright6 = "89B482"; # bright cyan
+        bright7 = "D4BE98"; # bright white
       };
       tweak = {
         font-monospace-warn = "no";

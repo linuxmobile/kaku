@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  home.packages = [ pkgs.neofetch ];
+{pkgs, ...}: {
+  home.packages = [pkgs.neofetch];
   home.file.".config/neofetch/config.conf".text = ''
     print_info() {
     	prin ""
@@ -68,7 +68,7 @@
     battery_display="off"
     disk_display="off"
     # Flag:     --backend
-    image_backend="iterm2"
+    image_backend="sixel"
     #image_source="auto"
     image_source="$HOME/.config/neofetch/images/plants.png"
     ascii_distro="auto"

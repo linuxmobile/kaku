@@ -55,7 +55,7 @@
       "window.titleBarStyle" = "custom";
       "terminal.integrated.defaultProfile.linux" = "zsh";
       "terminal.integrated.cursorBlinking" = true;
-      "terminal.integrated.enableBell" = false;
+      "terminal.integrated.enableVisualBell" = false;
       "editor.formatOnPaste" = true;
       "editor.formatOnSave" = true;
       "editor.formatOnType" = false;
@@ -86,9 +86,6 @@
       "editor.tabSize" = 2;
       "editor.wordWrap" = "on";
       "workbench.editor.tabActionLocation" = "left";
-      "[typescriptreact]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
     };
   };
 }

@@ -12,7 +12,7 @@
       # instant repl with automatic flake loading
       repl = pkgs.callPackage ./repl {};
 
-      wezterm = pkgs.callPackage ./wezterm {};
+      # wezterm = pkgs.callPackage ./wezterm {};
     };
   };
 }
