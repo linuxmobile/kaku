@@ -16,13 +16,13 @@ in {
     backgrounds = [
       {
         monitor = "";
-        path = "${config.home.homeDirectory}/Pictures/Wallpapers/plants.png";
+        path = "${config.home.homeDirectory}/Pictures/Wallpapers/leaves.png";
       }
     ];
 
     input-fields = [
       {
-        monitor = "HDMI-A-2";
+        monitor = "eDP-1";
 
         size = {
           width = 300;

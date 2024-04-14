@@ -2,14 +2,7 @@
   pkgs,
   inputs,
   ...
-}: let
-  SilentFox = pkgs.fetchFromGitHub {
-    owner = "linuxmobile";
-    repo = "SilentFox";
-    rev = "45ad3cb7c26c79831786a11387e21788edd84fe6";
-    sha256 = "sha256-9Bj0M0CAch4CenM9TFXUkGa6nHwC6y24azCXcUFtU6M=";
-  };
-in {
+}: {
   programs.firefox = {
     enable = true;
     package = pkgs.wrapFirefox pkgs.firefox-devedition-unwrapped {
@@ -260,9 +253,9 @@ in {
 
         "intl.accept_languages" = "es-AR, es, en-US, en";
       };
-      userChrome = builtins.concatStringsSep "\n" (builtins.map builtins.readFile [
-        "${SilentFox}/userChrome.css"
-      ]);
+      # userChrome = builtins.concatStringsSep "\n" (builtins.map builtins.readFile [
+      #   "${SilentFox}/userChrome.css"
+      # ]);
     };
   };
 }

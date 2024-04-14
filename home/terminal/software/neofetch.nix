@@ -70,7 +70,7 @@
     # Flag:     --backend
     image_backend="sixel"
     #image_source="auto"
-    image_source="$HOME/.config/neofetch/images/plants.png"
+    image_source="$HOME/.config/neofetch/images/nix.jpg"
     ascii_distro="auto"
     ascii_colors=(distro)
     ascii_bold="on"

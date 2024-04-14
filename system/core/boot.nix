@@ -1,9 +1,6 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   boot = {
-    # bootspec.enable = true;
+    bootspec.enable = true;
 
     initrd = {
       systemd.enable = true;
@@ -23,11 +20,10 @@
     loader = {
       # systemd-boot on UEFI
       systemd-boot.enable = true;
-      efi = {
-        canTouchEfiVariables = true;
-        # efiSysMountPoint = "/boot";
-      };
+      efi.canTouchEfiVariables = true;
     };
+
+    plymouth.enable = true;
 
     tmp.cleanOnBoot = true;
   };

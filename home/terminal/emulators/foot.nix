@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       main = {
-        font = "AestheticIosevka NF:size=10";
+        font = "AestheticIosevka NF:size=8";
         box-drawings-uses-font-glyphs = "yes";
         dpi-aware = "yes";
         pad = "25x25center";

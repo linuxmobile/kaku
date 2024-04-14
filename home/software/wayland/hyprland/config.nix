@@ -11,13 +11,11 @@ in {
     settings = {
       "$MOD" = "SUPER";
       env = [
-        "QT_QPA_PLATFORM,wayland"
-        "QT_QPA_PLATFORMTHEME,qt5ct"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
       ];
       exec-once = [
         "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
+        "systemctl --user start clight"
         "hyprlock"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "echo latam > /tmp/kb_layout"
@@ -27,13 +25,17 @@ in {
         "xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1"
         "hyprctl dispatcher focusmonitor 1"
       ];
-      xwayland = {force_zero_scaling = true;};
+      xwayland.force_zero_scaling = true;
       input = {
         kb_layout = "latam";
         follow_mouse = 2;
         sensitivity = 0;
         force_no_accel = 1;
         accel_profile = "flat";
+        touchpad = {
+          disable_while_typing = true;
+          natural_scroll = true;
+        };
       };
       misc = {
         disable_autoreload = true;
@@ -47,8 +49,9 @@ in {
       };
       general = {
         monitor = [
-          "HDMI-A-2,1920x1080@75,1366x0,1"
-          "DP-1,1366x768@60,0x0,1"
+          # "HDMI-A-2,1920x1080@75,1366x0,1"
+          # "DP-1,1366x768@60,0x0,1"
+          "eDP-1, preferred, auto, 1.200000"
         ];
         gaps_in = 5;
         gaps_out = 5;
@@ -180,9 +183,18 @@ in {
       bindl = let
         e = "exec, wpctl";
       in [
-        "$MOD, F3, ${e} set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        "$MOD, F4, ${e} set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-        "$MOD, F5, ${e} set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ", XF86AudioMute, exec, ${e} set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86AudioMicMute, exec, ${e} set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        ", XF86AudioRaiseVolume, exec, ${e} set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%+"
+        ", XF86AudioLowerVolume, exec, ${e} set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%-"
+
+        # backlight
+        ", XF86MonBrightnessUp, exec, brillo -q -u 300000 -A 5"
+        ", XF86MonBrightnessDown, exec, brillo -q -u 300000 -U 5"
+
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioPrev, exec, playerctl previous"
+        ", XF86AudioNext, exec, playerctl next"
       ];
 
       bindm = ["$MOD, mouse:272, movewindow" "$MOD, mouse:273, resizewindow"];
@@ -230,6 +242,8 @@ in {
         "float,title:^(File Operation Progress)$"
         "float,class:^(com.github.Aylur.ags)$"
         "float,class:^(mpv)$"
+        "float,class:^(org.telegram.desktop)"
+        "size 380 690,class:^(org.telegram.desktop)"
 
         "float, title:^(Picture-in-Picture)$"
         "pin, title:^(Picture-in-Picture)$"

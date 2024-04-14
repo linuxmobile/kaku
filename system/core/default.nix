@@ -27,7 +27,11 @@
   system.stateVersion = lib.mkDefault "23.11";
 
   time.timeZone = lib.mkDefault "America/Argentina/Buenos_Aires";
+  time.hardwareClockInLocalTime = lib.mkDefault true;
 
   # compresses half the ram for use as swap
-  zramSwap.enable = true;
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+  };
 }

@@ -96,7 +96,8 @@ in {
             "https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt"
             "https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt"
             "https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt"
-            "https://www.i-dont-care-about-cookies.eu/abp/"            "https://raw.githubusercontent.com/Ewpratten/youtube_ad_blocklist/master/blocklist.txt"
+            "https://www.i-dont-care-about-cookies.eu/abp/"
+            "https://raw.githubusercontent.com/Ewpratten/youtube_ad_blocklist/master/blocklist.txt"
             "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext"
             "https://gitlab.com/curben/urlhaus-filter/-/raw/master/urlhaus-filter-online.txt"
           ];

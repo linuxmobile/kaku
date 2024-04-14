@@ -14,7 +14,7 @@
     userName = "Braian A. Diez";
     userEmail = "bdiez19@gmail.com";
     signing = {
-      key = "51083039D2041B30";
+      key = "FDA65033CDFE7C2A";
       signByDefault = true;
     };
 
@@ -24,11 +24,24 @@
     };
 
     extraConfig = {
-      init = {defaultBranch = "main";};
+      init.defaultBranch = "main";
       diff.colorMoved = "default";
       merge.conflictstyle = "diff3";
       push.autoSetupRemote = true;
       core.editor = "hx";
+      push.default = "current";
+      merge.stat = "true";
+      core.whitespace = "fix,-indent-with-non-tab,trailing-space,cr-at-eol";
+      repack.usedeltabaseoffset = "true";
+      pull.ff = "only";
+      rebase = {
+        autoSquash = true;
+        autoStash = true;
+      };
+      rerere = {
+        enabled = true;
+        autoupdate = true;
+      };
     };
 
     aliases = {

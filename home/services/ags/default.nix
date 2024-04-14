@@ -15,13 +15,12 @@
     procps
     ripgrep
     util-linux
-
-    sassc
-    inotify-tools
-    swww
   ];
 
   guiDeps = with pkgs; [
+    gnome.gnome-control-center
+    mission-center
+    overskride
     wlogout
   ];
 
@@ -39,6 +38,7 @@ in {
     Unit = {
       Description = "Aylur's Gtk Shell";
       PartOf = [
+        "tray.target"
         "graphical-session.target"
       ];
     };

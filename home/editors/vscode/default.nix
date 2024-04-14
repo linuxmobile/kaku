@@ -1,10 +1,18 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: let
+  marketplace = inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace;
+  marketplace-release = inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace-release;
+in {
   programs.vscode = {
     enable = true;
     enableExtensionUpdateCheck = true;
     enableUpdateCheck = false;
-    extensions = with pkgs.vscode-extensions;
-      [
+    mutableExtensionsDir = true;
+    extensions =
+      (with pkgs.vscode-extensions; [
         bbenoist.nix
 
         formulahendry.auto-close-tag
@@ -17,38 +25,20 @@
         kamadorueda.alejandra
         astro-build.astro-vscode
         bradlc.vscode-tailwindcss
-      ]
-      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "catppuccin-perfect-icons";
-          publisher = "thang-nm";
-          version = "0.21.31";
-          sha256 = "sha256-ax2n0YyO7q4LkrPBbik2P+s/s3tZZick91kvZsfWsVc=";
-        }
-        {
-          name = "tsuki";
-          publisher = "re1san";
-          version = "0.6.0";
-          sha256 = "sha256-AP3RnO3v0OfO3d3bHRy5sjHEjwLGUxI/sEdLtGOxE2c=";
-        }
-        {
-          name = "copilot-chat";
-          publisher = "GitHub";
-          version = "0.13.2024020701";
-          sha256 = "sha256-srhMLmLil6qgeAxJRMKz+MmqVJeX8N5f7WYN+CrV9B0=";
-        }
-        {
-          name = "unocss";
-          publisher = "antfu";
-          version = "0.58.5";
-          sha256 = "sha256-diwvMl88Nfq3QPm6AygiQpoFm82hSelpnU5KCOSU0pE=";
-        }
-      ];
+      ])
+      ++ (with marketplace; [
+        catppuccin.catppuccin-vsc-icons
+        github.copilot
+        re1san.tsuki
+      ])
+      ++ (with marketplace-release; [
+        github.copilot-chat
+      ]);
     userSettings = {
-      "workbench.iconTheme" = "catppuccin-perfect-mocha";
+      "workbench.iconTheme" = "catppuccin-mocha";
       "workbench.colorTheme" = "Tsuki";
-      "editor.fontFamily" = "AestheticIosevka Nerd Font, Catppuccin Perfect Mocha, 'monospace', monospace";
-      "editor.fontSize" = 13;
+      "editor.fontFamily" = "AestheticIosevka Nerd Font, Catppuccin Mocha, 'monospace', monospace";
+      "editor.fontSize" = 14;
       "editor.fontLigatures" = true;
       "files.trimTrailingWhitespace" = true;
       "terminal.integrated.fontFamily" = "AestheticIosevka Nerd Font Mono";
@@ -86,6 +76,12 @@
       "editor.tabSize" = 2;
       "editor.wordWrap" = "on";
       "workbench.editor.tabActionLocation" = "left";
+      window = {
+        "window.autoDetectColorScheme" = true;
+        "window.dialogStyle" = "native";
+        "window.menuBarVisibility" = "toggle";
+        "window.titleBarStyle" = "custom";
+      };
     };
   };
 }

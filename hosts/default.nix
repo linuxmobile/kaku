@@ -10,7 +10,7 @@
     mod = "${self}/system";
 
     # get the basic config to build on top of
-    inherit (import "${self}/system") desktop;
+    inherit (import "${self}/system") desktop laptop;
 
     # get these into the module system
     specialArgs = {inherit inputs self;};
@@ -19,11 +19,14 @@
       inherit specialArgs;
       modules =
         desktop
+        ++ laptop
         ++ [
           ./aesthetic
+          "${mod}/programs/gamemode.nix"
           "${mod}/programs/hyprland.nix"
           "${mod}/services/gnome-services.nix"
           "${mod}/services/location.nix"
+          "${mod}/core/lanzaboote.nix"
           {
             home-manager = {
               users.linuxmobile.imports =

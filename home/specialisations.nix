@@ -28,8 +28,8 @@
 
   theme = {
     wallpaper = builtins.fetchurl {
-      url = "https://i.imgur.com/mNDXG6G.jpeg";
-      sha256 = "sha256-0MCQD//ATUUkyPWVJZu6db7mqS0Wm6mkVpaqVs/s9qA=";
+      url = "https://i.imgur.com/jsRNfwg.jpg";
+      sha256 = "sha256:1khgkwcnz1lyd810hcvz54hs9l5hlnk5blwf63298cgqn9rivyz0";
     };
   };
 

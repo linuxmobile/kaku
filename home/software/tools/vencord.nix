@@ -1,4 +1,4 @@
-{...}: {
+_: {
   home.file.".config/vesktop/themes/chadcat7.css".text = ''
     /**
      * @name linudev
