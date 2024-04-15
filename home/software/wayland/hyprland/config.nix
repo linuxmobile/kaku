@@ -185,16 +185,20 @@ in {
       in [
         ", XF86AudioMute, exec, ${e} set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ", XF86AudioMicMute, exec, ${e} set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-        ", XF86AudioRaiseVolume, exec, ${e} set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%+"
-        ", XF86AudioLowerVolume, exec, ${e} set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%-"
-
-        # backlight
-        ", XF86MonBrightnessUp, exec, brillo -q -u 300000 -A 5"
-        ", XF86MonBrightnessDown, exec, brillo -q -u 300000 -U 5"
 
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPrev, exec, playerctl previous"
         ", XF86AudioNext, exec, playerctl next"
+      ];
+
+      bindle = let
+        e = "exec, wpctl";
+      in [
+        ", XF86AudioRaiseVolume, exec, ${e} set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%+"
+        ", XF86AudioLowerVolume, exec, ${e} set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%-"
+        # backlight
+        ", XF86MonBrightnessUp, exec, brillo -q -u 300000 -A 5"
+        ", XF86MonBrightnessDown, exec, brillo -q -u 300000 -U 5"
       ];
 
       bindm = ["$MOD, mouse:272, movewindow" "$MOD, mouse:273, resizewindow"];

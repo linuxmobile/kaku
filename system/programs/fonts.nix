@@ -16,6 +16,8 @@
       maple-mono-SC-NF
 
       inputs.aesthetic-iosevka.packages.${pkgs.system}.default
+      inputs.self.packages.${pkgs.system}.SF-Mono
+      inputs.self.packages.${pkgs.system}.SF-Pro
 
       (google-fonts.override {fonts = ["Inter"];})
       # nerdfonts
@@ -41,9 +43,9 @@
         rgba = "rgb";
       };
       defaultFonts = {
-        serif = ["Noto Serif" "Noto Color Emoji"];
-        sansSerif = ["Inter" "Noto Color Emoji"];
-        monospace = ["AestheticIosevka Nerd Font Mono" "Noto Color Emoji"];
+        serif = ["SF Pro Text" "Noto Color Emoji"];
+        sansSerif = ["SF Pro DIsplay" "Noto Color Emoji"];
+        monospace = ["LigaSFMono Nerd Font" "Noto Color Emoji"];
         emoji = ["Noto Color Emoji"];
       };
     };
