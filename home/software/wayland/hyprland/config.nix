@@ -1,13 +1,18 @@
 {
   config,
+  inputs,
   lib,
+  pkgs,
   ...
 }: let
   c = config.programs.matugen.theme.colors.colors.${config.theme.name};
   pointer = config.home.pointerCursor;
   homeDir = config.home.homeDirectory;
+
+  hyprfocus = inputs.hyprfocus.packages.${pkgs.system}.default;
 in {
   wayland.windowManager.hyprland = {
+    plugins = [hyprfocus];
     settings = {
       "$MOD" = "SUPER";
       env = [
@@ -19,7 +24,7 @@ in {
         "hyprlock"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "echo latam > /tmp/kb_layout"
-        "wlsunset -t 5200 -S 9:00 -s 19:30"
+        # "wlsunset -t 5200 -S 9:00 -s 19:30"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1"
@@ -74,8 +79,8 @@ in {
           brightness = "1.2";
           xray = true;
         };
-        dim_inactive = true;
-        dim_strength = "0.3";
+        # dim_inactive = true;
+        # dim_strength = "0.3";
         fullscreen_opacity = 1;
         drop_shadow = true;
         shadow_ignore_window = true;
@@ -292,6 +297,26 @@ in {
         "ignorealpha 0.2, ${toRegex ["bar" "gtk-layer-shell"]}"
         "ignorealpha 0.5, ${toRegex (ignorealpha ++ ["music"])}"
       ];
+      plugin.hyprfocus = {
+        enabled = true;
+        animate_floating = true;
+        focus_animation = "flash";
+        bezier = [
+          "bezIn, 0.05,0.9,0.1,1.05"
+          "bezOut, 0.05,0.9,0.1,1.05"
+          "overshot, 0.05, 0.9, 0.1, 1.05"
+          "smoothOut, 0.36, 0, 0.66, -0.56"
+          "smoothIn, 0.25, 1, 0.5, 1"
+          "realsmooth, 0.28,0.9,0.1,1.05"
+        ];
+        flash = {
+          flash_opacity = 0.8;
+          in_bezier = "realsmooth";
+          in_speed = 2.5;
+          out_bezier = "realsmooth";
+          out_speed = 2.5;
+        };
+      };
     };
   };
 }

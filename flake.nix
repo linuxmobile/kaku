@@ -74,6 +74,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprfocus = {
+      url = "github:pyt0xic/hyprfocus";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     hypridle.url = "github:hyprwm/hypridle";
 
     hyprland.url = "github:hyprwm/Hyprland";
