@@ -15,11 +15,10 @@
     procps
     ripgrep
     util-linux
-  ];
+ ];
 
   guiDeps = with pkgs; [
     gnome.gnome-control-center
-    mission-center
     overskride
     wlogout
   ];
