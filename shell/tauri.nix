@@ -3,6 +3,8 @@
   system,
 }: let
   pkgs = inputs.nixpkgs.legacyPackages.${system};
+  fenix = inputs.fenix;
+  toolchain = fenix.packages.${system}.minimal.toolchain;
 
   libraries = with pkgs; [
     cairo
@@ -16,6 +18,8 @@
   ];
 
   packages = with pkgs; [
+    cargo
+    cargo-make
     curl
     dbus
     glib
@@ -24,6 +28,7 @@
     libsoup
     openssl_3
     pkg-config
+    toolchain
     webkitgtk
     wget
   ];
