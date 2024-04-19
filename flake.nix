@@ -44,16 +44,6 @@
       inputs.home-manager.follows = "hm";
     };
 
-    ags = {
-      url = "github:Aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    anyrun = {
-      url = "github:Kirottu/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     fenix.url = "github:nix-community/fenix/monthly";
 
     firefox-addons = {
@@ -73,24 +63,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hyprfocus = {
-      url = "github:pyt0xic/hyprfocus";
-      inputs.hyprland.follows = "hyprland";
-    };
-
-    hypridle.url = "github:hyprwm/hypridle";
-
-    hyprland.url = "github:hyprwm/Hyprland";
-
-    hyprland-contrib = {
-      url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hyprlock.url = "github:hyprwm/hyprlock";
-
-    hyprpaper.url = "github:hyprwm/hyprpaper";
 
     lanzaboote.url = "github:nix-community/lanzaboote";
 
@@ -131,7 +103,5 @@
     };
 
     twitch-hls-client.url = "github:2bc4/twitch-hls-client/";
-
-    xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
   };
 }

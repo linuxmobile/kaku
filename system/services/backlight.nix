@@ -12,6 +12,10 @@
       gamma.long_transition = true;
       keyboard.disabled = true;
       screen.disabled = true;
+      daytime = {
+        latitud = "-38.38";
+        longitude = "-60.26";
+      };
     };
   };
 }

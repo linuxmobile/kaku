@@ -4,7 +4,6 @@
   ...
 }: {
   imports = [
-    ./anyrun
     ./browsers/brave.nix
     ./browsers/firefox.nix
     ./browsers/qutebrowser.nix
@@ -17,8 +16,6 @@
     # messaging
     tdesktop
 
-    xfce.thunar
-    xfce.thunar-archive-plugin
     ps_mem
 
     vesktop
@@ -30,9 +27,6 @@
     colord
     ffmpegthumbnailer
     imagemagick
-    xfce.tumbler
-    xdotool
-    cliphist
     rizin
     xcolor
     nodejs
@@ -41,8 +35,6 @@
     socat
     catimg
     bun
-
-    gnome.file-roller
 
     inputs.matugen.packages.${pkgs.system}.default
   ];

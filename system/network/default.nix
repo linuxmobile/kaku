@@ -15,6 +15,8 @@
 
     # DNS resolver
     resolved.enable = true;
+
+    gnome.glib-networking.enable = true;
   };
 
   # Don't wait for network startup

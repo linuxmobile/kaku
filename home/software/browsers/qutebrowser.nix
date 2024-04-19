@@ -214,7 +214,7 @@ in {
         tabs.pinned.selected.odd.bg = bg0;
         tabs.pinned.selected.odd.fg = fg2;
 
-        webpage.bg = bg4;
+        webpage.bg = bg0;
         webpage.preferred_color_scheme = "dark";
       };
     };

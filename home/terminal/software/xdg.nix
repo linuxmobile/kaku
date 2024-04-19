@@ -4,9 +4,9 @@
   ...
 }: let
   browser = ["firefox"];
-  imageViewer = ["viewnior"];
-  videoPlayer = ["mpv"];
-  audioPlayer = ["termusic"];
+  imageViewer = ["org.gnome.loupe"];
+  videoPlayer = ["io.github.celluloid_player.Celluloid"];
+  audioPlayer = ["io.bassi.Amberol"];
 
   xdgAssociations = type: program: list:
     builtins.listToAttrs (map (e: {
@@ -69,7 +69,7 @@ in {
   home.packages = [
     # used by `gio open` and xdp-gtk
     (pkgs.writeShellScriptBin "xdg-terminal-exec" ''
-      wezterm start "$@"
+      foot start "$@"
     '')
     pkgs.xdg-utils
   ];

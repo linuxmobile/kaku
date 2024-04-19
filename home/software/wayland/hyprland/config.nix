@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   lib,
   pkgs,
   ...
@@ -8,11 +7,8 @@
   c = config.programs.matugen.theme.colors.colors.${config.theme.name};
   pointer = config.home.pointerCursor;
   homeDir = config.home.homeDirectory;
-
-  hyprfocus = inputs.hyprfocus.packages.${pkgs.system}.default;
 in {
   wayland.windowManager.hyprland = {
-    plugins = [hyprfocus];
     settings = {
       "$MOD" = "SUPER";
       env = [
@@ -297,26 +293,6 @@ in {
         "ignorealpha 0.2, ${toRegex ["bar" "gtk-layer-shell"]}"
         "ignorealpha 0.5, ${toRegex (ignorealpha ++ ["music"])}"
       ];
-      plugin.hyprfocus = {
-        enabled = true;
-        animate_floating = true;
-        focus_animation = "flash";
-        bezier = [
-          "bezIn, 0.05,0.9,0.1,1.05"
-          "bezOut, 0.05,0.9,0.1,1.05"
-          "overshot, 0.05, 0.9, 0.1, 1.05"
-          "smoothOut, 0.36, 0, 0.66, -0.56"
-          "smoothIn, 0.25, 1, 0.5, 1"
-          "realsmooth, 0.28,0.9,0.1,1.05"
-        ];
-        flash = {
-          flash_opacity = 0.8;
-          in_bezier = "realsmooth";
-          in_speed = 2.5;
-          out_bezier = "realsmooth";
-          out_speed = 2.5;
-        };
-      };
     };
   };
 }

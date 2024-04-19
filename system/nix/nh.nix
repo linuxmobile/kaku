@@ -1,12 +1,8 @@
-{inputs, ...}: {
-  imports = [
-    inputs.nh.nixosModules.default
-  ];
-
+_: {
   # nh default flake
   environment.variables.FLAKE = "/home/linuxmobile/Dev/nixland";
 
-  nh = {
+  programs.nh = {
     enable = true;
     # weekly cleanup
     clean = {

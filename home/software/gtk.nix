@@ -1,12 +1,13 @@
 {
-  pkgs,
   config,
+  inputs,
+  pkgs,
   ...
 }: {
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Original-Ice";
-    size = 16;
+    size = 24;
     gtk.enable = true;
     x11.enable = true;
   };
@@ -14,22 +15,23 @@
   gtk = {
     enable = true;
     font = {
-      name = "Inter";
-      package = pkgs.google-fonts.override {fonts = ["Inter"];};
-      size = 9;
+      name = "SF Pro Display";
+      package = inputs.self.packages.${pkgs.system}.SF-Pro;
+      size = 11;
     };
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
 
     iconTheme = {
-      name = "WhiteSur";
-      package = pkgs.whitesur-icon-theme;
+      name = "Colloid";
+      package = pkgs.colloid-icon-theme;
     };
 
     theme = {
       name = "Colloid-Dark";
       package = pkgs.colloid-gtk-theme.override {
         tweaks = ["rimless" "black" "float"];
+        themeVariants = ["grey"];
       };
     };
     gtk3 = {

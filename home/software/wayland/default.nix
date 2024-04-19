@@ -2,9 +2,7 @@
 # Wayland config
 {
   imports = [
-    ./hyprland
-    ./hyprlock.nix
-    ./wlogout.nix
+    ./gnome
   ];
 
   home.packages = with pkgs; [
@@ -15,8 +13,6 @@
     # utils
     wl-clipboard
     wl-screenrec
-    hyprpicker
-    # wlsunset
   ];
 
   # make stuff work on wayland
@@ -24,6 +20,6 @@
     QT_QPA_PLATFORM = "wayland";
     SDL_VIDEODRIVER = "wayland";
     XDG_SESSION_TYPE = "wayland";
-    QT_SCALE_FACTOR_ROUNDING_POLICY = "RoundPreferFloor";
+    # QT_SCALE_FACTOR_ROUNDING_POLICY = "RoundPreferFloor";
   };
 }

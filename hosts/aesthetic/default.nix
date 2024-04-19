@@ -1,5 +1,9 @@
 _: {
-  imports = [./hardware-configuration.nix ./powersave.nix];
+  imports = [
+    ./hardware-configuration.nix
+    ./powersave.nix
+    ./profiles/gnome
+  ];
 
   boot = {
     # load modules on boot

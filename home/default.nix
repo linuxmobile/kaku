@@ -9,14 +9,13 @@
     ./terminal
     inputs.matugen.nixosModules.default
     inputs.nix-index-db.hmModules.nix-index
-    inputs.hyprlock.homeManagerModules.default
-    inputs.hypridle.homeManagerModules.default
     self.nixosModules.theme
   ];
   home = {
     username = "linuxmobile";
     homeDirectory = "/home/linuxmobile";
     stateVersion = "23.11";
+    extraOutputsToInstall = ["doc" "devdoc"];
   };
 
   # disable manuals as nmd fails to build often
