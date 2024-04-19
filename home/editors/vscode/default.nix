@@ -30,6 +30,7 @@ in {
         catppuccin.catppuccin-vsc-icons
         github.copilot
         re1san.tsuki
+        vue.volar
       ])
       ++ (with marketplace-release; [
         github.copilot-chat
