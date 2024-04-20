@@ -4,9 +4,6 @@
     ../../editors/helix
     ../../editors/vscode
 
-    # media services
-    ../../services/media/playerctl.nix
-
     # software
     ../../software
     ../../software/wayland

@@ -25,7 +25,6 @@
 
     gnome.excludePackages =
       (with pkgs; [
-        # gnome-text-editor
         gnome-console
         gnome-photos
         gnome-text-editor
@@ -54,6 +53,7 @@
         gnome-shell-extensions
         gnome-maps
         gnome-font-viewer
+        gnome-online-miners
       ]);
   };
 

@@ -3,6 +3,7 @@
     appindicator
     blur-my-shell
     dash-to-dock
+    forge
     just-perfection
   ];
 in {
@@ -38,7 +39,6 @@ in {
 
     "org/gnome/shell/extensions/just-perfection" = {
       panel-size = 34;
-      window-maximized-on-create = true;
     };
   };
 }
