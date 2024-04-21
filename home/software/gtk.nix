@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   config,
   ...
@@ -14,16 +15,16 @@
   gtk = {
     enable = true;
     font = {
-      name = "Inter";
-      package = pkgs.google-fonts.override {fonts = ["Inter"];};
+      name = "SF Pro Display";
+      package = inputs.self.packages.${pkgs.system}.SF-Pro;
       size = 9;
     };
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
 
     iconTheme = {
-      name = "WhiteSur";
-      package = pkgs.whitesur-icon-theme;
+      name = "Colloid";
+      package = pkgs.colloid-icon-theme;
     };
 
     theme = {

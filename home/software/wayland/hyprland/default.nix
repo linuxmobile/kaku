@@ -9,9 +9,9 @@
     packages = with pkgs; [
       seatd
       jaq
-      xorg.xprop
+      # xorg.xprop
       inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
-      xwaylandvideobridge
+      # xwaylandvideobridge
     ];
     file = {
       ".config/hypr/scripts/colorpicker" = {

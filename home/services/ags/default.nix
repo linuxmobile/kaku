@@ -15,7 +15,14 @@
     procps
     ripgrep
     util-linux
- ];
+
+    brightnessctl
+    bun
+    fd
+    inputs.matugen.packages.${pkgs.system}.default
+    swww
+    which
+  ];
 
   guiDeps = with pkgs; [
     gnome.gnome-control-center

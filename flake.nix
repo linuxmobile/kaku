@@ -74,11 +74,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprfocus = {
-      url = "github:pyt0xic/hyprfocus";
-      inputs.hyprland.follows = "hyprland";
-    };
-
     hypridle.url = "github:hyprwm/hypridle";
 
     hyprland.url = "github:hyprwm/Hyprland";
@@ -96,11 +91,6 @@
 
     matugen = {
       url = "github:InioX/matugen";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nh = {
-      url = "github:viperML/nh";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

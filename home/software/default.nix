@@ -17,8 +17,7 @@
     # messaging
     tdesktop
 
-    xfce.thunar
-    xfce.thunar-archive-plugin
+    gnome.nautilus
     ps_mem
 
     vesktop
