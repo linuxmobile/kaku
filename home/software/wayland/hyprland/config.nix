@@ -1,8 +1,6 @@
 {
   config,
-  inputs,
   lib,
-  pkgs,
   ...
 }: let
   c = config.programs.matugen.theme.colors.colors.${config.theme.name};
@@ -38,6 +36,10 @@ in {
           disable_while_typing = true;
           natural_scroll = true;
         };
+      };
+      gestures = {
+        workspace_swipe = true;
+        workspace_swipe_fingers = 3;
       };
       misc = {
         disable_autoreload = true;

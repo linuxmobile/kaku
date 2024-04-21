@@ -85,7 +85,7 @@
 
     hyprlock.url = "github:hyprwm/hyprlock";
 
-    hyprpaper.url = "github:hyprwm/hyprpaper";
+    # hyprpaper.url = "github:hyprwm/hyprpaper";
 
     lanzaboote.url = "github:nix-community/lanzaboote";
 
