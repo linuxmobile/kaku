@@ -6,6 +6,7 @@
   programs.bottom = {
     enable = true;
     settings = {
+      enable_gpu = true;
       flags.group_processes = true;
       row = [
         {

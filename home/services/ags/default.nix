@@ -6,23 +6,30 @@
   ...
 }: let
   requiredDeps = with pkgs; [
+    bash
     brightnessctl
+    bun
     config.wayland.windowManager.hyprland.package
+    coreutils
     dart-sass
     fd
     fzf
+    gawk
     gtk3
     hyprpicker
+    imagemagick
     inputs.matugen.packages.${pkgs.system}.default
     networkmanager
     pavucontrol
-    # slurp
+    ripgrep
+    slurp
     # swappy
     swww
+    util-linux
     # wayshot
-    wf-recorder
     which
     wl-clipboard
+    wl-screenrec
   ];
 
   guiDeps = with pkgs; [

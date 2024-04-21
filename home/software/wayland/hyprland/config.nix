@@ -126,10 +126,12 @@ in {
 
       bind = [
         "$MOD, Escape, exec, wlogout -p layer-shell"
-        ", F9, exec, wl-screenrec -f $VIDEODIR/$(date +%Y-%m-%d_%H-%M-%S).mp4"
-        ", F9, exec, $NOTIFY 'Recording started'"
-        ", F10, exec, killall -s SIGINT wl-screenrec"
-        ", F10, exec, $NOTIFY 'Recording stopped'"
+        "$MOD, Tab, exec, ags -t overview"
+        "$MOD, XF86Calculator, exec, ags -r 'recorder.start()'"
+        # ", F9, exec, wl-screenrec -f $VIDEODIR/$(date +%Y-%m-%d_%H-%M-%S).mp4"
+        # ", F9, exec, $NOTIFY 'Recording started'"
+        # ", F10, exec, killall -s SIGINT wl-screenrec"
+        # ", F10, exec, $NOTIFY 'Recording stopped'"
 
         ", Print, exec, screenshot-full"
         "$MODSHIFT, S, exec, screenshot-area"
