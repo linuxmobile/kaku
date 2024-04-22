@@ -3,6 +3,7 @@
     # editors
     ../../editors/helix
     ../../editors/vscode
+    ../../editors/zed
 
     # services
     ../../services/ags

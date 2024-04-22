@@ -12,10 +12,14 @@
     pamixer
     alsa-utils
 
-    # images
-    viewnior
-
-    # music
+    # audio
+    amberol
     termusic
+
+    # images
+    loupe
+
+    # videos
+    celluloid
   ];
 }

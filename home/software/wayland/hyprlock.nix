@@ -16,7 +16,7 @@ in {
     backgrounds = [
       {
         monitor = "";
-        path = "${config.home.homeDirectory}/Pictures/Wallpapers/leaves.png";
+        path = "/tmp/hyprlock.png";
       }
     ];
 
