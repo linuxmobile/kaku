@@ -3,13 +3,14 @@
     appindicator
     blur-my-shell
     dash-to-dock
-    forge
+    user-themes
     just-perfection
   ];
 in {
   home.packages = with pkgs;
     [
       gnome-extension-manager
+      dart-sass
     ]
     ++ defaultExtensions;
 

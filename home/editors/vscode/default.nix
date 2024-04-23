@@ -13,22 +13,21 @@ in {
     mutableExtensionsDir = true;
     extensions =
       (with pkgs.vscode-extensions; [
+        astro-build.astro-vscode
         bbenoist.nix
-
-        formulahendry.auto-close-tag
+        bradlc.vscode-tailwindcss
         christian-kohler.path-intellisense
+        eamodio.gitlens
+        esbenp.prettier-vscode
+        formulahendry.auto-close-tag
+        kamadorueda.alejandra
         naumovs.color-highlight
         usernamehw.errorlens
-        eamodio.gitlens
-
-        esbenp.prettier-vscode
-        kamadorueda.alejandra
-        astro-build.astro-vscode
-        bradlc.vscode-tailwindcss
       ])
       ++ (with marketplace; [
         catppuccin.catppuccin-vsc-icons
         github.copilot
+        mvllow.rose-pine
         re1san.tsuki
         vue.volar
       ])
@@ -37,7 +36,12 @@ in {
       ]);
     userSettings = {
       "workbench.iconTheme" = "catppuccin-mocha";
-      "workbench.colorTheme" = "Tsuki";
+      # "workbench.colorTheme" = "Tsuki";
+      "settingsSync.ignoredSettings" = [
+        "workbench.colorTheme"
+      ];
+      "workbench.preferredLightColorTheme" = "Rosé Pine Moon";
+      "workbench.preferredDarkColorTheme" = "Rosé Pine";
       "editor.fontFamily" = "LigaSFMono Nerd Font, Catppuccin Mocha, 'monospace', monospace";
       "editor.fontSize" = 14;
       "editor.fontLigatures" = true;
@@ -77,12 +81,8 @@ in {
       "editor.tabSize" = 2;
       "editor.wordWrap" = "on";
       "workbench.editor.tabActionLocation" = "left";
-      window = {
-        "window.autoDetectColorScheme" = true;
-        "window.dialogStyle" = "native";
-        "window.menuBarVisibility" = "toggle";
-        "window.titleBarStyle" = "custom";
-      };
+      "window.autoDetectColorScheme" = true;
+      "window.dialogStyle" = "native";
     };
   };
 }

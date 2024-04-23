@@ -28,11 +28,8 @@
     };
 
     theme = {
-      name = "Colloid-Dark";
-      package = pkgs.colloid-gtk-theme.override {
-        tweaks = ["rimless" "black" "float"];
-        themeVariants = ["grey"];
-      };
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
     };
     gtk3 = {
       bookmarks = [

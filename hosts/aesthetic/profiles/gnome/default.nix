@@ -16,7 +16,7 @@
       ffmpegthumbnailer
       gnome.adwaita-icon-theme
       gnome.dconf-editor
-      # gnome.gnome-tweaks
+      gnome.gnome-tweaks
       gnome.gnome-themes-extra
       gnome.nautilus-python
       nautilus-open-any-terminal
@@ -25,13 +25,14 @@
 
     gnome.excludePackages =
       (with pkgs; [
-        gnome-console
+        # gnome-console
+        gedit
+        gnome-connections
         gnome-photos
         gnome-text-editor
         gnome-tour
-        gnome-connections
+        nano
         snapshot
-        gedit
       ])
       ++ (with pkgs.gnome; [
         cheese # webcam tool
