@@ -17,7 +17,6 @@
     # messaging
     tdesktop
 
-    gnome.nautilus
     ps_mem
 
     vesktop
@@ -41,7 +40,10 @@
     catimg
     bun
 
+    gnome.nautilus
     gnome.file-roller
+    gnome-console
+    epiphany
 
     inputs.matugen.packages.${pkgs.system}.default
   ];

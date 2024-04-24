@@ -23,12 +23,12 @@
     	if [[ $(cat "$BAT_STATUS") == "Discharging" ]]; then
       	profile=$BAT_PROFILE
         for i in $(hyprctl instances -j | jaq ".[].instance" -r); do
-          hyprctl -i "$i" --batch 'keyword decoration:blur:enabled false; keyword animations:enabled false'
+          hyprctl -i "$i" --batch 'keyword decoration:blur:enabled false; keyword animations:enabled false; keyword decoration:active_opacity 1.0; keyword decoration:inactive_opacity 1.0'
         done
     	else
     		profile=$AC_PROFILE
         for i in $(hyprctl instances -j | jaq ".[].instance" -r); do
-          hyprctl -i "$i" --batch 'keyword decoration:blur:enabled true; keyword animations:enabled true'
+          hyprctl -i "$i" --batch 'keyword decoration:blur:enabled true; keyword animations:enabled true; keyword decoration:active_opacity 0.9; keyword decoration:inactive_opacity 0.9'
         done
     	fi
 

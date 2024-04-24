@@ -16,7 +16,7 @@ in {
     backgrounds = [
       {
         monitor = "";
-        path = "/tmp/hyprlock.png";
+        path = "${config.xdg.configHome}/hyprlock.png";
       }
     ];
 

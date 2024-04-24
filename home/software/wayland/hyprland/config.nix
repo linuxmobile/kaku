@@ -50,6 +50,7 @@ in {
         disable_splash_rendering = true;
         disable_hyprland_logo = true;
         force_default_wallpaper = 0;
+        initial_workspace_tracking = false;
       };
       general = {
         monitor = [
@@ -69,6 +70,7 @@ in {
       decoration = {
         rounding = 1;
         blur = {
+          enabled = true;
           size = 6;
           passes = 3;
           new_optimizations = true;
@@ -78,8 +80,6 @@ in {
           brightness = "1.2";
           xray = true;
         };
-        # dim_inactive = true;
-        # dim_strength = "0.3";
         fullscreen_opacity = 1;
         drop_shadow = true;
         shadow_ignore_window = true;
@@ -128,10 +128,6 @@ in {
         "$MOD, Escape, exec, wlogout -p layer-shell"
         "$MOD, Tab, exec, ags -t overview"
         "$MOD, XF86Calculator, exec, ags -r 'recorder.start()'"
-        # ", F9, exec, wl-screenrec -f $VIDEODIR/$(date +%Y-%m-%d_%H-%M-%S).mp4"
-        # ", F9, exec, $NOTIFY 'Recording started'"
-        # ", F10, exec, killall -s SIGINT wl-screenrec"
-        # ", F10, exec, $NOTIFY 'Recording stopped'"
 
         ", Print, exec, screenshot-full"
         "$MODSHIFT, S, exec, screenshot-area"
@@ -276,6 +272,7 @@ in {
         "noinitialfocus,class:^(xwaylandvideobridge)$"
         "noblur,class:^(xwaylandvideobridge)$"
         "noshadow,class:^(xwaylandvideobridge)$"
+        "rounding 0, xwayland:1"
       ];
       layerrule = let
         toRegex = list: let
@@ -289,13 +286,13 @@ in {
           "system-menu"
 
           "anyrun"
-          "popups"
+          "logout_dialog"
         ];
         layers = ignorealpha ++ ["bar" "gtk-layer-shell"];
       in [
         "blur, ${toRegex layers}"
-        "xray 1, ${toRegex ["bar" "gtk-layer-shell"]}"
-        "ignorealpha 0.2, ${toRegex ["bar" "gtk-layer-shell"]}"
+        "xray 1, ${toRegex ["bar"]}"
+        "ignorealpha 0.2, ${toRegex ["bar" "logout_dialog"]}"
         "ignorealpha 0.5, ${toRegex (ignorealpha ++ ["music"])}"
       ];
     };

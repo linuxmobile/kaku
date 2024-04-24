@@ -57,6 +57,7 @@ in {
         pad = "25x25center";
         notify = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
         selection-target = "clipboard";
+        include = "${config.xdg.configHome}/foot/theme.ini";
       };
       scrollback = {
         lines = 10000;
@@ -78,11 +79,10 @@ in {
         font-monospace-warn = "no";
         sixel = "yes";
       };
-      colors =
-        {
-          alpha = 1.0;
-        }
-        // colors.${config.theme.name};
+      colors = {
+        alpha = 1.0;
+      };
+      # // colors.${config.theme.name};
     };
   };
 }
