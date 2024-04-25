@@ -137,11 +137,11 @@
         {
           name = "vue";
           roots = ["package.json" "vue.config.js" "vue.config.ts"];
-          # auto-format = true;
-          formatter = {
-            command = "biome";
-            args = ["format" "--stdin-file-path" "a.vue"];
-          };
+          # # auto-format = true;
+          # formatter = {
+          #   command = "biome";
+          #   args = ["format" "--stdin-file-path" "a.vue"];
+          # };
           language-servers = [
             {
               name = "volar";
