@@ -9,12 +9,12 @@
 }:
 buildGoModule rec {
   pname = "discordo";
-  version = "unstable-2024-03-07";
+  version = "unstable-2024-04-27";
 
   src = fetchFromGitHub {
     owner = "ayn2op";
     repo = pname;
-    rev = "23cb3a146a8567526b35807c6f16120163c40f98";
+    rev = "ca988b5fa318100f4e967b8ba4dbd7cabdf81176";
     hash = "sha256-71i/8t768RtD0Gk2cpSdznERSNf1gErQrrOGYiZz05g=";
   };
 

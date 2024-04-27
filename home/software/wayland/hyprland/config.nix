@@ -288,7 +288,7 @@ in {
           "anyrun"
           "logout_dialog"
         ];
-        layers = ignorealpha ++ ["bar" "gtk-layer-shell"];
+        layers = ignorealpha ++ ["bar"];
       in [
         "blur, ${toRegex layers}"
         "xray 1, ${toRegex ["bar"]}"
