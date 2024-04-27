@@ -38,6 +38,7 @@
       switch-to-workspace-4 = ["<Super>4"];
       switch-to-workspace-5 = ["<Super>5"];
       toggle-fullscreen = ["<Super>f"];
+      toggle-maximized = ["<Super>space"];
     };
 
     "org/gnome/shell/keybindings" = {

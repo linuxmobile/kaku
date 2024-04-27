@@ -97,11 +97,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sss = {
-      url = "github:SergioRibera/sss/";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     twitch-hls-client.url = "github:2bc4/twitch-hls-client/";
   };
 }

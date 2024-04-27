@@ -23,4 +23,7 @@ in {
     # auto-run programs using nix-index-database
     NIX_AUTO_RUN = "1";
   };
+  systemd.user.sessionVariables = {
+    EDITOR = "hx";
+  };
 }
