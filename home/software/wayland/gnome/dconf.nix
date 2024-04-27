@@ -79,7 +79,7 @@
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>Return";
-      command = "/usr/bin/env foot";
+      command = "/usr/bin/env blackbox";
       name = "Terminal";
     };
 
@@ -122,7 +122,7 @@
     };
 
     "com/github/stunkymonkey/nautilus-open-any-terminal" = {
-      terminal = "foot";
+      terminal = "blackbox";
     };
 
     "org/gnome/TextEditor" = {

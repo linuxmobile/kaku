@@ -34,7 +34,5 @@
 
       trusted-users = ["root" "@wheel"];
     };
-
-    distributedBuilds = true;
   };
 }

@@ -12,9 +12,6 @@
     pamixer
     alsa-utils
 
-    # images
-    viewnior
-
     # music
     termusic
   ];

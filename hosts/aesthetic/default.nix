@@ -1,7 +1,6 @@
 _: {
   imports = [
     ./hardware-configuration.nix
-    ./powersave.nix
     ./profiles/gnome
   ];
 

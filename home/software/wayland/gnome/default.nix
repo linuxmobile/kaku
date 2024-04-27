@@ -16,6 +16,8 @@
         amberol
         celluloid
         loupe
+        blackbox-terminal
+        lsix
         ;
     };
   };

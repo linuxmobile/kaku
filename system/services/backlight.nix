@@ -1,7 +1,4 @@
 {
-  # smooth backlight control
-  hardware.brillo.enable = true;
-
   services.clight = {
     enable = true;
     settings = {
