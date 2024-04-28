@@ -12,6 +12,7 @@
       enable = true;
       settings.UseDns = true;
     };
+    gnome.glib-networking.enable = true;
 
     # DNS resolver
     resolved.enable = true;

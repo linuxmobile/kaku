@@ -42,11 +42,11 @@ in {
       ];
       "workbench.preferredLightColorTheme" = "Rosé Pine Moon";
       "workbench.preferredDarkColorTheme" = "Rosé Pine";
-      "editor.fontFamily" = "LigaSFMono Nerd Font, Catppuccin Mocha, 'monospace', monospace";
+      "editor.fontFamily" = "GeistMono Nerd Font, Catppuccin Mocha, 'monospace', monospace";
       "editor.fontSize" = 14;
       "editor.fontLigatures" = true;
       "files.trimTrailingWhitespace" = true;
-      "terminal.integrated.fontFamily" = "LigaSFMono Nerd Font";
+      "terminal.integrated.fontFamily" = "GeistMono Nerd Font";
       "window.titleBarStyle" = "custom";
       "terminal.integrated.defaultProfile.linux" = "zsh";
       "terminal.integrated.cursorBlinking" = true;

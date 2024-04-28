@@ -17,7 +17,7 @@
     font = {
       name = "SF Pro Display";
       package = inputs.self.packages.${pkgs.system}.SF-Pro;
-      size = 9;
+      size = 11;
     };
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";

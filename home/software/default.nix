@@ -42,7 +42,6 @@
 
     gnome.nautilus
     gnome.file-roller
-    gnome-console
     epiphany
 
     inputs.matugen.packages.${pkgs.system}.default

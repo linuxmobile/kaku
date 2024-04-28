@@ -10,7 +10,7 @@ _: {
         return wezterm.font_with_fallback(names, params)
       end
 
-      local font_name = "LigaSFMono Nerd Font"
+      local font_name = "GeistMono Nerd Font"
 
       return {
 

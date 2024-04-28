@@ -24,7 +24,7 @@
         author = c.secondary;
         shadow = c.background;
       };
-      fonts = "LigaSFMono Nerd Font=11.0";
+      fonts = "GeistMono Nerd Font=11.0";
       radius = 8;
       save-format = "webp";
       shadow = true;

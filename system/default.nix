@@ -18,7 +18,6 @@ let
   laptop =
     desktop
     ++ [
-      ./network/avahi.nix
       ./hardware/bluetooth.nix
 
       ./services/backlight.nix

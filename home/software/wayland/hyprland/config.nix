@@ -12,6 +12,7 @@ in {
       "$MOD" = "SUPER";
       env = [
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        "HYPRCURSOR_SIZE=16"
       ];
       exec-once = [
         "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
@@ -56,7 +57,7 @@ in {
         monitor = [
           # "HDMI-A-2,1920x1080@75,1366x0,1"
           # "DP-1,1366x768@60,0x0,1"
-          "eDP-1, preferred, auto, 1.200000"
+          "eDP-1, preferred, auto, 1.0"
         ];
         gaps_in = 5;
         gaps_out = 5;
