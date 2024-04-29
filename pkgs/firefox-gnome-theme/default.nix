@@ -5,7 +5,7 @@
 }:
 stdenv.mkDerivation rec {
   pname = "firefox-gnome-theme";
-  version = "124";
+  version = "125";
 
   src = fetchFromGitHub {
     repo = pname;

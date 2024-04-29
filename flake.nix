@@ -66,12 +66,7 @@
 
     lanzaboote.url = "github:nix-community/lanzaboote";
 
-    matugen = {
-      url = "github:InioX/matugen";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-index-db = {
+   nix-index-db = {
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };

@@ -7,7 +7,7 @@
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Original-Ice";
-    size = 24;
+    size = 18;
     gtk.enable = true;
     x11.enable = true;
   };
@@ -17,7 +17,7 @@
     font = {
       name = "SF Pro Display";
       package = inputs.self.packages.${pkgs.system}.SF-Pro;
-      size = 11;
+      size = 10;
     };
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
@@ -28,7 +28,7 @@
     };
 
     theme = {
-      name = "adw-gtk3-dark";
+      name = "adw-gtk3";
       package = pkgs.adw-gtk3;
     };
     gtk3 = {

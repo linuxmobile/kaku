@@ -7,7 +7,7 @@
     ./gpg.nix
     ./git.nix
     ./gitui.nix
-    ./inlyne.nix
+    # ./inlyne.nix
     ./neofetch.nix
     ./nix.nix
     # ./screenshot-area.nix

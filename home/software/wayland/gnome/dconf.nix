@@ -6,6 +6,7 @@
   dconf.settings = with lib.hm.gvariant; {
     "org/gnome/desktop/interface" = {
       gtk-enable-primary-paste = false;
+      show-battery-percentage = true;
     };
 
     "org/gnome/desktop/peripherals/touchpad" = {
@@ -100,12 +101,13 @@
       disable-user-extensions = false;
       favorite-apps = [
         "org.gnome.Nautilus.desktop"
+        "com.raggesilver.BlackBox.desktop"
+        "brave-browser.desktop"
         "firefox.desktop"
         "code.desktop"
-        "spotify.desktop"
         "org.telegram.desktop.desktop"
         "com.obsproject.Studio.desktop"
-        "brave-browser.desktop"
+        "spotify.desktop"
       ];
     };
 
@@ -127,6 +129,15 @@
 
     "org/gnome/TextEditor" = {
       keybindings = "hx";
+    };
+
+    # org.gnome.shell.extensions.pop-shell.gschema.xml
+    "org/gnome/shell/extensions/pop-shell" = {
+      toggle-floating = ["<Super>space"];
+      tile-enter = [];
+      tile-accept = [];
+      toggle-stacking = [];
+      toggle-stacking-global= [];
     };
   };
 }

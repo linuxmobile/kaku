@@ -3,8 +3,9 @@
     appindicator
     blur-my-shell
     dash-to-dock
-    user-themes
     just-perfection
+    # pop-shell
+    user-themes
   ];
 in {
   home.packages = with pkgs;

@@ -36,6 +36,6 @@
     catimg
     bun
 
-    inputs.matugen.packages.${pkgs.system}.default
+    # inputs.matugen.packages.${pkgs.system}.default
   ];
 }
