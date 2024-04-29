@@ -12,7 +12,7 @@ in {
       "$MOD" = "SUPER";
       env = [
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        "HYPRCURSOR_SIZE=16"
+        "HYPRCURSOR_SIZE,16"
       ];
       exec-once = [
         "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
@@ -20,7 +20,6 @@ in {
         "hyprlock"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "echo latam > /tmp/kb_layout"
-        # "wlsunset -t 5200 -S 9:00 -s 19:30"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1"
@@ -130,8 +129,13 @@ in {
         "$MOD, Tab, exec, ags -t overview"
         "$MOD, XF86Calculator, exec, ags -r 'recorder.start()'"
 
-        ", Print, exec, screenshot-full"
-        "$MODSHIFT, S, exec, screenshot-area"
+        # SSS
+        "ALT, Print, exec, screenshot-full"
+        "ALTSHIFT, S, exec, screenshot-area"
+        # Normal Screenshot
+        ", Print, exec, ags -r 'recorder.screenshot(true)'"
+        "$MODSHIFT, S, exec, ags -r 'recorder.screenshot()'"
+
         "$MODSHIFT, X, exec, $COLORPICKER"
 
         "$MOD, D, exec, pkill .anyrun-wrapped || run-as-service anyrun"
@@ -144,16 +148,13 @@ in {
         "$MOD, Space, togglefloating"
         "$MOD, P, pseudo"
         "$MOD, S, togglesplit"
-        "$MOD, O, toggleopaque"
 
         "$MODSHIFT, Space, workspaceopt, allfloat"
         "$MODSHIFT, P, workspaceopt, allpseudotile"
 
-        "$MOD, Tab, cyclenext"
-        "$MOD, Tab, bringactivetotop"
+        "ALT, Tab, cyclenext"
+        "ALT, Tab, bringactivetotop"
 
-        "$MOD, A, togglespecialworkspace"
-        "$MODSHIFT, A, movetoworkspace, special"
         "$MOD, C, exec, hyprctl dispatch centerwindow"
 
         "$MOD, K, movefocus, u"

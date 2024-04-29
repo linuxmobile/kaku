@@ -23,8 +23,10 @@
     pavucontrol
     ripgrep
     slurp
+    swappy
     swww
     util-linux
+    wayshot
     which
     wl-clipboard
     wl-screenrec
