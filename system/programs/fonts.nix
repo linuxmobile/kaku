@@ -16,12 +16,10 @@
       maple-mono-SC-NF
 
       inputs.aesthetic-iosevka.packages.${pkgs.system}.default
-      inputs.self.packages.${pkgs.system}.SF-Mono
       inputs.self.packages.${pkgs.system}.SF-Pro
 
-      (google-fonts.override {fonts = ["Inter"];})
       # nerdfonts
-      (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
+      (nerdfonts.override {fonts = ["GeistMono" "NerdFontsSymbolsOnly"];})
     ];
 
     # causes more issues than it solves
@@ -45,7 +43,7 @@
       defaultFonts = {
         serif = ["SF Pro Text" "Noto Color Emoji"];
         sansSerif = ["SF Pro DIsplay" "Noto Color Emoji"];
-        monospace = ["LigaSFMono Nerd Font" "Noto Color Emoji"];
+        monospace = ["GeistMono Nerd Font" "Noto Color Emoji"];
         emoji = ["Noto Color Emoji"];
       };
     };

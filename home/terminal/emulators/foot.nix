@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       main = {
-        font = "LigaSFMono Nerd Font:size=7.5:fontfeatures=calt:fontfeatures=dlig:fontfeatures=liga";
+        font = "GeistMono Nerd Font:size=7.5:fontfeatures=calt:fontfeatures=dlig:fontfeatures=liga";
         box-drawings-uses-font-glyphs = "yes";
         dpi-aware = "yes";
         pad = "25x25center";

@@ -54,7 +54,7 @@ in {
       fonts = {
         default_family = "SF Pro Display";
         default_size = "12pt";
-        web.family.fixed = "LigaSFMono Nerd Font";
+        web.family.fixed = "GeistMono Nerd Font";
       };
       new_instance_open_target = "window";
       tabs.background = true;
