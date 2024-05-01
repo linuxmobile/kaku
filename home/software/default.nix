@@ -36,6 +36,8 @@
     catimg
     bun
 
+    scrcpy
+
     # inputs.matugen.packages.${pkgs.system}.default
   ];
 }
