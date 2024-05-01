@@ -2,7 +2,7 @@
   imports = [
     ./fonts.nix
     ./home-manager.nix
-    ./qt.nix
+    # ./qt.nix
   ];
 
   programs = {
