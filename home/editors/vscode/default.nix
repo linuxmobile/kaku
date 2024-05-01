@@ -36,12 +36,7 @@ in {
       ]);
     userSettings = {
       "workbench.iconTheme" = "catppuccin-mocha";
-      # "workbench.colorTheme" = "Tsuki";
-      "settingsSync.ignoredSettings" = [
-        "workbench.colorTheme"
-      ];
-      "workbench.preferredLightColorTheme" = "Rosé Pine Moon";
-      "workbench.preferredDarkColorTheme" = "Rosé Pine";
+      "workbench.colorTheme" = "Tsuki";
       "editor.fontFamily" = "GeistMono Nerd Font, Catppuccin Mocha, 'monospace', monospace";
       "editor.fontSize" = 14;
       "editor.fontLigatures" = true;

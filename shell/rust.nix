@@ -13,6 +13,8 @@ in
         cargo-make
         openssl
         pkg-config
+        rust-analyzer
+        rustup
         toolchain
       ]
       ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
