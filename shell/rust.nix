@@ -14,6 +14,8 @@ in
         openssl
         pkg-config
         toolchain
+        rustup
+        rust-analyzer
       ]
       ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
         darwin.apple_sdk.frameworks.SystemConfiguration
