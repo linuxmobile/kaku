@@ -20,7 +20,6 @@ let
       ./network/avahi.nix
       ./hardware/bluetooth.nix
 
-      ./services/backlight.nix
       ./services/power.nix
     ];
 in {
