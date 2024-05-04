@@ -69,6 +69,7 @@
           select = "underline";
         };
         bufferline = "always";
+        undercurl = true;
         true-color = true;
         soft-wrap.enable = true;
         indent-guides = {
@@ -96,6 +97,15 @@
           tab = "→";
           newline = "⤶";
         };
+        auto-pairs = true;
+        # commonAutoPairs = {
+        #   "(" = ")";
+        #   "{" = "}";
+        #   "[" = "]";
+        #   "<" = ">";
+        #   "'" = "'";
+        #   "\"" = "\"";
+        # };
       };
 
       keys.insert = {

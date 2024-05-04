@@ -22,15 +22,6 @@
         formatter = prettier e;
       });
       langs = ["css" "scss" "json" "html"];
-
-      commonAutoPairs = {
-        "(" = ")";
-        "{" = "}";
-        "[" = "]";
-        "<" = ">";
-        "'" = "'";
-        "\"" = "\"";
-      };
     in
       [
         {
@@ -41,7 +32,6 @@
             args = ["--parser" "astro"];
           };
           language-servers = ["astro-lsp" "emmet-lsp"];
-          auto-pairs = commonAutoPairs;
         }
         {
           name = "bash";
@@ -50,7 +40,6 @@
             command = "${pkgs.shfmt}/bin/shfmt";
             args = ["-i" "2"];
           };
-          auto-pairs = commonAutoPairs;
         }
         {
           name = "javascript";
@@ -66,7 +55,6 @@
             }
             "biome-lsp"
           ];
-          auto-pairs = commonAutoPairs;
         }
         {
           name = "json";
@@ -78,7 +66,6 @@
             }
             "biome-lsp"
           ];
-          auto-pairs = commonAutoPairs;
         }
         {
           name = "jsx";
@@ -94,13 +81,11 @@
             }
             "biome-lsp"
           ];
-          auto-pairs = commonAutoPairs;
         }
         {
           name = "markdown";
           auto-format = true;
           formatter = deno "md";
-          auto-pairs = commonAutoPairs;
         }
         {
           name = "typescript";
@@ -116,7 +101,6 @@
             }
             "biome-lsp"
           ];
-          auto-pairs = commonAutoPairs;
         }
         {
           name = "tsx";
@@ -132,7 +116,6 @@
             }
             "biome-lsp"
           ];
-          auto-pairs = commonAutoPairs;
         }
         {
           name = "vue";
@@ -149,7 +132,6 @@
             }
             "biome-lsp"
           ];
-          auto-pairs = commonAutoPairs;
         }
       ]
       ++ prettierLangs langs;
