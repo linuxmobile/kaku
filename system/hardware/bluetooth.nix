@@ -6,6 +6,7 @@
       General = {
         Experimental = true;
         FastConnectable = true;
+        powerOnBoot = true;
       };
     };
   };
