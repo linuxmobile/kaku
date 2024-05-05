@@ -29,19 +29,31 @@
     };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # global, so they can be `.follow`ed
+    systems.url = "github:nix-systems/default-linux";
+
+    flake-compat.url = "github:edolstra/flake-compat";
+
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.systems.follows = "systems";
+    };
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    # rest of inputs, alphabetical order
     aesthetic-iosevka.url = "github:alphatechnolog/aesthetic-iosevka";
 
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "hm";
+      inputs.systems.follows = "systems";
     };
 
     ags = {
@@ -61,11 +73,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    fu.url = "github:numtide/flake-utils";
-
     helix = {
       url = "github:helix-editor/helix";
-      inputs.flake-utils.follows = "fu";
+      inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -74,18 +84,26 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hypridle.url = "github:hyprwm/hypridle";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hypridle = {
+      url = "github:hyprwm/hypridle";
+      inputs.hyprlang.follows = "hyprland/hyprlang";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+      inputs.systems.follows = "hyprland/systems";
+    };
 
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
     };
 
-    hyprlock.url = "github:hyprwm/hyprlock";
-
-    # hyprpaper.url = "github:hyprwm/hyprpaper";
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs.hyprlang.follows = "hyprland/hyprlang";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+      inputs.systems.follows = "hyprland/systems";
+    };
 
     lanzaboote.url = "github:nix-community/lanzaboote";
 
@@ -107,7 +125,7 @@
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "fu";
+      inputs.flake-utils.follows = "flake-utils";
     };
 
     spicetify-nix = {
