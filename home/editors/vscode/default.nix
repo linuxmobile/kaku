@@ -37,9 +37,6 @@ in {
     userSettings = {
       "workbench.iconTheme" = "catppuccin-mocha";
       "workbench.colorTheme" = "Tsuki";
-      "settingsSync.ignoredSettings" = [
-        "workbench.colorTheme"
-      ];
       "editor.fontFamily" = "GeistMono Nerd Font, Catppuccin Mocha, 'monospace', monospace";
       "editor.fontSize" = 14;
       "editor.fontLigatures" = true;
@@ -79,7 +76,6 @@ in {
       "editor.tabSize" = 2;
       "editor.wordWrap" = "on";
       "workbench.editor.tabActionLocation" = "left";
-      "window.autoDetectColorScheme" = true;
       "window.dialogStyle" = "native";
     };
   };
