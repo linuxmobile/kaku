@@ -42,8 +42,8 @@
 
     gnome.nautilus
     gnome.file-roller
-    epiphany
 
-    inputs.matugen.packages.${pkgs.system}.default
+    inkscape
+    gimp
   ];
 }

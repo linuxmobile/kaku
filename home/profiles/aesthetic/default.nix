@@ -23,8 +23,6 @@
     ../../services/system/syncthing.nix
 
     # wayland specific
-    # ../../services/wayland/hyprpaper.nix
-    ../../services/wayland/hypridle.nix
 
     # terminal emulators
     ../../terminal/emulators/foot.nix
