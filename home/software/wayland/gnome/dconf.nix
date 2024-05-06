@@ -80,7 +80,7 @@
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>Return";
-      command = "/usr/bin/env blackbox";
+      command = "/usr/bin/env kgx";
       name = "Terminal";
     };
 
@@ -124,7 +124,7 @@
     };
 
     "com/github/stunkymonkey/nautilus-open-any-terminal" = {
-      terminal = "blackbox";
+      terminal = "kgx";
     };
 
     "org/gnome/TextEditor" = {

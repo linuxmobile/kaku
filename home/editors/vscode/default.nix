@@ -76,7 +76,6 @@ in {
       "editor.tabSize" = 2;
       "editor.wordWrap" = "on";
       "workbench.editor.tabActionLocation" = "left";
-      "window.autoDetectColorScheme" = true;
       "window.dialogStyle" = "native";
     };
   };

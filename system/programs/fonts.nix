@@ -15,7 +15,6 @@
 
       maple-mono-SC-NF
 
-      inputs.aesthetic-iosevka.packages.${pkgs.system}.default
       inputs.self.packages.${pkgs.system}.SF-Pro
 
       # nerdfonts

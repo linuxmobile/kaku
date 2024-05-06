@@ -2,9 +2,7 @@
   pkgs,
   inputs,
   ...
-}: let
-  firefox-gnome-theme = inputs.self.packages.${pkgs.system}.firefox-gnome-theme;
-in {
+}: {
   programs.firefox = {
     enable = true;
     package = pkgs.wrapFirefox pkgs.firefox-devedition-unwrapped {
@@ -254,21 +252,7 @@ in {
         "layout.word_select.eat_space_to_next_word" = false;
 
         "intl.accept_languages" = "es-AR, es, en-US, en";
-
-        "gnomeTheme.hideSingleTab" = true;
-        "gnomeTheme.bookmarksToolbarUnderTabs" = true;
-        "gnomeTheme.normalWidthTabs" = false;
-        "gnomeTheme.tabsAsHeaderbar" = false;
       };
-      userChrome = ''
-        @import "${firefox-gnome-theme}/share/firefox-gnome-theme/userChrome.css";
-      '';
-
-      userContent = ''
-        @import "${firefox-gnome-theme}/share/firefox-gnome-theme/userContent.css";
-      '';
-
-      extraConfig = builtins.readFile "${firefox-gnome-theme}/share/firefox-gnome-theme/configuration/user.js";
     };
   };
 }

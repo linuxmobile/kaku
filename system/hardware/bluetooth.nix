@@ -9,6 +9,4 @@
       };
     };
   };
-
-  services.blueman.enable = true;
 }

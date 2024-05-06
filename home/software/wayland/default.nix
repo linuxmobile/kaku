@@ -1,4 +1,8 @@
-{pkgs, ...}:
+{
+  inputs,
+  pkgs,
+  ...
+}:
 # Wayland config
 {
   imports = [
@@ -13,6 +17,7 @@
     # utils
     wl-clipboard
     wl-screenrec
+    # inputs.self.packages.${pkgs.system}.dynamic-wallpapers
   ];
 
   # make stuff work on wayland
