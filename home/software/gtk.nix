@@ -27,10 +27,10 @@
       package = pkgs.colloid-icon-theme;
     };
 
-    theme = {
-      name = "adw-gtk3";
-      package = pkgs.adw-gtk3;
-    };
+    # theme = {
+    #   name = "adw-gtk3";
+    #   package = pkgs.adw-gtk3;
+    # };
     gtk3 = {
       bookmarks = [
         "file://${config.home.homeDirectory}/Documents"

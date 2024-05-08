@@ -38,7 +38,7 @@
         cheese # webcam tool
         eog
         gnome-music
-        # epiphany # web browser
+        epiphany # web browser
         geary # email reader
         evince # document viewer
         gnome-characters

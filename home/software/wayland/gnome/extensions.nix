@@ -4,7 +4,7 @@
     blur-my-shell
     dash-to-dock
     just-perfection
-    # pop-shell
+    pop-shell
     user-themes
   ];
 in {

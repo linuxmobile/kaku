@@ -1,20 +1,19 @@
 {
   config,
   pkgs,
-  lib,
   ...
 }: let
   script = pkgs.writeShellScript "theme-changer.sh" ''
     HELIX_THEME="${config.xdg.configHome}/helix/current.toml"
 
     while true; do
-      THEME=$(gsettings get org.gnome.desktop.interface color-sheme)
+      THEME=$(gsettings get org.gnome.desktop.interface color-scheme)
       case "$THEME" in
         "'prefer-dark'")
-          sed -i 's/^inherits = .*/inherits = "mocha"/' $HELIX_THEME
+          sed -i 's/^\s*inherits = .*/inherits = "mocha"/' $HELIX_THEME
           ;;
         "'prefer-light'")
-          sed -i 's/^inherits = .*/inherits = "latte"/' $HELIX_THEME
+          sed -i 's/^\s*inherits = .*/inherits = "latte"/' $HELIX_THEME
           ;;
       esac
 
