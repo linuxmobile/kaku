@@ -5,9 +5,9 @@
 }:
 # Wayland config
 {
-  imports = [
-    ./gnome
-  ];
+  # imports = [
+  #   ./gnome
+  # ];
 
   home.packages = with pkgs; [
     # screenshot

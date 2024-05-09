@@ -1,7 +1,7 @@
 _: {
   imports = [
     ./hardware-configuration.nix
-    ./profiles/gnome
+    ./profiles/cosmic
   ];
 
   boot = {

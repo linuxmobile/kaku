@@ -35,6 +35,7 @@
           }
 
           inputs.agenix.nixosModules.default
+          inputs.nixos-cosmic.nixosModules.default
         ];
     };
   };
