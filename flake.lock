@@ -120,11 +120,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1715140979,
-        "narHash": "sha256-0I873xD9WrsFBvjf/M+lNP4zwlND4U+w62kClxJDm+c=",
+        "lastModified": 1715227380,
+        "narHash": "sha256-56TsrSnWkMyyIIAJxkifmeyE9fECe71hbk9rVO4Ycnc=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "ac4efe03632b5180a4bec10df256077fbe055972",
+        "rev": "ad65e9ed739554e747ddcdbe697fbd49d5162635",
         "type": "gitlab"
       },
       "original": {
@@ -392,11 +392,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1714872073,
-        "narHash": "sha256-Gybo6MqJ2tva9vMaSxOgie8uVObiP0LxD2FMokiR0X4=",
+        "lastModified": 1715269120,
+        "narHash": "sha256-AcN0Zv7E2mPpB4JsKCFeKz7X0VQgFSCFXplsxj6oens=",
         "owner": "fufexan",
         "repo": "nix-gaming",
-        "rev": "b85b9c3afa1bfee0150580eb76c52e572a85a6a9",
+        "rev": "8960f1a63dab72f971044c217c6936cc527e679b",
         "type": "github"
       },
       "original": {
@@ -436,11 +436,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1715130616,
-        "narHash": "sha256-pWwzSphfGbeg/2lmfFo15b2Ykv/JtTXAWydy8dfHv9I=",
+        "lastModified": 1715217683,
+        "narHash": "sha256-xr0rPyije/zNj/L1kw1DI/O7CNmd0eQw2ePBFM2Id4g=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "f0219364cbf407c76993996a9242b8eda0406b9a",
+        "rev": "bd7ff7845868d9238e6365dbd61bec13b4d1dee6",
         "type": "github"
       },
       "original": {
@@ -654,11 +654,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1715107345,
-        "narHash": "sha256-ydOSsXHROYH3ukUJ/z4AUhnQsYJ2IlcQMrDuBRWuE/Q=",
+        "lastModified": 1715193725,
+        "narHash": "sha256-WC3/e6f296RmVoHDLzYk0lC4lhEE+Xx16iTfOh0Chtc=",
         "owner": "MichaelPachec0",
         "repo": "spicetify-nix",
-        "rev": "f7cde4aa9e57ddf5d7535fe4598dd5554c728fc2",
+        "rev": "2039fa673f8be87a66ba33499cd091d779464ac5",
         "type": "github"
       },
       "original": {

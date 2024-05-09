@@ -44,7 +44,7 @@
         gtk-xft-hinting = 1;
         gtk-xft-hintstyle = "hintfull";
         gtk-xft-rgba = "rgb";
-        gtk-application-prefer-dark-theme = 1;
+        # gtk-application-prefer-dark-theme = 1;
       };
     };
 
@@ -55,6 +55,6 @@
       gtk-xft-rgba="rgb"
     '';
 
-    gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
+    # gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
   };
 }

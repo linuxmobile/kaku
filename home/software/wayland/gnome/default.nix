@@ -9,17 +9,12 @@
   ];
 
   home = {
-    packages = lib.attrValues {
-      # Utilities
-      inherit
-        (pkgs)
-        amberol
-        celluloid
-        loupe
-        blackbox-terminal
-        
-        lsix
-        ;
-    };
+    packages = with pkgs; [
+      amberol
+      celluloid
+      loupe
+      (blackbox-terminal.override {sixelSupport = true;})
+      lsix
+    ];
   };
 }
