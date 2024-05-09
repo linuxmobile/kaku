@@ -128,6 +128,7 @@ in {
         "$MOD, Escape, exec, wlogout -p layer-shell"
         "$MOD, Tab, exec, ags -t overview"
         "$MOD, XF86Calculator, exec, ags -r 'recorder.start()'"
+        "$MODSHIFT, Tab, hyprexpo:expo, toggle"
 
         # SSS
         "ALT, Print, exec, screenshot-full"
@@ -297,6 +298,27 @@ in {
         "ignorealpha 0.2, ${toRegex ["bar" "logout_dialog"]}"
         "ignorealpha 0.5, ${toRegex (ignorealpha ++ ["music"])}"
       ];
+      plugin = {
+        overview = {
+          centerAligned = true;
+          hideTopLayers = true;
+          hideOverlayLayers = true;
+          showNewWorkspace = true;
+          exitOnClick = true;
+          exitOnSwitch = true;
+          drawActiveWorkspace = true;
+          reverseSwipe = true;
+        };
+        hyprexpo = {
+          columns = 3;
+          gap_size = 4;
+          bg_col = "rgb(000000)";
+
+          enable_gesture = true;
+          gesture_distance = 300;
+          gesture_positive = false;
+        };
+      };
     };
   };
 }

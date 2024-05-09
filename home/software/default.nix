@@ -45,5 +45,6 @@
 
     inkscape
     gimp
+    scrcpy
   ];
 }
