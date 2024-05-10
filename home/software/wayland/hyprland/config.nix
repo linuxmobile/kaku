@@ -128,7 +128,6 @@ in {
         "$MOD, Escape, exec, wlogout -p layer-shell"
         "$MOD, Tab, exec, ags -t overview"
         "$MOD, XF86Calculator, exec, ags -r 'recorder.start()'"
-        "$MODSHIFT, Tab, hyprexpo:expo, toggle"
 
         # SSS
         "ALT, Print, exec, screenshot-full"
