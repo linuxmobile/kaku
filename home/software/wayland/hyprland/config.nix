@@ -18,12 +18,8 @@ in {
         "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
         "systemctl --user start clight"
         "hyprlock"
-        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "echo latam > /tmp/kb_layout"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1"
-        "hyprctl dispatcher focusmonitor 1"
       ];
       xwayland.force_zero_scaling = true;
       input = {
@@ -40,6 +36,9 @@ in {
       gestures = {
         workspace_swipe = true;
         workspace_swipe_fingers = 3;
+      };
+      cursor = {
+        no_warps = true;
       };
       misc = {
         disable_autoreload = true;
@@ -65,20 +64,23 @@ in {
         "col.inactive_border" = "rgb(${c.primary});";
         "no_border_on_floating" = false;
         layout = "dwindle";
-        no_cursor_warps = true;
       };
       decoration = {
         rounding = 1;
         blur = {
           enabled = true;
-          size = 6;
+          size = 10;
           passes = 3;
           new_optimizations = true;
           ignore_opacity = true;
           noise = "0.1";
-          contrast = "1.1";
-          brightness = "1.2";
+          contrast = "1.0";
+          brightness = "1.0";
           xray = true;
+          vibrancy = "0.5";
+          vibrancy_darkness = "0.1";
+          popups = true;
+          popups_ignorealpha = "0.2";
         };
         fullscreen_opacity = 1;
         drop_shadow = true;

@@ -6,6 +6,7 @@
   imports = [
     ./anyrun
     ./browsers/brave.nix
+    ./browsers/edge.nix
     ./browsers/firefox.nix
     ./browsers/qutebrowser.nix
     ./gtk.nix
@@ -42,6 +43,10 @@
 
     gnome.nautilus
     gnome.file-roller
+    contrast
+    paleta
+    paper-plane
+    resources
 
     inkscape
     gimp

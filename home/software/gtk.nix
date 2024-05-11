@@ -28,10 +28,9 @@
     };
 
     theme = {
-      name = "Colloid-Dark";
-      package = pkgs.colloid-gtk-theme.override {
-        tweaks = ["rimless" "black" "float"];
-        themeVariants = ["grey"];
+      name = "WhiteSur-Dark";
+      package = pkgs.whitesur-gtk-theme.override {
+        nautilusStyle = "glassy";
       };
     };
     gtk3 = {

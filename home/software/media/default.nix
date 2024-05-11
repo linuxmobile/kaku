@@ -15,6 +15,7 @@
     # audio
     amberol
     termusic
+    blanket
 
     # images
     loupe

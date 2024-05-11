@@ -16,7 +16,6 @@
     wl-clipboard
     wl-screenrec
     hyprpicker
-    # wlsunset
   ];
 
   # make stuff work on wayland
