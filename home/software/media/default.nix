@@ -8,7 +8,7 @@
 
   home.packages = with pkgs; [
     # audio control
-    pavucontrol
+    pwvucontrol
     pamixer
     alsa-utils
 

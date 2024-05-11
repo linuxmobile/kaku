@@ -99,16 +99,7 @@
 
     "org/gnome/shell" = {
       disable-user-extensions = false;
-      favorite-apps = [
-        "org.gnome.Nautilus.desktop"
-        "com.raggesilver.BlackBox.desktop"
-        "brave-browser.desktop"
-        "firefox.desktop"
-        "code.desktop"
-        "org.telegram.desktop.desktop"
-        "com.obsproject.Studio.desktop"
-        "spotify.desktop"
-      ];
+      favorite-apps = ["org.gnome.Nautilus.desktop" "com.raggesilver.BlackBox.desktop" "brave-browser.desktop" "firefox.desktop" "code.desktop" "app.drey.PaperPlane.desktop" "io.gitlab.news_flash.NewsFlash.desktop" "spotify.desktop" "com.obsproject.Studio.desktop" "com.rafaelmardojai.Blanket.desktop" "net.nokyan.Resources.desktop" "org.gnome.Solanum.desktop" "io.github.nate_xyz.Paleta.desktop" "io.github.kaii_lb.Overskride.desktop" "com.mattjakeman.ExtensionManager.desktop" "org.gnome.Settings.desktop"];
     };
 
     "org/gnome/shell/app-switcher" = {
@@ -117,6 +108,10 @@
 
     "org/gnome/shell/keybindings" = {
       toggle-application-view = ["<Super>a"];
+    };
+
+    "org.gnome.shell.weather" = {
+      automatic-location = false;
     };
 
     "org/gtk/gtk4/settings/file-chooser" = {
@@ -137,7 +132,7 @@
       tile-enter = [];
       tile-accept = [];
       toggle-stacking = [];
-      toggle-stacking-global= [];
+      toggle-stacking-global = [];
     };
   };
 }

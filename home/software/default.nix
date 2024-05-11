@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./browsers/brave.nix
+    ./browsers/edge.nix
     ./browsers/firefox.nix
     ./browsers/qutebrowser.nix
     ./gtk.nix
