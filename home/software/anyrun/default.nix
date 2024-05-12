@@ -24,7 +24,7 @@
       closeOnClick = true;
     };
 
-    extraCss = builtins.readFile (./. + "/style-${config.theme.name}.css");
+    extraCss = builtins.readFile (./. + "/style-dark.css");
 
     extraConfigFiles."applications.ron".text = ''
       Config(

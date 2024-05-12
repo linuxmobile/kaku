@@ -3,7 +3,6 @@
   lib,
   ...
 }: let
-  c = config.programs.matugen.theme.colors.colors.${config.theme.name};
   pointer = config.home.pointerCursor;
   homeDir = config.home.homeDirectory;
 in {
@@ -12,7 +11,7 @@ in {
       "$MOD" = "SUPER";
       env = [
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        "HYPRCURSOR_SIZE,16"
+        "HYPRCURSOR_SIZE,24"
       ];
       exec-once = [
         "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
@@ -36,6 +35,7 @@ in {
       gestures = {
         workspace_swipe = true;
         workspace_swipe_fingers = 3;
+        workspace_swipe_use_r = true;
       };
       cursor = {
         no_warps = true;
@@ -60,8 +60,8 @@ in {
         gaps_in = 5;
         gaps_out = 5;
         border_size = 1;
-        "col.active_border" = "rgb(${c.on_primary})";
-        "col.inactive_border" = "rgb(${c.primary});";
+        # "col.active_border" = "rgb(${c.on_primary})";
+        # "col.inactive_border" = "rgb(${c.primary});";
         "no_border_on_floating" = false;
         layout = "dwindle";
       };
@@ -255,6 +255,8 @@ in {
         "float,class:^(mpv)$"
         "float,class:^(org.telegram.desktop)"
         "size 380 690,class:^(org.telegram.desktop)"
+        "float,class:^(app.drey.PaperPlane)"
+        "size 450 760,class:^(app.drey.PaperPlane)"
 
         "float, title:^(Picture-in-Picture)$"
         "pin, title:^(Picture-in-Picture)$"
@@ -283,21 +285,31 @@ in {
           elements = lib.concatStringsSep "|" list;
         in "^(${elements})$";
 
-        ignorealpha = [
-          "calendar"
+        lowopacity = [
+          "bar"
           "notifications"
           "osd"
+          "logout_dialog"
+        ];
+
+        highopacity = [
+          # ags
+          "calendar"
           "system-menu"
 
           "anyrun"
           "logout_dialog"
         ];
-        layers = ignorealpha ++ ["bar"];
+
+        blurred = lib.concatLists [
+          lowopacity
+          highopacity
+        ];
       in [
-        "blur, ${toRegex layers}"
+        "blur, ${toRegex blurred}"
         "xray 1, ${toRegex ["bar"]}"
-        "ignorealpha 0.2, ${toRegex ["bar" "logout_dialog"]}"
-        "ignorealpha 0.5, ${toRegex (ignorealpha ++ ["music"])}"
+        "ignorealpha 0.5, ${toRegex (highopacity ++ ["music"])}"
+        "ignorealpha 0.2, ${toRegex lowopacity}"
       ];
       plugin = {
         overview = {
@@ -309,15 +321,6 @@ in {
           exitOnSwitch = true;
           drawActiveWorkspace = true;
           reverseSwipe = true;
-        };
-        hyprexpo = {
-          columns = 3;
-          gap_size = 4;
-          bg_col = "rgb(000000)";
-
-          enable_gesture = true;
-          gesture_distance = 300;
-          gesture_positive = false;
         };
       };
     };

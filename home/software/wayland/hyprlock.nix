@@ -1,6 +1,6 @@
 {config, ...}: let
-  variant = config.theme.name;
-  c = config.programs.matugen.theme.colors.colors.${variant};
+  # variant = config.theme.name;
+  # c = config.programs.matugen.theme.colors.colors.${variant};
 
   font_family = "GeistMono Nerd Font";
 in {
@@ -36,12 +36,12 @@ in {
 
           outline_thickness = 2;
 
-          outer_color = "rgb(${c.primary})";
-          inner_color = "rgb(${c.on_primary_container})";
-          font_color = "rgb(${c.primary_container})";
+          # outer_color = "rgb(${c.primary})";
+          # inner_color = "rgb(${c.on_primary_container})";
+          # font_color = "rgb(${c.primary_container})";
 
           fade_on_empty = false;
-          placeholder_text = ''<span font_family="${font_family}" foreground="##${c.primary_container}">Password...</span>'';
+          # placeholder_text = ''<span font_family="${font_family}" foreground="##${c.primary_container}">Password...</span>'';
 
           dots_spacing = 0.3;
           dots_center = true;
@@ -54,7 +54,7 @@ in {
           text = "$TIME";
           inherit font_family;
           font_size = 50;
-          color = "rgb(${c.primary})";
+          # color = "rgb(${c.primary})";
 
           position = {
             x = 0;

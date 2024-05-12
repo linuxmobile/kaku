@@ -110,6 +110,11 @@
       inputs.systems.follows = "hyprland/systems";
     };
 
+    hyprland-hyprspace = {
+      url = "github:KZDKM/Hyprspace";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     lanzaboote.url = "github:nix-community/lanzaboote";
 
     matugen = {

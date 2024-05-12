@@ -80,7 +80,7 @@ in {
         sixel = "yes";
       };
       colors = {
-        alpha = 1.0;
+        alpha = 0.9;
       };
       # // colors.${config.theme.name};
     };
