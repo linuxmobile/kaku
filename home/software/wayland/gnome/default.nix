@@ -18,6 +18,8 @@
       paleta
       paper-plane
       resources
+      halftone
+      letterpress
 
       # Terminal
       (blackbox-terminal.override {sixelSupport = true;})
