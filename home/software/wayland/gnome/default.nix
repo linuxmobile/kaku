@@ -12,14 +12,13 @@
       contrast
       eyedropper
       gnome-solanum
+      halftone
       loupe
       newsflash
       overskride
       paleta
       paper-plane
       resources
-      halftone
-      letterpress
 
       # Terminal
       (blackbox-terminal.override {sixelSupport = true;})
