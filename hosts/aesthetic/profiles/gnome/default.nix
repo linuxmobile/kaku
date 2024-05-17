@@ -16,8 +16,8 @@
       ffmpegthumbnailer
       gnome.adwaita-icon-theme
       gnome.dconf-editor
-      gnome.gnome-tweaks
       gnome.gnome-themes-extra
+      gnome.gnome-tweaks
       gnome.nautilus-python
       nautilus-open-any-terminal
       wl-clipboard

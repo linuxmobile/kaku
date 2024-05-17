@@ -1,8 +1,4 @@
-{
-  lib,
-  # themes,
-  ...
-}: {
+{lib, ...}: {
   dconf.settings = with lib.hm.gvariant; {
     "org/gnome/desktop/interface" = {
       gtk-enable-primary-paste = false;
@@ -99,7 +95,7 @@
 
     "org/gnome/shell" = {
       disable-user-extensions = false;
-      favorite-apps = ["org.gnome.Nautilus.desktop" "com.raggesilver.BlackBox.desktop" "brave-browser.desktop" "firefox.desktop" "code.desktop" "app.drey.PaperPlane.desktop" "io.gitlab.news_flash.NewsFlash.desktop" "spotify.desktop" "com.obsproject.Studio.desktop" "com.rafaelmardojai.Blanket.desktop" "net.nokyan.Resources.desktop" "org.gnome.Solanum.desktop" "io.github.nate_xyz.Paleta.desktop" "io.github.kaii_lb.Overskride.desktop" "com.mattjakeman.ExtensionManager.desktop" "org.gnome.Settings.desktop"];
+      favorite-apps = ["org.gnome.Nautilus.desktop" "com.raggesilver.BlackBox.desktop" "brave-browser.desktop" "microsoft-edge-dev.desktop" "firefox.desktop" "code.desktop" "app.drey.PaperPlane.desktop" "io.gitlab.news_flash.NewsFlash.desktop" "spotify.desktop" "com.obsproject.Studio.desktop" "gimp.desktop" "org.inkscape.Inkscape.desktop" "com.rafaelmardojai.Blanket.desktop" "org.gnome.Solanum.desktop" "io.github.nate_xyz.Paleta.desktop" "net.nokyan.Resources.desktop" "io.github.kaii_lb.Overskride.desktop" "com.mattjakeman.ExtensionManager.desktop" "org.gnome.tweaks.desktop" "org.gnome.Settings.desktop"];
     };
 
     "org/gnome/shell/app-switcher" = {
