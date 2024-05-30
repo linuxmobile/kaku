@@ -16,7 +16,7 @@
           "PATH"
           ":"
           (lib.makeBinPath [
-            inputs.self.packages.${pkgs.system}.biome
+            biome
             emmet-ls
             marksman
             nil
