@@ -19,9 +19,6 @@
             name = "nixland";
             DIRENV_LOG_FORMAT = "";
           };
-          tauri = import ./shell/tauri.nix {inherit inputs system;};
-          rust = import ./shell/rust.nix {inherit inputs system;};
-          leptos = import ./shell/leptos.nix {inherit inputs system;};
         };
         # Nix Formatter
         formatter = pkgs.alejandra;
@@ -53,8 +50,6 @@
       inputs.home-manager.follows = "hm";
       inputs.systems.follows = "systems";
     };
-
-    fenix.url = "github:nix-community/fenix/monthly";
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
