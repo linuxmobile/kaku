@@ -20,7 +20,6 @@
     ps_mem
 
     vesktop
-    inputs.self.packages.${pkgs.system}.discordo
 
     # misc
     pciutils
@@ -38,7 +37,5 @@
     bun
 
     scrcpy
-
-    # inputs.matugen.packages.${pkgs.system}.default
   ];
 }

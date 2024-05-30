@@ -12,12 +12,13 @@
       contrast
       eyedropper
       gnome-solanum
-      halftone
+      kooha
       loupe
-      newsflash
       overskride
       paleta
       paper-plane
+      parabolic
+      planify
       resources
 
       # Terminal

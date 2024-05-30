@@ -88,14 +88,14 @@
 
     "org/gnome/settings-daemon/plugins/power" = {
       idle-dim = false;
-      power-button-action = "interactive";
+      power-button-action = "sleep";
       sleep-inactive-ac-type = "nothing";
       sleep-inactive-battery-type = "nothing";
     };
 
     "org/gnome/shell" = {
       disable-user-extensions = false;
-      favorite-apps = ["org.gnome.Nautilus.desktop" "com.raggesilver.BlackBox.desktop" "brave-browser.desktop" "microsoft-edge-dev.desktop" "firefox.desktop" "code.desktop" "app.drey.PaperPlane.desktop" "io.gitlab.news_flash.NewsFlash.desktop" "spotify.desktop" "com.obsproject.Studio.desktop" "gimp.desktop" "org.inkscape.Inkscape.desktop" "com.rafaelmardojai.Blanket.desktop" "org.gnome.Solanum.desktop" "io.github.nate_xyz.Paleta.desktop" "net.nokyan.Resources.desktop" "io.github.kaii_lb.Overskride.desktop" "com.mattjakeman.ExtensionManager.desktop" "org.gnome.tweaks.desktop" "org.gnome.Settings.desktop"];
+      favorite-apps = ["org.gnome.Nautilus.desktop" "com.raggesilver.BlackBox.desktop" "brave-browser.desktop" "microsoft-edge-dev.desktop" "firefox.desktop" "code.desktop" "dev.zed.Zed.desktop" "app.drey.PaperPlane.desktop" "spotify.desktop" "com.obsproject.Studio.desktop" "gimp.desktop" "org.inkscape.Inkscape.desktop" "io.github.nate_xyz.Paleta.desktop" "org.gnome.Solanum.desktop" "org.nickvision.tubeconverter.desktop" "io.github.alainm23.planify.desktop" "com.rafaelmardojai.Blanket.desktop" "io.github.seadve.Kooha.desktop" "net.nokyan.Resources.desktop" "io.github.kaii_lb.Overskride.desktop" "com.mattjakeman.ExtensionManager.desktop" "org.gnome.tweaks.desktop" "org.gnome.Settings.desktop"];
     };
 
     "org/gnome/shell/app-switcher" = {
@@ -116,19 +116,6 @@
 
     "com/github/stunkymonkey/nautilus-open-any-terminal" = {
       terminal = "blackbox";
-    };
-
-    "org/gnome/TextEditor" = {
-      keybindings = "hx";
-    };
-
-    # org.gnome.shell.extensions.pop-shell.gschema.xml
-    "org/gnome/shell/extensions/pop-shell" = {
-      toggle-floating = ["<Super>space"];
-      tile-enter = [];
-      tile-accept = [];
-      toggle-stacking = [];
-      toggle-stacking-global = [];
     };
   };
 }

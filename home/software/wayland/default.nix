@@ -10,14 +10,8 @@
   ];
 
   home.packages = with pkgs; [
-    # screenshot
-    grim
-    slurp
-
     # utils
     wl-clipboard
-    wl-screenrec
-    # inputs.self.packages.${pkgs.system}.dynamic-wallpapers
   ];
 
   # make stuff work on wayland

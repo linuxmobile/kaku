@@ -25,11 +25,10 @@
 
     gnome.excludePackages =
       (with pkgs; [
-        # gnome-console
+        gnome-console
         gedit
         gnome-connections
         gnome-photos
-        gnome-text-editor
         gnome-tour
         nano
         snapshot

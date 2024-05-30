@@ -3,8 +3,6 @@
     appindicator
     blur-my-shell
     dash-to-dock
-    just-perfection
-    pop-shell
     user-themes
   ];
 in {
@@ -37,10 +35,6 @@ in {
       show-favorites = true;
       show-trash = false;
       transparency-mode = "fixed";
-    };
-
-    "org/gnome/shell/extensions/just-perfection" = {
-      panel-size = 34;
     };
   };
 }
