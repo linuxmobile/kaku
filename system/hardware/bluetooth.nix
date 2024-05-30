@@ -4,6 +4,7 @@
     package = pkgs.bluez5-experimental;
     settings = {
       General = {
+        MultiProfile = "multiple";
         Experimental = true;
         FastConnectable = true;
       };
