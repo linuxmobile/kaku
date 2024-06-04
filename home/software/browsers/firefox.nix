@@ -20,7 +20,6 @@
       extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
         ublock-origin
         bitwarden
-        sponsorblock
         sidebery
       ];
       search.force = true;
@@ -28,7 +27,7 @@
         "Home Manager NixOs" = {
           urls = [
             {
-              template = "https://mipmip.github.io/home-manager-option-search/";
+              template = "https://home-manager-options.extranix.com/";
               params = [
                 {
                   name = "query";
@@ -64,6 +63,25 @@
           iconUpdateURL = "https://nixos.wiki/favicon.png";
           updateInterval = 24 * 60 * 60 * 1000; # every day
           definedAliases = ["@nw"];
+        };
+        "GitHub Code" = {
+          urls = [{template = "https://github.com/search?q={searchTerms}&type=code";}];
+          definedAliases = ["@gc"];
+        };
+
+        "NPM" = {
+          urls = [{template = "https://www.npmjs.com/search?q={searchTerms}";}];
+          definedAliases = ["@npm"];
+        };
+
+        "GitHub Pulls" = {
+          urls = [{template = "https://github.com/NixOS/nixpkgs/pulls?q=is%3Apr+is%3Aopen+{searchTerms}";}];
+          definedAliases = ["@gp"];
+        };
+
+        "GitHub Issues" = {
+          urls = [{template = "https://github.com/NixOS/nixpkgs/issues?q=is%3Aissue+{searchTerms}";}];
+          definedAliases = ["@gi"];
         };
         Bing.metaData.hidden = true;
         "Amazon.com".metaData.hidden = true;
@@ -252,6 +270,14 @@
         "layout.word_select.eat_space_to_next_word" = false;
 
         "intl.accept_languages" = "es-AR, es, en-US, en";
+
+        "dom.battery,enabled" = false;
+        "browser.urlbar.speculativeConnect.enabled" = false;
+        "ui.key.menuAccessKeyFocuses" = false;
+        "identity.fxaccounts.enabled" = false;
+        "dom.push.enabled" = false;
+        "dom.push.connection.enabled" = false;
+        "browser.tabs.firefox-view" = false;
       };
     };
   };
