@@ -17,6 +17,7 @@
       overskride
       paleta
       paper-plane
+      papers
       parabolic
       planify
       resources

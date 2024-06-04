@@ -4,7 +4,7 @@
   ...
 }: let
   browser = ["firefox"];
-  imageViewer = ["org.gnome.loupe"];
+  imageViewer = ["org.gnome.Loupe"];
   videoPlayer = ["io.github.celluloid_player.Celluloid"];
   audioPlayer = ["io.bassi.Amberol"];
 
@@ -37,9 +37,9 @@
 
   # XDG MIME types
   associations = builtins.mapAttrs (_: v: (map (e: "${e}.desktop") v)) ({
-      "application/pdf" = ["org.pwmt.zathura-pdf-mupdf"];
+      "application/pdf" = ["papers"];
       "text/html" = browser;
-      "text/plain" = ["Helix"];
+      "text/plain" = ["org.gnome.TextEditor"];
       "x-scheme-handler/chrome" = ["chromium-browser"];
     }
     // image
