@@ -4,9 +4,9 @@
   ...
 }: let
   script = pkgs.writeShellScript "theme-changer.sh" ''
-          HELIX_THEME="${config.xdg.configHome}/helix/themes/current.toml"
-          GTK_CONFIG_DIR="${config.xdg.configHome}/gtk-4.0"
-          THEMES_DIR="${config.xdg.dataHome}/themes"
+    HELIX_THEME="${config.xdg.configHome}/helix/themes/current.toml"
+    GTK_CONFIG_DIR="${config.xdg.configHome}/gtk-4.0"
+    THEMES_DIR="${config.xdg.dataHome}/themes"
 
     echo "HELIX_THEME: $HELIX_THEME"
     echo "GTK_CONFIG_DIR: $GTK_CONFIG_DIR"
