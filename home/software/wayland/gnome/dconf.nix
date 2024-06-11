@@ -95,7 +95,7 @@
 
     "org/gnome/shell" = {
       disable-user-extensions = false;
-      favorite-apps = ["org.gnome.Nautilus.desktop" "com.raggesilver.BlackBox.desktop" "brave-browser.desktop" "microsoft-edge-dev.desktop" "firefox.desktop" "code.desktop" "dev.zed.Zed.desktop" "app.drey.PaperPlane.desktop" "spotify.desktop" "com.obsproject.Studio.desktop" "gimp.desktop" "org.inkscape.Inkscape.desktop" "io.github.nate_xyz.Paleta.desktop" "org.gnome.Solanum.desktop" "org.nickvision.tubeconverter.desktop" "io.github.alainm23.planify.desktop" "com.rafaelmardojai.Blanket.desktop" "io.github.seadve.Kooha.desktop" "net.nokyan.Resources.desktop" "io.github.kaii_lb.Overskride.desktop" "com.mattjakeman.ExtensionManager.desktop" "org.gnome.tweaks.desktop" "org.gnome.Settings.desktop"];
+      favorite-apps = ["org.gnome.Nautilus.desktop" "com.raggesilver.BlackBox.desktop" "brave-browser.desktop" "microsoft-edge-dev.desktop" "firefox.desktop" "code.desktop" "dev.zed.Zed.desktop" "app.drey.PaperPlane.desktop" "spotify.desktop" "com.obsproject.Studio.desktop" "gimp.desktop" "org.inkscape.Inkscape.desktop" "io.github.nate_xyz.Paleta.desktop" "org.gnome.Solanum.desktop" "org.nickvision.tubeconverter.desktop" "io.github.alainm23.planify.desktop" "com.rafaelmardojai.Blanket.desktop" "dev.bragefuglseth.Keypunch.Devel.desktop" "io.github.seadve.Kooha.desktop" "net.nokyan.Resources.desktop" "io.github.kaii_lb.Overskride.desktop" "com.mattjakeman.ExtensionManager.desktop" "org.gnome.tweaks.desktop" "org.gnome.Settings.desktop"];
     };
 
     "org/gnome/shell/app-switcher" = {

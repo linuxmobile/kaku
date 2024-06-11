@@ -12,6 +12,7 @@
       contrast
       eyedropper
       gnome-solanum
+      keypunch
       kooha
       loupe
       overskride
