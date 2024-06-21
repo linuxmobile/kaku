@@ -8,6 +8,7 @@
     packages = with pkgs; [
       amberol
       blanket
+      cavalier
       celluloid
       contrast
       eyedropper

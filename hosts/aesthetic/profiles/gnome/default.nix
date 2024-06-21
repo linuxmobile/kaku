@@ -68,6 +68,8 @@
     };
   };
 
+  xdg.portal.extraPortals = with pkgs; [xdg-desktop-portal-gnome];
+
   services.udev.packages = with pkgs; [gnome.gnome-settings-daemon];
 
   programs.dconf.profiles = {
