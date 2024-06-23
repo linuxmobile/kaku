@@ -1,8 +1,8 @@
 {pkgs, ...}: {
-  imports = [
-    ./dconf.nix
-    ./extensions.nix
-  ];
+  # imports = [
+  #   ./dconf.nix
+  #   ./extensions.nix
+  # ];
 
   home = {
     packages = with pkgs; [
@@ -25,8 +25,8 @@
       resources
 
       # Terminal
-      (blackbox-terminal.override {sixelSupport = true;})
-      lsix
+      # (blackbox-terminal.override {sixelSupport = true;})
+      # lsix
 
       inkscape
       gimp

@@ -6,7 +6,7 @@
 # Wayland config
 {
   imports = [
-    ./gnome
+    ./cosmic
   ];
 
   home.packages = with pkgs; [
