@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ./mpv.nix
+    # ./mpv.nix
     ./obs.nix
     ./rnnoise.nix
     ./spicetify.nix
@@ -10,8 +10,5 @@
     # audio control
     pamixer
     alsa-utils
-
-    # music
-    termusic
   ];
 }
