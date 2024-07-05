@@ -21,7 +21,6 @@
     ps_mem
 
     vesktop
-    inputs.self.packages.${pkgs.system}.discordo
 
     # misc
     pciutils
@@ -41,11 +40,26 @@
     catimg
     bun
 
+    # gnome
     gnome.nautilus
     gnome.file-roller
+    amberol
+    blanket
+    cavalier
+    celluloid
     contrast
+    eyedropper
+    gnome-solanum
+    keypunch
+    kooha
+    loupe
+    overskride
     paleta
     paper-plane
+    papers
+    parabolic
+    planify
+    pwvucontrol
     resources
 
     inkscape

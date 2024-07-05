@@ -31,6 +31,7 @@
     wl-clipboard
     wl-screenrec
     gtk3
+    cliphist
   ];
 
   guiDeps = with pkgs; [

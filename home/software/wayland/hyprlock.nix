@@ -1,11 +1,16 @@
-{config, ...}: let
-  # variant = config.theme.name;
-  # c = config.programs.matugen.theme.colors.colors.${variant};
-
-  font_family = "GeistMono Nerd Font";
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}: let
+  font_family = "SF Pro Display";
 in {
   programs.hyprlock = {
     enable = true;
+
+    package = inputs.hyprlock.packages.${pkgs.system}.hyprlock;
+
     settings = {
       general = {
         disable_loading_bar = true;
@@ -16,7 +21,7 @@ in {
       background = [
         {
           monitor = "";
-          path = "${config.xdg.configHome}/hyprlock.png";
+          path = "${config.xdg.userDirs.download}/blue_distortion_1.jpg";
           blur_passes = 3;
           blur_size = 6;
           noise = 0.1;
@@ -48,7 +53,7 @@ in {
         }
       ];
 
-      labels = [
+      label = [
         {
           monitor = "";
           text = "$TIME";
@@ -56,10 +61,19 @@ in {
           font_size = 50;
           # color = "rgb(${c.primary})";
 
-          position = {
-            x = 0;
-            y = 80;
-          };
+          position = "0, 150";
+
+          valign = "center";
+          halign = "center";
+        }
+        {
+          monitor = "";
+          text = "cmd[update:3600000] date +'%a %b %d'";
+          inherit font_family;
+          font_size = 20;
+          # color = "rgb(${c.primary})";
+
+          position = "0, 50";
 
           valign = "center";
           halign = "center";

@@ -16,11 +16,10 @@
           "PATH"
           ":"
           (lib.makeBinPath [
-            inputs.self.packages.${pkgs.system}.biome
+            biome
             emmet-ls
             marksman
             nil
-            nodePackages.volar
             nodePackages.vscode-css-languageserver-bin
             nodePackages.vscode-langservers-extracted
             nodePackages.typescript-language-server

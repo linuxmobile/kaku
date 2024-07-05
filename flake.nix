@@ -19,9 +19,6 @@
             name = "nixland";
             DIRENV_LOG_FORMAT = "";
           };
-          tauri = import ./shell/tauri.nix {inherit inputs system;};
-          rust = import ./shell/rust.nix {inherit inputs system;};
-          leptos = import ./shell/leptos.nix {inherit inputs system;};
         };
         # Nix Formatter
         formatter = pkgs.alejandra;
@@ -47,8 +44,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # rest of inputs, alphabetical order
-    aesthetic-iosevka.url = "github:alphatechnolog/aesthetic-iosevka";
-
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -65,8 +60,6 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    fenix.url = "github:nix-community/fenix/monthly";
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -110,11 +103,6 @@
       inputs.systems.follows = "hyprland/systems";
     };
 
-    hyprland-hyprspace = {
-      url = "github:KZDKM/Hyprspace";
-      inputs.hyprland.follows = "hyprland";
-    };
-
     lanzaboote.url = "github:nix-community/lanzaboote";
 
     matugen = {
@@ -142,13 +130,6 @@
       url = "github:MichaelPachec0/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    sss = {
-      url = "github:SergioRibera/sss/";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    twitch-hls-client.url = "github:2bc4/twitch-hls-client/";
 
     xdg-portal-hyprland.url = "github:hyprwm/xdg-desktop-portal-hyprland";
   };

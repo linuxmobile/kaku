@@ -5,13 +5,19 @@
 }: let
   pointer = config.home.pointerCursor;
   homeDir = config.home.homeDirectory;
+
+  toggle = program: service: let
+    prog = builtins.substring 0 14 program;
+    runserv = lib.optionalString service "run-as-service";
+  in "pkill ${prog} || ${runserv} ${program}";
+  # runOnce = program: "pgrep ${program} || ${program}";
 in {
   wayland.windowManager.hyprland = {
     settings = {
       "$MOD" = "SUPER";
       env = [
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        "HYPRCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,20"
       ];
       exec-once = [
         "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
@@ -53,9 +59,8 @@ in {
       };
       general = {
         monitor = [
-          # "HDMI-A-2,1920x1080@75,1366x0,1"
-          # "DP-1,1366x768@60,0x0,1"
-          "eDP-1, preferred, auto, 1.0"
+          "eDP-1,1920x1080@60,0x0, 1.0"
+          "HDMI-A-1,1920x1080@75,0x-1080, 1.0"
         ];
         gaps_in = 5;
         gaps_out = 5;
@@ -63,10 +68,11 @@ in {
         # "col.active_border" = "rgb(${c.on_primary})";
         # "col.inactive_border" = "rgb(${c.primary});";
         "no_border_on_floating" = false;
+        allow_tearing = true;
         layout = "dwindle";
       };
       decoration = {
-        rounding = 1;
+        rounding = 8;
         blur = {
           enabled = true;
           size = 10;
@@ -119,7 +125,6 @@ in {
         pseudotile = true;
         preserve_split = true;
       };
-      master = {new_is_master = true;};
 
       "$VIDEODIR" = "$HOME/Videos";
       "$NOTIFY" = "notify-send -h string:x-canonical-private-synchronouse:hypr-cfg -u low";
@@ -127,8 +132,8 @@ in {
       "$LAYERS" = "^(eww-.+|bar|system-menu|anyrun|gtk-layer-shell|osd[0-9]|dunst)$";
 
       bind = [
-        "$MOD, Escape, exec, wlogout -p layer-shell"
-        "$MOD, Tab, exec, ags -t overview"
+        "$MOD, Escape, exec, ${toggle "wlogout" true} -p layer-shell"
+        "$MOD, Tab, exec, overview:toggle"
         "$MOD, XF86Calculator, exec, ags -r 'recorder.start()'"
 
         # SSS
@@ -140,9 +145,9 @@ in {
 
         "$MODSHIFT, X, exec, $COLORPICKER"
 
-        "$MOD, D, exec, pkill .anyrun-wrapped || run-as-service anyrun"
+        "$MOD, D, exec, ${toggle "anyrun" true}"
         "$MOD, Return, exec, run-as-service foot"
-        "CTRL_ALT, L, exec, loginctl lock-session"
+        "CTRL_ALT, L, exec, pgrep hyprlock || hyprlock"
 
         "$MOD, Q, killactive"
         "$MODSHIFT, Q, exit"
@@ -150,6 +155,7 @@ in {
         "$MOD, Space, togglefloating"
         "$MOD, P, pseudo"
         "$MOD, S, togglesplit"
+        "$MOD, O, toggleopaque"
 
         "$MODSHIFT, Space, workspaceopt, allfloat"
         "$MODSHIFT, P, workspaceopt, allpseudotile"
@@ -225,7 +231,7 @@ in {
         # "opacity 0.80 0.80,class:^(nwg-look)$"
         # "opacity 0.80 0.80,class:^(qt5ct)$"
         # "opacity 0.80 0.80,class:^(VencordDesktop|Webcord|discord|Discord)"
-        # "opacity 0.80 0.70,class:^(pavucontrol)$"
+        # "opacity 0.80 0.70,class:^(pwvucontrol)$"
         # "opacity 0.80 0.70,class:^(org.kde.polkit-kde-authentication-agent-1)$"
         # "opacity 0.80 0.80,class:^(org.telegram.desktop)$"
         # "opacity 0.80 0.80,class:^(code-url-handler)$"
@@ -235,7 +241,7 @@ in {
         # "opacity 0.90 0.90, class:^(org.qutebrowser.qutebrowser)$"
 
         "float,class:^(org.kde.polkit-kde-authentication-agent-1)$"
-        "float,class:^(pavucontrol)$"
+        "float,class:^(pwvucontrol)$"
         "float,title:^(Media viewer)$"
         "float,title:^(Volume Control)$"
         "float,class:^(Viewnior)$"
@@ -287,16 +293,13 @@ in {
 
         lowopacity = [
           "bar"
+          "calendar"
           "notifications"
           "osd"
-          "logout_dialog"
+          "system-menu"
         ];
 
         highopacity = [
-          # ags
-          "calendar"
-          "system-menu"
-
           "anyrun"
           "logout_dialog"
         ];
@@ -311,6 +314,7 @@ in {
         "ignorealpha 0.5, ${toRegex (highopacity ++ ["music"])}"
         "ignorealpha 0.2, ${toRegex lowopacity}"
       ];
+
       plugin = {
         overview = {
           centerAligned = true;

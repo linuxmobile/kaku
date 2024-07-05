@@ -14,7 +14,7 @@
     userName = "Braian A. Diez";
     userEmail = "bdiez19@gmail.com";
     signing = {
-      key = "FDA65033CDFE7C2A";
+      key = "17EA20FCAAFB3342";
       signByDefault = true;
     };
 

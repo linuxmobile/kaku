@@ -22,6 +22,15 @@
         formatter = prettier e;
       });
       langs = ["css" "scss" "json" "html"];
+
+      commonAutoPairs = {
+        "(" = ")";
+        "{" = "}";
+        "[" = "]";
+        "<" = ">";
+        "'" = "'";
+        "\"" = "\"";
+      };
     in
       [
         {
@@ -32,6 +41,7 @@
             args = ["--parser" "astro"];
           };
           language-servers = ["astro-lsp" "emmet-lsp"];
+          auto-pairs = commonAutoPairs;
         }
         {
           name = "bash";
@@ -40,6 +50,7 @@
             command = "${pkgs.shfmt}/bin/shfmt";
             args = ["-i" "2"];
           };
+          auto-pairs = commonAutoPairs;
         }
         {
           name = "javascript";
@@ -55,6 +66,7 @@
             }
             "biome-lsp"
           ];
+          auto-pairs = commonAutoPairs;
         }
         {
           name = "json";
@@ -66,6 +78,7 @@
             }
             "biome-lsp"
           ];
+          auto-pairs = commonAutoPairs;
         }
         {
           name = "jsx";
@@ -81,11 +94,13 @@
             }
             "biome-lsp"
           ];
+          auto-pairs = commonAutoPairs;
         }
         {
           name = "markdown";
           auto-format = true;
           formatter = deno "md";
+          auto-pairs = commonAutoPairs;
         }
         {
           name = "typescript";
@@ -101,6 +116,7 @@
             }
             "biome-lsp"
           ];
+          auto-pairs = commonAutoPairs;
         }
         {
           name = "tsx";
@@ -116,22 +132,7 @@
             }
             "biome-lsp"
           ];
-        }
-        {
-          name = "vue";
-          roots = ["package.json" "vue.config.js" "vue.config.ts"];
-          # # auto-format = true;
-          # formatter = {
-          #   command = "biome";
-          #   args = ["format" "--stdin-file-path" "a.vue"];
-          # };
-          language-servers = [
-            {
-              name = "volar";
-              except-features = ["format"];
-            }
-            "biome-lsp"
-          ];
+          auto-pairs = commonAutoPairs;
         }
       ]
       ++ prettierLangs langs;
@@ -185,12 +186,6 @@
       unocss-lsp = {
         command = "unocss-language-server";
         args = ["--stdio"];
-      };
-
-      volar = {
-        command = "vue-language-server";
-        args = ["--stdio"];
-        config.typescript.tsdk = "${pkgs.typescript}/lib/node_modules/typescript/lib/";
       };
 
       vscode-css-language-server = {

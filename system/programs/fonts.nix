@@ -15,11 +15,10 @@
 
       maple-mono-SC-NF
 
-      inputs.aesthetic-iosevka.packages.${pkgs.system}.default
       inputs.self.packages.${pkgs.system}.SF-Pro
 
       # nerdfonts
-      (nerdfonts.override {fonts = ["GeistMono" "NerdFontsSymbolsOnly"];})
+      (nerdfonts.override {fonts = ["GeistMono" "ZedMono" "NerdFontsSymbolsOnly"];})
     ];
 
     # causes more issues than it solves
