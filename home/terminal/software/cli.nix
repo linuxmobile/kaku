@@ -10,7 +10,6 @@
     fontconfig
 
     # utils
-    dijo
     du-dust
     duf
     fd
@@ -20,8 +19,6 @@
     killall
 
     yt-dlp
-    cfspeedtest
-    onefetch
   ];
 
   programs = {
