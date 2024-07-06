@@ -2,8 +2,9 @@
 # Wayland config
 {
   imports = [
-    ./hyprland
-    ./hyprlock.nix
+    # ./hyprland
+    # ./hyprlock.nix
+    ./niri.nix
     ./wlogout.nix
   ];
 
