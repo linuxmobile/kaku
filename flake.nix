@@ -57,7 +57,7 @@
     };
 
     helix = {
-      url = "github:helix-editor/helix";
+      url = "github:SoraTenshi/helix/new-daily-driver";
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
