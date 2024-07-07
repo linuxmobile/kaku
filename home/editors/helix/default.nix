@@ -20,9 +20,7 @@
             emmet-ls
             marksman
             nil
-            nodePackages.volar
-            nodePackages.vscode-css-languageserver-bin
-            nodePackages.vscode-langservers-extracted
+            vscode-langservers-extracted
             nodePackages.typescript-language-server
             nodePackages."@astrojs/language-server"
             typescript

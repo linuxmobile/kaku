@@ -134,23 +134,6 @@
           ];
           auto-pairs = commonAutoPairs;
         }
-        {
-          name = "vue";
-          roots = ["package.json" "vue.config.js" "vue.config.ts"];
-          auto-format = true;
-          formatter = {
-            command = "biome";
-            args = ["format" "--stdin-file-path" "a.vue"];
-          };
-          language-servers = [
-            {
-              name = "volar";
-              except-features = ["format"];
-            }
-            "biome-lsp"
-          ];
-          auto-pairs = commonAutoPairs;
-        }
       ]
       ++ prettierLangs langs;
 
@@ -205,14 +188,8 @@
         args = ["--stdio"];
       };
 
-      volar = {
-        command = "vue-language-server";
-        args = ["--stdio"];
-        config.typescript.tsdk = "${pkgs.typescript}/lib/node_modules/typescript/lib/";
-      };
-
       vscode-css-language-server = {
-        command = "${pkgs.nodePackages.vscode-css-languageserver-bin}/bin/css-languageserver";
+        command = "${pkgs.vscode-langservers-extracted}/bin/css-languageserver";
         args = ["--stdio"];
         config = {
           provideFormatter = true;
