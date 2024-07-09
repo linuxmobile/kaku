@@ -1,5 +1,6 @@
 {
   inputs,
+  lib,
   pkgs,
   config,
   ...
@@ -37,7 +38,6 @@
         "file://${config.home.homeDirectory}/Videos"
       ];
     };
-
-    xdg.configFile."gtk-4.0/gtk.css".enable = lib.mkForce false;
   };
+  xdg.configFile."gtk-4.0/gtk.css".enable = lib.mkForce false;
 }
