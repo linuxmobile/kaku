@@ -8,7 +8,7 @@
     ./browsers/brave.nix
     ./browsers/edge.nix
     ./browsers/firefox.nix
-    ./browsers/qutebrowser.nix
+    # ./browsers/qutebrowser.nix
     ./gtk.nix
     ./media
   ];
@@ -32,8 +32,10 @@
     bun
 
     # gnome
-    gnome.nautilus
+    gnome.dconf-editor
     gnome.file-roller
+    gnome.nautilus
+    gnome-text-editor
     amberol
     blanket
     cavalier
