@@ -6,7 +6,7 @@
     ./gpg.nix
     ./git.nix
     ./gitui.nix
-    ./neofetch.nix
+    # ./neofetch.nix
     ./nix.nix
     ./skim.nix
     ./transient-services.nix
