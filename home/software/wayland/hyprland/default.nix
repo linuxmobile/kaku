@@ -9,7 +9,7 @@
     packages = with pkgs; [
       seatd
       jaq
-      inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+      # inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     ];
     file = {
       ".config/hypr/scripts/colorpicker" = {
