@@ -1,9 +1,10 @@
-_: {
+{config, ...}: {
   imports = [./hardware-configuration.nix ./powersave.nix];
 
   boot = {
     # load modules on boot
-    kernelModules = ["amdgpu"];
+    kernelModules = ["amdgpu" "v4l2loopback"];
+    extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
     kernelParams = [
       "amd_pstate=active"
       "ideapad_laptop.allow_v4_dytc=Y"

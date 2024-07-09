@@ -23,7 +23,7 @@
         ++ [
           ./aesthetic
           "${mod}/programs/gamemode.nix"
-          "${mod}/programs/hyprland.nix"
+          # "${mod}/programs/hyprland.nix"
           "${mod}/services/gnome-services.nix"
           "${mod}/services/location.nix"
           "${mod}/core/lanzaboote.nix"
