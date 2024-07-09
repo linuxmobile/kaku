@@ -4,7 +4,7 @@
   imports = [
     # ./hyprland
     # ./hyprlock.nix
-    ./niri.nix
+    ./niri
     ./wlogout.nix
   ];
 
@@ -16,7 +16,6 @@
     # utils
     wl-clipboard
     wl-screenrec
-    hyprpicker
   ];
 
   # make stuff work on wayland

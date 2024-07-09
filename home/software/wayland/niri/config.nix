@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   pointer = config.home.pointerCursor;
@@ -10,11 +11,12 @@
 in {
   programs.niri = {
     enable = true;
-    package = pkgs.niri-unstable;
     settings = {
+      screenshot-path = "${config.xdg.userDirs.pictures}/Screenshots from %Y-%m-%d %H-%M-%S.png";
       environment = {
         QT_QPA_PLATFORM = "wayland";
         QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+        NIXOS_OZONE_WL = "1";
       };
       spawn-at-startup = [
         (makeCommand "/usr/libexec/polkit-gnome-authentication-agent-1")
@@ -22,6 +24,21 @@ in {
         (makeCommand "systemctl --user start clight")
         (makeCommand "wl-paste --type image --watch cliphist store")
         (makeCommand "wl-paste --type text --watch cliphist store")
+        {
+          command = [
+            "${pkgs.dbus}/bin/dbus-update-activation-environment"
+            "--systemd"
+            "DISPLAY"
+            "WAYLAND_DISPLAY"
+            "SWAYSOCK"
+            "XDG_CURRENT_DESKTOP"
+            "XDG_SESSION_TYPE"
+            "NIXOS_OZONE_WL"
+            "XCURSOR_THEME"
+            "XCURSOR_SIZE"
+            "XDG_DATA_DIRS"
+          ];
+        }
       ];
       input = {
         keyboard.xkb.layout = "latam";
@@ -47,6 +64,11 @@ in {
           };
         };
         "HDMI-A-1" = {
+          mode = {
+            width = 1920;
+            height = 1080;
+            refresh = 75.973;
+          };
           scale = 1.0;
           position = {
             x = 0;
@@ -55,7 +77,7 @@ in {
         };
       };
       cursor = {
-        size = ${pointer.size};
+        size = 20;
         theme = "${pointer.name}";
       };
       layout = {
@@ -63,7 +85,12 @@ in {
         border = {
           enable = true;
           width = 1;
-          active.color = "#ffffff";
+          active.gradient = {
+            angle = 45;
+            relative-to = "workspace-view";
+            from = "#9796f0";
+            to = "#fbc7d4";
+          };
           inactive.color = "#000000";
         };
 
@@ -87,16 +114,8 @@ in {
         brillo = spawn "${pkgs.brillo}/bin/brillo" "-q" "-u" "300000";
         playerctl = spawn "${pkgs.playerctl}/bin/playerctl";
         ags = spawn "${pkgs.ags}/bin/ags" "-r";
-
-        dynamicBinds = lib.attrsets.mergeAttrsList (map (x: let
-          xStr = builtins.toString x;
-        in {
-          "${"Mod+" + xStr}".action = focus-workspace x;
-          "${"Mod+Shift+" + xStr}".action = move-column-to-workspace x;
-        }) [1 2 3 4 5 6 7 8 9]);
       in
-        dynamicBinds
-        // {
+        {
           "XF86AudioMute".action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle";
           "XF86AudioMicMute".action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle";
 
@@ -112,9 +131,10 @@ in {
           "XF86MonBrightnessDown".action = brillo "-U" "5";
 
           "XF86Calculator".action = ags "recorder.start()";
-          "Print".action = ags "recorder.screenshot(true)";
-          "Mod+Shift+S".action = ags "'recorder.screenshot()'";
-          "Mod+D".action = spawn "${pkgs.anyrun}/bin/anyrun}";
+          "Print".action = screenshot-screen;
+          "Mod+Shift+Alt+S".action = screenshot-window;
+          "Mod+Shift+S".action = screenshot;
+          "Mod+D".action = spawn "${pkgs.anyrun}/bin/anyrun";
           "Mod+Return".action = spawn "${pkgs.foot}/bin/foot";
           # "Ctrl+Alt+L".action = spawn "pgrep hyprlock || hyprlock";
 
@@ -125,18 +145,75 @@ in {
 
           "Mod+Comma".action = consume-window-into-column;
           "Mod+Period".action = expel-window-from-column;
+          "Mod+C".action = center-column;
+
+          "Mod+Minus".action = set-column-width "-10%";
+          "Mod+Plus".action = set-column-width "+10%";
+          "Mod+Shift+Minus".action = set-window-height "-10%";
+          "Mod+Shift+Plus".action = set-window-height "+10%";
 
           "Mod+H".action = focus-column-left;
           "Mod+L".action = focus-column-right;
-          "Mod+J".action = focus-window-or-monitor-down;
-          "Mod+K".action = focus-window-or-monitor-up;
+          "Mod+J".action = focus-workspace-down;
+          "Mod+K".action = focus-workspace-up;
+          "Mod+Left".action = focus-column-left;
+          "Mod+Right".action = focus-column-right;
+          "Mod+Down".action = focus-window-down;
+          "Mod+Up".action = focus-window-up;
 
           "Mod+Shift+H".action = move-column-left;
           "Mod+Shift+L".action = move-column-right;
-          "Mod+Shift+J".action = move-window-down-or-to-workspace-down;
-          "Mod+Shift+K".action = move-window-up-or-to-workspace-up;
-        };
-      window-rules = {};
+          "Mod+Shift+J".action = focus-monitor-down;
+          "Mod+Shift+K".action = focus-monitor-up;
+
+          "Mod+Shift+Ctrl+H".action = move-column-to-workspace-up;
+          "Mod+Shift+Ctrl+J".action = move-column-to-monitor-down;
+          "Mod+Shift+Ctrl+K".action = move-column-to-monitor-up;
+          "Mod+Shift+Ctrl+L".action = move-column-to-workspace-down;
+        }
+        // (lib.attrsets.mergeAttrsList (
+          map (x: let
+            xStr = builtins.toString x;
+          in {
+            "Mod+${xStr}".action = focus-workspace x;
+            "Mod+Shift+${xStr}".action = move-column-to-workspace x;
+          })
+          (builtins.genList (x: x + 1) 9)
+        ));
+      window-rules = [
+        {
+          geometry-corner-radius = let
+            radius = 8.0;
+          in {
+            bottom-left = radius;
+            bottom-right = radius;
+            top-left = radius;
+            top-right = radius;
+          };
+          clip-to-geometry = true;
+        }
+        {
+          matches = [{app-id = "org.telegram.desktop";}];
+          block-out-from = "screencast";
+          max-width = 450;
+        }
+        {
+          matches = [{app-id = "app.drey.PaperPlane";}];
+          block-out-from = "screencast";
+          max-width = 450;
+        }
+        {
+          matches = [{app-id = "com.rafaelmardojai.Blanket";}];
+          max-width = 230;
+        }
+        {
+          matches = [{app-id = "org.nickvision.cavalier";}];
+          max-width = 230;
+        }
+      ];
+
+      prefer-no-csd = true;
+      hotkey-overlay.skip-at-startup = true;
     };
   };
 }
