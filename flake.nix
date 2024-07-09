@@ -67,7 +67,7 @@
     };
 
     helix = {
-      url = "github:helix-editor/helix";
+      url = "github:SoraTenshi/helix/new-daily-driver";
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -77,26 +77,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hypridle = {
-      url = "github:hyprwm/hypridle";
-      inputs.hyprlang.follows = "hyprland/hyprlang";
-      inputs.nixpkgs.follows = "hyprland/nixpkgs";
-      inputs.systems.follows = "hyprland/systems";
-    };
-
-    hyprlock = {
-      url = "github:hyprwm/hyprlock";
-      inputs.hyprlang.follows = "hyprland/hyprlang";
-      inputs.nixpkgs.follows = "hyprland/nixpkgs";
-      inputs.systems.follows = "hyprland/systems";
-    };
-
     lanzaboote.url = "github:nix-community/lanzaboote";
 
     matugen = {
       url = "github:InioX/matugen";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.systems.follows = "hyprland/systems";
+    };
+
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-index-db = {
