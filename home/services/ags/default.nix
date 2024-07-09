@@ -9,14 +9,12 @@
     bash
     brightnessctl
     bun
-    config.wayland.windowManager.hyprland.package
     coreutils
     dart-sass
     fd
     fzf
     gawk
     gtk3
-    hyprpicker
     imagemagick
     inputs.matugen.packages.${pkgs.system}.default
     networkmanager
