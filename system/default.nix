@@ -12,6 +12,7 @@ let
 
     ./services
     ./services/greetd.nix
+    # ./services/gdm.nix
     ./services/pipewire.nix
   ];
 
