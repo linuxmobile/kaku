@@ -15,21 +15,15 @@
     fzf
     gawk
     gtk3
+    gtk3
     imagemagick
     inputs.matugen.packages.${pkgs.system}.default
     networkmanager
-    pavucontrol
+    niri
     ripgrep
-    slurp
-    swappy
     swww
     util-linux
-    wayshot
     which
-    wl-clipboard
-    wl-screenrec
-    gtk3
-    cliphist
   ];
 
   guiDeps = with pkgs; [
