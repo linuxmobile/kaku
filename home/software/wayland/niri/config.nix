@@ -163,13 +163,11 @@ in {
 
           "Mod+Shift+H".action = move-column-left;
           "Mod+Shift+L".action = move-column-right;
-          "Mod+Shift+J".action = focus-monitor-down;
-          "Mod+Shift+K".action = focus-monitor-up;
+          "Mod+Shift+K".action = move-column-to-workspace-up;
+          "Mod+Shift+J".action = move-column-to-workspace-down;
 
-          "Mod+Shift+Ctrl+H".action = move-column-to-workspace-up;
           "Mod+Shift+Ctrl+J".action = move-column-to-monitor-down;
           "Mod+Shift+Ctrl+K".action = move-column-to-monitor-up;
-          "Mod+Shift+Ctrl+L".action = move-column-to-workspace-down;
         }
         // (lib.attrsets.mergeAttrsList (
           map (x: let
