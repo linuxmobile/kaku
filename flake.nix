@@ -104,10 +104,5 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-
-    spicetify-nix = {
-      url = "github:MichaelPachec0/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 }
