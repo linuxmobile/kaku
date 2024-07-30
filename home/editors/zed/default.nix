@@ -40,7 +40,9 @@ in {
       dark = "Catbox Dark";
       light = "Catbox Latte";
     };
-    dock = "right";
+    project_panel = {
+      dock = "left";
+    };
     ui_font_size = 16;
     buffer_font_size = 14;
     server_url = "https://disable-stupid-crap.zed.invalid";
@@ -56,10 +58,24 @@ in {
       quick_actions = false;
     };
     tab_size = 2;
+    inlay_hints = {
+      enabled = true;
+    };
+    journal = {
+      hour_format = "hour24";
+    };
     telemetry = {
       diagnostics = false;
       metrics = false;
     };
+    calls = {
+      mute_on_join = true;
+      share_on_join = true;
+    };
+    terminal = {
+      font_family = "ZedMono Nerd Font";
+    };
+    vim_mode = true;
     format_on_save = "on";
     formatter = {
       external = {
@@ -108,14 +124,51 @@ in {
     };
     assistant = {
       enabled = true;
-      version = "1";
       provider = {
-        api_url = "https://api.groq.com/openai/v1/";
-        type = "openai";
+        available_models = [
+          {
+            custom = {
+              name = "llama-3.1-70b-versatile";
+              max_tokens = 8000;
+            };
+          }
+          {
+            custom = {
+              name = "llama3-70b-8192";
+              max_tokens = 32000;
+            };
+          }
+          {
+            custom = {
+              name = "llama3-70b-8192";
+              max_tokens = 64000;
+            };
+          }
+          {
+            custom = {
+              name = "openai/gpt-4o";
+              max_tokens = 128000;
+            };
+          }
+          {
+            custom = {
+              name = "google/gemini-flash-1.5";
+              max_tokens = 2000000;
+            };
+          }
+          {
+            custom = {
+              name = "deepseek/deepseek-coder";
+              max_tokens = 32000;
+            };
+          }
+        ];
+        api_url = "https://openrouter.ai/api/v1";
+        name = "openai";
         default_model = {
           custom = {
-            name = "llama-3.1-70b-versatile";
-            max_tokens = 32000;
+            name = "openai/gpt-4o";
+            max_tokens = 128000;
           };
         };
       };
