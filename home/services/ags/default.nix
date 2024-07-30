@@ -15,7 +15,6 @@
     fzf
     gawk
     gtk3
-    gtk3
     imagemagick
     inputs.matugen.packages.${pkgs.system}.default
     networkmanager
@@ -24,6 +23,9 @@
     swww
     util-linux
     which
+    wl-clipboard
+    glib
+    cliphist
   ];
 
   guiDeps = with pkgs; [
