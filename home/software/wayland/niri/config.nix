@@ -12,7 +12,6 @@ in {
   programs.niri = {
     enable = true;
     settings = {
-      screenshot-path = "${config.xdg.userDirs.pictures}/Screenshots from %Y-%m-%d %H-%M-%S.png";
       environment = {
         QT_QPA_PLATFORM = "wayland";
         QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
@@ -51,7 +50,7 @@ in {
           tap = true;
           tap-button-map = "left-right-middle";
         };
-        focus-follows-mouse = true;
+        focus-follows-mouse.enable = true;
         warp-mouse-to-focus = true;
         workspace-auto-back-and-forth = true;
       };
@@ -193,20 +192,18 @@ in {
         {
           matches = [{app-id = "org.telegram.desktop";}];
           block-out-from = "screencast";
-          max-width = 450;
+          max-width = 550;
         }
         {
           matches = [{app-id = "app.drey.PaperPlane";}];
           block-out-from = "screencast";
-          max-width = 450;
+          max-width = 550;
         }
         {
           matches = [{app-id = "com.rafaelmardojai.Blanket";}];
-          max-width = 230;
         }
         {
           matches = [{app-id = "org.nickvision.cavalier";}];
-          max-width = 230;
         }
       ];
 
