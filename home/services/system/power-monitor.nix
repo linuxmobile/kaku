@@ -1,7 +1,7 @@
 {
   pkgs,
   lib,
-  config,
+  # config,
   ...
 }: let
   script = pkgs.writeShellScript "power_monitor.sh" ''
@@ -54,19 +54,19 @@
       fi
 
       # Apply Hyprland settings based on the selected profile
-      for i in $(hyprctl instances -j | jaq ".[].instance" -r); do
-        case $profile in
-          $AC_PROFILE)
-            hyprctl -i "$i" --batch 'keyword decoration:blur:enabled true; keyword animations:enabled true; keyword decoration:active_opacity 0.9; keyword decoration:inactive_opacity 0.9'
-            ;;
-          $BALANCED_PROFILE)
-            hyprctl -i "$i" --batch 'keyword decoration:blur:enabled true; keyword animations:enabled false; keyword decoration:active_opacity 0.9; keyword decoration:inactive_opacity 0.9'
-            ;;
-          $BAT_PROFILE)
-            hyprctl -i "$i" --batch 'keyword decoration:blur:enabled false; keyword animations:enabled false; keyword decoration:active_opacity 1.0; keyword decoration:inactive_opacity 1.0'
-            ;;
-        esac
-      done
+      # for i in $(hyprctl instances -j | jaq ".[].instance" -r); do
+      #   case $profile in
+      #     $AC_PROFILE)
+      #       hyprctl -i "$i" --batch 'keyword decoration:blur:enabled true; keyword animations:enabled true; keyword decoration:active_opacity 0.9; keyword decoration:inactive_opacity 0.9'
+      #       ;;
+      #     $BALANCED_PROFILE)
+      #       hyprctl -i "$i" --batch 'keyword decoration:blur:enabled true; keyword animations:enabled false; keyword decoration:active_opacity 0.9; keyword decoration:inactive_opacity 0.9'
+      #       ;;
+      #     $BAT_PROFILE)
+      #       hyprctl -i "$i" --batch 'keyword decoration:blur:enabled false; keyword animations:enabled false; keyword decoration:active_opacity 1.0; keyword decoration:inactive_opacity 1.0'
+      #       ;;
+      #   esac
+      # done
 
       # Notify and set the new profile if it has changed
       if [[ $prevProfile != "$profile" ]] || [[ $prevStatus != "$status" ]]; then
@@ -95,7 +95,6 @@
 
   dependencies = with pkgs; [
     coreutils
-    config.wayland.windowManager.hyprland.package
     power-profiles-daemon
     inotify-tools
     jaq

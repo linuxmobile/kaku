@@ -4,12 +4,9 @@
     package = pkgs.ungoogled-chromium;
     commandLineArgs = [
       # Chromium Wayland Flags
-      "--disable-gpu-driver-bug-workarounds"
-      "--use-gl=egl"
       "--ignore-gpu-blocklist"
       "--enable-gpu-rasterization"
       "--enable-zero-copy"
-      "--enable-features=VaapiVideoDecoder,VaapiVideoEncoder,CanvasOopRasterization,UseOzonePlatform"
       "--disable-features=UseChromeOSDirectVideoDecoder"
       "--ozone-platform=wayland"
 
