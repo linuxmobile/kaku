@@ -1,12 +1,8 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # greetd display manager
   services.greetd = let
     session = {
-      command = "${lib.getExe pkgs.niri}";
+      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd niri-session";
       user = "linuxmobile";
     };
   in {
