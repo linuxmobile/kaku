@@ -13,7 +13,7 @@
       noto-fonts-emoji
       roboto
 
-      maple-mono-SC-NF
+      # maple-mono-SC-NF
 
       inputs.self.packages.${pkgs.system}.SF-Pro
 
