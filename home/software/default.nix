@@ -1,13 +1,10 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./anyrun
-    ./browsers/brave.nix
+    ./browsers/chromium.nix
     ./browsers/edge.nix
     ./browsers/firefox.nix
+    # ./browsers/epiphany.nix
     # ./browsers/qutebrowser.nix
     ./gtk.nix
     ./media
@@ -17,6 +14,7 @@
     # messaging
     tdesktop
     vesktop
+    dorion
 
     # misc
     ps_mem
@@ -32,9 +30,9 @@
     bun
 
     # gnome
-    gnome.dconf-editor
-    gnome.file-roller
-    gnome.nautilus
+    dconf-editor
+    file-roller
+    nautilus
     gnome-text-editor
     amberol
     blanket
