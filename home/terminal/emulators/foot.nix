@@ -3,16 +3,16 @@
   programs.foot = {
     enable = true;
     settings = {
-      csd.size = 0;
+      csd = {
+        size = 0;
+      };
       main = {
         font = "SFMono Nerd Font:size=7.5:fontfeatures=calt:fontfeatures=dlig:fontfeatures=liga";
-        # box-drawings-uses-font-glyphs = "yes";
         dpi-aware = "yes";
         pad = "25x25center";
         notify = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
         term = "xterm-256color";
         selection-target = "clipboard";
-
       };
       scrollback = {
         lines = 10000;

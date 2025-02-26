@@ -10,26 +10,25 @@
     fontconfig
 
     # utils
-    dijo
     du-dust
     duf
     fd
-    jq
-    bc
     file
     jaq
     ripgrep
     killall
     koji
+    jq
+
+    tuicam
+    fum
   ];
 
   programs = {
     eza.enable = true;
-    eza.enableZshIntegration = true;
     ssh.enable = true;
     dircolors = {
       enable = true;
-      enableZshIntegration = true;
     };
   };
 }

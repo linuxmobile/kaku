@@ -10,7 +10,7 @@
     userName = "Braian A. Diez";
     userEmail = "bdiez19@gmail.com";
     signing = {
-      key = "6C50C8D5F2378B63";
+      key = "481EFFCF2C7B8C7B";
       signByDefault = true;
     };
 
@@ -37,7 +37,6 @@
         };
       };
     };
-
     extraConfig = {
       init.defaultBranch = "main";
       diff.colorMoved = "default";

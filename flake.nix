@@ -56,8 +56,6 @@
       url = "github:ghostty-org/ghostty";
     };
 
-    helix.url = "github:helix-editor/helix";
-
     hm = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -76,7 +74,7 @@
     };
 
     zen-browser = {
-      url = "github:linuxmobile/zen-browser-flake";
+      url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

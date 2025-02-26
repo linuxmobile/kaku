@@ -9,7 +9,6 @@
       material-symbols
 
       # normal fonts
-      libertinus
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
