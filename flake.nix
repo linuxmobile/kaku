@@ -5,7 +5,7 @@
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux"];
 
-      imports = [./home/profiles ./hosts ./lib ./modules ./pkgs];
+      imports = [./home/profiles ./hosts ./pkgs];
 
       perSystem = {
         config,
@@ -71,11 +71,6 @@
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
       inputs.flake-parts.follows = "flake-parts";
-    };
-
-    zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     kwin-effects-forceblur = {
