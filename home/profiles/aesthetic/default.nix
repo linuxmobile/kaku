@@ -6,7 +6,8 @@
 
     # software
     ../../software
-    ../../software/wayland/wine.nix
+    # ../../software/wayland/wine.nix
+    ../../software/wayland/caido.nix
 
     # system services
     ../../services/system/gpg-agent.nix

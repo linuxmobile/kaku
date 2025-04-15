@@ -1,12 +1,7 @@
-{
-  self,
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
     ./terminal
     inputs.nix-index-db.hmModules.nix-index
-    self.nixosModules.theme
   ];
   home = {
     username = "linuxmobile";

@@ -3,7 +3,7 @@
     enable = true;
     enableSshSupport = true;
     enableZshIntegration = true;
-    enableNushellIntegration = true;
+    enableFishIntegration = true;
     pinentryPackage = pkgs.pinentry-gnome3;
   };
 }

@@ -1,24 +1,38 @@
 {
-  pkgs,
   inputs,
+  lib,
+  pkgs,
   ...
 }: {
   environment = {
     plasma6.excludePackages = with pkgs.kdePackages; [
-      oxygen
-      plasma-browser-integration
       elisa
+      gwenview
       kate
       khelpcenter
+      konsole
+      kwallet
+      kwalletmanager
+      kwallet-pam
       okular
-      gwenview
+      oxygen
+      plasma-browser-integration
+      xwaylandvideobridge
+      baloo
+      baloo-widgets
+      plasma-browser-integration
+      krdp
+      qtvirtualkeyboard
+      flatpak-kcm
+      discover
+      plasma-thunderbolt
+      wacomtablet
     ];
     systemPackages = with pkgs; [
       kdePackages.qtstyleplugin-kvantum
       kdePackages.sddm-kcm
       kdePackages.qt6ct
       kde-rounded-corners
-      utterly-nord-plasma
       inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
       inputs.ghostty.packages.${pkgs.system}.default
 
@@ -28,20 +42,16 @@
       (celluloid.override {youtubeSupport = true;})
       easyeffects
       keypunch
-      kooha
       loupe
       resources
-      halftone
-      letterpress
-      newsflash
 
       wl-clipboard
     ];
   };
 
   services = {
-    xserver.enable = true;
-    xserver.desktopManager.xterm.enable = false;
+    xserver.enable = false;
+    xserver.desktopManager.xterm.enable = lib.mkForce false;
     displayManager = {
       sddm = {
         enable = true;
@@ -56,6 +66,5 @@
 
   programs = {
     dconf.enable = true;
-    kdeconnect.enable = true;
   };
 }

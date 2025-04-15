@@ -1,11 +1,9 @@
-{lib, ...}:
-# default configuration shared by all hosts
-{
+{lib, ...}: {
   imports = [
     ./security.nix
     ./users.nix
     ../nix
-    ../programs/nushell.nix
+    ../programs/fish.nix
   ];
 
   i18n = {
@@ -35,5 +33,6 @@
   zramSwap = {
     enable = true;
     algorithm = "zstd";
+    memoryPercent = 25;
   };
 }

@@ -18,7 +18,6 @@
 
       # nerdfonts
       nerd-fonts.symbols-only
-      nerd-fonts.geist-mono
     ];
 
     # causes more issues than it solves
@@ -47,7 +46,7 @@
           serif = ["Noto Sans Serif"];
           sansSerif = ["SF Pro"];
           monospace = ["PragmataPro Mono Liga"];
-          emoji = [];
+          emoji = ["Noto Color Emoji"];
         };
     };
     fontDir = {

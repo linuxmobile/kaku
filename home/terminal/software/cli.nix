@@ -29,6 +29,11 @@
     ssh.enable = true;
     dircolors = {
       enable = true;
+      enableFishIntegration = true;
+    };
+    autojump = {
+      enable = true;
+      enableFishIntegration = true;
     };
   };
 }

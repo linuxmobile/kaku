@@ -4,11 +4,12 @@
   };
   programs.starship = {
     enable = true;
-    enableNushellIntegration = true;
+    enableFishIntegration = true;
     settings = {
-      format = "$directory$all$cmd_duration$jobs$status$shell$line_break$env_var$username$sudo$character";
-      right_format = "$battery$time";
-      add_newline = true;
+      format = "$directory$all$shell$line_break$env_var$username$sudo$character";
+      right_format = "$jobs$status$cmd_duration";
+      add_newline = false;
+
       character = {
         format = "$symbol ";
         success_symbol = "[●](bright-green)";

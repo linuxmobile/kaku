@@ -1,6 +1,7 @@
 _: {
   services = {
     dbus.implementation = "broker";
+    printing.enable = true;
 
     # profile-sync-daemon
     psd = {

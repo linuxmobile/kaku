@@ -77,5 +77,10 @@
       url = "github:taj-ny/kwin-effects-forceblur";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zen-browser = {
+      url = "github:pfaj/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

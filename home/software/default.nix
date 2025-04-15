@@ -30,6 +30,6 @@
     bun
 
     scrcpy
-    lutris
+    multiviewer-for-f1
   ];
 }
