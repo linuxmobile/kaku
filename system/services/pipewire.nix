@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -31,6 +27,4 @@
       extraConfig."wireplumber.profiles".main."monitor.libcamera" = "disabled";
     };
   };
-
-  # hardware.pulseaudio.enable = lib.mkForce false;
 }

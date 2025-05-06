@@ -16,6 +16,7 @@
     # messaging
     telegram-desktop
     vesktop
+    equibop
 
     # misc
     ps_mem
@@ -30,7 +31,6 @@
     bun
 
     fastfetch
-    netscanner
 
     # gnome
     dconf-editor
@@ -58,6 +58,6 @@
     multiviewer-for-f1
 
     swww
-    inputs.ghostty.packages.${pkgs.system}.default
+    ghostty
   ];
 }

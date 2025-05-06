@@ -1,30 +1,18 @@
 {pkgs, ...}: {
   imports = [./languages.nix];
 
+  home.packages = with pkgs; [
+    biome
+    emmet-ls
+    marksman
+    nil
+    vscode-langservers-extracted
+    nodePackages.typescript-language-server
+    typescript
+  ];
+
   programs.helix = {
     enable = true;
-    package = pkgs.helix.overrideAttrs (self: {
-      makeWrapperArgs = with pkgs;
-        self.makeWrapperArgs
-        or []
-        ++ [
-          "--suffix"
-          "PATH"
-          ":"
-          (lib.makeBinPath [
-            biome
-            emmet-ls
-            marksman
-            nil
-            vscode-langservers-extracted
-            nodePackages.typescript-language-server
-            typescript
-            stylua
-            lua-language-server
-          ])
-        ];
-    });
-
     settings = {
       theme = "current";
       editor = {
