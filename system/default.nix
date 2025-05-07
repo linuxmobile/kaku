@@ -10,9 +10,9 @@ let
     ./network/avahi.nix
 
     ./programs
+    ./programs/cosmic.nix
 
     ./services
-    ./services/greetd.nix
     ./services/pipewire.nix
   ];
 

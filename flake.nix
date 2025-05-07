@@ -1,5 +1,5 @@
 {
-  description = "LinuDev Configuration NixOs.";
+  description = "linuxmobile Configuration NixOs.";
 
   outputs = inputs:
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
@@ -54,8 +54,9 @@
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
+    cosmic-ext-extra-sessions = {
+      url = "github:KiaraGrouwstra/cosmic-ext-extra-sessions?niri-screen-share";
+      flake = false;
     };
 
     hm = {

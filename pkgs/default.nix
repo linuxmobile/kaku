@@ -8,6 +8,7 @@
 
       SF-Pro = pkgs.callPackage ./SF-Pro {inherit (pkgs) stdenv;};
       SF-Pro-mono = pkgs.callPackage ./SF-Pro-mono {};
+      cosmic-ext-alt = pkgs.callPackage ./cosmic-ext-alt {};
     };
   };
 }

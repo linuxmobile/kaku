@@ -3,7 +3,6 @@
 {
   imports = [
     ./niri
-    ./hyprlock.nix
   ];
 
   home.packages = with pkgs; [
