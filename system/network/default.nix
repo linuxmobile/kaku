@@ -1,10 +1,12 @@
 # networking configuration
-{pkgs, ...}:
-{
-  networking.networkmanager = {
-    enable = true;
-    dns = "systemd-resolved";
-    wifi.powersave = true;
+{pkgs, ...}: {
+  networking = {
+    nftables.enable = true;
+    networkmanager = {
+      enable = true;
+      dns = "systemd-resolved";
+      wifi.powersave = true;
+    };
   };
 
   services = {

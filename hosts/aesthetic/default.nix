@@ -4,11 +4,11 @@
   pkgs,
   ...
 }: {
-  imports = [./hardware-configuration.nix ./profiles/plasma];
+  imports = [./hardware-configuration.nix ./profiles/gnome];
 
   boot = {
     # load modules on boot
-    kernelModules = ["amdgpu" "v4l2loopback" "i2c-dev"];
+    kernelModules = ["amdgpu" "v4l2loopback" "i2c-dev"]; # add v4l2loopback when fixed
     kernelPackages = lib.mkForce pkgs.linuxPackages_cachyos;
     extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
     kernelParams = [

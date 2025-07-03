@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./browsers/chromium.nix
-    ./browsers/edge.nix
+    # ./browsers/edge.nix
     ./browsers/zen.nix
     ./gtk.nix
     ./media
@@ -25,11 +25,12 @@
     nodejs
     nodePackages.pnpm
     jq
-    socat
-    # catimg
     bun
 
     scrcpy
     multiviewer-for-f1
+    inkscape
+    gimp
+    opencode
   ];
 }

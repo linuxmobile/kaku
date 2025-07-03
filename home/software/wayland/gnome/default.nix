@@ -1,4 +1,7 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  ...
+}: {
   imports = [
     ./dconf.nix
     ./extensions.nix
@@ -7,30 +10,25 @@
   home = {
     packages = with pkgs; [
       amberol
-      blanket
-      # cavalier
-      celluloid
-      contrast
+      cavalier
+      (celluloid.override {youtubeSupport = true;})
+      # denaro // isn't working.
+      dialect
+      easyeffects
       eyedropper
-      gnome-solanum
       keypunch
       kooha
       loupe
-      muzika
-      overskride
-      paleta
+      newsflash
+      packet
       paper-plane
-      papers
-      parabolic
-      planify
+      (papers.override {supportNautilus = true;})
+      # planify
       resources
 
-      # Terminal
-      (blackbox-terminal.override {sixelSupport = true;})
-      lsix
-
+      ghostty
+      nwg-look
       inkscape
-      gimp
     ];
   };
 }

@@ -25,6 +25,12 @@
 
   # don't touch this
   system.stateVersion = lib.mkDefault "24.05";
+  system = {
+    switch = {
+      enable = true;
+    };
+    rebuild.enableNg = true;
+  };
 
   time.timeZone = lib.mkDefault "America/Argentina/Buenos_Aires";
   time.hardwareClockInLocalTime = lib.mkDefault true;

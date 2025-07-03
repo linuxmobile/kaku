@@ -11,6 +11,8 @@
       "transmission"
       "video"
       "wheel"
+      "kvm"
+      "docker"
     ];
   };
 }

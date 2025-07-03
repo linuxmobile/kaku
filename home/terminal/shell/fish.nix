@@ -106,7 +106,7 @@
         echo "Searching for options matching '$argv[1]'..."
         echo ""
 
-        curl -s https://raw.githubusercontent.com/mipmip/home-manager-option-search/refs/heads/main/static/data/options-release-23.11.json | \
+        curl -s https://raw.githubusercontent.com/mipmip/home-manager-option-search/refs/heads/main/static/data/options-release-24.05.json | \
         jq -r --arg TERM $argv[1] '
           .options[]? |
           select(

@@ -8,5 +8,6 @@ _: {
       enable = true;
       resyncTimer = "10m";
     };
+    irqbalance.enable = true;
   };
 }

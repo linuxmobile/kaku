@@ -1,5 +1,5 @@
 {
-  programs.yazi.theme.manager = {
+  programs.yazi.theme.mgr = {
     cwd = {fg = "cyan";};
 
     # Hovered

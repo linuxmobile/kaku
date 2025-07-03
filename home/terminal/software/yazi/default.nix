@@ -18,7 +18,7 @@
     enableFishIntegration = config.programs.fish.enable;
 
     settings = {
-      manager = {
+      mgr = {
         layout = [ 1 4 3 ];
         sort_by = "alphabetical";
         sort_sensitive = true;

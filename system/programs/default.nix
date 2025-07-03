@@ -2,6 +2,7 @@
   imports = [
     ./fonts.nix
     ./home-manager.nix
+    ./nix-ld.nix
   ];
 
   programs = {

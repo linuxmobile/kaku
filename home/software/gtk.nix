@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   lib,
   pkgs,
   ...
@@ -16,12 +15,10 @@
   gtk = {
     enable = true;
     font = {
-      name = "SF Pro";
-      package = inputs.self.packages.${pkgs.system}.SF-Pro;
+      name = "Adwaita Sans";
+      package = pkgs.adwaita-fonts;
       size = 10;
     };
-
-    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
 
     iconTheme = {
       name = "WhiteSur";
