@@ -17,11 +17,11 @@
     jaq
     ripgrep
     killall
-    koji
     jq
 
     tuicam
     fum
+    meteor-git
   ];
 
   programs = {

@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./browsers/chromium.nix
-    # ./browsers/edge.nix
+    ./browsers/edge.nix
     ./browsers/zen.nix
     ./gtk.nix
     ./media
@@ -31,6 +31,8 @@
     multiviewer-for-f1
     inkscape
     gimp
+
     opencode
+    mods
   ];
 }

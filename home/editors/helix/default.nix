@@ -14,7 +14,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "current";
+      theme = "charm-dark";
       editor = {
         color-modes = true;
         cursorline = true;
