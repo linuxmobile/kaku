@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   imports = [
     ./fonts.nix
     ./home-manager.nix
@@ -9,4 +9,5 @@
     dconf.enable = true;
     xfconf.enable = true;
   };
+  services.udev.packages = [pkgs.android-udev-rules];
 }
