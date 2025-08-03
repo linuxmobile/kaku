@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   fonts = {
     packages = with pkgs; [
       # icon fonts
@@ -12,21 +8,17 @@
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-emoji
-
-      inputs.self.packages.${pkgs.system}.SF-Pro
-      inputs.self.packages.${pkgs.system}.SF-Pro-mono
+      adwaita-fonts
 
       # nerdfonts
       nerd-fonts.symbols-only
+      nerd-fonts.zed-mono
+      nerd-fonts.iosevka
     ];
 
     # causes more issues than it solves
     enableDefaultPackages = false;
 
-    # user defined fonts
-    # the reason there's Noto Color Emoji everywhere is to override DejaVu's
-    # B&W emojis that would sometimes show instead of some Color emojis
-    #
     fontconfig = {
       enable = true;
       antialias = true;
@@ -44,8 +36,8 @@
       in
         addAll {
           serif = ["Noto Sans Serif"];
-          sansSerif = ["SF Pro"];
-          monospace = ["PragmataPro Mono Liga"];
+          sansSerif = ["Adwaita Sans"];
+          monospace = ["Adwaita Mono"];
           emoji = ["Noto Color Emoji"];
         };
     };
