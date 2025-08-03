@@ -2,6 +2,7 @@
   imports = [
     ./browsers/chromium.nix
     ./browsers/edge.nix
+    # ./browsers/qutebrowser.nix
     ./browsers/zen.nix
     ./gtk.nix
     ./media
@@ -12,24 +13,36 @@
     telegram-desktop
     vesktop
 
-    ps_mem
-    fastfetch
-
     # misc
     pciutils
     nixos-icons
     colord
+    cliphist
     ffmpegthumbnailer
     imagemagick
-    rizin
     nodejs
     nodePackages.pnpm
-    jq
-    socat
-    # catimg
     bun
 
+    fastfetch
+
+    # gnome
+    amberol
+    (celluloid.override {youtubeSupport = true;})
+    dconf-editor
+    file-roller
+    loupe
+    (papers.override {supportNautilus = true;})
+    resources
+
+    inkscape
+    gimp
+    # krita
     scrcpy
     multiviewer-for-f1
+
+    swww
+    ghostty
+    mods
   ];
 }

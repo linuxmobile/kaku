@@ -1,16 +1,16 @@
 {
-  programs.yazi.theme.manager = {
+  programs.yazi.theme.mgr = {
     cwd = {fg = "cyan";};
 
     # Hovered
     hovered = {
       fg = "black";
-      bg = "blue";
+      bg = "magenta";
     };
 
     preview_hovered = {
       fg = "black";
-      bg = "blue";
+      bg = "magenta";
     };
 
     # Find
@@ -41,7 +41,7 @@
     # Tab
     tab_active = {
       fg = "black";
-      bg = "blue";
+      bg = "magenta";
     };
     tab_inactive = {
       fg = "white";

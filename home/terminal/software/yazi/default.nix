@@ -4,8 +4,8 @@
 }: {
   imports = [
     ./theme/icons.nix
-    ./theme/manager.nix
-    ./theme/status.nix
+    # ./theme/manager.nix
+    # ./theme/status.nix
   ];
 
   # general file info
@@ -15,10 +15,11 @@
   programs.yazi = {
     enable = true;
 
-    enableFishIntegration = config.programs.fish.enable;
+    enableBashIntegration = config.programs.bash.enable;
+    enableNushellIntegration = config.programs.fish.enable;
 
     settings = {
-      manager = {
+      mgr = {
         layout = [ 1 4 3 ];
         sort_by = "alphabetical";
         sort_sensitive = true;

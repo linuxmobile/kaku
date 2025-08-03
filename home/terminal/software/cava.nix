@@ -59,8 +59,8 @@
     ; foreground = '#33cccc'
 
 
-   ; gradient = 1
-   ; gradient_count = 3
+    ; gradient = 1
+    ; gradient_count = 3
 
     [smoothing]
     ; integral = 77

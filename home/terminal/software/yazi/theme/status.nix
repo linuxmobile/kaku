@@ -1,7 +1,7 @@
 {
   programs.yazi.theme.status = {
-    separator_open = "";
-    separator_close = "";
+    separator_open = "█";
+    separator_close = "█";
     separator_style = {
       fg = "darkgray";
       bg = "darkgray";
@@ -27,7 +27,7 @@
     # Progress;
     progress_label = {bold = true;};
     progress_normal = {
-      fg = "blue";
+      fg = "magenta";
       bg = "black";
     };
     progress_error = {
@@ -36,7 +36,7 @@
     };
 
     # Permissions;
-    permissions_t = {fg = "blue";};
+    permissions_t = {fg = "magenta";};
     permissions_r = {fg = "yellow";};
     permissions_w = {fg = "red";};
     permissions_x = {fg = "green";};

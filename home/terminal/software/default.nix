@@ -3,17 +3,15 @@
     ./atuin.nix
     ./bat.nix
     ./bottom.nix
-    # ./cava.nix
     ./cli.nix
-    ./gpg.nix
     ./git.nix
-    ./gitui.nix
-    ./neofetch.nix
+    ./gpg.nix
+    ./lazygit.nix
     ./nix.nix
     ./skim.nix
-    ./transient-services.nix
-    ./yazi
+    # ./transient-services.nix
     ./xdg.nix
+    ./yazi
     ./zoxide.nix
   ];
 }
