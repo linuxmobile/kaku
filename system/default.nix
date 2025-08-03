@@ -12,6 +12,7 @@ let
     ./programs
 
     ./services
+    ./services/ananicy.nix
     ./services/pipewire.nix
   ];
 
