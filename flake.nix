@@ -52,16 +52,14 @@
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
-
     hm = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     lanzaboote.url = "github:nix-community/lanzaboote";
+
+    mynixpkgs.url = "github:linuxmobile/mynixpkgs";
 
     nix-index-db = {
       url = "github:Mic92/nix-index-database";
@@ -70,11 +68,19 @@
 
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
-      inputs.flake-parts.follows = "flake-parts";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
     };
 
     kwin-effects-forceblur = {
       url = "github:taj-ny/kwin-effects-forceblur";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stylix = {
+      url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
