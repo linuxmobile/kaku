@@ -1,0 +1,20 @@
+scheme: "charm"
+author: "linuxmobile"
+accent: "F780E2" # B66467 - Updated to Charm's fuchsia, as a main accent.
+
+base00: "151515" # default background
+base01: "1F1F1F" # lighter background (status bar)
+base02: "2E2E2E" # selection background
+base03: "424242" # comments, line highlighting
+base04: "878787" # dark foreground
+base05: "C0C6D1" # default foreground, caret, delimiters, operators
+base06: "D6DBE5" # light foreground
+base07: "FFFDF5" # light background
+base08: "ED567A" # variables
+base09: "F7D96B" # ints, bools, constants
+base0A: "F7D96B" # classes, search text background
+base0B: "02BF87" # strings
+base0C: "6DD7E0" # regex, escape chars
+base0D: "7571F9" # functions, methods, headings
+base0E: "F780E2" # keywords, storage, selector
+base0F: "BBB6B6" # opening/clossing embedded language tags

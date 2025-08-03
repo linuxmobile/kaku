@@ -1,0 +1,19 @@
+scheme: "paradise"
+author: "manas140"
+accent: "B66467" 
+base00: "151515"  # default background
+base01: "1F1F1F"  # lighter background (status bar)
+base02: "2E2E2E"  # selection background
+base03: "424242"  # comments, line highlighting
+base04: "BBB6B6"  # dark foreground
+base05: "E8E3E3"  # default foreground, caret, delimiters, operators
+base06: "E8E3E3"  # light foreground
+base07: "E8E3E3"  # light background
+base08: "B66467"  # variables
+base09: "D9BC8C"  # ints, bools, constants
+base0A: "D9BC8C"  # classes, search text background
+base0B: "8C977D"  # strings
+base0C: "8AA6A2"  # regex, escape chars
+base0D: "8DA3B9"  # functions, methods, headings
+base0E: "A988B0"  # keywords, storage, selector
+base0F: "BBB6B6"  # opening/clossing embedded language tags
