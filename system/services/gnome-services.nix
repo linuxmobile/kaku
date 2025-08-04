@@ -4,6 +4,7 @@
     dbus.packages = with pkgs; [
       gcr
       gnome-settings-daemon
+      libsecret
     ];
 
     gnome.gnome-keyring.enable = true;

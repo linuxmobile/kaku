@@ -3,7 +3,7 @@
     ./security.nix
     ./users.nix
     ../nix
-    ../programs/fish.nix
+    ../programs/nushell.nix
   ];
 
   i18n = {
@@ -26,9 +26,7 @@
   # don't touch this
   system.stateVersion = lib.mkDefault "24.05";
   system = {
-    switch = {
-      enable = true;
-    };
+    switch.enable = true;
     rebuild.enableNg = true;
   };
 

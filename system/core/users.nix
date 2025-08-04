@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   users.users.linuxmobile = {
     isNormalUser = true;
-    shell = pkgs.fish;
+    shell = pkgs.nushell;
     extraGroups = [
       "adbusers"
       "input"

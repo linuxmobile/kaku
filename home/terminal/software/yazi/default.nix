@@ -1,25 +1,27 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   imports = [
     ./theme/icons.nix
-    ./theme/manager.nix
-    ./theme/status.nix
+    # ./theme/manager.nix
+    # ./theme/status.nix
   ];
 
   # general file info
-  home.packages = [ pkgs.exiftool ];
+  home.packages = [pkgs.exiftool];
 
   # yazi file manager
   programs.yazi = {
     enable = true;
 
-    enableFishIntegration = config.programs.fish.enable;
+    enableBashIntegration = config.programs.bash.enable;
+    enableNushellIntegration = config.programs.fish.enable;
 
     settings = {
       mgr = {
-        layout = [ 1 4 3 ];
+        layout = [1 4 3];
         sort_by = "alphabetical";
         sort_sensitive = true;
         sort_reverse = false;

@@ -12,16 +12,14 @@
   </a>
 </p>
 
-
 <p align="center">
-<a href="https://nixos.org/"><img src="https://img.shields.io/badge/NixOS-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8AADF4"></a> 
-
+<a href="https://nixos.org/"><img src="https://img.shields.io/badge/NixOS-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8AADF4"></a>
 
 <p align="center"><img src="https://i.imgur.com/NbxQ8MY.png" width=600px></p>
 
 <h2 align="center">革 | kaku</h2>
 
-###  ⚠ <sup><sub><samp>PLEASE RESPECT THE CREDITS IF YOU USE SOMETHING FROM MY DESKTOP/SETUP.</samp></sub></sup>
+### ⚠ <sup><sub><samp>PLEASE RESPECT THE CREDITS IF YOU USE SOMETHING FROM MY DESKTOP/SETUP.</samp></sub></sup>
 
 ---
 
@@ -52,7 +50,7 @@
 - **GUI Basic-IDE** • [NvChad-V2](https://github.com/linuxmobile/nvchad-v2) Rice
   IDE!
 
-### 🍂  <samp>CHANGELOGS</samp>
+### 🍂 <samp>CHANGELOGS</samp>
 
 > From the previous major versions (0-1.x).
 
@@ -61,6 +59,7 @@
 > Request: [NixOs](https://channels.nixos.org/nixos-23.05/latest-nixos-minimal-x86_64-linux.iso)
 
 - Download ISO.
+
 ```bash
 wget -O https://channels.nixos.org/nixos-23.05/latest-nixos-minimal-x86_64-linux.iso
 ```
@@ -71,16 +70,17 @@ wget -O https://channels.nixos.org/nixos-23.05/latest-nixos-minimal-x86_64-linux
 
 - Partitions:
 
-*I prefer to use 1GB on the EFI partition. Specifically because the 'generations' list may become very long, and to avoid overloading the partition.*
+_I prefer to use 1GB on the EFI partition. Specifically because the 'generations' list may become very long, and to avoid overloading the partition._
 
 ```bash
 # Replace nvme with your disk partition
 gdisk /dev/nvme0n1
 ```
-	- `o` (create new partition table)
-	- `n` (add partition, 512M, type ef00 EFI)
-	- `n` (add partition, remaining space, type 8300 Linux)
-	`w` (write partition table and exit)
+
+    - `o` (create new partition table)
+    - `n` (add partition, 512M, type ef00 EFI)
+    - `n` (add partition, remaining space, type 8300 Linux)
+    `w` (write partition table and exit)
 
 - Format Partitions:
 
@@ -103,19 +103,20 @@ mount /dev/disk/by-label/EFI /mnt/boot
 nix-shell -p nixFlakes git
 ```
 
-- Clone my Dotfiles 
+- Clone my Dotfiles
 
-```bash 
+```bash
 git clone --depth 1 https://github.com/linuxmobile/kaku /mnt/etc/nixos
 ```
 
 - Generate your Own Nix Hardware Settings:
+
 ### ⚠ <sup><sub><samp>DON'T FORGET IT</samp></sub></sup>
 
 ```bash
 sudo nixos-generate-config --dir --force /mnt/etc/nixos/hosts/aesthetic
 
-# Remove configuration.nix 
+# Remove configuration.nix
 rm -rf /mnt/etc/nixos/hosts/aesthetic/configuration.nix
 ```
 
@@ -131,7 +132,7 @@ nixos-install --flake .#aesthetic
 
 - Reboot
 
-### 🐙  <sup><sub><samp>Remember <strong>Default</strong> User & password are: nixos</samp></sub></sup>
+### 🐙 <sup><sub><samp>Remember <strong>Default</strong> User & password are: nixos</samp></sub></sup>
 
 - Change Default password for User.
 
@@ -155,19 +156,19 @@ home-manager switch --flake 'github:linuxmobile/kaku#linudev@aesthetic'
 
 ## 💐 <samp>ACKNOWLEDGEMENTS</samp>
 
-|           |   | Inspiration and Resources                                   |                                                                                                                                                              |            |
-|:---------:|:-:|:------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------:|
-|           | 1 | [owl4ce](https://github.com/owl4ce)                        |                                                                                                                                                              |            |
-|           | 2 | [Ilham25](https://github.com/ilham25)              |                                                                                                                                                              |            |
-|           | 3 | [Siduck](https://github.com/siduck)                |                                                                                                                                                              |            |
-|           | 4 | [NvChad](https://github.com/NvChad)         |                                                                                                                                                              |            |
-|           | 5 | [Rxyhn](https://github.com/rxyhn)         |                                                                                                                                                              |            |
-|           | 6 | [HeinzDev](https://github.com/HeinzDev)                        |                                                                                                                                                              |            |
-|           | 7 | [fufexan](https://github.com/fufexan)                        |                                                                                                                                                              |            |
-|           | 8 | [AmitGolden](https://github.com/AmitGolden)               |                                                                                                                                                              |            |
-|           |   |                                                             |                                                                                                                                                              |            |
-| **Based** |   | **Community**                                               | **Membership Status**                                                                                                                                        |            |
-|🗺| 3 | [r/unixp*rn](https://reddit.com/r/unixporn)                 | Not working there anymore.                                                                                                                                    |            |
+|           |     | Inspiration and Resources                    |                            |     |
+| :-------: | :-: | :------------------------------------------- | :------------------------- | :-: |
+|           |  1  | [owl4ce](https://github.com/owl4ce)          |                            |     |
+|           |  2  | [Ilham25](https://github.com/ilham25)        |                            |     |
+|           |  3  | [Siduck](https://github.com/siduck)          |                            |     |
+|           |  4  | [NvChad](https://github.com/NvChad)          |                            |     |
+|           |  5  | [Rxyhn](https://github.com/rxyhn)            |                            |     |
+|           |  6  | [HeinzDev](https://github.com/HeinzDev)      |                            |     |
+|           |  7  | [fufexan](https://github.com/fufexan)        |                            |     |
+|           |  8  | [AmitGolden](https://github.com/AmitGolden)  |                            |     |
+|           |     |                                              |                            |     |
+| **Based** |     | **Community**                                | **Membership Status**      |     |
+|    🗺     |  3  | [r/unixp\*rn](https://reddit.com/r/unixporn) | Not working there anymore. |     |
 
 ## 🌳 <samp>CONTRIBUTING</samp>
 

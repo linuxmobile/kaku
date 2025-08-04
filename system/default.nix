@@ -12,9 +12,8 @@ let
     ./programs
 
     ./services
-    ./services/pipewire.nix
     ./services/ananicy.nix
-    ./services/docker.nix
+    ./services/pipewire.nix
   ];
 
   laptop =

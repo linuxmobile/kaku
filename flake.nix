@@ -45,9 +45,11 @@
     # rest of inputs, alphabetical order
     agenix = {
       url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "hm";
-      inputs.systems.follows = "systems";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "hm";
+        systems.follows = "systems";
+      };
     };
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
@@ -59,6 +61,8 @@
 
     lanzaboote.url = "github:nix-community/lanzaboote";
 
+    mynixpkgs.url = "github:linuxmobile/mynixpkgs";
+
     nix-index-db = {
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -67,11 +71,6 @@
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
       inputs.flake-parts.follows = "flake-parts";
-    };
-
-    kwin-effects-forceblur = {
-      url = "github:taj-ny/kwin-effects-forceblur";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     zen-browser = {

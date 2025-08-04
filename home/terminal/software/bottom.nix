@@ -1,11 +1,12 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     (writeScriptBin "btop" ''exec btm'')
-    (writeScriptBin "htop" ''exec btm -b --battery'')
+    (writeScriptBin "htop" ''exec btm -b'')
   ];
   programs.bottom = {
     enable = true;
     settings = {
+      enable_gpu = true;
       flags.group_processes = true;
       row = [
         {

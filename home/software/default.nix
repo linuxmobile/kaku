@@ -12,7 +12,6 @@
     telegram-desktop
     vesktop
 
-    ps_mem
     fastfetch
 
     # misc

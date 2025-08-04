@@ -4,7 +4,7 @@
     config = {
       pager = "less -FR";
       style = "plain";
-      theme = "base16";
+      # theme = "base16";
     };
   };
 

@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./dconf.nix
     ./extensions.nix
@@ -12,7 +9,6 @@
       amberol
       cavalier
       (celluloid.override {youtubeSupport = true;})
-      # denaro // isn't working.
       dialect
       easyeffects
       eyedropper
@@ -20,8 +16,6 @@
       kooha
       loupe
       newsflash
-      packet
-      paper-plane
       (papers.override {supportNautilus = true;})
       # planify
       resources

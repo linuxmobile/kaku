@@ -37,6 +37,7 @@
         };
       };
     };
+
     extraConfig = {
       init.defaultBranch = "main";
       diff.colorMoved = "default";

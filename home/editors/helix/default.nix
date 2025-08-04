@@ -6,18 +6,25 @@
     emmet-ls
     marksman
     nil
+    nixd
     vscode-langservers-extracted
     nodePackages.typescript-language-server
     typescript
+    gopls
+    yaml-language-server
   ];
 
   programs.helix = {
     enable = true;
     settings = {
-      theme = "charm-dark";
+      # theme = "charm-dark";
       editor = {
         color-modes = true;
+        completion-trigger-len = 1;
+        completion-replace = true;
         cursorline = true;
+        bufferline = "multiple";
+        line-number = "relative";
         cursor-shape = {
           insert = "bar";
           normal = "block";
@@ -36,20 +43,30 @@
         };
         gutters = ["diagnostics" "line-numbers" "spacer" "diff"];
         statusline = {
-          left = ["mode" "version-control"];
-          center = ["spinner" "file-base-name"];
-          right = ["diagnostics" "file-encoding" "position" "position-percentage" "total-line-numbers"];
+          left = ["mode" "spacer" "version-control"];
+          center = ["file-modification-indicator" "file-name" "spinner"];
+          right = ["diagnostics" "selections" "position" "position-percentage" "total-line-numbers"];
           mode = {
             normal = "NORMAL";
             insert = "INSERT";
             select = "SELECT";
           };
         };
-        whitespace.characters = {
-          space = "·";
-          nbsp = "⍽";
-          tab = "→";
-          newline = "⤶";
+        trim-final-newlines = true;
+        trim-trailing-whitespace = true;
+        whitespace = {
+          render = {
+            space = "all";
+            tab = "all";
+            newline = "all";
+          };
+          characters = {
+            space = " ";
+            nbsp = "⍽";
+            tab = "→";
+            newline = "↴";
+            tabpad = "-";
+          };
         };
         auto-pairs = true;
         clipboard-provider = "wayland";
