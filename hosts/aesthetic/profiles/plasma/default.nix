@@ -34,14 +34,12 @@
       kdePackages.qt6ct
       kde-rounded-corners
       inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
-      inputs.ghostty.packages.${pkgs.system}.default
 
       # apps
       amberol
       cavalier
       (celluloid.override {youtubeSupport = true;})
       easyeffects
-      keypunch
       loupe
       resources
 
