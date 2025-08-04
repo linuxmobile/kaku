@@ -45,9 +45,11 @@
     # rest of inputs, alphabetical order
     agenix = {
       url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "hm";
-      inputs.systems.follows = "systems";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "hm";
+        systems.follows = "systems";
+      };
     };
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";

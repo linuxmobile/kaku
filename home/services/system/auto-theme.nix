@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   script = pkgs.writeShellScript "theme-changer.sh" ''
     echo "HELIX_THEME: $HELIX_THEME"
     echo "GTK_CONFIG_DIR: $GTK_CONFIG_DIR"

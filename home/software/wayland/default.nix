@@ -1,8 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}:
+{pkgs, ...}:
 # Wayland config
 {
   imports = [
