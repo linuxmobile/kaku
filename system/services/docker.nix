@@ -1,4 +1,4 @@
 {
-  virtualisation.docker.enable = true;
+  virtualisation.podman.enable = true;
   programs.adb.enable = true;
 }

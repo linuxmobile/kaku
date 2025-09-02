@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  users.users.linuxmobile = {
+  users.users.banumath = {
     isNormalUser = true;
     shell = pkgs.nushell;
     extraGroups = [
@@ -12,7 +12,7 @@
       "video"
       "wheel"
       "kvm"
-      "docker"
+  "podman"
     ];
   };
 }

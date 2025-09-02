@@ -4,24 +4,27 @@
     ./users.nix
     ../nix
     ../programs/nushell.nix
+    ../services/dev.nix
+    ../services/virt.nix
+    ../services/docker.nix
   ];
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
     extraLocaleSettings = {
-      LC_ADDRESS = "es_AR.UTF-8";
-      LC_IDENTIFICATION = "es_AR.UTF-8";
-      LC_MEASUREMENT = "es_AR.UTF-8";
-      LC_MONETARY = "es_AR.UTF-8";
-      LC_NAME = "es_AR.UTF-8";
-      LC_NUMERIC = "es_AR.UTF-8";
-      LC_PAPER = "es_AR.UTF-8";
-      LC_TELEPHONE = "es_AR.UTF-8";
-      LC_TIME = "es_AR.UTF-8";
+      LC_ADDRESS = "en_US.UTF-8";
+      LC_IDENTIFICATION = "en_US.UTF-8";
+      LC_MEASUREMENT = "en_US.UTF-8";
+      LC_MONETARY = "en_US.UTF-8";
+      LC_NAME = "en_US.UTF-8";
+      LC_NUMERIC = "en_US.UTF-8";
+      LC_PAPER = "en_US.UTF-8";
+      LC_TELEPHONE = "en_US.UTF-8";
+      LC_TIME = "en_US.UTF-8";
     };
   };
 
-  console.keyMap = "la-latin1";
+  console.keyMap = "us";
 
   # don't touch this
   system.stateVersion = lib.mkDefault "24.05";
@@ -30,7 +33,7 @@
     rebuild.enableNg = true;
   };
 
-  time.timeZone = lib.mkDefault "America/Argentina/Buenos_Aires";
+  time.timeZone = lib.mkDefault "Asia/Colombo";
   time.hardwareClockInLocalTime = lib.mkDefault true;
 
   # compresses half the ram for use as swap
