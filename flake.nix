@@ -59,8 +59,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lanzaboote.url = "github:nix-community/lanzaboote";
-
     mynixpkgs.url = "github:linuxmobile/mynixpkgs";
 
     nix-index-db = {
