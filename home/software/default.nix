@@ -2,7 +2,6 @@
   imports = [
     ./browsers/chromium.nix
     ./browsers/edge.nix
-    # ./browsers/qutebrowser.nix
     ./browsers/zen.nix
     ./gtk.nix
     ./media
@@ -20,8 +19,6 @@
     cliphist
     ffmpegthumbnailer
     imagemagick
-    nodejs
-    nodePackages.pnpm
     bun
 
     fastfetch
@@ -36,12 +33,9 @@
     resources
 
     inkscape
-    gimp
-    # krita
     scrcpy
     multiviewer-for-f1
 
-    swww
     ghostty
     mods
   ];

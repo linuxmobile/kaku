@@ -136,10 +136,6 @@
           nix-store --query --requisites /run/current-system/ | sk | wl-copy
         }
 
-        def search [term: string] {
-          nix search nixpkgs --json $term | from json | values | select pname description
-        }
-
         def homesearch [program: string] {
           http get https://raw.githubusercontent.com/mipmip/home-manager-option-search/refs/heads/main/static/data/options-release-24.05.json
           | get options
