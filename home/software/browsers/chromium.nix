@@ -2,7 +2,7 @@
   imports = [
     ./chromium-flags.nix
   ];
-  
+
   programs.chromium = {
     enable = true;
     package = pkgs.ungoogled-chromium;
