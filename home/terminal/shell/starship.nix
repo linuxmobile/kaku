@@ -30,7 +30,7 @@
         vicmd_symbol = "[ ](white bold)";
       };
       directory = {
-        format = "[█]($style)[ ](bg:black fg:white)[$path](bg:black fg:bright purple bold)[█ ]($style)";
+        format = "[█]($style)[ ](bg:black fg:white)[$path](bg:black fg:bright-purple bold)[█ ]($style)";
         style = "bg:none fg:black";
         truncation_length = 3;
         truncate_to_repo = false;

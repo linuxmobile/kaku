@@ -24,7 +24,7 @@
           ./aesthetic
           "${mod}/programs/gamemode.nix"
           "${mod}/services/location.nix"
-          "${mod}/core/lanzaboote.nix"
+          "${mod}/core/limine.nix"
           {
             home-manager = {
               users.linuxmobile.imports =
