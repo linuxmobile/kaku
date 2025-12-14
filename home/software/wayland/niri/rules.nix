@@ -296,9 +296,12 @@ _: let
 in {
   programs.niri.settings = {
     window-rules = windowRules;
+    layout = {
+      background-color = "transparent";
+    };
     layer-rules = [
       {
-        matches = [{namespace = "^noctalia-overview*";}];
+        matches = [{namespace = "^quickshell$";}];
         place-within-backdrop = true;
       }
     ];

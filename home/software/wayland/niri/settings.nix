@@ -21,6 +21,7 @@ in {
         WLR_NO_HARDWARE_CURSORS = "1";
         QT_QPA_PLATFORMTHEME = "qt6ct";
         GTK_IM_MODULE = "simple";
+        GSETTINGS_SCHEMA_DIR = "${pkgs.glib.getSchemaPath pkgs.gtk4}";
       };
       spawn-at-startup = [
         {command = ["wl-paste" "--watch" "cliphist" "store"];}
