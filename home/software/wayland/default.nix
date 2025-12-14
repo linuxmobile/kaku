@@ -2,13 +2,12 @@
 # Wayland config
 {
   imports = [
-    ./dms
     ./niri
   ];
 
   home.packages = with pkgs; [
     # utils
-    wl-clipboard-rs
+    wl-clipboard
   ];
 
   # make stuff work on wayland

@@ -8,7 +8,7 @@ _: {
 
       scrollback-limit = 10000;
 
-      font-family = "SF-Mono";
+      font-family = "Cozette";
       font-size = 10;
       cursor-style = "bar";
       cursor-style-blink = true;

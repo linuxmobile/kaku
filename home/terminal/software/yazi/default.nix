@@ -4,8 +4,8 @@
   ...
 }: {
   imports = [
-    ./theme/icons.nix
-    ./theme/manager.nix
+    # ./theme/icons.nix
+    # ./theme/manager.nix
     ./theme/status.nix
   ];
 
@@ -35,6 +35,10 @@
         max_width = 600;
         max_height = 900;
         cache_dir = "${config.xdg.cacheHome}";
+      };
+
+      flavor = {
+        dark = "noctalia";
       };
     };
   };

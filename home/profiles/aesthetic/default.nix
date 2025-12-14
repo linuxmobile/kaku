@@ -6,7 +6,7 @@
 
     # services
     ../../services/wayland/gammastep.nix
-    # ../../services/wayland/quickshell.nix
+    ../../services/wayland/quickshell.nix
 
     # media services
     ../../services/media/playerctl.nix

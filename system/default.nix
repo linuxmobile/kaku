@@ -11,7 +11,7 @@ let
     ./programs
 
     ./services
-    ./services/dmsgreet.nix
+    ./services/greetd.nix
     ./services/pipewire.nix
   ];
 

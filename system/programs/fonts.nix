@@ -15,7 +15,7 @@
 
       # nerdfonts
       nerd-fonts.symbols-only
-      departure-mono
+      cozette
 
       inputs.self.packages.${pkgs.system}.apple-fonts
     ];

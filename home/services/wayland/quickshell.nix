@@ -18,7 +18,7 @@ in {
     [
       quickshell
       accountsservice
-      adw-gtk3
+      gsettings-desktop-schemas
       brightnessctl
       cava
       cliphist

@@ -10,7 +10,7 @@
     settings = {
       main = {
         font = lib.mkForce (
-          "SF Mono:size=10"
+          "Cozette:size=10"
           + ":fontfeatures=calt"
           + ":fontfeatures=dlig"
           + ":fontfeatures=fbarc"
@@ -22,7 +22,7 @@
         pad = "15x6center";
         term = "xterm-256color";
         selection-target = "both";
-        include = "${config.xdg.configHome}/foot/dank-colors.ini";
+        include = "${config.xdg.configHome}/foot/themes/noctalia";
       };
       bell = {
         command = "notify-send bell";

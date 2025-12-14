@@ -301,7 +301,7 @@ in {
     };
     layer-rules = [
       {
-        matches = [{namespace = "^quickshell$";}];
+        matches = [{namespace = "^noctalia-wallpaper*";}];
         place-within-backdrop = true;
       }
     ];
