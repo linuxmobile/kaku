@@ -272,11 +272,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1764699449,
-        "narHash": "sha256-N/Z3aCwz6+lhl57mmWHm6UEoY4URusAlNdmC7An58MI=",
+        "lastModified": 1766424766,
+        "narHash": "sha256-4zI2n8Rsr0PziUkZFdOmJJcyJvJq2khjh0toENJsBmY=",
         "owner": "linuxmobile",
         "repo": "mynixpkgs",
-        "rev": "f0fcee431869938df74364ea29996f8f4650a2d0",
+        "rev": "b0a60be2a51c5875f41ad7d0e790e2b030f9eafa",
         "type": "github"
       },
       "original": {

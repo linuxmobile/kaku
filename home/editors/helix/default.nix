@@ -17,7 +17,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "ttox";
+      theme = "noctalia";
       editor = {
         color-modes = true;
         completion-trigger-len = 1;

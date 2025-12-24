@@ -39,12 +39,13 @@
     ]
     ++ (with inputs.mynixpkgs.packages.${pkgs.system}; [
       bmm
+      dawn
       dfft
+      lightview
       nekot
       omm
       orchat
       prs
-      toney
     ]);
 
   programs = {

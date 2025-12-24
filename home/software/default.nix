@@ -6,7 +6,6 @@
   imports = [
     ./browsers/chromium.nix
     ./browsers/edge.nix
-    # ./browsers/zen.nix
     ./browsers/helium.nix
     ./gtk.nix
     ./media
@@ -27,16 +26,12 @@
     fastfetch
 
     # gnome
-    amberol
-    (celluloid.override {youtubeSupport = true;})
     dconf-editor
     file-roller
     gnome-control-center
     gnome-text-editor
-    loupe
     nautilus
     (papers.override {supportNautilus = true;})
-    resources
 
     inkscape
     scrcpy
