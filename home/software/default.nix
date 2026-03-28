@@ -1,10 +1,12 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
-    ./anyrun
     ./browsers/chromium.nix
     ./browsers/edge.nix
-    # ./browsers/qutebrowser.nix
-    ./browsers/zen.nix
+    ./browsers/helium.nix
     ./gtk.nix
     ./media
   ];
@@ -17,38 +19,35 @@
     # misc
     pciutils
     nixos-icons
-    colord
-    cliphist
     ffmpegthumbnailer
     imagemagick
-    nodejs
-    nodePackages.pnpm
     bun
 
     fastfetch
 
     # gnome
-    amberol
-    (celluloid.override {youtubeSupport = true;})
     dconf-editor
     file-roller
     gnome-control-center
     gnome-text-editor
-    # keypunch
-    loupe
     nautilus
     (papers.override {supportNautilus = true;})
-    pwvucontrol
-    resources
 
     inkscape
-    # gimp
-    # krita
     scrcpy
-    multiviewer-for-f1
+    (inputs.mynixpkgs.packages.${pkgs.system}.multiviewer.overrideAttrs (old: {
+      buildInputs = (old.buildInputs or []) ++ [pkgs.makeWrapper];
+      postInstall = ''
+        wrapProgram $out/bin/multiviewer \
+          --set LD_LIBRARY_PATH "/run/opengl-driver/lib:''${LD_LIBRARY_PATH:-}" \
+          --set __EGL_VENDOR_LIBRARY_FILENAMES ${pkgs.mesa}/share/glvnd/egl_vendor.d/50_mesa.json \
+          --set LIBGL_ALWAYS_INDIRECT 0 \
+          --set ELECTRON_OZONE_PLATFORM_HINT wayland
+      '';
+    }))
 
     swww
-    ghostty
-    mods
+    openvpn
+    # (mangowc.override {enableXWayland = false;})
   ];
 }

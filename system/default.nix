@@ -7,12 +7,10 @@ let
     ./hardware/fwupd.nix
 
     ./network/default.nix
-    ./network/avahi.nix
 
     ./programs
 
     ./services
-    ./services/ananicy.nix
     ./services/greetd.nix
     ./services/pipewire.nix
   ];
@@ -21,8 +19,6 @@ let
     desktop
     ++ [
       ./hardware/bluetooth.nix
-
-      ./services/backlight.nix
       ./services/power.nix
     ];
 in {

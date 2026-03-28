@@ -3,10 +3,7 @@
     ./security.nix
     ./users.nix
     ../nix
-    ../programs/nushell.nix
-    ../services/dev.nix
-    ../services/virt.nix
-    ../services/docker.nix
+    ../programs/fish.nix
   ];
 
   i18n = {

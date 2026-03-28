@@ -6,8 +6,6 @@
   boot = {
     bootspec.enable = true;
 
-    enableContainers = true;
-
     initrd = {
       systemd.enable = true;
     };

@@ -3,9 +3,9 @@
   pkgs,
   ...
 }: let
-  browser = ["zen"];
-  imageViewer = ["org.gnome.Loupe"];
-  videoPlayer = ["io.github.celluloid_player.Celluloid"];
+  browser = ["helium"];
+  imageViewer = ["lightview"];
+  videoPlayer = ["mpv"];
   audioPlayer = ["io.bassi.Amberol"];
 
   xdgAssociations = type: program: list:
@@ -16,13 +16,48 @@
       list);
 
   image = xdgAssociations "image" imageViewer [
-    "png" "jpg" "jpeg" "gif" "webp" "bmp" "tiff" "tif" "ico" "svg" "avif" "heic" "heif"
+    "png"
+    "jpg"
+    "jpeg"
+    "gif"
+    "webp"
+    "bmp"
+    "tiff"
+    "tif"
+    "ico"
+    "svg"
+    "avif"
+    "heic"
+    "heif"
   ];
   video = xdgAssociations "video" videoPlayer [
-    "mp4" "avi" "mkv" "mov" "wmv" "flv" "webm" "m4v" "3gp" "ogv" "ts" "mts" "m2ts"
+    "mp4"
+    "avi"
+    "mkv"
+    "mov"
+    "wmv"
+    "flv"
+    "webm"
+    "m4v"
+    "3gp"
+    "ogv"
+    "ts"
+    "mts"
+    "m2ts"
   ];
   audio = xdgAssociations "audio" audioPlayer [
-    "mp3" "flac" "wav" "aac" "ogg" "oga" "opus" "m4a" "wma" "ape" "alac" "aiff"
+    "mp3"
+    "flac"
+    "wav"
+    "aac"
+    "ogg"
+    "oga"
+    "opus"
+    "m4a"
+    "wma"
+    "ape"
+    "alac"
+    "aiff"
   ];
   browserTypes =
     (xdgAssociations "application" browser [

@@ -3,10 +3,17 @@
   pkgs,
   ...
 }: let
-  # Create a wrapper script for zen-browser with Wayland enabled
+  zenFixed = inputs.zen-browser.packages."${pkgs.system}".default.overrideAttrs (old: {
+    nativeBuildInputs = [
+      pkgs.makeWrapper
+      pkgs.copyDesktopItems
+      pkgs.wrapGAppsHook3
+    ];
+  });
+
   zenWithWayland = pkgs.symlinkJoin {
     name = "zen-browser-wayland";
-    paths = [inputs.zen-browser.packages."${pkgs.system}".default];
+    paths = [zenFixed];
     buildInputs = [pkgs.makeWrapper];
     postBuild = ''
       wrapProgram $out/bin/zen \

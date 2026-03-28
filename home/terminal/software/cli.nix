@@ -15,49 +15,77 @@
       fontconfig
 
       # utils
-      du-dust
+      dust
       duf
       fd
       file
       jaq
-      ripgrep
       killall
       jq
       ps_mem
+      inshellisense
 
       discordo
       fum
       glow
       gtt
       meteor-git
+      nix-search-tv
       reddit-tui
       scope-tui
       tuicam
       wiremix
       zfxtop
-      nix-search-tv
-      television
     ]
     ++ (with inputs.mynixpkgs.packages.${pkgs.system}; [
-      opencode
-      toney
       bmm
-      omm
-      prs
+      dawn
       dfft
-      crush
+      lightview
+      nekot
+      omm
+      orchat
+      prs
     ]);
 
   programs = {
-    eza.enable = true;
-    ssh.enable = true;
+    eza = {
+      enable = true;
+      enableFishIntegration = true;
+      colors = "auto";
+      git = true;
+      icons = "auto";
+    };
     dircolors = {
       enable = true;
-      # enableNushellIntegration = true;
+      enableFishIntegration = true;
     };
     autojump = {
       enable = true;
-      # enableNushellIntegration = true;
+      enableFishIntegration = true;
+    };
+    television = {
+      enableFishIntegration = true;
+      enable = true;
+    };
+    mods = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+    ripgrep = {
+      enable = true;
+    };
+    nix-your-shell = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+    pay-respects = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+    fzf = {
+      enable = true;
+      enableFishIntegration = true;
     };
   };
 }

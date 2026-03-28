@@ -32,6 +32,10 @@
             osc2 = true;
             osc7 = true;
             osc8 = true;
+            osc9_9 = true;
+            osc133 = true;
+            osc633 = true;
+            reset_application_mode = true;
           };
 
           use_kitty_protocol = true;
@@ -126,11 +130,9 @@
         # })
 
 
-        def fcd [] {
-          let dir = (fd --type d | sk | str trim)
-          if ($dir != "") {
-            cd $dir
-          }
+        def --env fcd [] {
+          let selected = (fd --type d --strip-cwd-prefix | sk --ansi)
+          if not ($selected | is-empty) { cd $selected }
         }
 
         def installed [] {

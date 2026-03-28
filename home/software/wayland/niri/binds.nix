@@ -3,24 +3,69 @@
   pkgs,
   ...
 }: {
-  programs.niri.settings.binds = with config.lib.niri.actions; let
-    playerctl = spawn "${pkgs.playerctl}/bin/playerctl";
-  in {
-    "XF86AudioPlay".action = playerctl "play-pause";
-    "XF86AudioStop".action = playerctl "pause";
-    "XF86AudioPrev".action = playerctl "previous";
-    "XF86AudioNext".action = playerctl "next";
+  programs.niri.settings.binds = with config.lib.niri.actions; {
+    "XF86AudioPlay" = {
+      allow-when-locked = true;
+      action.spawn = [
+        "qs"
+        "-c"
+        "noctalia"
+        "ipc"
+        "call"
+        "media"
+        "playPause"
+      ];
+    };
+
+    "XF86AudioStop" = {
+      allow-when-locked = true;
+      action.spawn = [
+        "qs"
+        "-c"
+        "noctalia"
+        "ipc"
+        "call"
+        "media"
+        "stop"
+      ];
+    };
+
+    "XF86AudioNext" = {
+      allow-when-locked = true;
+      action.spawn = [
+        "qs"
+        "-c"
+        "noctalia"
+        "ipc"
+        "call"
+        "media"
+        "next"
+      ];
+    };
+
+    "XF86AudioPrev" = {
+      allow-when-locked = true;
+      action.spawn = [
+        "qs"
+        "-c"
+        "noctalia"
+        "ipc"
+        "call"
+        "media"
+        "previous"
+      ];
+    };
 
     "XF86AudioMute" = {
       allow-when-locked = true;
       action.spawn = [
         "qs"
         "-c"
-        "DankMaterialShell"
+        "noctalia"
         "ipc"
         "call"
-        "audio"
-        "mute"
+        "volume"
+        "muteOutput"
       ];
     };
     "XF86AudioMicMute" = {
@@ -28,11 +73,11 @@
       action.spawn = [
         "qs"
         "-c"
-        "DankMaterialShell"
+        "noctalia"
         "ipc"
         "call"
-        "audio"
-        "micmute"
+        "volume"
+        "muteInput"
       ];
     };
 
@@ -41,12 +86,11 @@
       action.spawn = [
         "qs"
         "-c"
-        "DankMaterialShell"
+        "noctalia"
         "ipc"
         "call"
-        "audio"
-        "increment"
-        "5"
+        "volume"
+        "increase"
       ];
     };
     "XF86AudioLowerVolume" = {
@@ -54,12 +98,11 @@
       action.spawn = [
         "qs"
         "-c"
-        "DankMaterialShell"
+        "noctalia"
         "ipc"
         "call"
-        "audio"
-        "decrement"
-        "5"
+        "volume"
+        "decrease"
       ];
     };
 
@@ -68,13 +111,11 @@
       action.spawn = [
         "qs"
         "-c"
-        "DankMaterialShell"
+        "noctalia"
         "ipc"
         "call"
         "brightness"
-        "increment"
-        "5"
-        "amdgpu_bl1"
+        "increase"
       ];
     };
 
@@ -83,61 +124,78 @@
       action.spawn = [
         "qs"
         "-c"
-        "DankMaterialShell"
+        "noctalia"
         "ipc"
         "call"
         "brightness"
-        "decrement"
-        "5"
-        "amdgpu_bl1"
+        "decrease"
       ];
     };
 
     "Ctrl+Alt+L".action = spawn [
       "qs"
       "-c"
-      "DankMaterialShell"
+      "noctalia"
       "ipc"
       "call"
-      "lock"
+      "lockScreen"
       "lock"
     ];
 
     "Mod+V".action = spawn [
       "qs"
       "-c"
-      "DankMaterialShell"
+      "noctalia"
       "ipc"
       "call"
+      "launcher"
       "clipboard"
-      "toggle"
+    ];
+
+    "Mod+E".action = spawn [
+      "qs"
+      "-c"
+      "noctalia"
+      "ipc"
+      "call"
+      "launcher"
+      "emoji"
     ];
 
     "Mod+U".action = spawn [
       "qs"
       "-c"
-      "DankMaterialShell"
+      "noctalia"
       "ipc"
       "call"
       "settings"
       "toggle"
     ];
 
-    "Mod+M".action = spawn [
+    "Alt+Space".action = spawn [
       "qs"
       "-c"
-      "DankMaterialShell"
+      "noctalia"
       "ipc"
       "call"
-      "processlist"
+      "launcher"
+      "toggle"
+    ];
+
+    "Mod+D".action = spawn [
+      "qs"
+      "-c"
+      "noctalia"
+      "ipc"
+      "call"
+      "launcher"
       "toggle"
     ];
 
     "Print".action.screenshot-screen = {write-to-disk = true;};
-    "Mod+Shift+Alt+S".action = screenshot-window;
+    "Mod+Shift+Alt+S".action.screenshot-window = [];
     "Mod+Shift+S".action.screenshot = {show-pointer = false;};
-    "Mod+D".action = spawn "${pkgs.anyrun}/bin/anyrun";
-    "Mod+Return".action = spawn "${pkgs.ghostty}/bin/ghostty";
+    "Mod+Return".action = spawn "${pkgs.foot}/bin/foot";
 
     "Mod+Q".action = close-window;
     "Mod+S".action = switch-preset-column-width;

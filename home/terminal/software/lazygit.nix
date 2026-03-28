@@ -1,6 +1,7 @@
 {
   programs.lazygit = {
     enable = true;
+    enableFishIntegration = true;
     settings = {
       disableStartupPopups = true;
       notARepository = "skip";

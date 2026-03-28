@@ -17,7 +17,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "gruvbox_dark_hard";
+      theme = "noctalia";
       editor = {
         color-modes = true;
         completion-trigger-len = 1;
@@ -36,6 +36,11 @@
         indent-guides = {
           render = true;
           rainbow-option = "dim";
+        };
+        inline-diagnostics = {
+          cursor-line = "hint";
+          other-lines = "error";
+          max-diagnostics = 3;
         };
         lsp = {
           display-messages = true;

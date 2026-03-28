@@ -8,12 +8,12 @@
     <img src="https://raw.githubusercontent.com/zemmsoares/awesome-rices/main/assets/awesome-rice-badge.svg" alt="awesome-rice-badge">
   </a>
   <a href="https://nixos.wiki/wiki/Flakes">
-    <img src="https://img.shields.io/static/v1?label=Nix Flake&message=check&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5">
+    <img src="https://img.shields.io/static/v1?label=Nix-Flake&message=check&style=flat&logo=nixos&colorA=24273A&colorB=9173ff&logoColor=CAD3F5">
+  </a>
+  <a href="https://nixos.org/">
+  <img src="https://img.shields.io/badge/NixOS-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8AADF4">
   </a>
 </p>
-
-<p align="center">
-<a href="https://nixos.org/"><img src="https://img.shields.io/badge/NixOS-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8AADF4"></a>
 
 <p align="center"><img src="/assets/1.png" width=600px></p>
 
@@ -23,9 +23,7 @@
 
 ---
 
-<pre align="center">
-<a href="#seedling--setup">SETUP</a> • <a href="#herb--guides">GUIDES</a> • <a href="#four_leaf_clover--key-bindings">KEYBINDS</a> • <a href="https://linu.dev/kaku">GALLERY</a>
-</pre>
+<pre align="center"><p align="center"><a href="#seedling--setup">SETUP</a> • <a href="#herb--guides">GUIDES</a> • <a href="#four_leaf_clover--key-bindings">KEYBINDS</a> • <a href="https://linu.dev/kaku">GALLERY</a></p></pre>
 
 ---
 
@@ -39,24 +37,18 @@
 - **Shell** • [Nu](https://www.nushell.sh/) 🐚 with
   [starship](https://github.com/starship/starship) Cross Shell Platform!
 - **Terminal** • [Ghostty](https://ghostty.org/) 💻 A powerful Hyped term
-- **Panel** • [Astal](https://aylur.github.io/astal/) 🍧 Astal GTK-shell :3!
-- **Notify Daemon** • [Dunst](https://github.com/dunst-project/dunst) 🍃
-  Minimalist and functional!
-- **Launcher** • [AnyRun](https://github.com/Kirottu/anyrun) 🚀 Fast AnyRunner!
+- **Panel** • [DMS Quickshell](https://github.com/AvengeMedia/DankMaterialShell) 🍧 The Best GOAT DMS-Quickshell :3!
 - **File Manager** • [Yazi](https://github.com/sxyazi/yazi) 🔖 Rustacean File
   Manager!
 - **GUI Basic-IDE** • [Helix](https://docs.helix-editor.com/) ✴️ Rustacean vim
   version!
 - **GTK Theme** • [GTK](https://github.com/linuxmobile/Colloid-gtk-theme) 🐾 My
   Fork of colloid
-- **LockScreen** •
-  [Hyprlock](https://wiki.hyprland.org/Hypr-Ecosystem/hyprlock/) 🔒 hyprland
-  locker
 
 ## 🌼 <samp>INSTALLATION (NixOS)</samp>
 
 > Request:
-> [NixOs](https://channels.nixos.org/nixos-24.05/latest-nixos-minimal-x86_64-linux.iso)
+> [NixOs](https://channels.nixos.org/nixos-25.05/latest-nixos-minimal-x86_64-linux.iso)
 
 - Download ISO.
 
@@ -116,7 +108,7 @@ git clone --depth 1 https://github.com/linuxmobile/kaku /mnt/etc/nixos
 ### ⚠ <sup><sub><samp>DON'T FORGET IT</samp></sub></sup>
 
 ```bash
-sudo nixos-generate-config --dir /mnt/etc/nixos/hosts/aesthetic --force
+sudo nixos-generate-config --dir /mnt/etc/nixos/hosts/aesthetic
 
 # Remove configuration.nix
 rm -rf /mnt/etc/nixos/hosts/aesthetic/configuration.nix
@@ -126,7 +118,7 @@ rm -rf /mnt/etc/nixos/hosts/aesthetic/configuration.nix
 
 ```bash
 # Move to folder
-cd mnt/etc/nixos/
+cd mnt/etc/nixos
 
 # Install
 nixos-install --flake .#aesthetic
@@ -158,25 +150,41 @@ home-manager switch --flake 'github:linuxmobile/kaku#linudev@aesthetic'
 
 ### 🌻 <samp>TODO LIST</samp>
 
-### 🎋 <samp>ADDITIONALS</samp>
+### 🧩 <samp>ADDITIONAL TIPS</samp>
+
+If you're using this NixOS configuration flake locally, you can simplify the process of switching and managing your system using [`nh`](https://github.com/viperML/nh), a CLI helper for Nix Flakes.
+
+To switch your system configuration with `nh`, use:
+
+```bash
+nh os switch .#aesthetic
+```
+
+Similarly, to apply home-manager configurations:
+
+```bash
+nh home switch .#linudev@aesthetic
+```
+
+This avoids needing to type out the full `nixos-rebuild` or `home-manager` commands manually and provides a cleaner workflow when iterating on your setup.
+
+> 💡 Make sure `nh` is installed in your system environment or user profile.
 
 ## 🍀 <samp>KEY BINDINGS</samp>
 
 ## 💐 <samp>ACKNOWLEDGEMENTS</samp>
 
-|           |     | Inspiration and Resources                   |                            |     |
-| :-------: | :-: | :------------------------------------------ | :------------------------- | :-: |
-|           |  1  | [owl4ce](https://github.com/owl4ce)         |                            |     |
-|           |  2  | [Ilham25](https://github.com/ilham25)       |                            |     |
-|           |  3  | [Siduck](https://github.com/siduck)         |                            |     |
-|           |  4  | [NvChad](https://github.com/NvChad)         |                            |     |
-|           |  5  | [Rxyhn](https://github.com/rxyhn)           |                            |     |
-|           |  6  | [HeinzDev](https://github.com/HeinzDev)     |                            |     |
-|           |  7  | [fufexan](https://github.com/fufexan)       |                            |     |
-|           |  8  | [AmitGolden](https://github.com/AmitGolden) |                            |     |
-|           |     |                                             |                            |     |
-| **Based** |     | **Community**                               | **Membership Status**      |     |
-|     🗺     |  3  | [r/unixp*rn](https://reddit.com/r/unixporn) | Not working there anymore. |     |
+|     |     | Inspiration and Resources                   |     |     |
+| :-: | :-: | :------------------------------------------ | :-- | :-: |
+|     |  1  | [owl4ce](https://github.com/owl4ce)         |     |     |
+|     |  2  | [Ilham25](https://github.com/ilham25)       |     |     |
+|     |  3  | [Siduck](https://github.com/siduck)         |     |     |
+|     |  4  | [NvChad](https://github.com/NvChad)         |     |     |
+|     |  5  | [Rxyhn](https://github.com/rxyhn)           |     |     |
+|     |  6  | [HeinzDev](https://github.com/HeinzDev)     |     |     |
+|     |  7  | [fufexan](https://github.com/fufexan)       |     |     |
+|     |  8  | [AmitGolden](https://github.com/AmitGolden) |     |     |
+|     |     |                                             |     |     |
 
 ## 🌳 <samp>CONTRIBUTING</samp>
 

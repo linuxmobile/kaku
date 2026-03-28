@@ -1,34 +1,40 @@
 {
   pkgs,
-  inputs,
   lib,
   ...
 }: let
-  quickshell = inputs.quickshell.packages.${pkgs.system}.default;
+  qmlCandidates =
+    [pkgs.quickshell]
+    ++ (with pkgs.kdePackages; [
+      qtbase
+      qtdeclarative
+      qt6ct
+      qtmultimedia
+      qtwayland
+      kirigami
+    ]);
 in {
   home.packages = with pkgs;
     [
       quickshell
-    ]
-    ++ [
-      inputs.mynixpkgs.packages.${pkgs.system}.dgop
       accountsservice
+      gsettings-desktop-schemas
       brightnessctl
       cava
       cliphist
       ddcutil
-      kdePackages.qt6ct
-      khal
+      elogind
+      glib
+      gpu-screen-recorder
       material-symbols
       matugen
       swww
       wl-clipboard
-      glib
-    ];
+    ]
+    ++ qmlCandidates;
 
-  home.sessionVariables.QML2_IMPORT_PATH = lib.concatStringsSep ":" [
-    "${quickshell}/lib/qt-6/qml"
-    "${pkgs.kdePackages.qtdeclarative}/lib/qt-6/qml"
-    "${pkgs.kdePackages.kirigami.unwrapped}/lib/qt-6/qml"
-  ];
+  systemd.user.sessionVariables.QML2_IMPORT_PATH =
+    lib.makeSearchPath "lib/qt-6/qml" qmlCandidates
+    + ":"
+    + lib.makeSearchPath "lib/qt-5/qml" qmlCandidates;
 }

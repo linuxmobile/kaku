@@ -1,28 +1,26 @@
-# networking configuration
 {pkgs, ...}: {
   networking = {
-    # nameservers = ["1.1.1.1" "1.0.0.1"];
+    nameservers = ["1.1.1.1" "1.0.0.1"];
+
     nftables.enable = true;
+
     networkmanager = {
       enable = true;
-      dns = "systemd-resolved";
+      dns = "none";
       wifi.powersave = true;
+      plugins = with pkgs; [
+        networkmanager-openvpn
+      ];
     };
-    firewall = {
-      allowedTCPPorts = [4444];
-    };
+
+    useDHCP = false;
+    dhcpcd.enable = false;
   };
 
   services = {
     openssh = {
       enable = true;
       settings.UseDns = true;
-    };
-
-    # DNS resolver
-    resolved = {
-      enable = true;
-      dnsovertls = "opportunistic";
     };
   };
 

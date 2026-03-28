@@ -9,19 +9,30 @@
     enable = true;
     settings = {
       main = {
-        font = "ZedMono Nerd Font Mono:size=8:fontfeatures=calt:fontfeatures=dlig:fontfeatures=liga";
-        dpi-aware = "yes";
+        font = lib.mkForce (
+          "Cozette:size=10"
+          + ":fontfeatures=calt"
+          + ":fontfeatures=dlig"
+          + ":fontfeatures=fbarc"
+          + ":fontfeatures=liga,PragmataProMonoLiga Nerd Font:size=8"
+        );
+
         horizontal-letter-offset = 0;
         vertical-letter-offset = 0;
         pad = "15x6center";
         term = "xterm-256color";
-        selection-target = "clipboard";
-        include = "${config.xdg.configHome}/foot/theme.ini";
-        shell = "${pkgs.zellij}/bin/zellij";
+        selection-target = "both";
+        include = "${config.xdg.configHome}/foot/themes/noctalia";
+      };
+      bell = {
+        command = "notify-send bell";
+        command-focused = "no";
+        notify = "yes";
+        urgent = "yes";
       };
       desktop-notifications.command = "${lib.getExe pkgs.libnotify} -a \${app-id} -i \${app-id} \${title} \${body}";
       scrollback = {
-        lines = 10000;
+        lines = 1000;
         multiplier = 3;
         indicator-position = "relative";
         indicator-format = "line";

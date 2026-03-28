@@ -52,9 +52,18 @@
       };
     };
 
-    anyrun.url = "github:anyrun-org/anyrun";
-
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dankMaterialShell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.dgop.follows = "dgop";
+    };
 
     hm = {
       url = "github:nix-community/home-manager";
@@ -70,29 +79,6 @@
 
     nix-index-db = {
       url = "github:Mic92/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-gaming = {
-      url = "github:fufexan/nix-gaming";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-      };
-    };
-
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/quickshell/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    zen-browser = {
-      url = "github:pfaj/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

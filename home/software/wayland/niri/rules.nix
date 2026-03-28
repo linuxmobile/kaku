@@ -50,15 +50,17 @@ _: let
     {
       matches = [
         {app-id = "zen";}
+        {app-id = "helium";}
         {app-id = "firefox";}
         {app-id = "chromium-browser";}
         {app-id = "xdg-desktop-portal-gtk";}
       ];
-      scroll-factor = 0.5;
+      scroll-factor = 0.6;
     }
     {
       matches = [
         {app-id = "zen";}
+        {app-id = "helium";}
         {app-id = "firefox";}
         {app-id = "chromium-browser";}
         {app-id = "edge";}
@@ -68,8 +70,7 @@ _: let
     {
       matches = [
         {
-          app-id = "firefox";
-          title = "Picture-in-Picture";
+          title = "^Picture-in-Picture$";
         }
       ];
       open-floating = true;
@@ -81,31 +82,7 @@ _: let
       default-column-width = {fixed = 480;};
       default-window-height = {fixed = 270;};
     }
-    {
-      matches = [
-        {
-          app-id = "zen";
-          title = "Picture-in-Picture";
-        }
-      ];
-      open-floating = true;
-      default-floating-position = {
-        x = 32;
-        y = 32;
-        relative-to = "bottom-right";
-      };
-      default-column-width = {fixed = 480;};
-      default-window-height = {fixed = 270;};
-    }
-    {
-      matches = [{title = "Picture in picture";}];
-      open-floating = true;
-      default-floating-position = {
-        x = 32;
-        y = 32;
-        relative-to = "bottom-right";
-      };
-    }
+
     {
       matches = [{title = "Discord Popout";}];
       open-floating = true;
@@ -115,6 +92,98 @@ _: let
         relative-to = "bottom-right";
       };
     }
+
+    {
+      matches = [
+        {app-id = "Multiviewer";}
+        {title = "^Track Map$";}
+      ];
+      open-floating = true;
+      default-floating-position = {
+        x = 1426;
+        y = 747;
+        relative-to = "top-right";
+      };
+      default-column-width = {fixed = 490;};
+      default-window-height = {fixed = 330;};
+      open-on-output = "HDMI-A-1";
+    }
+    {
+      matches = [
+        {app-id = "Multiviewer";}
+        {title = "^Replay Radio$";}
+      ];
+      open-floating = true;
+      default-floating-position = {
+        x = 1423;
+        y = 301;
+        relative-to = "top-right";
+      };
+      default-column-width = {fixed = 500;};
+      default-window-height = {fixed = 450;};
+      open-on-output = "HDMI-A-1";
+    }
+    {
+      matches = [
+        {app-id = "Multiviewer";}
+        {title = "^Franco Colapinto$";}
+      ];
+      open-floating = true;
+      default-floating-position = {
+        x = 637;
+        y = -2;
+        relative-to = "top-right";
+      };
+      default-column-width = {fixed = 640;};
+      default-window-height = {fixed = 360;};
+      open-on-output = "HDMI-A-1";
+    }
+    {
+      matches = [
+        {app-id = "Multiviewer";}
+        {title = "^Pierre Gasly$";}
+      ];
+      open-floating = true;
+      default-floating-position = {
+        x = -2;
+        y = -2;
+        relative-to = "top-right";
+      };
+      default-column-width = {fixed = 640;};
+      default-window-height = {fixed = 360;};
+      open-on-output = "HDMI-A-1";
+    }
+    {
+      matches = [
+        {app-id = "Multiviewer";}
+        {title = "^Kimi Antonelli$";}
+      ];
+      open-floating = true;
+      default-floating-position = {
+        x = 1278;
+        y = -2;
+        relative-to = "top-right";
+      };
+      default-column-width = {fixed = 640;};
+      default-window-height = {fixed = 360;};
+      open-on-output = "HDMI-A-1";
+    }
+    {
+      matches = [
+        {app-id = "Multiviewer";}
+        {title = "^Live Timing$";}
+      ];
+      open-floating = true;
+      default-floating-position = {
+        x = 1430;
+        y = 710;
+        relative-to = "bottom-left";
+      };
+      default-column-width = {fixed = 1430;};
+      default-window-height = {fixed = 710;};
+      open-on-output = "HDMI-A-1";
+    }
+
     {
       matches = [{app-id = "pavucontrol";}];
       open-floating = true;
@@ -227,9 +296,12 @@ _: let
 in {
   programs.niri.settings = {
     window-rules = windowRules;
+    layout = {
+      background-color = "transparent";
+    };
     layer-rules = [
       {
-        matches = [{namespace = "^swww$";}];
+        matches = [{namespace = "^noctalia-wallpaper*";}];
         place-within-backdrop = true;
       }
     ];
