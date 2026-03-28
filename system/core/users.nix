@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   users.users.banumath = {
     isNormalUser = true;
+    description = "Banumath Hettiarachchi";
     shell = pkgs.fish;
     extraGroups = [
       "adbusers"
@@ -10,6 +11,7 @@
       "video"
       "wheel"
       "kvm"
+      "docker"
     ];
   };
 }

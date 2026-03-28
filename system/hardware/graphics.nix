@@ -8,6 +8,13 @@
       libvdpau-va-gl
       libGL
       mesa
+      intel-media-driver
+      libva-utils
+      gstreamer1
+      gstreamer1Plugins.good
+      gstreamer1Plugins.bad
+      gstreamer1Plugins.ugly
+      ffmpeg
     ];
     extraPackages32 = with pkgs.pkgsi686Linux; [
       libva-vdpau-driver

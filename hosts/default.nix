@@ -26,7 +26,7 @@
           "${mod}/core/limine.nix"
           {
             home-manager = {
-              users.linuxmobile.imports =
+              users.banmath.imports =
                 homeImports."linuxmobile@aesthetic";
               extraSpecialArgs = specialArgs;
             };

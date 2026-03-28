@@ -8,13 +8,17 @@
 
   boot = {
     # load modules on boot
-    kernelModules = ["amdgpu" "v4l2loopback" "i2c-dev" "efivarfs"];
-    kernelPackages = lib.mkForce pkgs.linuxPackages_cachyos;
+    kernelModules = ["i915" "v4l2loopback" "i2c-dev" "efivarfs"];
+    kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
     extraModulePackages = with config.boot.kernelPackages; [v4l2loopback];
     kernelParams = [
-      "amd_pstate=active" # Enable AMD P-state CPU scaling driver
-      "amd_iommu=force" # Force AMD IOMMU for better DMA protection
+      "intel_pstate=enable" # Enable Intel P-state CPU scaling driver
+      "intel_iommu=on" # Enable Intel IOMMU support
+      "iommu=pt" # Use passthrough IOMMU mode for lower latency
       "mitigations=off" # Disable CPU security mitigations (improves performance, reduces security)
+      "processor.max_cstate=0" # Disable deep CPU idle states for maximum responsiveness
+      "idle=poll" # Prefer polling idle state for max CPU availability
+      "intel_idle.max_cstate=1" # Restrict Intel idle states to prevent power-saving latency
       "ideapad_laptop" # Allow Lenovo IdeaPad v4 Dynamic Thermal Control
       # "nvme_core.default_ps_max_latency_us=0" # Set NVMe power state latency to minimum (max performance)
       "preempt=voluntary"
@@ -128,7 +132,11 @@
     '';
   };
 
-  networking.hostName = "aesthetic";
+  networking.hostName = "My-Laptop";
+
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
 
   security.tpm2.enable = true;
 
@@ -149,7 +157,7 @@
 
   hardware = {
     enableRedistributableFirmware = true;
-    cpu.amd.updateMicrocode = true;
+    cpu.intel.updateMicrocode = true;
   };
 
   # Additional systemd hardening
@@ -160,5 +168,40 @@
     '';
   };
 
-  environment.systemPackages = [pkgs.cryptsetup];
+  fileSystems = {
+    "/mnt/Srorage" = {
+      device = "//192.168.1.2/Srorage";
+      fsType = "cifs";
+      options = [
+        "username=banumath"
+        "password=20050831"
+        "uid=1000"
+        "gid=1000"
+        "file_mode=0770"
+        "dir_mode=0770"
+        "vers=3.0"
+      ];
+    };
+    "/mnt/Backp" = {
+      device = "//192.168.1.2/Backup";
+      fsType = "cifs";
+      options = [
+        "username=banumath"
+        "password=20050831"
+        "uid=1000"
+        "gid=1000"
+        "file_mode=0770"
+        "dir_mode=0770"
+        "vers=3.0"
+      ];
+    };
+  };
+
+  environment.systemPackages = with pkgs; [
+    cryptsetup
+    docker
+    (pkgs."docker-compose")
+    sunshine
+    cifs-utils
+  ];
 }

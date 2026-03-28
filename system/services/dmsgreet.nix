@@ -7,7 +7,7 @@ _: {
     displayManager.dms-greeter = {
       enable = true;
       compositor.name = "niri";
-      configHome = "/home/linuxmobile";
+      configHome = "/home/banmath";
       logs = {
         save = true;
         path = "/tmp/dms-greeter.log";
@@ -16,7 +16,7 @@ _: {
 
     greetd.settings = {
       initial_session = {
-        user = "linuxmobile";
+        user = "banmath";
         command = "niri-session";
       };
     };

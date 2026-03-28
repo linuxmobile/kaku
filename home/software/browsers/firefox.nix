@@ -19,7 +19,7 @@
       name = "dev-edition-default";
       extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
         ublock-origin
-        bitwarden
+        protonpass
         sidebery
       ];
       search.force = true;

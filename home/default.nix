@@ -6,8 +6,8 @@
     inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
   ];
   home = {
-    username = "linuxmobile";
-    homeDirectory = "/home/linuxmobile";
+    username = "banmath";
+    homeDirectory = "/home/banmath";
     stateVersion = "24.05";
   };
 

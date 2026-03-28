@@ -26,7 +26,6 @@
     # Useful dev tools
     git
     neovim
-    vscode
     helix
     
     # Debugging and utilities
